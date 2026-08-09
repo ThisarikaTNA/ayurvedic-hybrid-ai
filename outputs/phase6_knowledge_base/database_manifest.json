@@ -1,0 +1,172 @@
+{
+  "phase": 6,
+  "status": "constructed_awaiting_user_approval",
+  "generated_at_utc": "2026-08-06T15:14:31.579912+00:00",
+  "schema_version": "1.0.0-phase6",
+  "software_versions": {
+    "python": "3.12.7",
+    "sqlite": "3.45.3"
+  },
+  "database": {
+    "path": "C:\\Users\\thisari.thathsarani\\Documents\\MSc AI Coursework\\ayurvedic_hybrid_ai\\data\\knowledge_base\\ayurvedic_knowledge.db",
+    "sha256": "6C78E31E694BC457E8481E572FCB4C685AD173767657D553FB20572BBE4AE333"
+  },
+  "phase5_selection_manifest": {
+    "path": "C:\\Users\\thisari.thathsarani\\Documents\\MSc AI Coursework\\ayurvedic_hybrid_ai\\outputs\\phase5_condition_selection\\phase5_selection.json",
+    "sha256": "D96418205F3476D38FB62645BA7F2C79A3FA05A096EA1A6A3830D639C0242F0D",
+    "approval_status": "approved_and_finalized_for_phase6"
+  },
+  "schema_files": {
+    "schema.sql": {
+      "path": "C:\\Users\\thisari.thathsarani\\Documents\\MSc AI Coursework\\ayurvedic_hybrid_ai\\sql\\schema.sql",
+      "sha256": "1B9DFD2DBA9C39BD20D2FA4CA2C7F38C808279DA28B35D1B56014F4962B6C724"
+    },
+    "indexes.sql": {
+      "path": "C:\\Users\\thisari.thathsarani\\Documents\\MSc AI Coursework\\ayurvedic_hybrid_ai\\sql\\indexes.sql",
+      "sha256": "1DFF13679E6379B9684CE4C28A2C23EC97F8ECD641F888F286F68989EF0C62EF"
+    },
+    "triggers.sql": {
+      "path": "C:\\Users\\thisari.thathsarani\\Documents\\MSc AI Coursework\\ayurvedic_hybrid_ai\\sql\\triggers.sql",
+      "sha256": "8F45D85592EED144F919E9D5FEBBA95E7748E9376F18C5A73C031001C1567897"
+    }
+  },
+  "row_counts": {
+    "conditions": 5,
+    "condition_aliases": 15,
+    "symptoms": 36,
+    "condition_symptoms": 36,
+    "doshas": 3,
+    "condition_doshas": 9,
+    "recommendations": 17,
+    "recommendation_categories": 3,
+    "formulations": 0,
+    "ingredients": 0,
+    "formulation_ingredients": 0,
+    "contraindications": 0,
+    "safety_claims": 11,
+    "evidence_sources": 5,
+    "knowledge_claims": 45,
+    "claim_evidence": 15,
+    "knowledge_rules": 0,
+    "rule_evidence": 0,
+    "rule_validation": 0,
+    "knowledge_base_versions": 1,
+    "model_predictions": 0,
+    "retrieval_results": 0,
+    "final_recommendations": 0,
+    "stale_items": 0,
+    "final_recommendation_claims": 0,
+    "audit_log": 55
+  },
+  "source_counts": {
+    "NHS": 5
+  },
+  "evidence_status_counts": {
+    "dataset_derived": 30,
+    "reference_checked": 15
+  },
+  "relationship_provenance_counts": {
+    "condition_symptoms": {
+      "dataset_derived": 16,
+      "reference_checked": 20
+    },
+    "condition_doshas": {
+      "dataset_derived": 9
+    },
+    "recommendations": {
+      "dataset_derived": 12,
+      "reference_checked": 5
+    },
+    "safety_claims": {
+      "dataset_derived": 6,
+      "reference_checked": 5
+    }
+  },
+  "evidence_matrix": {
+    "path": "C:\\Users\\thisari.thathsarani\\Documents\\MSc AI Coursework\\ayurvedic_hybrid_ai\\outputs\\phase6_knowledge_base\\evidence_matrix.csv",
+    "row_count": 45,
+    "sha256": "0204F7B15F91406E4B34F20E615B85E34A3EA375F9916D16CC5F066223BC954C"
+  },
+  "fts5": {
+    "available": true,
+    "prepared_not_phase8_retrieval": true
+  },
+  "indexes": [
+    "idx_audit_log_entity",
+    "idx_audit_log_timestamp",
+    "idx_claim_evidence_claim",
+    "idx_claim_evidence_source",
+    "idx_condition_aliases_condition_id",
+    "idx_condition_aliases_normalized_alias",
+    "idx_condition_doshas_claim",
+    "idx_condition_doshas_condition",
+    "idx_condition_doshas_dosha",
+    "idx_condition_symptoms_claim",
+    "idx_condition_symptoms_condition",
+    "idx_condition_symptoms_symptom",
+    "idx_conditions_canonical_name",
+    "idx_contraindications_claim",
+    "idx_evidence_sources_url",
+    "idx_final_recommendation_claims_claim",
+    "idx_final_recommendations_condition",
+    "idx_formulation_ingredients_formulation",
+    "idx_formulation_ingredients_ingredient",
+    "idx_knowledge_claims_condition",
+    "idx_knowledge_claims_status_type",
+    "idx_knowledge_rules_status_priority",
+    "idx_model_predictions_dosha",
+    "idx_recommendations_claim",
+    "idx_recommendations_condition",
+    "idx_retrieval_results_condition",
+    "idx_rule_evidence_rule",
+    "idx_rule_evidence_source",
+    "idx_rule_validation_rule",
+    "idx_safety_claims_condition",
+    "idx_stale_items_status",
+    "idx_symptoms_normalized_text"
+  ],
+  "foreign_key_check": {
+    "violation_count": 0
+  },
+  "dosage_audit": {
+    "forbidden_dosage_columns": [],
+    "exact_dosage_content_findings": [],
+    "passed": true
+  },
+  "later_phase_tables": {
+    "knowledge_rules": 0,
+    "rule_evidence": 0,
+    "rule_validation": 0,
+    "model_predictions": 0,
+    "retrieval_results": 0,
+    "final_recommendations": 0,
+    "phase7_rules_created": false
+  },
+  "final_test_seal": {
+    "allowed_partitions": [
+      "train",
+      "validation"
+    ],
+    "approved_profile_count": 6,
+    "approved_condition_count": 5,
+    "retained_profile_ids": [
+      "kp_0006",
+      "kp_0010",
+      "kp_0016",
+      "kp_0114",
+      "kp_0150",
+      "kp_0226"
+    ],
+    "final_test_profiles_retained": 0,
+    "final_test_fields_retained": 0,
+    "final_test_predictions_retained": 0,
+    "final_test_errors_retained": 0,
+    "final_test_metrics_calculated": false
+  },
+  "limitations": [
+    "Dataset relationships are not medical validation.",
+    "No Ayurveda-specific source or expert validation supports the Dosha relationships.",
+    "External source review is limited to the exact claim and named source section.",
+    "This coursework prototype must not diagnose or prescribe."
+  ]
+}
