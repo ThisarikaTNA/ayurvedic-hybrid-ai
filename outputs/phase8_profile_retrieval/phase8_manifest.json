@@ -1,0 +1,491 @@
+{
+  "phase": 8,
+  "status": "implemented_awaiting_user_approval",
+  "generated_at_utc": "2026-08-06T16:02:50.674822+00:00",
+  "software_versions": {
+    "python": "3.12.7",
+    "sqlite": "3.45.3"
+  },
+  "random_seed": {
+    "value": null,
+    "reason": "Retrieval, ranking, tie-breaking, and run IDs are deterministic."
+  },
+  "parent_phase7": {
+    "approval": "explicitly_approved_by_user",
+    "manifest_path": "C:\\Users\\thisari.thathsarani\\Documents\\MSc AI Coursework\\ayurvedic_hybrid_ai\\outputs\\phase7_rule_engine\\phase7_manifest.json",
+    "manifest_sha256": "5774E1096A7BB0B0347876358E532B681D8B24D6FF6694AD6EE91D9753D73784"
+  },
+  "database": {
+    "path": "C:\\Users\\thisari.thathsarani\\Documents\\MSc AI Coursework\\ayurvedic_hybrid_ai\\data\\knowledge_base\\ayurvedic_knowledge.db",
+    "sha256_before": "E52BD930AEE515F32012AC24359E7A94F4B4F726B0A5F86465185B1D2103ADFD",
+    "sha256_after": "E52BD930AEE515F32012AC24359E7A94F4B4F726B0A5F86465185B1D2103ADFD",
+    "unchanged": true,
+    "evaluation_copy": "temporary_in_memory"
+  },
+  "retrieval_configuration": {
+    "config_version": "1.0.0",
+    "scope": "phase8_standalone_condition_scoped_retrieval",
+    "top_k": {
+      "default": 3,
+      "minimum": 1,
+      "maximum": 5
+    },
+    "input_limits": {
+      "condition_characters": 120,
+      "query_characters": 500,
+      "query_terms": 30
+    },
+    "lexical_scoring": {
+      "bm25_normalized_weight": 0.7,
+      "matched_term_coverage_weight": 0.3,
+      "bm25_normalization": "per_collection_min_max_smaller_is_better",
+      "single_bm25_match_score": 1.0
+    },
+    "profile_ranking": {
+      "query_and_dosha": {
+        "lexical_relevance_weight": 0.75,
+        "caller_supplied_dosha_overlap_weight": 0.25
+      },
+      "query_only": {
+        "lexical_relevance_weight": 1.0,
+        "caller_supplied_dosha_overlap_weight": 0.0
+      },
+      "dosha_only": {
+        "lexical_relevance_weight": 0.0,
+        "caller_supplied_dosha_overlap_weight": 1.0
+      },
+      "no_optional_signals": {
+        "lexical_relevance_weight": 0.0,
+        "caller_supplied_dosha_overlap_weight": 0.0,
+        "order": "source_profile_id_ascending"
+      }
+    },
+    "record_ranking": {
+      "lexical_relevance_weight": 1.0,
+      "no_query_order": "stable_record_id_ascending"
+    },
+    "dosha_overlap": {
+      "method": "jaccard_set_overlap",
+      "allowed_tags": [
+        "Vata",
+        "Pitta",
+        "Kapha"
+      ],
+      "interpretation": "caller_supplied_retrieval_signal_only"
+    },
+    "filters": {
+      "allowed_evidence_statuses": [
+        "dataset_derived",
+        "reference_checked",
+        "expert_reviewed"
+      ],
+      "exclude_inactive": true,
+      "exclude_stale": true,
+      "require_complete_reference_support": true
+    },
+    "tie_breaking": [
+      "final_score_descending",
+      "lexical_score_descending",
+      "raw_bm25_ascending",
+      "stable_record_id_ascending"
+    ],
+    "disclaimers": {
+      "lexical": "Lexical relevance measures text similarity, not evidence quality or medical correctness.",
+      "dosha": "Caller-supplied Dosha tags are retrieval signals only and are not inferred or clinically validated.",
+      "prototype": "Educational research prototype only; retrieval does not diagnose, infer a true Dosha, prescribe, fire medical rules, or replace professional healthcare."
+    }
+  },
+  "configuration_file": {
+    "path": "C:\\Users\\thisari.thathsarani\\Documents\\MSc AI Coursework\\ayurvedic_hybrid_ai\\config\\retrieval_config.v1.json",
+    "sha256": "C2D65A4F0F65AC56A8356668A53896DCF95648E3E9C3EE932FE5254F31B61845"
+  },
+  "code_hashes": {
+    "src\\retrieval\\query_schema.py": "4DBAB8F510F85526AA2A715B184AB868B6CCC7D6242D77907A597D16DF43115A",
+    "src\\retrieval\\repository.py": "F82F4E3C141F37FEBD175BFF9899AC0DA86BC360B39DA80DDE75C0A0E8E61E1B",
+    "src\\retrieval\\profile_retriever.py": "40F6EA05A8D75460CBAEB12A011127A9764FE353B26B878F5DC6B120D565319D",
+    "src\\retrieval\\evaluation.py": "F731736400497E16807C4DA3D63ED988193E4582EBAC73712CFB7DD207773FED",
+    "scripts\\run_phase8_profile_retrieval.py": "A7A115DBA33ACE8B25BBF18606B005826F3B341BE125E026FB60073199A636E3"
+  },
+  "artifact_hashes": {
+    "outputs\\phase8_profile_retrieval\\evaluation_queries.json": "3D55BFC608E15D129F1BEFE114E66DFB12426D6AC9B088F529C3822B1EC5EAEF",
+    "outputs\\phase8_profile_retrieval\\evaluation_results.json": "D3F56D626C43E239A86449606009C5E235D38A741FE21BF58D827E1D4BBC98E7",
+    "outputs\\phase8_profile_retrieval\\sample_retrieval_traces.json": "F03AF633F6A05C58DB72375FD8800FB5C0664E19C6606F909B366147B372992C"
+  },
+  "retrieved_inventory": {
+    "Acne": {
+      "dataset_profiles": 1,
+      "reference_checked_claims": 3,
+      "symptoms": 6,
+      "dataset_recommendations": 2,
+      "external_sources": 1,
+      "dataset_provenance_records": 1
+    },
+    "Common Cold": {
+      "dataset_profiles": 1,
+      "reference_checked_claims": 3,
+      "symptoms": 9,
+      "dataset_recommendations": 2,
+      "external_sources": 1,
+      "dataset_provenance_records": 1
+    },
+    "Gastroesophageal Reflux Disease": {
+      "dataset_profiles": 1,
+      "reference_checked_claims": 3,
+      "symptoms": 5,
+      "dataset_recommendations": 2,
+      "external_sources": 1,
+      "dataset_provenance_records": 1
+    },
+    "Insomnia": {
+      "dataset_profiles": 2,
+      "reference_checked_claims": 3,
+      "symptoms": 10,
+      "dataset_recommendations": 4,
+      "external_sources": 1,
+      "dataset_provenance_records": 2
+    },
+    "Osteoarthritis": {
+      "dataset_profiles": 1,
+      "reference_checked_claims": 3,
+      "symptoms": 6,
+      "dataset_recommendations": 2,
+      "external_sources": 1,
+      "dataset_provenance_records": 1
+    }
+  },
+  "evaluation": {
+    "query_count": 18,
+    "target_result_count": 19,
+    "metrics": {
+      "overall": {
+        "evaluation_query_count": 18,
+        "ranking_query_count": 16,
+        "alias_resolution_accuracy": 1.0,
+        "condition_resolution_accuracy": 1.0,
+        "hit_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "mean_reciprocal_rank": 1.0,
+        "exact_expected_record_retrieval": 1.0,
+        "passed_query_count": 18,
+        "all_queries_passed": true
+      },
+      "by_query_type": {
+        "alias": {
+          "query_count": 4,
+          "pass_rate": 1.0,
+          "hit_at_k": 1.0,
+          "recall_at_k": 1.0,
+          "mean_reciprocal_rank": 1.0,
+          "exact_expected_record_retrieval": 1.0
+        },
+        "caller_dosha_ranking": {
+          "query_count": 1,
+          "pass_rate": 1.0,
+          "hit_at_k": 1.0,
+          "recall_at_k": 1.0,
+          "mean_reciprocal_rank": 1.0,
+          "exact_expected_record_retrieval": 1.0
+        },
+        "canonical_name": {
+          "query_count": 5,
+          "pass_rate": 1.0,
+          "hit_at_k": 1.0,
+          "recall_at_k": 1.0,
+          "mean_reciprocal_rank": 1.0,
+          "exact_expected_record_retrieval": 1.0
+        },
+        "fts5_lexical": {
+          "query_count": 1,
+          "pass_rate": 1.0,
+          "hit_at_k": 1.0,
+          "recall_at_k": 1.0,
+          "mean_reciprocal_rank": 1.0,
+          "exact_expected_record_retrieval": 1.0
+        },
+        "insomnia_disagreement": {
+          "query_count": 1,
+          "pass_rate": 1.0,
+          "hit_at_k": 1.0,
+          "recall_at_k": 1.0,
+          "mean_reciprocal_rank": 1.0,
+          "exact_expected_record_retrieval": 1.0
+        },
+        "missing_condition": {
+          "query_count": 1,
+          "pass_rate": 1.0,
+          "hit_at_k": null,
+          "recall_at_k": null,
+          "mean_reciprocal_rank": null,
+          "exact_expected_record_retrieval": null
+        },
+        "no_result": {
+          "query_count": 1,
+          "pass_rate": 1.0,
+          "hit_at_k": 1.0,
+          "recall_at_k": 1.0,
+          "mean_reciprocal_rank": null,
+          "exact_expected_record_retrieval": 1.0
+        },
+        "unknown_condition": {
+          "query_count": 1,
+          "pass_rate": 1.0,
+          "hit_at_k": null,
+          "recall_at_k": null,
+          "mean_reciprocal_rank": null,
+          "exact_expected_record_retrieval": null
+        },
+        "within_condition_text": {
+          "query_count": 3,
+          "pass_rate": 1.0,
+          "hit_at_k": 1.0,
+          "recall_at_k": 1.0,
+          "mean_reciprocal_rank": 1.0,
+          "exact_expected_record_retrieval": 1.0
+        }
+      }
+    }
+  },
+  "metrics_by_query_type": {
+    "alias": {
+      "query_count": 4,
+      "pass_rate": 1.0,
+      "hit_at_k": 1.0,
+      "recall_at_k": 1.0,
+      "mean_reciprocal_rank": 1.0,
+      "exact_expected_record_retrieval": 1.0
+    },
+    "caller_dosha_ranking": {
+      "query_count": 1,
+      "pass_rate": 1.0,
+      "hit_at_k": 1.0,
+      "recall_at_k": 1.0,
+      "mean_reciprocal_rank": 1.0,
+      "exact_expected_record_retrieval": 1.0
+    },
+    "canonical_name": {
+      "query_count": 5,
+      "pass_rate": 1.0,
+      "hit_at_k": 1.0,
+      "recall_at_k": 1.0,
+      "mean_reciprocal_rank": 1.0,
+      "exact_expected_record_retrieval": 1.0
+    },
+    "fts5_lexical": {
+      "query_count": 1,
+      "pass_rate": 1.0,
+      "hit_at_k": 1.0,
+      "recall_at_k": 1.0,
+      "mean_reciprocal_rank": 1.0,
+      "exact_expected_record_retrieval": 1.0
+    },
+    "insomnia_disagreement": {
+      "query_count": 1,
+      "pass_rate": 1.0,
+      "hit_at_k": 1.0,
+      "recall_at_k": 1.0,
+      "mean_reciprocal_rank": 1.0,
+      "exact_expected_record_retrieval": 1.0
+    },
+    "missing_condition": {
+      "query_count": 1,
+      "pass_rate": 1.0,
+      "hit_at_k": null,
+      "recall_at_k": null,
+      "mean_reciprocal_rank": null,
+      "exact_expected_record_retrieval": null
+    },
+    "no_result": {
+      "query_count": 1,
+      "pass_rate": 1.0,
+      "hit_at_k": 1.0,
+      "recall_at_k": 1.0,
+      "mean_reciprocal_rank": null,
+      "exact_expected_record_retrieval": 1.0
+    },
+    "unknown_condition": {
+      "query_count": 1,
+      "pass_rate": 1.0,
+      "hit_at_k": null,
+      "recall_at_k": null,
+      "mean_reciprocal_rank": null,
+      "exact_expected_record_retrieval": null
+    },
+    "within_condition_text": {
+      "query_count": 3,
+      "pass_rate": 1.0,
+      "hit_at_k": 1.0,
+      "recall_at_k": 1.0,
+      "mean_reciprocal_rank": 1.0,
+      "exact_expected_record_retrieval": 1.0
+    }
+  },
+  "alias_resolution_results": [
+    {
+      "query_id": "EVAL-CANON-ACNE",
+      "supplied_condition": "Acne",
+      "expected_condition": "Acne",
+      "actual_condition": "Acne",
+      "status": "success",
+      "correct": true
+    },
+    {
+      "query_id": "EVAL-CANON-COLD",
+      "supplied_condition": "Common Cold",
+      "expected_condition": "Common Cold",
+      "actual_condition": "Common Cold",
+      "status": "success",
+      "correct": true
+    },
+    {
+      "query_id": "EVAL-CANON-GERD",
+      "supplied_condition": "Gastroesophageal Reflux Disease",
+      "expected_condition": "Gastroesophageal Reflux Disease",
+      "actual_condition": "Gastroesophageal Reflux Disease",
+      "status": "success",
+      "correct": true
+    },
+    {
+      "query_id": "EVAL-CANON-OA",
+      "supplied_condition": "Osteoarthritis",
+      "expected_condition": "Osteoarthritis",
+      "actual_condition": "Osteoarthritis",
+      "status": "success",
+      "correct": true
+    },
+    {
+      "query_id": "EVAL-CANON-INSOMNIA",
+      "supplied_condition": "Insomnia",
+      "expected_condition": "Insomnia",
+      "actual_condition": "Insomnia",
+      "status": "success",
+      "correct": true
+    },
+    {
+      "query_id": "EVAL-ALIAS-GERD",
+      "supplied_condition": "GERD",
+      "expected_condition": "Gastroesophageal Reflux Disease",
+      "actual_condition": "Gastroesophageal Reflux Disease",
+      "status": "success",
+      "correct": true
+    },
+    {
+      "query_id": "EVAL-ALIAS-GORD",
+      "supplied_condition": "GORD",
+      "expected_condition": "Gastroesophageal Reflux Disease",
+      "actual_condition": "Gastroesophageal Reflux Disease",
+      "status": "success",
+      "correct": true
+    },
+    {
+      "query_id": "EVAL-ALIAS-ACID-REFLUX",
+      "supplied_condition": "Acid reflux",
+      "expected_condition": "Gastroesophageal Reflux Disease",
+      "actual_condition": "Gastroesophageal Reflux Disease",
+      "status": "success",
+      "correct": true
+    },
+    {
+      "query_id": "EVAL-ALIAS-GASTRO-OESOPHAGEAL",
+      "supplied_condition": "Gastro-oesophageal Reflux Disease",
+      "expected_condition": "Gastroesophageal Reflux Disease",
+      "actual_condition": "Gastroesophageal Reflux Disease",
+      "status": "success",
+      "correct": true
+    },
+    {
+      "query_id": "EVAL-UNKNOWN-CONDITION",
+      "supplied_condition": "Unlisted Condition",
+      "expected_condition": null,
+      "actual_condition": null,
+      "status": "no_match",
+      "correct": true
+    },
+    {
+      "query_id": "EVAL-MISSING-CONDITION",
+      "supplied_condition": null,
+      "expected_condition": null,
+      "actual_condition": null,
+      "status": "clarification_required",
+      "correct": true
+    }
+  ],
+  "fts5": {
+    "available": true,
+    "used_for": [
+      "symptom_text",
+      "recommendation_text",
+      "dataset_profile_mapping"
+    ],
+    "safe_quoted_tokens_and_parameterized_match": true
+  },
+  "production_table_counts": {
+    "model_predictions": 0,
+    "retrieval_results": 0,
+    "final_recommendations": 0
+  },
+  "persistence": {
+    "implemented": false,
+    "default": "non_persistent",
+    "synthetic_records_written_to_production": 0
+  },
+  "insomnia_conflict_preservation": {
+    "passed": true,
+    "profile_associations": {
+      "kp_0010": [
+        "Vata",
+        "Pitta"
+      ],
+      "kp_0150": [
+        "Vata"
+      ]
+    },
+    "majority_vote_used": false,
+    "clinical_interpretation_used": false
+  },
+  "exact_dosage_findings": [],
+  "forbidden_phase8_import_or_invocation_findings": [],
+  "final_test_seal": {
+    "allowed_partitions": [
+      "train",
+      "validation"
+    ],
+    "approved_profile_count": 6,
+    "approved_condition_count": 5,
+    "retained_profile_ids": [
+      "kp_0006",
+      "kp_0010",
+      "kp_0016",
+      "kp_0114",
+      "kp_0150",
+      "kp_0226"
+    ],
+    "final_test_profiles_retained": 0,
+    "final_test_fields_retained": 0,
+    "final_test_predictions_retained": 0,
+    "final_test_errors_retained": 0,
+    "final_test_metrics_calculated": false,
+    "phase7_ml_model_loaded": false,
+    "phase7_final_test_access_events": 0,
+    "phase7_final_test_metrics": 0,
+    "phase8_final_test_access_events": 0,
+    "phase8_final_test_predictions": 0,
+    "phase8_final_test_errors": 0,
+    "phase8_final_test_metrics": 0,
+    "phase8_ml_model_loads": 0,
+    "phase8_rule_engine_invocations": 0
+  },
+  "scope_confirmations": {
+    "condition_diagnosis_performed": false,
+    "dosha_inference_performed": false,
+    "ml_model_loaded_or_invoked": false,
+    "rule_engine_loaded_or_invoked": false,
+    "hybrid_integration_started": false,
+    "final_recommendation_created": false
+  },
+  "test_results": {
+    "passed": 32,
+    "total": 32,
+    "phase8_tests": 32,
+    "warnings": 0
+  }
+}

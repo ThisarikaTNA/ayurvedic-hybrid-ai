@@ -1,0 +1,1381 @@
+{
+  "temporary_database_only": true,
+  "synthetic_scenarios": [
+    {
+      "scenario_id": "SYN-ALIAS-GERD-TEXT",
+      "synthetic": true,
+      "request": {
+        "condition": "GORD",
+        "free_text": "heartburn reflux",
+        "categories": [
+          "profiles",
+          "claims",
+          "symptoms",
+          "sources"
+        ],
+        "top_k": 3
+      },
+      "result": {
+        "retrieval_run_id": "RET-C6C7C0794C7BEFAA",
+        "status": "success",
+        "request": {
+          "condition_context": "GORD",
+          "free_text": "heartburn reflux",
+          "query_terms": [
+            "heartburn",
+            "reflux"
+          ],
+          "categories": [
+            "profiles",
+            "claims",
+            "symptoms",
+            "sources"
+          ],
+          "caller_supplied_dosha_tags": [],
+          "top_k": 3
+        },
+        "condition_context_source": "caller_supplied_not_inferred",
+        "resolved_condition": "Gastroesophageal Reflux Disease",
+        "matched_alias": {
+          "supplied": "GORD",
+          "matched_name": "GORD",
+          "match_type": "alias",
+          "mapping_status": "draft"
+        },
+        "collections": {
+          "profiles": [
+            {
+              "retrieval_run_id": "RET-C6C7C0794C7BEFAA",
+              "resolved_condition": "Gastroesophageal Reflux Disease",
+              "matched_alias": {
+                "supplied": "GORD",
+                "matched_name": "GORD",
+                "match_type": "alias",
+                "mapping_status": "draft"
+              },
+              "record_id": "kp_0114",
+              "result_type": "dataset_knowledge_profile",
+              "rank": 1,
+              "component_scores": {
+                "lexical_method": "fts5_bm25_plus_safe_token_coverage",
+                "raw_bm25_smaller_is_better": -4.348023600753534,
+                "bm25_normalized": 1.0,
+                "matched_term_coverage": 0.5,
+                "lexical_relevance": 0.85,
+                "caller_supplied_dosha_jaccard": 0.0,
+                "evidence_quality_score": null
+              },
+              "final_retrieval_score": 0.85,
+              "matched_query_terms": [
+                "heartburn"
+              ],
+              "dosha_overlap_details": {
+                "used": false,
+                "caller_supplied_tags": [],
+                "dataset_assigned_tags": [
+                  "Pitta"
+                ],
+                "intersection": [],
+                "union": [],
+                "jaccard_score": 0.0,
+                "interpretation": "retrieval_signal_not_inference"
+              },
+              "evidence_status": "dataset_derived",
+              "lifecycle_status": "active",
+              "is_stale": false,
+              "source_profile_identifier": "kp_0114",
+              "supporting_claim_ids": [
+                "KC-DATA-KP_0114-COMPLICATION",
+                "KC-DATA-KP_0114-DOSHA",
+                "KC-DATA-KP_0114-LIFESTYLE",
+                "KC-DATA-KP_0114-PREVENT",
+                "KC-DATA-KP_0114-SYM"
+              ],
+              "supporting_source_ids": [],
+              "reason_included": "Record is active, non-stale, and restricted to the resolved condition. Safe lexical terms matched: heartburn.",
+              "limitations": "Dataset-derived knowledge profile; content and assigned Dosha tags are not medically or clinically validated.",
+              "content": {
+                "profile_claims": [
+                  {
+                    "claim_id": "KC-DATA-KP_0114-COMPLICATION",
+                    "claim_type": "dataset_complication_text",
+                    "claim_summary": "Dataset complication text retained from knowledge profile kp_0114.",
+                    "original_text": "Esophageal Damage, Ulcers",
+                    "evidence_status": "dataset_derived"
+                  },
+                  {
+                    "claim_id": "KC-DATA-KP_0114-DOSHA",
+                    "claim_type": "dataset_dosha_association",
+                    "claim_summary": "Dataset-assigned Dosha tags: Pitta retained from knowledge profile kp_0114.",
+                    "original_text": "Pitta",
+                    "evidence_status": "dataset_derived"
+                  },
+                  {
+                    "claim_id": "KC-DATA-KP_0114-LIFESTYLE",
+                    "claim_type": "dataset_lifestyle_text",
+                    "claim_summary": "Dataset diet and lifestyle text retained from knowledge profile kp_0114.",
+                    "original_text": "Avoid spicy and acidic foods; consume smaller, frequent meals.",
+                    "evidence_status": "dataset_derived"
+                  },
+                  {
+                    "claim_id": "KC-DATA-KP_0114-PREVENT",
+                    "claim_type": "dataset_prevention_text",
+                    "claim_summary": "Dataset prevention text retained from knowledge profile kp_0114.",
+                    "original_text": "Healthy Diet, Avoid Trigger Foods",
+                    "evidence_status": "dataset_derived"
+                  },
+                  {
+                    "claim_id": "KC-DATA-KP_0114-SYM",
+                    "claim_type": "dataset_symptom_profile",
+                    "claim_summary": "Dataset symptom text retained from knowledge profile kp_0114.",
+                    "original_text": "Heartburn, regurgitation, chest pain",
+                    "evidence_status": "dataset_derived"
+                  }
+                ],
+                "dataset_assigned_dosha_tags": [
+                  "Pitta"
+                ],
+                "original_dosha_text": "Pitta",
+                "conflict_notes": []
+              },
+              "lexical_relevance_note": "Lexical relevance measures text similarity, not evidence quality or medical correctness.",
+              "caller_supplied_dosha_note": "Caller-supplied Dosha tags are retrieval signals only and are not inferred, confirmed, or clinically validated.",
+              "disclaimer": "Educational research prototype only; retrieval does not diagnose, infer a true Dosha, prescribe, fire medical rules, or replace professional healthcare."
+            }
+          ],
+          "claims": [
+            {
+              "retrieval_run_id": "RET-C6C7C0794C7BEFAA",
+              "resolved_condition": "Gastroesophageal Reflux Disease",
+              "matched_alias": {
+                "supplied": "GORD",
+                "matched_name": "GORD",
+                "match_type": "alias",
+                "mapping_status": "draft"
+              },
+              "record_id": "KC-GERD-REF-SYM-001",
+              "result_type": "reference_checked_claim",
+              "rank": 1,
+              "component_scores": {
+                "lexical_method": "safe_token_coverage",
+                "raw_bm25_smaller_is_better": null,
+                "bm25_normalized": 0.0,
+                "matched_term_coverage": 1.0,
+                "lexical_relevance": 1.0,
+                "caller_supplied_dosha_jaccard": 0.0,
+                "evidence_quality_score": null
+              },
+              "final_retrieval_score": 1.0,
+              "matched_query_terms": [
+                "heartburn",
+                "reflux"
+              ],
+              "dosha_overlap_details": {
+                "used": false,
+                "caller_supplied_tags": [],
+                "dataset_assigned_tags": [],
+                "intersection": [],
+                "union": [],
+                "jaccard_score": 0.0,
+                "interpretation": "retrieval_signal_not_inference"
+              },
+              "evidence_status": "reference_checked",
+              "lifecycle_status": "active",
+              "is_stale": false,
+              "source_profile_identifier": null,
+              "supporting_claim_ids": [
+                "KC-GERD-REF-SYM-001"
+              ],
+              "supporting_source_ids": [
+                "SRC-NHS-REFLUX"
+              ],
+              "reason_included": "Record is active, non-stale, and restricted to the resolved condition. Safe lexical terms matched: heartburn, reflux.",
+              "limitations": "Symptoms are not specific and do not establish a diagnosis.",
+              "content": {
+                "claim_type": "symptom",
+                "claim_summary": "The main acid-reflux symptoms listed by NHS are heartburn and an unpleasant sour taste in the mouth.",
+                "safety_relevance": "none",
+                "source_locator": "Symptoms of acid reflux",
+                "source_url": "https://www.nhs.uk/conditions/heartburn-and-acid-reflux/"
+              },
+              "lexical_relevance_note": "Lexical relevance measures text similarity, not evidence quality or medical correctness.",
+              "caller_supplied_dosha_note": "Caller-supplied Dosha tags are retrieval signals only and are not inferred, confirmed, or clinically validated.",
+              "disclaimer": "Educational research prototype only; retrieval does not diagnose, infer a true Dosha, prescribe, fire medical rules, or replace professional healthcare."
+            },
+            {
+              "retrieval_run_id": "RET-C6C7C0794C7BEFAA",
+              "resolved_condition": "Gastroesophageal Reflux Disease",
+              "matched_alias": {
+                "supplied": "GORD",
+                "matched_name": "GORD",
+                "match_type": "alias",
+                "mapping_status": "draft"
+              },
+              "record_id": "KC-GERD-REF-SAFE-001",
+              "result_type": "reference_checked_claim",
+              "rank": 2,
+              "component_scores": {
+                "lexical_method": "safe_token_coverage",
+                "raw_bm25_smaller_is_better": null,
+                "bm25_normalized": 0.0,
+                "matched_term_coverage": 0.5,
+                "lexical_relevance": 0.5,
+                "caller_supplied_dosha_jaccard": 0.0,
+                "evidence_quality_score": null
+              },
+              "final_retrieval_score": 0.5,
+              "matched_query_terms": [
+                "heartburn"
+              ],
+              "dosha_overlap_details": {
+                "used": false,
+                "caller_supplied_tags": [],
+                "dataset_assigned_tags": [],
+                "intersection": [],
+                "union": [],
+                "jaccard_score": 0.0,
+                "interpretation": "retrieval_signal_not_inference"
+              },
+              "evidence_status": "reference_checked",
+              "lifecycle_status": "active",
+              "is_stale": false,
+              "source_profile_identifier": null,
+              "supporting_claim_ids": [
+                "KC-GERD-REF-SAFE-001"
+              ],
+              "supporting_source_ids": [
+                "SRC-NHS-REFLUX"
+              ],
+              "reason_included": "Record is active, non-stale, and restricted to the resolved condition. Safe lexical terms matched: heartburn.",
+              "limitations": "UK NHS referral wording; chest symptoms still require separate emergency assessment outside this claim.",
+              "content": {
+                "claim_type": "referral_consideration",
+                "claim_summary": "NHS advises GP assessment when self-care and pharmacy measures do not help, heartburn occurs most days, or swallowing difficulty, frequent vomiting, or unexplained weight loss occurs.",
+                "safety_relevance": "referral",
+                "source_locator": "Non-urgent advice: See a GP if",
+                "source_url": "https://www.nhs.uk/conditions/heartburn-and-acid-reflux/"
+              },
+              "lexical_relevance_note": "Lexical relevance measures text similarity, not evidence quality or medical correctness.",
+              "caller_supplied_dosha_note": "Caller-supplied Dosha tags are retrieval signals only and are not inferred, confirmed, or clinically validated.",
+              "disclaimer": "Educational research prototype only; retrieval does not diagnose, infer a true Dosha, prescribe, fire medical rules, or replace professional healthcare."
+            },
+            {
+              "retrieval_run_id": "RET-C6C7C0794C7BEFAA",
+              "resolved_condition": "Gastroesophageal Reflux Disease",
+              "matched_alias": {
+                "supplied": "GORD",
+                "matched_name": "GORD",
+                "match_type": "alias",
+                "mapping_status": "draft"
+              },
+              "record_id": "KC-GERD-REF-SELF-001",
+              "result_type": "reference_checked_claim",
+              "rank": 3,
+              "component_scores": {
+                "lexical_method": "safe_token_coverage",
+                "raw_bm25_smaller_is_better": null,
+                "bm25_normalized": 0.0,
+                "matched_term_coverage": 0.5,
+                "lexical_relevance": 0.5,
+                "caller_supplied_dosha_jaccard": 0.0,
+                "evidence_quality_score": null
+              },
+              "final_retrieval_score": 0.5,
+              "matched_query_terms": [
+                "heartburn"
+              ],
+              "dosha_overlap_details": {
+                "used": false,
+                "caller_supplied_tags": [],
+                "dataset_assigned_tags": [],
+                "intersection": [],
+                "union": [],
+                "jaccard_score": 0.0,
+                "interpretation": "retrieval_signal_not_inference"
+              },
+              "evidence_status": "reference_checked",
+              "lifecycle_status": "active",
+              "is_stale": false,
+              "source_profile_identifier": null,
+              "supporting_claim_ids": [
+                "KC-GERD-REF-SELF-001"
+              ],
+              "supporting_source_ids": [
+                "SRC-NHS-REFLUX"
+              ],
+              "reason_included": "Record is active, non-stale, and restricted to the resolved condition. Safe lexical terms matched: heartburn.",
+              "limitations": "General measures only; persistent symptoms require assessment.",
+              "content": {
+                "claim_type": "general_self_care",
+                "claim_summary": "NHS lists smaller, more frequent meals and avoiding personally triggering foods or drinks as measures that may reduce heartburn.",
+                "safety_relevance": "general",
+                "source_locator": "How you can ease heartburn and acid reflux yourself",
+                "source_url": "https://www.nhs.uk/conditions/heartburn-and-acid-reflux/"
+              },
+              "lexical_relevance_note": "Lexical relevance measures text similarity, not evidence quality or medical correctness.",
+              "caller_supplied_dosha_note": "Caller-supplied Dosha tags are retrieval signals only and are not inferred, confirmed, or clinically validated.",
+              "disclaimer": "Educational research prototype only; retrieval does not diagnose, infer a true Dosha, prescribe, fire medical rules, or replace professional healthcare."
+            }
+          ],
+          "symptoms": [
+            {
+              "retrieval_run_id": "RET-C6C7C0794C7BEFAA",
+              "resolved_condition": "Gastroesophageal Reflux Disease",
+              "matched_alias": {
+                "supplied": "GORD",
+                "matched_name": "GORD",
+                "match_type": "alias",
+                "mapping_status": "draft"
+              },
+              "record_id": "SYM-26",
+              "result_type": "symptom",
+              "rank": 1,
+              "component_scores": {
+                "lexical_method": "fts5_bm25_plus_safe_token_coverage",
+                "raw_bm25_smaller_is_better": -4.348023600753534,
+                "bm25_normalized": 1.0,
+                "matched_term_coverage": 0.5,
+                "lexical_relevance": 0.85,
+                "caller_supplied_dosha_jaccard": 0.0,
+                "evidence_quality_score": null
+              },
+              "final_retrieval_score": 0.85,
+              "matched_query_terms": [
+                "heartburn"
+              ],
+              "dosha_overlap_details": {
+                "used": false,
+                "caller_supplied_tags": [],
+                "dataset_assigned_tags": [],
+                "intersection": [],
+                "union": [],
+                "jaccard_score": 0.0,
+                "interpretation": "retrieval_signal_not_inference"
+              },
+              "evidence_status": "reference_checked",
+              "lifecycle_status": "active",
+              "is_stale": false,
+              "source_profile_identifier": null,
+              "supporting_claim_ids": [
+                "KC-GERD-REF-SYM-001"
+              ],
+              "supporting_source_ids": [
+                "SRC-NHS-REFLUX"
+              ],
+              "reason_included": "Record is active, non-stale, and restricted to the resolved condition. Safe lexical terms matched: heartburn.",
+              "limitations": "Symptoms are not specific and do not establish a diagnosis.",
+              "content": {
+                "symptom_text": "heartburn"
+              },
+              "lexical_relevance_note": "Lexical relevance measures text similarity, not evidence quality or medical correctness.",
+              "caller_supplied_dosha_note": "Caller-supplied Dosha tags are retrieval signals only and are not inferred, confirmed, or clinically validated.",
+              "disclaimer": "Educational research prototype only; retrieval does not diagnose, infer a true Dosha, prescribe, fire medical rules, or replace professional healthcare."
+            },
+            {
+              "retrieval_run_id": "RET-C6C7C0794C7BEFAA",
+              "resolved_condition": "Gastroesophageal Reflux Disease",
+              "matched_alias": {
+                "supplied": "GORD",
+                "matched_name": "GORD",
+                "match_type": "alias",
+                "mapping_status": "draft"
+              },
+              "record_id": "SYM-9",
+              "result_type": "symptom",
+              "rank": 2,
+              "component_scores": {
+                "lexical_method": "fts5_bm25_plus_safe_token_coverage",
+                "raw_bm25_smaller_is_better": -4.348023600753534,
+                "bm25_normalized": 1.0,
+                "matched_term_coverage": 0.5,
+                "lexical_relevance": 0.85,
+                "caller_supplied_dosha_jaccard": 0.0,
+                "evidence_quality_score": null
+              },
+              "final_retrieval_score": 0.85,
+              "matched_query_terms": [
+                "heartburn"
+              ],
+              "dosha_overlap_details": {
+                "used": false,
+                "caller_supplied_tags": [],
+                "dataset_assigned_tags": [],
+                "intersection": [],
+                "union": [],
+                "jaccard_score": 0.0,
+                "interpretation": "retrieval_signal_not_inference"
+              },
+              "evidence_status": "dataset_derived",
+              "lifecycle_status": "active",
+              "is_stale": false,
+              "source_profile_identifier": "kp_0114",
+              "supporting_claim_ids": [
+                "KC-DATA-KP_0114-SYM"
+              ],
+              "supporting_source_ids": [],
+              "reason_included": "Record is active, non-stale, and restricted to the resolved condition. Safe lexical terms matched: heartburn.",
+              "limitations": "Dataset-derived and medically unverified; not eligible for a clinical rule.",
+              "content": {
+                "symptom_text": "heartburn"
+              },
+              "lexical_relevance_note": "Lexical relevance measures text similarity, not evidence quality or medical correctness.",
+              "caller_supplied_dosha_note": "Caller-supplied Dosha tags are retrieval signals only and are not inferred, confirmed, or clinically validated.",
+              "disclaimer": "Educational research prototype only; retrieval does not diagnose, infer a true Dosha, prescribe, fire medical rules, or replace professional healthcare."
+            }
+          ],
+          "recommendations": [],
+          "sources": [
+            {
+              "retrieval_run_id": "RET-C6C7C0794C7BEFAA",
+              "resolved_condition": "Gastroesophageal Reflux Disease",
+              "matched_alias": {
+                "supplied": "GORD",
+                "matched_name": "GORD",
+                "match_type": "alias",
+                "mapping_status": "draft"
+              },
+              "record_id": "SRC-NHS-REFLUX",
+              "result_type": "evidence_source",
+              "rank": 1,
+              "component_scores": {
+                "lexical_method": "safe_token_coverage",
+                "raw_bm25_smaller_is_better": null,
+                "bm25_normalized": 0.0,
+                "matched_term_coverage": 1.0,
+                "lexical_relevance": 1.0,
+                "caller_supplied_dosha_jaccard": 0.0,
+                "evidence_quality_score": null
+              },
+              "final_retrieval_score": 1.0,
+              "matched_query_terms": [
+                "heartburn",
+                "reflux"
+              ],
+              "dosha_overlap_details": {
+                "used": false,
+                "caller_supplied_tags": [],
+                "dataset_assigned_tags": [],
+                "intersection": [],
+                "union": [],
+                "jaccard_score": 0.0,
+                "interpretation": "retrieval_signal_not_inference"
+              },
+              "evidence_status": "reference_checked",
+              "lifecycle_status": "active",
+              "is_stale": false,
+              "source_profile_identifier": null,
+              "supporting_claim_ids": [
+                "KC-GERD-REF-SAFE-001",
+                "KC-GERD-REF-SELF-001",
+                "KC-GERD-REF-SYM-001"
+              ],
+              "supporting_source_ids": [
+                "SRC-NHS-REFLUX"
+              ],
+              "reason_included": "Record is active, non-stale, and restricted to the resolved condition. Safe lexical terms matched: heartburn, reflux.",
+              "limitations": "Source supports only the linked checked claims; source ranking is not a measure of medical authority beyond that review.",
+              "content": {
+                "publisher": "NHS",
+                "page_title": "Heartburn and acid reflux",
+                "url": "https://www.nhs.uk/conditions/heartburn-and-acid-reflux/",
+                "access_date": "2026-08-06",
+                "jurisdiction": "United Kingdom"
+              },
+              "lexical_relevance_note": "Lexical relevance measures text similarity, not evidence quality or medical correctness.",
+              "caller_supplied_dosha_note": "Caller-supplied Dosha tags are retrieval signals only and are not inferred, confirmed, or clinically validated.",
+              "disclaimer": "Educational research prototype only; retrieval does not diagnose, infer a true Dosha, prescribe, fire medical rules, or replace professional healthcare."
+            },
+            {
+              "retrieval_run_id": "RET-C6C7C0794C7BEFAA",
+              "resolved_condition": "Gastroesophageal Reflux Disease",
+              "matched_alias": {
+                "supplied": "GORD",
+                "matched_name": "GORD",
+                "match_type": "alias",
+                "mapping_status": "draft"
+              },
+              "record_id": "PROV-kp_0114",
+              "result_type": "dataset_provenance",
+              "rank": 2,
+              "component_scores": {
+                "lexical_method": "safe_token_coverage",
+                "raw_bm25_smaller_is_better": null,
+                "bm25_normalized": 0.0,
+                "matched_term_coverage": 0.5,
+                "lexical_relevance": 0.5,
+                "caller_supplied_dosha_jaccard": 0.0,
+                "evidence_quality_score": null
+              },
+              "final_retrieval_score": 0.5,
+              "matched_query_terms": [
+                "heartburn"
+              ],
+              "dosha_overlap_details": {
+                "used": false,
+                "caller_supplied_tags": [],
+                "dataset_assigned_tags": [],
+                "intersection": [],
+                "union": [],
+                "jaccard_score": 0.0,
+                "interpretation": "retrieval_signal_not_inference"
+              },
+              "evidence_status": "dataset_derived",
+              "lifecycle_status": "active",
+              "is_stale": false,
+              "source_profile_identifier": "kp_0114",
+              "supporting_claim_ids": [
+                "KC-DATA-KP_0114-COMPLICATION",
+                "KC-DATA-KP_0114-DOSHA",
+                "KC-DATA-KP_0114-LIFESTYLE",
+                "KC-DATA-KP_0114-PREVENT",
+                "KC-DATA-KP_0114-SYM"
+              ],
+              "supporting_source_ids": [],
+              "reason_included": "Record is active, non-stale, and restricted to the resolved condition. Safe lexical terms matched: heartburn.",
+              "limitations": "Dataset-derived knowledge profile; content and assigned Dosha tags are not medically or clinically validated.",
+              "content": {
+                "source_profile_id": "kp_0114",
+                "provenance_statement": "Dataset-derived knowledge-profile provenance; not a historical patient record."
+              },
+              "lexical_relevance_note": "Lexical relevance measures text similarity, not evidence quality or medical correctness.",
+              "caller_supplied_dosha_note": "Caller-supplied Dosha tags are retrieval signals only and are not inferred, confirmed, or clinically validated.",
+              "disclaimer": "Educational research prototype only; retrieval does not diagnose, infer a true Dosha, prescribe, fire medical rules, or replace professional healthcare."
+            }
+          ]
+        },
+        "collection_counts": {
+          "profiles": 1,
+          "claims": 3,
+          "symptoms": 2,
+          "recommendations": 0,
+          "sources": 2
+        },
+        "disclosures": [],
+        "persistence": "disabled_non_persistent",
+        "ml_model_loaded_or_invoked": false,
+        "rule_engine_loaded_or_invoked": false,
+        "diagnosis_performed": false,
+        "dosha_inference_performed": false,
+        "lexical_relevance_note": "Lexical relevance measures text similarity, not evidence quality or medical correctness.",
+        "caller_supplied_dosha_note": "Caller-supplied Dosha tags are retrieval signals only and are not inferred, confirmed, or clinically validated.",
+        "disclaimer": "Educational research prototype only; retrieval does not diagnose, infer a true Dosha, prescribe, fire medical rules, or replace professional healthcare.",
+        "condition_resolution": {
+          "status": "resolved",
+          "normalized_input": "gord",
+          "supplied_name": "GORD",
+          "condition_id": 3,
+          "canonical_name": "Gastroesophageal Reflux Disease",
+          "match_type": "alias",
+          "matched_name": "GORD",
+          "alias_type": "abbreviation",
+          "mapping_status": "draft"
+        },
+        "fts5": {
+          "available": true,
+          "safe_query": "\"heartburn\" OR \"reflux\"",
+          "parameterized": true
+        }
+      }
+    },
+    {
+      "scenario_id": "SYN-COLD-FTS",
+      "synthetic": true,
+      "request": {
+        "condition": "Common Cold",
+        "free_text": "blocked runny nose cough",
+        "categories": [
+          "profiles",
+          "symptoms",
+          "recommendations"
+        ],
+        "top_k": 3
+      },
+      "result": {
+        "retrieval_run_id": "RET-5DBC6129F402FD8D",
+        "status": "success",
+        "request": {
+          "condition_context": "Common Cold",
+          "free_text": "blocked runny nose cough",
+          "query_terms": [
+            "blocked",
+            "runny",
+            "nose",
+            "cough"
+          ],
+          "categories": [
+            "profiles",
+            "symptoms",
+            "recommendations"
+          ],
+          "caller_supplied_dosha_tags": [],
+          "top_k": 3
+        },
+        "condition_context_source": "caller_supplied_not_inferred",
+        "resolved_condition": "Common Cold",
+        "matched_alias": {
+          "supplied": "Common Cold",
+          "matched_name": "Common Cold",
+          "match_type": "canonical",
+          "mapping_status": "dataset_derived"
+        },
+        "collections": {
+          "profiles": [
+            {
+              "retrieval_run_id": "RET-5DBC6129F402FD8D",
+              "resolved_condition": "Common Cold",
+              "matched_alias": {
+                "supplied": "Common Cold",
+                "matched_name": "Common Cold",
+                "match_type": "canonical",
+                "mapping_status": "dataset_derived"
+              },
+              "record_id": "kp_0006",
+              "result_type": "dataset_knowledge_profile",
+              "rank": 1,
+              "component_scores": {
+                "lexical_method": "fts5_bm25_plus_safe_token_coverage",
+                "raw_bm25_smaller_is_better": -7.668130640657636,
+                "bm25_normalized": 1.0,
+                "matched_term_coverage": 0.5,
+                "lexical_relevance": 0.85,
+                "caller_supplied_dosha_jaccard": 0.0,
+                "evidence_quality_score": null
+              },
+              "final_retrieval_score": 0.85,
+              "matched_query_terms": [
+                "runny",
+                "nose"
+              ],
+              "dosha_overlap_details": {
+                "used": false,
+                "caller_supplied_tags": [],
+                "dataset_assigned_tags": [
+                  "Vata",
+                  "Kapha"
+                ],
+                "intersection": [],
+                "union": [],
+                "jaccard_score": 0.0,
+                "interpretation": "retrieval_signal_not_inference"
+              },
+              "evidence_status": "dataset_derived",
+              "lifecycle_status": "active",
+              "is_stale": false,
+              "source_profile_identifier": "kp_0006",
+              "supporting_claim_ids": [
+                "KC-DATA-KP_0006-COMPLICATION",
+                "KC-DATA-KP_0006-DOSHA",
+                "KC-DATA-KP_0006-LIFESTYLE",
+                "KC-DATA-KP_0006-PREVENT",
+                "KC-DATA-KP_0006-SYM"
+              ],
+              "supporting_source_ids": [],
+              "reason_included": "Record is active, non-stale, and restricted to the resolved condition. Safe lexical terms matched: runny, nose.",
+              "limitations": "Dataset-derived knowledge profile; content and assigned Dosha tags are not medically or clinically validated.",
+              "content": {
+                "profile_claims": [
+                  {
+                    "claim_id": "KC-DATA-KP_0006-COMPLICATION",
+                    "claim_type": "dataset_complication_text",
+                    "claim_summary": "Dataset complication text retained from knowledge profile kp_0006.",
+                    "original_text": "Secondary infections",
+                    "evidence_status": "dataset_derived"
+                  },
+                  {
+                    "claim_id": "KC-DATA-KP_0006-DOSHA",
+                    "claim_type": "dataset_dosha_association",
+                    "claim_summary": "Dataset-assigned Dosha tags: Vata, Kapha retained from knowledge profile kp_0006.",
+                    "original_text": "Kapha, Vata",
+                    "evidence_status": "dataset_derived"
+                  },
+                  {
+                    "claim_id": "KC-DATA-KP_0006-LIFESTYLE",
+                    "claim_type": "dataset_lifestyle_text",
+                    "claim_summary": "Dataset diet and lifestyle text retained from knowledge profile kp_0006.",
+                    "original_text": "Rest well; consume warm foods; avoid dairy temporarily.",
+                    "evidence_status": "dataset_derived"
+                  },
+                  {
+                    "claim_id": "KC-DATA-KP_0006-PREVENT",
+                    "claim_type": "dataset_prevention_text",
+                    "claim_summary": "Dataset prevention text retained from knowledge profile kp_0006.",
+                    "original_text": "Good hygiene, Rest",
+                    "evidence_status": "dataset_derived"
+                  },
+                  {
+                    "claim_id": "KC-DATA-KP_0006-SYM",
+                    "claim_type": "dataset_symptom_profile",
+                    "claim_summary": "Dataset symptom text retained from knowledge profile kp_0006.",
+                    "original_text": "Runny nose, sneezing, mild fever",
+                    "evidence_status": "dataset_derived"
+                  }
+                ],
+                "dataset_assigned_dosha_tags": [
+                  "Vata",
+                  "Kapha"
+                ],
+                "original_dosha_text": "Kapha, Vata",
+                "conflict_notes": []
+              },
+              "lexical_relevance_note": "Lexical relevance measures text similarity, not evidence quality or medical correctness.",
+              "caller_supplied_dosha_note": "Caller-supplied Dosha tags are retrieval signals only and are not inferred, confirmed, or clinically validated.",
+              "disclaimer": "Educational research prototype only; retrieval does not diagnose, infer a true Dosha, prescribe, fire medical rules, or replace professional healthcare."
+            }
+          ],
+          "claims": [],
+          "symptoms": [
+            {
+              "retrieval_run_id": "RET-5DBC6129F402FD8D",
+              "resolved_condition": "Common Cold",
+              "matched_alias": {
+                "supplied": "Common Cold",
+                "matched_name": "Common Cold",
+                "match_type": "canonical",
+                "mapping_status": "dataset_derived"
+              },
+              "record_id": "SYM-20",
+              "result_type": "symptom",
+              "rank": 1,
+              "component_scores": {
+                "lexical_method": "fts5_bm25_plus_safe_token_coverage",
+                "raw_bm25_smaller_is_better": -9.940180793711685,
+                "bm25_normalized": 1.0,
+                "matched_term_coverage": 0.75,
+                "lexical_relevance": 0.925,
+                "caller_supplied_dosha_jaccard": 0.0,
+                "evidence_quality_score": null
+              },
+              "final_retrieval_score": 0.925,
+              "matched_query_terms": [
+                "blocked",
+                "runny",
+                "nose"
+              ],
+              "dosha_overlap_details": {
+                "used": false,
+                "caller_supplied_tags": [],
+                "dataset_assigned_tags": [],
+                "intersection": [],
+                "union": [],
+                "jaccard_score": 0.0,
+                "interpretation": "retrieval_signal_not_inference"
+              },
+              "evidence_status": "reference_checked",
+              "lifecycle_status": "active",
+              "is_stale": false,
+              "source_profile_identifier": null,
+              "supporting_claim_ids": [
+                "KC-COLD-REF-SYM-001"
+              ],
+              "supporting_source_ids": [
+                "SRC-NHS-COLD"
+              ],
+              "reason_included": "Record is active, non-stale, and restricted to the resolved condition. Safe lexical terms matched: blocked, runny, nose.",
+              "limitations": "Symptoms overlap with other respiratory infections and are not diagnostic alone.",
+              "content": {
+                "symptom_text": "blocked or runny nose"
+              },
+              "lexical_relevance_note": "Lexical relevance measures text similarity, not evidence quality or medical correctness.",
+              "caller_supplied_dosha_note": "Caller-supplied Dosha tags are retrieval signals only and are not inferred, confirmed, or clinically validated.",
+              "disclaimer": "Educational research prototype only; retrieval does not diagnose, infer a true Dosha, prescribe, fire medical rules, or replace professional healthcare."
+            },
+            {
+              "retrieval_run_id": "RET-5DBC6129F402FD8D",
+              "resolved_condition": "Common Cold",
+              "matched_alias": {
+                "supplied": "Common Cold",
+                "matched_name": "Common Cold",
+                "match_type": "canonical",
+                "mapping_status": "dataset_derived"
+              },
+              "record_id": "SYM-1",
+              "result_type": "symptom",
+              "rank": 2,
+              "component_scores": {
+                "lexical_method": "fts5_bm25_plus_safe_token_coverage",
+                "raw_bm25_smaller_is_better": -7.668130640657636,
+                "bm25_normalized": 0.51643993,
+                "matched_term_coverage": 0.5,
+                "lexical_relevance": 0.51150795,
+                "caller_supplied_dosha_jaccard": 0.0,
+                "evidence_quality_score": null
+              },
+              "final_retrieval_score": 0.51150795,
+              "matched_query_terms": [
+                "runny",
+                "nose"
+              ],
+              "dosha_overlap_details": {
+                "used": false,
+                "caller_supplied_tags": [],
+                "dataset_assigned_tags": [],
+                "intersection": [],
+                "union": [],
+                "jaccard_score": 0.0,
+                "interpretation": "retrieval_signal_not_inference"
+              },
+              "evidence_status": "dataset_derived",
+              "lifecycle_status": "active",
+              "is_stale": false,
+              "source_profile_identifier": "kp_0006",
+              "supporting_claim_ids": [
+                "KC-DATA-KP_0006-SYM"
+              ],
+              "supporting_source_ids": [],
+              "reason_included": "Record is active, non-stale, and restricted to the resolved condition. Safe lexical terms matched: runny, nose.",
+              "limitations": "Dataset-derived and medically unverified; not eligible for a clinical rule.",
+              "content": {
+                "symptom_text": "runny nose"
+              },
+              "lexical_relevance_note": "Lexical relevance measures text similarity, not evidence quality or medical correctness.",
+              "caller_supplied_dosha_note": "Caller-supplied Dosha tags are retrieval signals only and are not inferred, confirmed, or clinically validated.",
+              "disclaimer": "Educational research prototype only; retrieval does not diagnose, infer a true Dosha, prescribe, fire medical rules, or replace professional healthcare."
+            },
+            {
+              "retrieval_run_id": "RET-5DBC6129F402FD8D",
+              "resolved_condition": "Common Cold",
+              "matched_alias": {
+                "supplied": "Common Cold",
+                "matched_name": "Common Cold",
+                "match_type": "canonical",
+                "mapping_status": "dataset_derived"
+              },
+              "record_id": "SYM-24",
+              "result_type": "symptom",
+              "rank": 3,
+              "component_scores": {
+                "lexical_method": "fts5_bm25_plus_safe_token_coverage",
+                "raw_bm25_smaller_is_better": -5.241591486903731,
+                "bm25_normalized": 0.0,
+                "matched_term_coverage": 0.25,
+                "lexical_relevance": 0.075,
+                "caller_supplied_dosha_jaccard": 0.0,
+                "evidence_quality_score": null
+              },
+              "final_retrieval_score": 0.075,
+              "matched_query_terms": [
+                "cough"
+              ],
+              "dosha_overlap_details": {
+                "used": false,
+                "caller_supplied_tags": [],
+                "dataset_assigned_tags": [],
+                "intersection": [],
+                "union": [],
+                "jaccard_score": 0.0,
+                "interpretation": "retrieval_signal_not_inference"
+              },
+              "evidence_status": "reference_checked",
+              "lifecycle_status": "active",
+              "is_stale": false,
+              "source_profile_identifier": null,
+              "supporting_claim_ids": [
+                "KC-COLD-REF-SYM-001"
+              ],
+              "supporting_source_ids": [
+                "SRC-NHS-COLD"
+              ],
+              "reason_included": "Record is active, non-stale, and restricted to the resolved condition. Safe lexical terms matched: cough.",
+              "limitations": "Symptoms overlap with other respiratory infections and are not diagnostic alone.",
+              "content": {
+                "symptom_text": "cough"
+              },
+              "lexical_relevance_note": "Lexical relevance measures text similarity, not evidence quality or medical correctness.",
+              "caller_supplied_dosha_note": "Caller-supplied Dosha tags are retrieval signals only and are not inferred, confirmed, or clinically validated.",
+              "disclaimer": "Educational research prototype only; retrieval does not diagnose, infer a true Dosha, prescribe, fire medical rules, or replace professional healthcare."
+            }
+          ],
+          "recommendations": [],
+          "sources": []
+        },
+        "collection_counts": {
+          "profiles": 1,
+          "claims": 0,
+          "symptoms": 3,
+          "recommendations": 0,
+          "sources": 0
+        },
+        "disclosures": [],
+        "persistence": "disabled_non_persistent",
+        "ml_model_loaded_or_invoked": false,
+        "rule_engine_loaded_or_invoked": false,
+        "diagnosis_performed": false,
+        "dosha_inference_performed": false,
+        "lexical_relevance_note": "Lexical relevance measures text similarity, not evidence quality or medical correctness.",
+        "caller_supplied_dosha_note": "Caller-supplied Dosha tags are retrieval signals only and are not inferred, confirmed, or clinically validated.",
+        "disclaimer": "Educational research prototype only; retrieval does not diagnose, infer a true Dosha, prescribe, fire medical rules, or replace professional healthcare.",
+        "condition_resolution": {
+          "status": "resolved",
+          "normalized_input": "common cold",
+          "supplied_name": "Common Cold",
+          "condition_id": 2,
+          "canonical_name": "Common Cold",
+          "match_type": "canonical",
+          "matched_name": "Common Cold",
+          "alias_type": "canonical",
+          "mapping_status": "dataset_derived"
+        },
+        "fts5": {
+          "available": true,
+          "safe_query": "\"blocked\" OR \"runny\" OR \"nose\" OR \"cough\"",
+          "parameterized": true
+        }
+      }
+    },
+    {
+      "scenario_id": "SYN-INSOMNIA-PITTA-SIGNAL",
+      "synthetic": true,
+      "request": {
+        "condition": "Insomnia",
+        "caller_supplied_dosha_tags": [
+          "Pitta"
+        ],
+        "categories": [
+          "profiles",
+          "sources"
+        ],
+        "top_k": 2
+      },
+      "result": {
+        "retrieval_run_id": "RET-A432459F3DC1E7B7",
+        "status": "success",
+        "request": {
+          "condition_context": "Insomnia",
+          "free_text": null,
+          "query_terms": [],
+          "categories": [
+            "profiles",
+            "sources"
+          ],
+          "caller_supplied_dosha_tags": [
+            "Pitta"
+          ],
+          "top_k": 2
+        },
+        "condition_context_source": "caller_supplied_not_inferred",
+        "resolved_condition": "Insomnia",
+        "matched_alias": {
+          "supplied": "Insomnia",
+          "matched_name": "Insomnia",
+          "match_type": "canonical",
+          "mapping_status": "dataset_derived"
+        },
+        "collections": {
+          "profiles": [
+            {
+              "retrieval_run_id": "RET-A432459F3DC1E7B7",
+              "resolved_condition": "Insomnia",
+              "matched_alias": {
+                "supplied": "Insomnia",
+                "matched_name": "Insomnia",
+                "match_type": "canonical",
+                "mapping_status": "dataset_derived"
+              },
+              "record_id": "kp_0010",
+              "result_type": "dataset_knowledge_profile",
+              "rank": 1,
+              "component_scores": {
+                "lexical_method": "safe_token_coverage",
+                "raw_bm25_smaller_is_better": null,
+                "bm25_normalized": 0.0,
+                "matched_term_coverage": 0.0,
+                "lexical_relevance": 0.0,
+                "caller_supplied_dosha_jaccard": 0.5,
+                "evidence_quality_score": null
+              },
+              "final_retrieval_score": 0.5,
+              "matched_query_terms": [],
+              "dosha_overlap_details": {
+                "used": true,
+                "caller_supplied_tags": [
+                  "Pitta"
+                ],
+                "dataset_assigned_tags": [
+                  "Vata",
+                  "Pitta"
+                ],
+                "intersection": [
+                  "Pitta"
+                ],
+                "union": [
+                  "Pitta",
+                  "Vata"
+                ],
+                "jaccard_score": 0.5,
+                "interpretation": "retrieval_signal_not_inference"
+              },
+              "evidence_status": "dataset_derived",
+              "lifecycle_status": "active",
+              "is_stale": false,
+              "source_profile_identifier": "kp_0010",
+              "supporting_claim_ids": [
+                "KC-DATA-KP_0010-COMPLICATION",
+                "KC-DATA-KP_0010-DOSHA",
+                "KC-DATA-KP_0010-LIFESTYLE",
+                "KC-DATA-KP_0010-PREVENT",
+                "KC-DATA-KP_0010-SYM"
+              ],
+              "supporting_source_ids": [],
+              "reason_included": "Record is active, non-stale, and restricted to the resolved condition. Caller-supplied Dosha overlap was used only as a ranking signal.",
+              "limitations": "Dataset-derived knowledge profile; content and assigned Dosha tags are not medically or clinically validated.",
+              "content": {
+                "profile_claims": [
+                  {
+                    "claim_id": "KC-DATA-KP_0010-COMPLICATION",
+                    "claim_type": "dataset_complication_text",
+                    "claim_summary": "Dataset complication text retained from knowledge profile kp_0010.",
+                    "original_text": "Anxiety, Depression",
+                    "evidence_status": "dataset_derived"
+                  },
+                  {
+                    "claim_id": "KC-DATA-KP_0010-DOSHA",
+                    "claim_type": "dataset_dosha_association",
+                    "claim_summary": "Dataset-assigned Dosha tags: Vata, Pitta retained from knowledge profile kp_0010.",
+                    "original_text": "Vata, Pitta",
+                    "evidence_status": "dataset_derived"
+                  },
+                  {
+                    "claim_id": "KC-DATA-KP_0010-LIFESTYLE",
+                    "claim_type": "dataset_lifestyle_text",
+                    "claim_summary": "Dataset diet and lifestyle text retained from knowledge profile kp_0010.",
+                    "original_text": "Establish a sleep routine; avoid caffeine; practice meditation.",
+                    "evidence_status": "dataset_derived"
+                  },
+                  {
+                    "claim_id": "KC-DATA-KP_0010-PREVENT",
+                    "claim_type": "dataset_prevention_text",
+                    "claim_summary": "Dataset prevention text retained from knowledge profile kp_0010.",
+                    "original_text": "Sleep routine, Relaxation",
+                    "evidence_status": "dataset_derived"
+                  },
+                  {
+                    "claim_id": "KC-DATA-KP_0010-SYM",
+                    "claim_type": "dataset_symptom_profile",
+                    "claim_summary": "Dataset symptom text retained from knowledge profile kp_0010.",
+                    "original_text": "Difficulty sleeping, restlessness",
+                    "evidence_status": "dataset_derived"
+                  }
+                ],
+                "dataset_assigned_dosha_tags": [
+                  "Vata",
+                  "Pitta"
+                ],
+                "original_dosha_text": "Vata, Pitta",
+                "conflict_notes": [
+                  "Conflicting profile-level Dosha combinations retained."
+                ]
+              },
+              "lexical_relevance_note": "Lexical relevance measures text similarity, not evidence quality or medical correctness.",
+              "caller_supplied_dosha_note": "Caller-supplied Dosha tags are retrieval signals only and are not inferred, confirmed, or clinically validated.",
+              "disclaimer": "Educational research prototype only; retrieval does not diagnose, infer a true Dosha, prescribe, fire medical rules, or replace professional healthcare."
+            }
+          ],
+          "claims": [],
+          "symptoms": [],
+          "recommendations": [],
+          "sources": [
+            {
+              "retrieval_run_id": "RET-A432459F3DC1E7B7",
+              "resolved_condition": "Insomnia",
+              "matched_alias": {
+                "supplied": "Insomnia",
+                "matched_name": "Insomnia",
+                "match_type": "canonical",
+                "mapping_status": "dataset_derived"
+              },
+              "record_id": "PROV-kp_0010",
+              "result_type": "dataset_provenance",
+              "rank": 1,
+              "component_scores": {
+                "lexical_method": "safe_token_coverage",
+                "raw_bm25_smaller_is_better": null,
+                "bm25_normalized": 0.0,
+                "matched_term_coverage": 0.0,
+                "lexical_relevance": 0.0,
+                "caller_supplied_dosha_jaccard": 0.0,
+                "evidence_quality_score": null
+              },
+              "final_retrieval_score": 0.0,
+              "matched_query_terms": [],
+              "dosha_overlap_details": {
+                "used": false,
+                "caller_supplied_tags": [
+                  "Pitta"
+                ],
+                "dataset_assigned_tags": [],
+                "intersection": [],
+                "union": [],
+                "jaccard_score": 0.0,
+                "interpretation": "retrieval_signal_not_inference"
+              },
+              "evidence_status": "dataset_derived",
+              "lifecycle_status": "active",
+              "is_stale": false,
+              "source_profile_identifier": "kp_0010",
+              "supporting_claim_ids": [
+                "KC-DATA-KP_0010-COMPLICATION",
+                "KC-DATA-KP_0010-DOSHA",
+                "KC-DATA-KP_0010-LIFESTYLE",
+                "KC-DATA-KP_0010-PREVENT",
+                "KC-DATA-KP_0010-SYM"
+              ],
+              "supporting_source_ids": [],
+              "reason_included": "Record is active, non-stale, and restricted to the resolved condition.",
+              "limitations": "Dataset-derived knowledge profile; content and assigned Dosha tags are not medically or clinically validated.",
+              "content": {
+                "source_profile_id": "kp_0010",
+                "provenance_statement": "Dataset-derived knowledge-profile provenance; not a historical patient record."
+              },
+              "lexical_relevance_note": "Lexical relevance measures text similarity, not evidence quality or medical correctness.",
+              "caller_supplied_dosha_note": "Caller-supplied Dosha tags are retrieval signals only and are not inferred, confirmed, or clinically validated.",
+              "disclaimer": "Educational research prototype only; retrieval does not diagnose, infer a true Dosha, prescribe, fire medical rules, or replace professional healthcare."
+            },
+            {
+              "retrieval_run_id": "RET-A432459F3DC1E7B7",
+              "resolved_condition": "Insomnia",
+              "matched_alias": {
+                "supplied": "Insomnia",
+                "matched_name": "Insomnia",
+                "match_type": "canonical",
+                "mapping_status": "dataset_derived"
+              },
+              "record_id": "PROV-kp_0150",
+              "result_type": "dataset_provenance",
+              "rank": 2,
+              "component_scores": {
+                "lexical_method": "safe_token_coverage",
+                "raw_bm25_smaller_is_better": null,
+                "bm25_normalized": 0.0,
+                "matched_term_coverage": 0.0,
+                "lexical_relevance": 0.0,
+                "caller_supplied_dosha_jaccard": 0.0,
+                "evidence_quality_score": null
+              },
+              "final_retrieval_score": 0.0,
+              "matched_query_terms": [],
+              "dosha_overlap_details": {
+                "used": false,
+                "caller_supplied_tags": [
+                  "Pitta"
+                ],
+                "dataset_assigned_tags": [],
+                "intersection": [],
+                "union": [],
+                "jaccard_score": 0.0,
+                "interpretation": "retrieval_signal_not_inference"
+              },
+              "evidence_status": "dataset_derived",
+              "lifecycle_status": "active",
+              "is_stale": false,
+              "source_profile_identifier": "kp_0150",
+              "supporting_claim_ids": [
+                "KC-DATA-KP_0150-COMPLICATION",
+                "KC-DATA-KP_0150-DOSHA",
+                "KC-DATA-KP_0150-LIFESTYLE",
+                "KC-DATA-KP_0150-PREVENT",
+                "KC-DATA-KP_0150-SYM"
+              ],
+              "supporting_source_ids": [],
+              "reason_included": "Record is active, non-stale, and restricted to the resolved condition.",
+              "limitations": "Dataset-derived knowledge profile; content and assigned Dosha tags are not medically or clinically validated.",
+              "content": {
+                "source_profile_id": "kp_0150",
+                "provenance_statement": "Dataset-derived knowledge-profile provenance; not a historical patient record."
+              },
+              "lexical_relevance_note": "Lexical relevance measures text similarity, not evidence quality or medical correctness.",
+              "caller_supplied_dosha_note": "Caller-supplied Dosha tags are retrieval signals only and are not inferred, confirmed, or clinically validated.",
+              "disclaimer": "Educational research prototype only; retrieval does not diagnose, infer a true Dosha, prescribe, fire medical rules, or replace professional healthcare."
+            }
+          ]
+        },
+        "collection_counts": {
+          "profiles": 1,
+          "claims": 0,
+          "symptoms": 0,
+          "recommendations": 0,
+          "sources": 2
+        },
+        "disclosures": [
+          {
+            "type": "dataset_association_disagreement",
+            "condition": "Insomnia",
+            "profile_associations": {
+              "kp_0010": [
+                "Vata",
+                "Pitta"
+              ],
+              "kp_0150": [
+                "Vata"
+              ]
+            },
+            "resolution": "preserved_not_resolved",
+            "explanation": "The retained Insomnia profiles contain Vata and Vata/Pitta dataset assignments. Ranking may reflect caller-supplied overlap, but no voting, clinical interpretation, or Dosha inference is performed."
+          }
+        ],
+        "persistence": "disabled_non_persistent",
+        "ml_model_loaded_or_invoked": false,
+        "rule_engine_loaded_or_invoked": false,
+        "diagnosis_performed": false,
+        "dosha_inference_performed": false,
+        "lexical_relevance_note": "Lexical relevance measures text similarity, not evidence quality or medical correctness.",
+        "caller_supplied_dosha_note": "Caller-supplied Dosha tags are retrieval signals only and are not inferred, confirmed, or clinically validated.",
+        "disclaimer": "Educational research prototype only; retrieval does not diagnose, infer a true Dosha, prescribe, fire medical rules, or replace professional healthcare.",
+        "condition_resolution": {
+          "status": "resolved",
+          "normalized_input": "insomnia",
+          "supplied_name": "Insomnia",
+          "condition_id": 5,
+          "canonical_name": "Insomnia",
+          "match_type": "canonical",
+          "matched_name": "Insomnia",
+          "alias_type": "canonical",
+          "mapping_status": "dataset_derived"
+        },
+        "fts5": {
+          "available": true,
+          "safe_query": null,
+          "parameterized": true
+        }
+      }
+    },
+    {
+      "scenario_id": "SYN-NO-TEXT-MATCH",
+      "synthetic": true,
+      "request": {
+        "condition": "Acne",
+        "free_text": "quantum telescope nebula",
+        "categories": [
+          "profiles",
+          "claims",
+          "symptoms",
+          "recommendations"
+        ],
+        "top_k": 3
+      },
+      "result": {
+        "retrieval_run_id": "RET-262196258C42D512",
+        "status": "no_match",
+        "request": {
+          "condition_context": "Acne",
+          "free_text": "quantum telescope nebula",
+          "query_terms": [
+            "quantum",
+            "telescope",
+            "nebula"
+          ],
+          "categories": [
+            "profiles",
+            "claims",
+            "symptoms",
+            "recommendations"
+          ],
+          "caller_supplied_dosha_tags": [],
+          "top_k": 3
+        },
+        "condition_context_source": "caller_supplied_not_inferred",
+        "resolved_condition": "Acne",
+        "matched_alias": {
+          "supplied": "Acne",
+          "matched_name": "Acne",
+          "match_type": "canonical",
+          "mapping_status": "dataset_derived"
+        },
+        "collections": {
+          "profiles": [],
+          "claims": [],
+          "symptoms": [],
+          "recommendations": [],
+          "sources": []
+        },
+        "collection_counts": {
+          "profiles": 0,
+          "claims": 0,
+          "symptoms": 0,
+          "recommendations": 0,
+          "sources": 0
+        },
+        "disclosures": [],
+        "persistence": "disabled_non_persistent",
+        "ml_model_loaded_or_invoked": false,
+        "rule_engine_loaded_or_invoked": false,
+        "diagnosis_performed": false,
+        "dosha_inference_performed": false,
+        "lexical_relevance_note": "Lexical relevance measures text similarity, not evidence quality or medical correctness.",
+        "caller_supplied_dosha_note": "Caller-supplied Dosha tags are retrieval signals only and are not inferred, confirmed, or clinically validated.",
+        "disclaimer": "Educational research prototype only; retrieval does not diagnose, infer a true Dosha, prescribe, fire medical rules, or replace professional healthcare.",
+        "condition_resolution": {
+          "status": "resolved",
+          "normalized_input": "acne",
+          "supplied_name": "Acne",
+          "condition_id": 1,
+          "canonical_name": "Acne",
+          "match_type": "canonical",
+          "matched_name": "Acne",
+          "alias_type": "canonical",
+          "mapping_status": "dataset_derived"
+        },
+        "reason": "No active, non-stale record matched the supplied lexical or Dosha retrieval signals within the resolved condition.",
+        "fts5": {
+          "available": true,
+          "safe_query": "\"quantum\" OR \"telescope\" OR \"nebula\"",
+          "parameterized": true
+        }
+      }
+    },
+    {
+      "scenario_id": "SYN-MISSING-CONDITION",
+      "synthetic": true,
+      "request": {
+        "free_text": "heartburn",
+        "top_k": 3
+      },
+      "result": {
+        "retrieval_run_id": "RET-D2160C2223489DF9",
+        "status": "clarification_required",
+        "request": {
+          "condition_context": null,
+          "free_text": "heartburn",
+          "query_terms": [
+            "heartburn"
+          ],
+          "categories": [
+            "profiles",
+            "claims",
+            "symptoms",
+            "recommendations",
+            "sources"
+          ],
+          "caller_supplied_dosha_tags": [],
+          "top_k": 3
+        },
+        "condition_context_source": "caller_supplied_not_inferred",
+        "resolved_condition": null,
+        "matched_alias": null,
+        "collections": {
+          "profiles": [],
+          "claims": [],
+          "symptoms": [],
+          "recommendations": [],
+          "sources": []
+        },
+        "collection_counts": {
+          "profiles": 0,
+          "claims": 0,
+          "symptoms": 0,
+          "recommendations": 0,
+          "sources": 0
+        },
+        "disclosures": [],
+        "persistence": "disabled_non_persistent",
+        "ml_model_loaded_or_invoked": false,
+        "rule_engine_loaded_or_invoked": false,
+        "diagnosis_performed": false,
+        "dosha_inference_performed": false,
+        "lexical_relevance_note": "Lexical relevance measures text similarity, not evidence quality or medical correctness.",
+        "caller_supplied_dosha_note": "Caller-supplied Dosha tags are retrieval signals only and are not inferred, confirmed, or clinically validated.",
+        "disclaimer": "Educational research prototype only; retrieval does not diagnose, infer a true Dosha, prescribe, fire medical rules, or replace professional healthcare.",
+        "reason": "A canonical condition name or approved alias is required; the condition will not be inferred from query text."
+      }
+    }
+  ]
+}

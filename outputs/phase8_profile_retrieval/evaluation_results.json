@@ -1,0 +1,676 @@
+{
+  "metrics": {
+    "overall": {
+      "evaluation_query_count": 18,
+      "ranking_query_count": 16,
+      "alias_resolution_accuracy": 1.0,
+      "condition_resolution_accuracy": 1.0,
+      "hit_at_k": 1.0,
+      "recall_at_k": 1.0,
+      "mean_reciprocal_rank": 1.0,
+      "exact_expected_record_retrieval": 1.0,
+      "passed_query_count": 18,
+      "all_queries_passed": true
+    },
+    "by_query_type": {
+      "alias": {
+        "query_count": 4,
+        "pass_rate": 1.0,
+        "hit_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "mean_reciprocal_rank": 1.0,
+        "exact_expected_record_retrieval": 1.0
+      },
+      "caller_dosha_ranking": {
+        "query_count": 1,
+        "pass_rate": 1.0,
+        "hit_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "mean_reciprocal_rank": 1.0,
+        "exact_expected_record_retrieval": 1.0
+      },
+      "canonical_name": {
+        "query_count": 5,
+        "pass_rate": 1.0,
+        "hit_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "mean_reciprocal_rank": 1.0,
+        "exact_expected_record_retrieval": 1.0
+      },
+      "fts5_lexical": {
+        "query_count": 1,
+        "pass_rate": 1.0,
+        "hit_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "mean_reciprocal_rank": 1.0,
+        "exact_expected_record_retrieval": 1.0
+      },
+      "insomnia_disagreement": {
+        "query_count": 1,
+        "pass_rate": 1.0,
+        "hit_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "mean_reciprocal_rank": 1.0,
+        "exact_expected_record_retrieval": 1.0
+      },
+      "missing_condition": {
+        "query_count": 1,
+        "pass_rate": 1.0,
+        "hit_at_k": null,
+        "recall_at_k": null,
+        "mean_reciprocal_rank": null,
+        "exact_expected_record_retrieval": null
+      },
+      "no_result": {
+        "query_count": 1,
+        "pass_rate": 1.0,
+        "hit_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "mean_reciprocal_rank": null,
+        "exact_expected_record_retrieval": 1.0
+      },
+      "unknown_condition": {
+        "query_count": 1,
+        "pass_rate": 1.0,
+        "hit_at_k": null,
+        "recall_at_k": null,
+        "mean_reciprocal_rank": null,
+        "exact_expected_record_retrieval": null
+      },
+      "within_condition_text": {
+        "query_count": 3,
+        "pass_rate": 1.0,
+        "hit_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "mean_reciprocal_rank": 1.0,
+        "exact_expected_record_retrieval": 1.0
+      }
+    }
+  },
+  "cases": [
+    {
+      "query_id": "EVAL-CANON-ACNE",
+      "query_type": "canonical_name",
+      "request": {
+        "condition": "Acne",
+        "categories": [
+          "profiles"
+        ],
+        "top_k": 3
+      },
+      "expected_status": "success",
+      "expected_condition": "Acne",
+      "target_collection": "profiles",
+      "expected_record_ids": [
+        "kp_0016"
+      ],
+      "relevance_assignment": "Exact condition scope and the sole approved Acne profile.",
+      "actual_status": "success",
+      "actual_condition": "Acne",
+      "retrieved_record_ids": [
+        "kp_0016"
+      ],
+      "hit_at_k": 1.0,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "exact_expected_record_retrieval": true,
+      "first_rank_correct": true,
+      "status_correct": true,
+      "condition_resolution_correct": true,
+      "passed": true,
+      "retrieval_run_id": "RET-8AE24B246DB4BD9A"
+    },
+    {
+      "query_id": "EVAL-CANON-COLD",
+      "query_type": "canonical_name",
+      "request": {
+        "condition": "Common Cold",
+        "categories": [
+          "profiles"
+        ],
+        "top_k": 3
+      },
+      "expected_status": "success",
+      "expected_condition": "Common Cold",
+      "target_collection": "profiles",
+      "expected_record_ids": [
+        "kp_0006"
+      ],
+      "relevance_assignment": "Exact condition scope and the sole approved Common Cold profile.",
+      "actual_status": "success",
+      "actual_condition": "Common Cold",
+      "retrieved_record_ids": [
+        "kp_0006"
+      ],
+      "hit_at_k": 1.0,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "exact_expected_record_retrieval": true,
+      "first_rank_correct": true,
+      "status_correct": true,
+      "condition_resolution_correct": true,
+      "passed": true,
+      "retrieval_run_id": "RET-A3F342561C5F93BF"
+    },
+    {
+      "query_id": "EVAL-CANON-GERD",
+      "query_type": "canonical_name",
+      "request": {
+        "condition": "Gastroesophageal Reflux Disease",
+        "categories": [
+          "profiles"
+        ],
+        "top_k": 3
+      },
+      "expected_status": "success",
+      "expected_condition": "Gastroesophageal Reflux Disease",
+      "target_collection": "profiles",
+      "expected_record_ids": [
+        "kp_0114"
+      ],
+      "relevance_assignment": "Exact condition scope and the sole approved reflux profile.",
+      "actual_status": "success",
+      "actual_condition": "Gastroesophageal Reflux Disease",
+      "retrieved_record_ids": [
+        "kp_0114"
+      ],
+      "hit_at_k": 1.0,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "exact_expected_record_retrieval": true,
+      "first_rank_correct": true,
+      "status_correct": true,
+      "condition_resolution_correct": true,
+      "passed": true,
+      "retrieval_run_id": "RET-059630FA72837365"
+    },
+    {
+      "query_id": "EVAL-CANON-OA",
+      "query_type": "canonical_name",
+      "request": {
+        "condition": "Osteoarthritis",
+        "categories": [
+          "profiles"
+        ],
+        "top_k": 3
+      },
+      "expected_status": "success",
+      "expected_condition": "Osteoarthritis",
+      "target_collection": "profiles",
+      "expected_record_ids": [
+        "kp_0226"
+      ],
+      "relevance_assignment": "Exact condition scope and the sole approved Osteoarthritis profile.",
+      "actual_status": "success",
+      "actual_condition": "Osteoarthritis",
+      "retrieved_record_ids": [
+        "kp_0226"
+      ],
+      "hit_at_k": 1.0,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "exact_expected_record_retrieval": true,
+      "first_rank_correct": true,
+      "status_correct": true,
+      "condition_resolution_correct": true,
+      "passed": true,
+      "retrieval_run_id": "RET-4235B64D6B76BDA1"
+    },
+    {
+      "query_id": "EVAL-CANON-INSOMNIA",
+      "query_type": "canonical_name",
+      "request": {
+        "condition": "Insomnia",
+        "categories": [
+          "profiles"
+        ],
+        "top_k": 3
+      },
+      "expected_status": "success",
+      "expected_condition": "Insomnia",
+      "target_collection": "profiles",
+      "expected_record_ids": [
+        "kp_0010",
+        "kp_0150"
+      ],
+      "relevance_assignment": "Both approved Insomnia profiles are relevant and must remain visible in stable ID order.",
+      "actual_status": "success",
+      "actual_condition": "Insomnia",
+      "retrieved_record_ids": [
+        "kp_0010",
+        "kp_0150"
+      ],
+      "hit_at_k": 1.0,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "exact_expected_record_retrieval": true,
+      "first_rank_correct": true,
+      "status_correct": true,
+      "condition_resolution_correct": true,
+      "passed": true,
+      "retrieval_run_id": "RET-42BE4C95F709C9DB"
+    },
+    {
+      "query_id": "EVAL-ALIAS-GERD",
+      "query_type": "alias",
+      "request": {
+        "condition": "GERD",
+        "categories": [
+          "profiles"
+        ],
+        "top_k": 3
+      },
+      "expected_status": "success",
+      "expected_condition": "Gastroesophageal Reflux Disease",
+      "target_collection": "profiles",
+      "expected_record_ids": [
+        "kp_0114"
+      ],
+      "relevance_assignment": "GERD is an approved abbreviation for the reflux condition.",
+      "actual_status": "success",
+      "actual_condition": "Gastroesophageal Reflux Disease",
+      "retrieved_record_ids": [
+        "kp_0114"
+      ],
+      "hit_at_k": 1.0,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "exact_expected_record_retrieval": true,
+      "first_rank_correct": true,
+      "status_correct": true,
+      "condition_resolution_correct": true,
+      "passed": true,
+      "retrieval_run_id": "RET-416436F2C01CF8D4"
+    },
+    {
+      "query_id": "EVAL-ALIAS-GORD",
+      "query_type": "alias",
+      "request": {
+        "condition": "GORD",
+        "categories": [
+          "profiles"
+        ],
+        "top_k": 3
+      },
+      "expected_status": "success",
+      "expected_condition": "Gastroesophageal Reflux Disease",
+      "target_collection": "profiles",
+      "expected_record_ids": [
+        "kp_0114"
+      ],
+      "relevance_assignment": "GORD is an approved abbreviation for the reflux condition.",
+      "actual_status": "success",
+      "actual_condition": "Gastroesophageal Reflux Disease",
+      "retrieved_record_ids": [
+        "kp_0114"
+      ],
+      "hit_at_k": 1.0,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "exact_expected_record_retrieval": true,
+      "first_rank_correct": true,
+      "status_correct": true,
+      "condition_resolution_correct": true,
+      "passed": true,
+      "retrieval_run_id": "RET-0CF94B640ABD27E9"
+    },
+    {
+      "query_id": "EVAL-ALIAS-ACID-REFLUX",
+      "query_type": "alias",
+      "request": {
+        "condition": "Acid reflux",
+        "categories": [
+          "profiles"
+        ],
+        "top_k": 3
+      },
+      "expected_status": "success",
+      "expected_condition": "Gastroesophageal Reflux Disease",
+      "target_collection": "profiles",
+      "expected_record_ids": [
+        "kp_0114"
+      ],
+      "relevance_assignment": "Acid reflux is an approved common-name alias.",
+      "actual_status": "success",
+      "actual_condition": "Gastroesophageal Reflux Disease",
+      "retrieved_record_ids": [
+        "kp_0114"
+      ],
+      "hit_at_k": 1.0,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "exact_expected_record_retrieval": true,
+      "first_rank_correct": true,
+      "status_correct": true,
+      "condition_resolution_correct": true,
+      "passed": true,
+      "retrieval_run_id": "RET-453FB811CCB21BAD"
+    },
+    {
+      "query_id": "EVAL-ALIAS-GASTRO-OESOPHAGEAL",
+      "query_type": "alias",
+      "request": {
+        "condition": "Gastro-oesophageal Reflux Disease",
+        "categories": [
+          "profiles"
+        ],
+        "top_k": 3
+      },
+      "expected_status": "success",
+      "expected_condition": "Gastroesophageal Reflux Disease",
+      "target_collection": "profiles",
+      "expected_record_ids": [
+        "kp_0114"
+      ],
+      "relevance_assignment": "Approved British spelling and punctuation variant.",
+      "actual_status": "success",
+      "actual_condition": "Gastroesophageal Reflux Disease",
+      "retrieved_record_ids": [
+        "kp_0114"
+      ],
+      "hit_at_k": 1.0,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "exact_expected_record_retrieval": true,
+      "first_rank_correct": true,
+      "status_correct": true,
+      "condition_resolution_correct": true,
+      "passed": true,
+      "retrieval_run_id": "RET-24EB010A0569B5E8"
+    },
+    {
+      "query_id": "EVAL-TEXT-ACNE-SELFCARE",
+      "query_type": "within_condition_text",
+      "request": {
+        "condition": "Acne",
+        "free_text": "picking squeezing scarring",
+        "categories": [
+          "claims"
+        ],
+        "top_k": 3
+      },
+      "expected_status": "success",
+      "expected_condition": "Acne",
+      "target_collection": "claims",
+      "expected_record_ids": [
+        "KC-ACNE-REF-SELF-001"
+      ],
+      "relevance_assignment": "Terms are stated in the checked Acne self-care claim.",
+      "actual_status": "success",
+      "actual_condition": "Acne",
+      "retrieved_record_ids": [
+        "KC-ACNE-REF-SELF-001"
+      ],
+      "hit_at_k": 1.0,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "exact_expected_record_retrieval": true,
+      "first_rank_correct": true,
+      "status_correct": true,
+      "condition_resolution_correct": true,
+      "passed": true,
+      "retrieval_run_id": "RET-A9EA355F0548F4E7"
+    },
+    {
+      "query_id": "EVAL-TEXT-COLD-REFERRAL",
+      "query_type": "within_condition_text",
+      "request": {
+        "condition": "Common Cold",
+        "free_text": "shortness breath chest pain",
+        "categories": [
+          "claims"
+        ],
+        "top_k": 3
+      },
+      "expected_status": "success",
+      "expected_condition": "Common Cold",
+      "target_collection": "claims",
+      "expected_record_ids": [
+        "KC-COLD-REF-SAFE-001"
+      ],
+      "relevance_assignment": "Terms are stated in the checked Common Cold referral-information claim.",
+      "actual_status": "success",
+      "actual_condition": "Common Cold",
+      "retrieved_record_ids": [
+        "KC-COLD-REF-SAFE-001"
+      ],
+      "hit_at_k": 1.0,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "exact_expected_record_retrieval": true,
+      "first_rank_correct": true,
+      "status_correct": true,
+      "condition_resolution_correct": true,
+      "passed": true,
+      "retrieval_run_id": "RET-06221187D05DA933"
+    },
+    {
+      "query_id": "EVAL-TEXT-INSOMNIA-SELFCARE",
+      "query_type": "within_condition_text",
+      "request": {
+        "condition": "Insomnia",
+        "free_text": "consistent wake time dark quiet",
+        "categories": [
+          "claims"
+        ],
+        "top_k": 3
+      },
+      "expected_status": "success",
+      "expected_condition": "Insomnia",
+      "target_collection": "claims",
+      "expected_record_ids": [
+        "KC-INSOMNIA-REF-SELF-001"
+      ],
+      "relevance_assignment": "Terms are stated in the checked Insomnia self-care claim.",
+      "actual_status": "success",
+      "actual_condition": "Insomnia",
+      "retrieved_record_ids": [
+        "KC-INSOMNIA-REF-SELF-001"
+      ],
+      "hit_at_k": 1.0,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "exact_expected_record_retrieval": true,
+      "first_rank_correct": true,
+      "status_correct": true,
+      "condition_resolution_correct": true,
+      "passed": true,
+      "retrieval_run_id": "RET-BFFA6900433DC764"
+    },
+    {
+      "query_id": "EVAL-FTS-COLD-SYMPTOMS",
+      "query_type": "fts5_lexical",
+      "request": {
+        "condition": "Common Cold",
+        "free_text": "blocked runny nose cough",
+        "categories": [
+          "symptoms"
+        ],
+        "top_k": 3
+      },
+      "expected_status": "success",
+      "expected_condition": "Common Cold",
+      "target_collection": "symptoms",
+      "expected_record_ids": [
+        "SYM-20",
+        "SYM-1",
+        "SYM-24"
+      ],
+      "expected_first_record_id": "SYM-20",
+      "relevance_assignment": "All three stored symptom records contain supplied terms; the checked phrase 'blocked or runny nose' covers three terms and is expected first by BM25/coverage.",
+      "actual_status": "success",
+      "actual_condition": "Common Cold",
+      "retrieved_record_ids": [
+        "SYM-20",
+        "SYM-1",
+        "SYM-24"
+      ],
+      "hit_at_k": 1.0,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "exact_expected_record_retrieval": true,
+      "first_rank_correct": true,
+      "status_correct": true,
+      "condition_resolution_correct": true,
+      "passed": true,
+      "retrieval_run_id": "RET-44ECAB54BEDB0F15"
+    },
+    {
+      "query_id": "EVAL-DOSHA-INSOMNIA-PITTA",
+      "query_type": "caller_dosha_ranking",
+      "request": {
+        "condition": "Insomnia",
+        "caller_supplied_dosha_tags": [
+          "Pitta"
+        ],
+        "categories": [
+          "profiles"
+        ],
+        "top_k": 2
+      },
+      "expected_status": "success",
+      "expected_condition": "Insomnia",
+      "target_collection": "profiles",
+      "expected_record_ids": [
+        "kp_0010"
+      ],
+      "expected_first_record_id": "kp_0010",
+      "relevance_assignment": "Only kp_0010 contains the caller-supplied Pitta tag; this is a retrieval signal, not validation.",
+      "actual_status": "success",
+      "actual_condition": "Insomnia",
+      "retrieved_record_ids": [
+        "kp_0010"
+      ],
+      "hit_at_k": 1.0,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "exact_expected_record_retrieval": true,
+      "first_rank_correct": true,
+      "status_correct": true,
+      "condition_resolution_correct": true,
+      "passed": true,
+      "retrieval_run_id": "RET-D59578782CA17243"
+    },
+    {
+      "query_id": "EVAL-CONFLICT-INSOMNIA-VATA",
+      "query_type": "insomnia_disagreement",
+      "request": {
+        "condition": "Insomnia",
+        "caller_supplied_dosha_tags": [
+          "Vata"
+        ],
+        "categories": [
+          "profiles"
+        ],
+        "top_k": 2
+      },
+      "expected_status": "success",
+      "expected_condition": "Insomnia",
+      "target_collection": "profiles",
+      "expected_record_ids": [
+        "kp_0150",
+        "kp_0010"
+      ],
+      "expected_first_record_id": "kp_0150",
+      "relevance_assignment": "Both profiles overlap Vata; exact Vata-set overlap ranks kp_0150 first while both remain disclosed.",
+      "actual_status": "success",
+      "actual_condition": "Insomnia",
+      "retrieved_record_ids": [
+        "kp_0150",
+        "kp_0010"
+      ],
+      "hit_at_k": 1.0,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "exact_expected_record_retrieval": true,
+      "first_rank_correct": true,
+      "status_correct": true,
+      "condition_resolution_correct": true,
+      "passed": true,
+      "retrieval_run_id": "RET-B18B4F9A7C7F7CB3"
+    },
+    {
+      "query_id": "EVAL-NO-RESULT",
+      "query_type": "no_result",
+      "request": {
+        "condition": "Acne",
+        "free_text": "quantum telescope nebula",
+        "categories": [
+          "profiles",
+          "claims",
+          "symptoms",
+          "recommendations"
+        ],
+        "top_k": 3
+      },
+      "expected_status": "no_match",
+      "expected_condition": "Acne",
+      "target_collection": "profiles",
+      "expected_record_ids": [],
+      "relevance_assignment": "Terms are absent from the condition-scoped approved records.",
+      "actual_status": "no_match",
+      "actual_condition": "Acne",
+      "retrieved_record_ids": [],
+      "hit_at_k": 1.0,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 0.0,
+      "exact_expected_record_retrieval": true,
+      "first_rank_correct": true,
+      "status_correct": true,
+      "condition_resolution_correct": true,
+      "passed": true,
+      "retrieval_run_id": "RET-262196258C42D512"
+    },
+    {
+      "query_id": "EVAL-UNKNOWN-CONDITION",
+      "query_type": "unknown_condition",
+      "request": {
+        "condition": "Unlisted Condition",
+        "free_text": "pain",
+        "top_k": 3
+      },
+      "expected_status": "no_match",
+      "expected_condition": null,
+      "target_collection": null,
+      "expected_record_ids": [],
+      "relevance_assignment": "No approved canonical condition or alias has this normalized name.",
+      "actual_status": "no_match",
+      "actual_condition": null,
+      "retrieved_record_ids": [],
+      "hit_at_k": 1.0,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 0.0,
+      "exact_expected_record_retrieval": true,
+      "first_rank_correct": true,
+      "status_correct": true,
+      "condition_resolution_correct": true,
+      "passed": true,
+      "retrieval_run_id": "RET-AD7D0CFD0A81AE7B"
+    },
+    {
+      "query_id": "EVAL-MISSING-CONDITION",
+      "query_type": "missing_condition",
+      "request": {
+        "free_text": "heartburn",
+        "top_k": 3
+      },
+      "expected_status": "clarification_required",
+      "expected_condition": null,
+      "target_collection": null,
+      "expected_record_ids": [],
+      "relevance_assignment": "Condition context is required and must not be inferred from text.",
+      "actual_status": "clarification_required",
+      "actual_condition": null,
+      "retrieved_record_ids": [],
+      "hit_at_k": 1.0,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 0.0,
+      "exact_expected_record_retrieval": true,
+      "first_rank_correct": true,
+      "status_correct": true,
+      "condition_resolution_correct": true,
+      "passed": true,
+      "retrieval_run_id": "RET-D2160C2223489DF9"
+    }
+  ]
+}

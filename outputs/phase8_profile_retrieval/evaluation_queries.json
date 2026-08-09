@@ -1,0 +1,344 @@
+{
+  "source_partitions": [
+    "train",
+    "validation"
+  ],
+  "final_test_queries_used": 0,
+  "clinical_effectiveness_claimed": false,
+  "queries": [
+    {
+      "query_id": "EVAL-CANON-ACNE",
+      "query_type": "canonical_name",
+      "request": {
+        "condition": "Acne",
+        "categories": [
+          "profiles"
+        ],
+        "top_k": 3
+      },
+      "expected_status": "success",
+      "expected_condition": "Acne",
+      "target_collection": "profiles",
+      "expected_record_ids": [
+        "kp_0016"
+      ],
+      "relevance_assignment": "Exact condition scope and the sole approved Acne profile."
+    },
+    {
+      "query_id": "EVAL-CANON-COLD",
+      "query_type": "canonical_name",
+      "request": {
+        "condition": "Common Cold",
+        "categories": [
+          "profiles"
+        ],
+        "top_k": 3
+      },
+      "expected_status": "success",
+      "expected_condition": "Common Cold",
+      "target_collection": "profiles",
+      "expected_record_ids": [
+        "kp_0006"
+      ],
+      "relevance_assignment": "Exact condition scope and the sole approved Common Cold profile."
+    },
+    {
+      "query_id": "EVAL-CANON-GERD",
+      "query_type": "canonical_name",
+      "request": {
+        "condition": "Gastroesophageal Reflux Disease",
+        "categories": [
+          "profiles"
+        ],
+        "top_k": 3
+      },
+      "expected_status": "success",
+      "expected_condition": "Gastroesophageal Reflux Disease",
+      "target_collection": "profiles",
+      "expected_record_ids": [
+        "kp_0114"
+      ],
+      "relevance_assignment": "Exact condition scope and the sole approved reflux profile."
+    },
+    {
+      "query_id": "EVAL-CANON-OA",
+      "query_type": "canonical_name",
+      "request": {
+        "condition": "Osteoarthritis",
+        "categories": [
+          "profiles"
+        ],
+        "top_k": 3
+      },
+      "expected_status": "success",
+      "expected_condition": "Osteoarthritis",
+      "target_collection": "profiles",
+      "expected_record_ids": [
+        "kp_0226"
+      ],
+      "relevance_assignment": "Exact condition scope and the sole approved Osteoarthritis profile."
+    },
+    {
+      "query_id": "EVAL-CANON-INSOMNIA",
+      "query_type": "canonical_name",
+      "request": {
+        "condition": "Insomnia",
+        "categories": [
+          "profiles"
+        ],
+        "top_k": 3
+      },
+      "expected_status": "success",
+      "expected_condition": "Insomnia",
+      "target_collection": "profiles",
+      "expected_record_ids": [
+        "kp_0010",
+        "kp_0150"
+      ],
+      "relevance_assignment": "Both approved Insomnia profiles are relevant and must remain visible in stable ID order."
+    },
+    {
+      "query_id": "EVAL-ALIAS-GERD",
+      "query_type": "alias",
+      "request": {
+        "condition": "GERD",
+        "categories": [
+          "profiles"
+        ],
+        "top_k": 3
+      },
+      "expected_status": "success",
+      "expected_condition": "Gastroesophageal Reflux Disease",
+      "target_collection": "profiles",
+      "expected_record_ids": [
+        "kp_0114"
+      ],
+      "relevance_assignment": "GERD is an approved abbreviation for the reflux condition."
+    },
+    {
+      "query_id": "EVAL-ALIAS-GORD",
+      "query_type": "alias",
+      "request": {
+        "condition": "GORD",
+        "categories": [
+          "profiles"
+        ],
+        "top_k": 3
+      },
+      "expected_status": "success",
+      "expected_condition": "Gastroesophageal Reflux Disease",
+      "target_collection": "profiles",
+      "expected_record_ids": [
+        "kp_0114"
+      ],
+      "relevance_assignment": "GORD is an approved abbreviation for the reflux condition."
+    },
+    {
+      "query_id": "EVAL-ALIAS-ACID-REFLUX",
+      "query_type": "alias",
+      "request": {
+        "condition": "Acid reflux",
+        "categories": [
+          "profiles"
+        ],
+        "top_k": 3
+      },
+      "expected_status": "success",
+      "expected_condition": "Gastroesophageal Reflux Disease",
+      "target_collection": "profiles",
+      "expected_record_ids": [
+        "kp_0114"
+      ],
+      "relevance_assignment": "Acid reflux is an approved common-name alias."
+    },
+    {
+      "query_id": "EVAL-ALIAS-GASTRO-OESOPHAGEAL",
+      "query_type": "alias",
+      "request": {
+        "condition": "Gastro-oesophageal Reflux Disease",
+        "categories": [
+          "profiles"
+        ],
+        "top_k": 3
+      },
+      "expected_status": "success",
+      "expected_condition": "Gastroesophageal Reflux Disease",
+      "target_collection": "profiles",
+      "expected_record_ids": [
+        "kp_0114"
+      ],
+      "relevance_assignment": "Approved British spelling and punctuation variant."
+    },
+    {
+      "query_id": "EVAL-TEXT-ACNE-SELFCARE",
+      "query_type": "within_condition_text",
+      "request": {
+        "condition": "Acne",
+        "free_text": "picking squeezing scarring",
+        "categories": [
+          "claims"
+        ],
+        "top_k": 3
+      },
+      "expected_status": "success",
+      "expected_condition": "Acne",
+      "target_collection": "claims",
+      "expected_record_ids": [
+        "KC-ACNE-REF-SELF-001"
+      ],
+      "relevance_assignment": "Terms are stated in the checked Acne self-care claim."
+    },
+    {
+      "query_id": "EVAL-TEXT-COLD-REFERRAL",
+      "query_type": "within_condition_text",
+      "request": {
+        "condition": "Common Cold",
+        "free_text": "shortness breath chest pain",
+        "categories": [
+          "claims"
+        ],
+        "top_k": 3
+      },
+      "expected_status": "success",
+      "expected_condition": "Common Cold",
+      "target_collection": "claims",
+      "expected_record_ids": [
+        "KC-COLD-REF-SAFE-001"
+      ],
+      "relevance_assignment": "Terms are stated in the checked Common Cold referral-information claim."
+    },
+    {
+      "query_id": "EVAL-TEXT-INSOMNIA-SELFCARE",
+      "query_type": "within_condition_text",
+      "request": {
+        "condition": "Insomnia",
+        "free_text": "consistent wake time dark quiet",
+        "categories": [
+          "claims"
+        ],
+        "top_k": 3
+      },
+      "expected_status": "success",
+      "expected_condition": "Insomnia",
+      "target_collection": "claims",
+      "expected_record_ids": [
+        "KC-INSOMNIA-REF-SELF-001"
+      ],
+      "relevance_assignment": "Terms are stated in the checked Insomnia self-care claim."
+    },
+    {
+      "query_id": "EVAL-FTS-COLD-SYMPTOMS",
+      "query_type": "fts5_lexical",
+      "request": {
+        "condition": "Common Cold",
+        "free_text": "blocked runny nose cough",
+        "categories": [
+          "symptoms"
+        ],
+        "top_k": 3
+      },
+      "expected_status": "success",
+      "expected_condition": "Common Cold",
+      "target_collection": "symptoms",
+      "expected_record_ids": [
+        "SYM-20",
+        "SYM-1",
+        "SYM-24"
+      ],
+      "expected_first_record_id": "SYM-20",
+      "relevance_assignment": "All three stored symptom records contain supplied terms; the checked phrase 'blocked or runny nose' covers three terms and is expected first by BM25/coverage."
+    },
+    {
+      "query_id": "EVAL-DOSHA-INSOMNIA-PITTA",
+      "query_type": "caller_dosha_ranking",
+      "request": {
+        "condition": "Insomnia",
+        "caller_supplied_dosha_tags": [
+          "Pitta"
+        ],
+        "categories": [
+          "profiles"
+        ],
+        "top_k": 2
+      },
+      "expected_status": "success",
+      "expected_condition": "Insomnia",
+      "target_collection": "profiles",
+      "expected_record_ids": [
+        "kp_0010"
+      ],
+      "expected_first_record_id": "kp_0010",
+      "relevance_assignment": "Only kp_0010 contains the caller-supplied Pitta tag; this is a retrieval signal, not validation."
+    },
+    {
+      "query_id": "EVAL-CONFLICT-INSOMNIA-VATA",
+      "query_type": "insomnia_disagreement",
+      "request": {
+        "condition": "Insomnia",
+        "caller_supplied_dosha_tags": [
+          "Vata"
+        ],
+        "categories": [
+          "profiles"
+        ],
+        "top_k": 2
+      },
+      "expected_status": "success",
+      "expected_condition": "Insomnia",
+      "target_collection": "profiles",
+      "expected_record_ids": [
+        "kp_0150",
+        "kp_0010"
+      ],
+      "expected_first_record_id": "kp_0150",
+      "relevance_assignment": "Both profiles overlap Vata; exact Vata-set overlap ranks kp_0150 first while both remain disclosed."
+    },
+    {
+      "query_id": "EVAL-NO-RESULT",
+      "query_type": "no_result",
+      "request": {
+        "condition": "Acne",
+        "free_text": "quantum telescope nebula",
+        "categories": [
+          "profiles",
+          "claims",
+          "symptoms",
+          "recommendations"
+        ],
+        "top_k": 3
+      },
+      "expected_status": "no_match",
+      "expected_condition": "Acne",
+      "target_collection": "profiles",
+      "expected_record_ids": [],
+      "relevance_assignment": "Terms are absent from the condition-scoped approved records."
+    },
+    {
+      "query_id": "EVAL-UNKNOWN-CONDITION",
+      "query_type": "unknown_condition",
+      "request": {
+        "condition": "Unlisted Condition",
+        "free_text": "pain",
+        "top_k": 3
+      },
+      "expected_status": "no_match",
+      "expected_condition": null,
+      "target_collection": null,
+      "expected_record_ids": [],
+      "relevance_assignment": "No approved canonical condition or alias has this normalized name."
+    },
+    {
+      "query_id": "EVAL-MISSING-CONDITION",
+      "query_type": "missing_condition",
+      "request": {
+        "free_text": "heartburn",
+        "top_k": 3
+      },
+      "expected_status": "clarification_required",
+      "expected_condition": null,
+      "target_collection": null,
+      "expected_record_ids": [],
+      "relevance_assignment": "Condition context is required and must not be inferred from text."
+    }
+  ]
+}
