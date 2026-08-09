@@ -1,0 +1,150 @@
+{
+  "rule_count": 10,
+  "valid_rule_count": 10,
+  "invalid_rule_count": 0,
+  "all_rules_valid": true,
+  "results": [
+    {
+      "rule_id": "R-ACNE-REFERRAL-001",
+      "rule_version": "1.0.0",
+      "condition": "Acne",
+      "valid": true,
+      "reason": null,
+      "claim_ids": [
+        "KC-ACNE-REF-SAFE-001"
+      ],
+      "source_ids": [
+        "SRC-NHS-ACNE"
+      ]
+    },
+    {
+      "rule_id": "R-ACNE-SELFCARE-001",
+      "rule_version": "1.0.0",
+      "condition": "Acne",
+      "valid": true,
+      "reason": null,
+      "claim_ids": [
+        "KC-ACNE-REF-SELF-001"
+      ],
+      "source_ids": [
+        "SRC-NHS-ACNE"
+      ]
+    },
+    {
+      "rule_id": "R-COLD-REFERRAL-001",
+      "rule_version": "1.0.0",
+      "condition": "Common Cold",
+      "valid": true,
+      "reason": null,
+      "claim_ids": [
+        "KC-COLD-REF-SAFE-001"
+      ],
+      "source_ids": [
+        "SRC-NHS-COLD"
+      ]
+    },
+    {
+      "rule_id": "R-COLD-SELFCARE-001",
+      "rule_version": "1.0.0",
+      "condition": "Common Cold",
+      "valid": true,
+      "reason": null,
+      "claim_ids": [
+        "KC-COLD-REF-SELF-001"
+      ],
+      "source_ids": [
+        "SRC-NHS-COLD"
+      ]
+    },
+    {
+      "rule_id": "R-GERD-REFERRAL-001",
+      "rule_version": "1.0.0",
+      "condition": "Gastroesophageal Reflux Disease",
+      "valid": true,
+      "reason": null,
+      "claim_ids": [
+        "KC-GERD-REF-SAFE-001"
+      ],
+      "source_ids": [
+        "SRC-NHS-REFLUX"
+      ]
+    },
+    {
+      "rule_id": "R-GERD-SELFCARE-001",
+      "rule_version": "1.0.0",
+      "condition": "Gastroesophageal Reflux Disease",
+      "valid": true,
+      "reason": null,
+      "claim_ids": [
+        "KC-GERD-REF-SELF-001"
+      ],
+      "source_ids": [
+        "SRC-NHS-REFLUX"
+      ]
+    },
+    {
+      "rule_id": "R-INSOMNIA-REFERRAL-001",
+      "rule_version": "1.0.0",
+      "condition": "Insomnia",
+      "valid": true,
+      "reason": null,
+      "claim_ids": [
+        "KC-INSOMNIA-REF-SAFE-001"
+      ],
+      "source_ids": [
+        "SRC-NHS-INSOMNIA"
+      ]
+    },
+    {
+      "rule_id": "R-INSOMNIA-SELFCARE-001",
+      "rule_version": "1.0.0",
+      "condition": "Insomnia",
+      "valid": true,
+      "reason": null,
+      "claim_ids": [
+        "KC-INSOMNIA-REF-SELF-001"
+      ],
+      "source_ids": [
+        "SRC-NHS-INSOMNIA"
+      ]
+    },
+    {
+      "rule_id": "R-OA-REFERRAL-001",
+      "rule_version": "1.0.0",
+      "condition": "Osteoarthritis",
+      "valid": true,
+      "reason": null,
+      "claim_ids": [
+        "KC-OA-REF-SAFE-001"
+      ],
+      "source_ids": [
+        "SRC-NHS-OA"
+      ]
+    },
+    {
+      "rule_id": "R-OA-SELFCARE-001",
+      "rule_version": "1.0.0",
+      "condition": "Osteoarthritis",
+      "valid": true,
+      "reason": null,
+      "claim_ids": [
+        "KC-OA-REF-SELF-001"
+      ],
+      "source_ids": [
+        "SRC-NHS-OA"
+      ]
+    }
+  ],
+  "phase7_checks": {
+    "all_rule_structures_and_links_valid": true,
+    "foreign_key_violation_count": 0,
+    "claim_count_reviewed": 45,
+    "converted_claim_count": 10,
+    "expert_reviewed_rule_count": 0,
+    "exact_dosage_findings": [],
+    "production_later_phase_tables_empty": true,
+    "final_test_access_events": 0,
+    "final_test_metrics_calculated": 0,
+    "passed": true
+  }
+}

@@ -1,0 +1,738 @@
+{
+  "synthetic_scenarios_only": true,
+  "scenarios": [
+    {
+      "scenario_id": "SYN-ACNE-REFERRAL",
+      "synthetic": true,
+      "condition": "Acne",
+      "facts": {
+        "acne_severity": "moderate",
+        "has_nodules": false,
+        "has_cysts": false,
+        "picks_or_squeezes_spots": true
+      },
+      "result": {
+        "condition_context": "Acne",
+        "condition_context_source": "externally_supplied_not_inferred",
+        "engine_status": "evaluated",
+        "candidate_actions": [
+          {
+            "rule_id": "R-ACNE-REFERRAL-001",
+            "rule_version": "1.0.0",
+            "conflict_group": "care_pathway",
+            "message": "Reference-checked NHS information advises GP assessment for moderate or severe acne, or when nodules or cysts develop.",
+            "prominence": "high",
+            "type": "professional_referral",
+            "value": "professional_assessment"
+          }
+        ],
+        "prominent_referral_messages": [
+          "Reference-checked NHS information advises GP assessment for moderate or severe acne, or when nodules or cysts develop."
+        ],
+        "suppressed_actions": [
+          {
+            "rule_id": "R-ACNE-SELFCARE-001",
+            "rule_version": "1.0.0",
+            "conflict_group": "supportive_information",
+            "message": "Reference-checked NHS information advises avoiding picking or squeezing acne spots because this can worsen them and contribute to scarring.",
+            "prominence": "normal",
+            "type": "general_recommendation",
+            "value": "avoid_picking_or_squeezing",
+            "suppression_reason": "higher_priority_safety_action_fired",
+            "conflict_details": []
+          }
+        ],
+        "conflicts": [],
+        "evaluated_rule_count": 2,
+        "ignored_rules": [],
+        "explanation_trace": [
+          {
+            "rule_id": "R-ACNE-REFERRAL-001",
+            "rule_version": "1.0.0",
+            "rule_type": "professional_referral",
+            "priority": 1,
+            "predicate_results": {
+              "operator": "any",
+              "result": "true",
+              "children": [
+                {
+                  "field": "acne_severity",
+                  "operator": "in",
+                  "expected": [
+                    "moderate",
+                    "severe"
+                  ],
+                  "actual": "moderate",
+                  "result": "true"
+                },
+                {
+                  "field": "has_nodules",
+                  "operator": "eq",
+                  "expected": true,
+                  "actual": false,
+                  "result": "false"
+                },
+                {
+                  "field": "has_cysts",
+                  "operator": "eq",
+                  "expected": true,
+                  "actual": false,
+                  "result": "false"
+                }
+              ]
+            },
+            "input_facts_used": {
+              "acne_severity": "moderate",
+              "has_nodules": false,
+              "has_cysts": false
+            },
+            "missing_required_inputs": [],
+            "outcome": "fired",
+            "fired": true,
+            "proposed_action": {
+              "conflict_group": "care_pathway",
+              "message": "Reference-checked NHS information advises GP assessment for moderate or severe acne, or when nodules or cysts develop.",
+              "prominence": "high",
+              "type": "professional_referral",
+              "value": "professional_assessment"
+            },
+            "action_suppressed": false,
+            "suppression_reason": null,
+            "conflict_details": [],
+            "evidence_status": "reference_checked",
+            "supporting_claim_ids": [
+              "KC-ACNE-REF-SAFE-001"
+            ],
+            "supporting_source_ids": [
+              "SRC-NHS-ACNE"
+            ],
+            "source_locator": "When to seek medical advice",
+            "human_readable_explanation": "The supplied Acne context matched a specifically checked NHS professional-assessment condition.",
+            "limitations": "UK NHS referral wording; local pathways may differ.",
+            "safety_notes": "Candidate referral information only; this engine does not diagnose acne.",
+            "disclaimer": "Educational research prototype only. The condition context was supplied by the user or caller; it was not inferred. Outputs are candidate information actions, not a diagnosis, Dosha inference, prescription, exact dosage, guaranteed benefit, clinical validation, or replacement for professional healthcare."
+          },
+          {
+            "rule_id": "R-ACNE-SELFCARE-001",
+            "rule_version": "1.0.0",
+            "rule_type": "general_recommendation",
+            "priority": 5,
+            "predicate_results": {
+              "field": "picks_or_squeezes_spots",
+              "operator": "eq",
+              "expected": true,
+              "actual": true,
+              "result": "true"
+            },
+            "input_facts_used": {
+              "picks_or_squeezes_spots": true
+            },
+            "missing_required_inputs": [],
+            "outcome": "fired",
+            "fired": true,
+            "proposed_action": {
+              "conflict_group": "supportive_information",
+              "message": "Reference-checked NHS information advises avoiding picking or squeezing acne spots because this can worsen them and contribute to scarring.",
+              "prominence": "normal",
+              "type": "general_recommendation",
+              "value": "avoid_picking_or_squeezing"
+            },
+            "action_suppressed": true,
+            "suppression_reason": "higher_priority_safety_action_fired",
+            "conflict_details": [],
+            "evidence_status": "reference_checked",
+            "supporting_claim_ids": [
+              "KC-ACNE-REF-SELF-001"
+            ],
+            "supporting_source_ids": [
+              "SRC-NHS-ACNE"
+            ],
+            "source_locator": "Things you can try if you have acne",
+            "human_readable_explanation": "The supplied input reported picking or squeezing spots, matching the checked self-care statement.",
+            "limitations": "General information only; it does not replace treatment advice.",
+            "safety_notes": "Suppressed when a referral rule fires or cannot be evaluated safely.",
+            "disclaimer": "Educational research prototype only. The condition context was supplied by the user or caller; it was not inferred. Outputs are candidate information actions, not a diagnosis, Dosha inference, prescription, exact dosage, guaranteed benefit, clinical validation, or replacement for professional healthcare."
+          }
+        ],
+        "knowledge_notes": [],
+        "disclaimer": "Educational research prototype only. The condition context was supplied by the user or caller; it was not inferred. Outputs are candidate information actions, not a diagnosis, Dosha inference, prescription, exact dosage, guaranteed benefit, clinical validation, or replacement for professional healthcare."
+      }
+    },
+    {
+      "scenario_id": "SYN-COLD-GENERAL",
+      "synthetic": true,
+      "condition": "Common Cold",
+      "facts": {
+        "cold_symptoms_worsening": false,
+        "shortness_of_breath": false,
+        "chest_pain": false,
+        "cold_symptom_duration_days": 3,
+        "cold_not_improving": false,
+        "general_self_care_requested": true
+      },
+      "result": {
+        "condition_context": "Common Cold",
+        "condition_context_source": "externally_supplied_not_inferred",
+        "engine_status": "evaluated",
+        "candidate_actions": [
+          {
+            "rule_id": "R-COLD-SELFCARE-001",
+            "rule_version": "1.0.0",
+            "conflict_group": "supportive_information",
+            "message": "Reference-checked NHS information lists rest and adequate fluids as general self-care measures for a common cold.",
+            "prominence": "normal",
+            "type": "general_recommendation",
+            "value": "show_general_self_care"
+          }
+        ],
+        "prominent_referral_messages": [],
+        "suppressed_actions": [],
+        "conflicts": [],
+        "evaluated_rule_count": 2,
+        "ignored_rules": [],
+        "explanation_trace": [
+          {
+            "rule_id": "R-COLD-REFERRAL-001",
+            "rule_version": "1.0.0",
+            "rule_type": "professional_referral",
+            "priority": 1,
+            "predicate_results": {
+              "operator": "any",
+              "result": "false",
+              "children": [
+                {
+                  "field": "cold_symptoms_worsening",
+                  "operator": "eq",
+                  "expected": true,
+                  "actual": false,
+                  "result": "false"
+                },
+                {
+                  "field": "shortness_of_breath",
+                  "operator": "eq",
+                  "expected": true,
+                  "actual": false,
+                  "result": "false"
+                },
+                {
+                  "field": "chest_pain",
+                  "operator": "eq",
+                  "expected": true,
+                  "actual": false,
+                  "result": "false"
+                },
+                {
+                  "operator": "all",
+                  "result": "false",
+                  "children": [
+                    {
+                      "field": "cold_symptom_duration_days",
+                      "operator": "gte",
+                      "expected": 10,
+                      "actual": 3,
+                      "result": "false"
+                    },
+                    {
+                      "field": "cold_not_improving",
+                      "operator": "eq",
+                      "expected": true,
+                      "actual": false,
+                      "result": "false"
+                    }
+                  ]
+                }
+              ]
+            },
+            "input_facts_used": {
+              "cold_symptoms_worsening": false,
+              "shortness_of_breath": false,
+              "chest_pain": false,
+              "cold_symptom_duration_days": 3,
+              "cold_not_improving": false
+            },
+            "missing_required_inputs": [],
+            "outcome": "not_fired",
+            "fired": false,
+            "proposed_action": {
+              "conflict_group": "care_pathway",
+              "message": "Reference-checked NHS information advises GP assessment when cold symptoms worsen, include shortness of breath or chest pain, or have not improved after 10 days.",
+              "prominence": "high",
+              "type": "professional_referral",
+              "value": "professional_assessment"
+            },
+            "action_suppressed": false,
+            "suppression_reason": null,
+            "conflict_details": [],
+            "evidence_status": "reference_checked",
+            "supporting_claim_ids": [
+              "KC-COLD-REF-SAFE-001"
+            ],
+            "supporting_source_ids": [
+              "SRC-NHS-COLD"
+            ],
+            "source_locator": "Non-urgent advice: See a GP if",
+            "human_readable_explanation": "The supplied Common Cold context matched a checked NHS professional-assessment condition.",
+            "limitations": "Selected NHS referral examples; not an exhaustive triage protocol.",
+            "safety_notes": "Candidate referral information only; breathing or chest symptoms need professional assessment.",
+            "disclaimer": "Educational research prototype only. The condition context was supplied by the user or caller; it was not inferred. Outputs are candidate information actions, not a diagnosis, Dosha inference, prescription, exact dosage, guaranteed benefit, clinical validation, or replacement for professional healthcare."
+          },
+          {
+            "rule_id": "R-COLD-SELFCARE-001",
+            "rule_version": "1.0.0",
+            "rule_type": "general_recommendation",
+            "priority": 5,
+            "predicate_results": {
+              "field": "general_self_care_requested",
+              "operator": "eq",
+              "expected": true,
+              "actual": true,
+              "result": "true"
+            },
+            "input_facts_used": {
+              "general_self_care_requested": true
+            },
+            "missing_required_inputs": [],
+            "outcome": "fired",
+            "fired": true,
+            "proposed_action": {
+              "conflict_group": "supportive_information",
+              "message": "Reference-checked NHS information lists rest and adequate fluids as general self-care measures for a common cold.",
+              "prominence": "normal",
+              "type": "general_recommendation",
+              "value": "show_general_self_care"
+            },
+            "action_suppressed": false,
+            "suppression_reason": null,
+            "conflict_details": [],
+            "evidence_status": "reference_checked",
+            "supporting_claim_ids": [
+              "KC-COLD-REF-SELF-001"
+            ],
+            "supporting_source_ids": [
+              "SRC-NHS-COLD"
+            ],
+            "source_locator": "How you can treat a cold yourself",
+            "human_readable_explanation": "General self-care information was requested within a supplied Common Cold context.",
+            "limitations": "General information only; individual fluid restrictions are not assessed.",
+            "safety_notes": "Suppressed when referral status is positive or not evaluable from supplied facts.",
+            "disclaimer": "Educational research prototype only. The condition context was supplied by the user or caller; it was not inferred. Outputs are candidate information actions, not a diagnosis, Dosha inference, prescription, exact dosage, guaranteed benefit, clinical validation, or replacement for professional healthcare."
+          }
+        ],
+        "knowledge_notes": [],
+        "disclaimer": "Educational research prototype only. The condition context was supplied by the user or caller; it was not inferred. Outputs are candidate information actions, not a diagnosis, Dosha inference, prescription, exact dosage, guaranteed benefit, clinical validation, or replacement for professional healthcare."
+      }
+    },
+    {
+      "scenario_id": "SYN-GERD-MISSING-SAFETY",
+      "synthetic": true,
+      "condition": "GORD",
+      "facts": {
+        "general_self_care_requested": true
+      },
+      "result": {
+        "condition_context": "Gastroesophageal Reflux Disease",
+        "condition_context_source": "externally_supplied_not_inferred",
+        "engine_status": "evaluated",
+        "candidate_actions": [],
+        "prominent_referral_messages": [],
+        "suppressed_actions": [
+          {
+            "rule_id": "R-GERD-SELFCARE-001",
+            "rule_version": "1.0.0",
+            "conflict_group": "supportive_information",
+            "message": "Reference-checked NHS information lists smaller, more frequent meals and avoiding personally triggering foods or drinks as general measures that may reduce heartburn.",
+            "prominence": "normal",
+            "type": "general_recommendation",
+            "value": "show_general_self_care",
+            "suppression_reason": "higher_priority_safety_rule_not_evaluable",
+            "conflict_details": []
+          }
+        ],
+        "conflicts": [],
+        "evaluated_rule_count": 2,
+        "ignored_rules": [],
+        "explanation_trace": [
+          {
+            "rule_id": "R-GERD-REFERRAL-001",
+            "rule_version": "1.0.0",
+            "rule_type": "professional_referral",
+            "priority": 1,
+            "predicate_results": {
+              "operator": "any",
+              "result": "not_evaluable",
+              "children": [
+                {
+                  "field": "reflux_self_care_not_helping",
+                  "operator": "eq",
+                  "result": "not_evaluable",
+                  "reason": "missing_input"
+                },
+                {
+                  "field": "heartburn_most_days",
+                  "operator": "eq",
+                  "result": "not_evaluable",
+                  "reason": "missing_input"
+                },
+                {
+                  "field": "food_sticking",
+                  "operator": "eq",
+                  "result": "not_evaluable",
+                  "reason": "missing_input"
+                },
+                {
+                  "field": "frequent_vomiting",
+                  "operator": "eq",
+                  "result": "not_evaluable",
+                  "reason": "missing_input"
+                },
+                {
+                  "field": "unexplained_weight_loss",
+                  "operator": "eq",
+                  "result": "not_evaluable",
+                  "reason": "missing_input"
+                }
+              ]
+            },
+            "input_facts_used": {},
+            "missing_required_inputs": [
+              "food_sticking",
+              "frequent_vomiting",
+              "heartburn_most_days",
+              "reflux_self_care_not_helping",
+              "unexplained_weight_loss"
+            ],
+            "outcome": "not_evaluable",
+            "fired": false,
+            "proposed_action": {
+              "conflict_group": "care_pathway",
+              "message": "Reference-checked NHS information advises GP assessment when self-care does not help, heartburn occurs most days, or swallowing difficulty, frequent vomiting, or unexplained weight loss occurs.",
+              "prominence": "high",
+              "type": "professional_referral",
+              "value": "professional_assessment"
+            },
+            "action_suppressed": false,
+            "suppression_reason": null,
+            "conflict_details": [],
+            "evidence_status": "reference_checked",
+            "supporting_claim_ids": [
+              "KC-GERD-REF-SAFE-001"
+            ],
+            "supporting_source_ids": [
+              "SRC-NHS-REFLUX"
+            ],
+            "source_locator": "Non-urgent advice: See a GP if",
+            "human_readable_explanation": "The supplied reflux context matched a checked NHS professional-assessment condition.",
+            "limitations": "UK NHS wording; chest symptoms require separate emergency assessment outside this rule.",
+            "safety_notes": "Candidate referral information only; no condition is inferred from symptoms.",
+            "disclaimer": "Educational research prototype only. The condition context was supplied by the user or caller; it was not inferred. Outputs are candidate information actions, not a diagnosis, Dosha inference, prescription, exact dosage, guaranteed benefit, clinical validation, or replacement for professional healthcare."
+          },
+          {
+            "rule_id": "R-GERD-SELFCARE-001",
+            "rule_version": "1.0.0",
+            "rule_type": "general_recommendation",
+            "priority": 5,
+            "predicate_results": {
+              "field": "general_self_care_requested",
+              "operator": "eq",
+              "expected": true,
+              "actual": true,
+              "result": "true"
+            },
+            "input_facts_used": {
+              "general_self_care_requested": true
+            },
+            "missing_required_inputs": [],
+            "outcome": "fired",
+            "fired": true,
+            "proposed_action": {
+              "conflict_group": "supportive_information",
+              "message": "Reference-checked NHS information lists smaller, more frequent meals and avoiding personally triggering foods or drinks as general measures that may reduce heartburn.",
+              "prominence": "normal",
+              "type": "general_recommendation",
+              "value": "show_general_self_care"
+            },
+            "action_suppressed": true,
+            "suppression_reason": "higher_priority_safety_rule_not_evaluable",
+            "conflict_details": [],
+            "evidence_status": "reference_checked",
+            "supporting_claim_ids": [
+              "KC-GERD-REF-SELF-001"
+            ],
+            "supporting_source_ids": [
+              "SRC-NHS-REFLUX"
+            ],
+            "source_locator": "How you can ease heartburn and acid reflux yourself",
+            "human_readable_explanation": "General self-care information was requested within a supplied reflux context.",
+            "limitations": "General information only; persistent symptoms require assessment.",
+            "safety_notes": "Suppressed when referral status is positive or not evaluable from supplied facts.",
+            "disclaimer": "Educational research prototype only. The condition context was supplied by the user or caller; it was not inferred. Outputs are candidate information actions, not a diagnosis, Dosha inference, prescription, exact dosage, guaranteed benefit, clinical validation, or replacement for professional healthcare."
+          }
+        ],
+        "knowledge_notes": [],
+        "disclaimer": "Educational research prototype only. The condition context was supplied by the user or caller; it was not inferred. Outputs are candidate information actions, not a diagnosis, Dosha inference, prescription, exact dosage, guaranteed benefit, clinical validation, or replacement for professional healthcare."
+      }
+    },
+    {
+      "scenario_id": "SYN-OA-NONMATCH",
+      "synthetic": true,
+      "condition": "Osteoarthritis",
+      "facts": {
+        "persistent_joint_symptoms": false,
+        "general_self_care_requested": false
+      },
+      "result": {
+        "condition_context": "Osteoarthritis",
+        "condition_context_source": "externally_supplied_not_inferred",
+        "engine_status": "evaluated",
+        "candidate_actions": [],
+        "prominent_referral_messages": [],
+        "suppressed_actions": [],
+        "conflicts": [],
+        "evaluated_rule_count": 2,
+        "ignored_rules": [],
+        "explanation_trace": [
+          {
+            "rule_id": "R-OA-REFERRAL-001",
+            "rule_version": "1.0.0",
+            "rule_type": "professional_referral",
+            "priority": 1,
+            "predicate_results": {
+              "field": "persistent_joint_symptoms",
+              "operator": "eq",
+              "expected": true,
+              "actual": false,
+              "result": "false"
+            },
+            "input_facts_used": {
+              "persistent_joint_symptoms": false
+            },
+            "missing_required_inputs": [],
+            "outcome": "not_fired",
+            "fired": false,
+            "proposed_action": {
+              "conflict_group": "care_pathway",
+              "message": "Reference-checked NHS information advises GP assessment for persistent symptoms of osteoarthritis.",
+              "prominence": "high",
+              "type": "professional_referral",
+              "value": "professional_assessment"
+            },
+            "action_suppressed": false,
+            "suppression_reason": null,
+            "conflict_details": [],
+            "evidence_status": "reference_checked",
+            "supporting_claim_ids": [
+              "KC-OA-REF-SAFE-001"
+            ],
+            "supporting_source_ids": [
+              "SRC-NHS-OA"
+            ],
+            "source_locator": "Symptoms of osteoarthritis",
+            "human_readable_explanation": "The supplied Osteoarthritis context reported persistent joint symptoms.",
+            "limitations": "General UK NHS advice; urgent joint presentations are not defined here.",
+            "safety_notes": "Candidate referral information only; no diagnosis is generated.",
+            "disclaimer": "Educational research prototype only. The condition context was supplied by the user or caller; it was not inferred. Outputs are candidate information actions, not a diagnosis, Dosha inference, prescription, exact dosage, guaranteed benefit, clinical validation, or replacement for professional healthcare."
+          },
+          {
+            "rule_id": "R-OA-SELFCARE-001",
+            "rule_version": "1.0.0",
+            "rule_type": "general_recommendation",
+            "priority": 5,
+            "predicate_results": {
+              "field": "general_self_care_requested",
+              "operator": "eq",
+              "expected": true,
+              "actual": false,
+              "result": "false"
+            },
+            "input_facts_used": {
+              "general_self_care_requested": false
+            },
+            "missing_required_inputs": [],
+            "outcome": "not_fired",
+            "fired": false,
+            "proposed_action": {
+              "conflict_group": "supportive_information",
+              "message": "Reference-checked NHS information lists regular exercise and, when applicable, weight reduction among general measures that can help manage mild osteoarthritis symptoms.",
+              "prominence": "normal",
+              "type": "general_recommendation",
+              "value": "show_general_self_care"
+            },
+            "action_suppressed": false,
+            "suppression_reason": null,
+            "conflict_details": [],
+            "evidence_status": "reference_checked",
+            "supporting_claim_ids": [
+              "KC-OA-REF-SELF-001"
+            ],
+            "supporting_source_ids": [
+              "SRC-NHS-OA"
+            ],
+            "source_locator": "Treating osteoarthritis",
+            "human_readable_explanation": "General self-care information was requested within a supplied Osteoarthritis context.",
+            "limitations": "Exercise should be individualized; no exercise prescription is produced.",
+            "safety_notes": "Suppressed when referral status is positive or not evaluable from supplied facts.",
+            "disclaimer": "Educational research prototype only. The condition context was supplied by the user or caller; it was not inferred. Outputs are candidate information actions, not a diagnosis, Dosha inference, prescription, exact dosage, guaranteed benefit, clinical validation, or replacement for professional healthcare."
+          }
+        ],
+        "knowledge_notes": [],
+        "disclaimer": "Educational research prototype only. The condition context was supplied by the user or caller; it was not inferred. Outputs are candidate information actions, not a diagnosis, Dosha inference, prescription, exact dosage, guaranteed benefit, clinical validation, or replacement for professional healthcare."
+      }
+    },
+    {
+      "scenario_id": "SYN-INSOMNIA-REFERRAL",
+      "synthetic": true,
+      "condition": "Insomnia",
+      "facts": {
+        "sleep_habit_changes_not_helped": false,
+        "trouble_sleeping_for_months": true,
+        "daily_life_hard_to_cope": false,
+        "general_self_care_requested": true
+      },
+      "result": {
+        "condition_context": "Insomnia",
+        "condition_context_source": "externally_supplied_not_inferred",
+        "engine_status": "evaluated",
+        "candidate_actions": [
+          {
+            "rule_id": "R-INSOMNIA-REFERRAL-001",
+            "rule_version": "1.0.0",
+            "conflict_group": "care_pathway",
+            "message": "Reference-checked NHS information advises GP assessment when sleep-habit changes have not helped, sleeping difficulty has lasted for months, or insomnia makes daily life hard to cope with.",
+            "prominence": "high",
+            "type": "professional_referral",
+            "value": "professional_assessment"
+          }
+        ],
+        "prominent_referral_messages": [
+          "Reference-checked NHS information advises GP assessment when sleep-habit changes have not helped, sleeping difficulty has lasted for months, or insomnia makes daily life hard to cope with."
+        ],
+        "suppressed_actions": [
+          {
+            "rule_id": "R-INSOMNIA-SELFCARE-001",
+            "rule_version": "1.0.0",
+            "conflict_group": "supportive_information",
+            "message": "Reference-checked NHS information includes keeping a consistent wake time, relaxing before bed, and making the bedroom dark and quiet.",
+            "prominence": "normal",
+            "type": "general_recommendation",
+            "value": "show_general_self_care",
+            "suppression_reason": "higher_priority_safety_action_fired",
+            "conflict_details": []
+          }
+        ],
+        "conflicts": [],
+        "evaluated_rule_count": 2,
+        "ignored_rules": [],
+        "explanation_trace": [
+          {
+            "rule_id": "R-INSOMNIA-REFERRAL-001",
+            "rule_version": "1.0.0",
+            "rule_type": "professional_referral",
+            "priority": 1,
+            "predicate_results": {
+              "operator": "any",
+              "result": "true",
+              "children": [
+                {
+                  "field": "sleep_habit_changes_not_helped",
+                  "operator": "eq",
+                  "expected": true,
+                  "actual": false,
+                  "result": "false"
+                },
+                {
+                  "field": "trouble_sleeping_for_months",
+                  "operator": "eq",
+                  "expected": true,
+                  "actual": true,
+                  "result": "true"
+                },
+                {
+                  "field": "daily_life_hard_to_cope",
+                  "operator": "eq",
+                  "expected": true,
+                  "actual": false,
+                  "result": "false"
+                }
+              ]
+            },
+            "input_facts_used": {
+              "sleep_habit_changes_not_helped": false,
+              "trouble_sleeping_for_months": true,
+              "daily_life_hard_to_cope": false
+            },
+            "missing_required_inputs": [],
+            "outcome": "fired",
+            "fired": true,
+            "proposed_action": {
+              "conflict_group": "care_pathway",
+              "message": "Reference-checked NHS information advises GP assessment when sleep-habit changes have not helped, sleeping difficulty has lasted for months, or insomnia makes daily life hard to cope with.",
+              "prominence": "high",
+              "type": "professional_referral",
+              "value": "professional_assessment"
+            },
+            "action_suppressed": false,
+            "suppression_reason": null,
+            "conflict_details": [],
+            "evidence_status": "reference_checked",
+            "supporting_claim_ids": [
+              "KC-INSOMNIA-REF-SAFE-001"
+            ],
+            "supporting_source_ids": [
+              "SRC-NHS-INSOMNIA"
+            ],
+            "source_locator": "Non-urgent advice: See a GP if",
+            "human_readable_explanation": "The supplied Insomnia context matched a checked NHS professional-assessment condition.",
+            "limitations": "General UK NHS advice; not an emergency or mental-health triage protocol.",
+            "safety_notes": "No Dosha inference or resolution of the dataset disagreement is performed.",
+            "disclaimer": "Educational research prototype only. The condition context was supplied by the user or caller; it was not inferred. Outputs are candidate information actions, not a diagnosis, Dosha inference, prescription, exact dosage, guaranteed benefit, clinical validation, or replacement for professional healthcare."
+          },
+          {
+            "rule_id": "R-INSOMNIA-SELFCARE-001",
+            "rule_version": "1.0.0",
+            "rule_type": "general_recommendation",
+            "priority": 5,
+            "predicate_results": {
+              "field": "general_self_care_requested",
+              "operator": "eq",
+              "expected": true,
+              "actual": true,
+              "result": "true"
+            },
+            "input_facts_used": {
+              "general_self_care_requested": true
+            },
+            "missing_required_inputs": [],
+            "outcome": "fired",
+            "fired": true,
+            "proposed_action": {
+              "conflict_group": "supportive_information",
+              "message": "Reference-checked NHS information includes keeping a consistent wake time, relaxing before bed, and making the bedroom dark and quiet.",
+              "prominence": "normal",
+              "type": "general_recommendation",
+              "value": "show_general_self_care"
+            },
+            "action_suppressed": true,
+            "suppression_reason": "higher_priority_safety_action_fired",
+            "conflict_details": [],
+            "evidence_status": "reference_checked",
+            "supporting_claim_ids": [
+              "KC-INSOMNIA-REF-SELF-001"
+            ],
+            "supporting_source_ids": [
+              "SRC-NHS-INSOMNIA"
+            ],
+            "source_locator": "How you can treat insomnia yourself",
+            "human_readable_explanation": "General sleep-habit information was requested within a supplied Insomnia context.",
+            "limitations": "General sleep-habit information; it does not address every cause of insomnia.",
+            "safety_notes": "No Dosha inference or resolution of the dataset disagreement is performed.",
+            "disclaimer": "Educational research prototype only. The condition context was supplied by the user or caller; it was not inferred. Outputs are candidate information actions, not a diagnosis, Dosha inference, prescription, exact dosage, guaranteed benefit, clinical validation, or replacement for professional healthcare."
+          }
+        ],
+        "knowledge_notes": [
+          "The two dataset-derived Insomnia Dosha combinations conflict; they are retained as provenance and are not evaluated or resolved by this engine."
+        ],
+        "disclaimer": "Educational research prototype only. The condition context was supplied by the user or caller; it was not inferred. Outputs are candidate information actions, not a diagnosis, Dosha inference, prescription, exact dosage, guaranteed benefit, clinical validation, or replacement for professional healthcare."
+      }
+    }
+  ]
+}

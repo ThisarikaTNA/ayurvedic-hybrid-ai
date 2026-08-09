@@ -1,0 +1,1373 @@
+{
+  "phase": 7,
+  "scope": "structured deterministic rules for caller-supplied condition contexts",
+  "rules": [
+    {
+      "rule_id": "R-ACNE-REFERRAL-001",
+      "rule_key": "R-ACNE-REFERRAL-001",
+      "rule_version": "1.0.0",
+      "rule_name": "Acne professional-assessment information",
+      "condition": "Acne",
+      "rule_type": "professional_referral",
+      "lifecycle_status": "active",
+      "evidence_status": "reference_checked",
+      "conditions": {
+        "operator": "any",
+        "conditions": [
+          {
+            "field": "acne_severity",
+            "operator": "in",
+            "value": [
+              "moderate",
+              "severe"
+            ]
+          },
+          {
+            "field": "has_nodules",
+            "operator": "eq",
+            "value": true
+          },
+          {
+            "field": "has_cysts",
+            "operator": "eq",
+            "value": true
+          }
+        ]
+      },
+      "action": {
+        "type": "professional_referral",
+        "message": "Reference-checked NHS information advises GP assessment for moderate or severe acne, or when nodules or cysts develop.",
+        "conflict_group": "care_pathway",
+        "value": "professional_assessment",
+        "prominence": "high"
+      },
+      "priority": 1,
+      "explanation_template": "The supplied Acne context matched a specifically checked NHS professional-assessment condition.",
+      "claim_ids": [
+        "KC-ACNE-REF-SAFE-001"
+      ],
+      "source_ids": [
+        "SRC-NHS-ACNE"
+      ],
+      "source_locator": "When to seek medical advice",
+      "validation_status": "valid",
+      "last_validation_date": "2026-08-06",
+      "limitations": "UK NHS referral wording; local pathways may differ.",
+      "safety_notes": "Candidate referral information only; this engine does not diagnose acne."
+    },
+    {
+      "rule_id": "R-ACNE-SELFCARE-001",
+      "rule_key": "R-ACNE-SELFCARE-001",
+      "rule_version": "1.0.0",
+      "rule_name": "Acne spot-handling information",
+      "condition": "Acne",
+      "rule_type": "general_recommendation",
+      "lifecycle_status": "active",
+      "evidence_status": "reference_checked",
+      "conditions": {
+        "field": "picks_or_squeezes_spots",
+        "operator": "eq",
+        "value": true
+      },
+      "action": {
+        "type": "general_recommendation",
+        "message": "Reference-checked NHS information advises avoiding picking or squeezing acne spots because this can worsen them and contribute to scarring.",
+        "conflict_group": "supportive_information",
+        "value": "avoid_picking_or_squeezing",
+        "prominence": "normal"
+      },
+      "priority": 5,
+      "explanation_template": "The supplied input reported picking or squeezing spots, matching the checked self-care statement.",
+      "claim_ids": [
+        "KC-ACNE-REF-SELF-001"
+      ],
+      "source_ids": [
+        "SRC-NHS-ACNE"
+      ],
+      "source_locator": "Things you can try if you have acne",
+      "validation_status": "valid",
+      "last_validation_date": "2026-08-06",
+      "limitations": "General information only; it does not replace treatment advice.",
+      "safety_notes": "Suppressed when a referral rule fires or cannot be evaluated safely."
+    },
+    {
+      "rule_id": "R-COLD-REFERRAL-001",
+      "rule_key": "R-COLD-REFERRAL-001",
+      "rule_version": "1.0.0",
+      "rule_name": "Common-cold professional-assessment information",
+      "condition": "Common Cold",
+      "rule_type": "professional_referral",
+      "lifecycle_status": "active",
+      "evidence_status": "reference_checked",
+      "conditions": {
+        "operator": "any",
+        "conditions": [
+          {
+            "field": "cold_symptoms_worsening",
+            "operator": "eq",
+            "value": true
+          },
+          {
+            "field": "shortness_of_breath",
+            "operator": "eq",
+            "value": true
+          },
+          {
+            "field": "chest_pain",
+            "operator": "eq",
+            "value": true
+          },
+          {
+            "operator": "all",
+            "conditions": [
+              {
+                "field": "cold_symptom_duration_days",
+                "operator": "gte",
+                "value": 10
+              },
+              {
+                "field": "cold_not_improving",
+                "operator": "eq",
+                "value": true
+              }
+            ]
+          }
+        ]
+      },
+      "action": {
+        "type": "professional_referral",
+        "message": "Reference-checked NHS information advises GP assessment when cold symptoms worsen, include shortness of breath or chest pain, or have not improved after 10 days.",
+        "conflict_group": "care_pathway",
+        "value": "professional_assessment",
+        "prominence": "high"
+      },
+      "priority": 1,
+      "explanation_template": "The supplied Common Cold context matched a checked NHS professional-assessment condition.",
+      "claim_ids": [
+        "KC-COLD-REF-SAFE-001"
+      ],
+      "source_ids": [
+        "SRC-NHS-COLD"
+      ],
+      "source_locator": "Non-urgent advice: See a GP if",
+      "validation_status": "valid",
+      "last_validation_date": "2026-08-06",
+      "limitations": "Selected NHS referral examples; not an exhaustive triage protocol.",
+      "safety_notes": "Candidate referral information only; breathing or chest symptoms need professional assessment."
+    },
+    {
+      "rule_id": "R-COLD-SELFCARE-001",
+      "rule_key": "R-COLD-SELFCARE-001",
+      "rule_version": "1.0.0",
+      "rule_name": "Common-cold general self-care information",
+      "condition": "Common Cold",
+      "rule_type": "general_recommendation",
+      "lifecycle_status": "active",
+      "evidence_status": "reference_checked",
+      "conditions": {
+        "field": "general_self_care_requested",
+        "operator": "eq",
+        "value": true
+      },
+      "action": {
+        "type": "general_recommendation",
+        "message": "Reference-checked NHS information lists rest and adequate fluids as general self-care measures for a common cold.",
+        "conflict_group": "supportive_information",
+        "value": "show_general_self_care",
+        "prominence": "normal"
+      },
+      "priority": 5,
+      "explanation_template": "General self-care information was requested within a supplied Common Cold context.",
+      "claim_ids": [
+        "KC-COLD-REF-SELF-001"
+      ],
+      "source_ids": [
+        "SRC-NHS-COLD"
+      ],
+      "source_locator": "How you can treat a cold yourself",
+      "validation_status": "valid",
+      "last_validation_date": "2026-08-06",
+      "limitations": "General information only; individual fluid restrictions are not assessed.",
+      "safety_notes": "Suppressed when referral status is positive or not evaluable from supplied facts."
+    },
+    {
+      "rule_id": "R-GERD-REFERRAL-001",
+      "rule_key": "R-GERD-REFERRAL-001",
+      "rule_version": "1.0.0",
+      "rule_name": "Reflux professional-assessment information",
+      "condition": "Gastroesophageal Reflux Disease",
+      "rule_type": "professional_referral",
+      "lifecycle_status": "active",
+      "evidence_status": "reference_checked",
+      "conditions": {
+        "operator": "any",
+        "conditions": [
+          {
+            "field": "reflux_self_care_not_helping",
+            "operator": "eq",
+            "value": true
+          },
+          {
+            "field": "heartburn_most_days",
+            "operator": "eq",
+            "value": true
+          },
+          {
+            "field": "food_sticking",
+            "operator": "eq",
+            "value": true
+          },
+          {
+            "field": "frequent_vomiting",
+            "operator": "eq",
+            "value": true
+          },
+          {
+            "field": "unexplained_weight_loss",
+            "operator": "eq",
+            "value": true
+          }
+        ]
+      },
+      "action": {
+        "type": "professional_referral",
+        "message": "Reference-checked NHS information advises GP assessment when self-care does not help, heartburn occurs most days, or swallowing difficulty, frequent vomiting, or unexplained weight loss occurs.",
+        "conflict_group": "care_pathway",
+        "value": "professional_assessment",
+        "prominence": "high"
+      },
+      "priority": 1,
+      "explanation_template": "The supplied reflux context matched a checked NHS professional-assessment condition.",
+      "claim_ids": [
+        "KC-GERD-REF-SAFE-001"
+      ],
+      "source_ids": [
+        "SRC-NHS-REFLUX"
+      ],
+      "source_locator": "Non-urgent advice: See a GP if",
+      "validation_status": "valid",
+      "last_validation_date": "2026-08-06",
+      "limitations": "UK NHS wording; chest symptoms require separate emergency assessment outside this rule.",
+      "safety_notes": "Candidate referral information only; no condition is inferred from symptoms."
+    },
+    {
+      "rule_id": "R-GERD-SELFCARE-001",
+      "rule_key": "R-GERD-SELFCARE-001",
+      "rule_version": "1.0.0",
+      "rule_name": "Reflux general self-care information",
+      "condition": "Gastroesophageal Reflux Disease",
+      "rule_type": "general_recommendation",
+      "lifecycle_status": "active",
+      "evidence_status": "reference_checked",
+      "conditions": {
+        "field": "general_self_care_requested",
+        "operator": "eq",
+        "value": true
+      },
+      "action": {
+        "type": "general_recommendation",
+        "message": "Reference-checked NHS information lists smaller, more frequent meals and avoiding personally triggering foods or drinks as general measures that may reduce heartburn.",
+        "conflict_group": "supportive_information",
+        "value": "show_general_self_care",
+        "prominence": "normal"
+      },
+      "priority": 5,
+      "explanation_template": "General self-care information was requested within a supplied reflux context.",
+      "claim_ids": [
+        "KC-GERD-REF-SELF-001"
+      ],
+      "source_ids": [
+        "SRC-NHS-REFLUX"
+      ],
+      "source_locator": "How you can ease heartburn and acid reflux yourself",
+      "validation_status": "valid",
+      "last_validation_date": "2026-08-06",
+      "limitations": "General information only; persistent symptoms require assessment.",
+      "safety_notes": "Suppressed when referral status is positive or not evaluable from supplied facts."
+    },
+    {
+      "rule_id": "R-OA-REFERRAL-001",
+      "rule_key": "R-OA-REFERRAL-001",
+      "rule_version": "1.0.0",
+      "rule_name": "Osteoarthritis professional-assessment information",
+      "condition": "Osteoarthritis",
+      "rule_type": "professional_referral",
+      "lifecycle_status": "active",
+      "evidence_status": "reference_checked",
+      "conditions": {
+        "field": "persistent_joint_symptoms",
+        "operator": "eq",
+        "value": true
+      },
+      "action": {
+        "type": "professional_referral",
+        "message": "Reference-checked NHS information advises GP assessment for persistent symptoms of osteoarthritis.",
+        "conflict_group": "care_pathway",
+        "value": "professional_assessment",
+        "prominence": "high"
+      },
+      "priority": 1,
+      "explanation_template": "The supplied Osteoarthritis context reported persistent joint symptoms.",
+      "claim_ids": [
+        "KC-OA-REF-SAFE-001"
+      ],
+      "source_ids": [
+        "SRC-NHS-OA"
+      ],
+      "source_locator": "Symptoms of osteoarthritis",
+      "validation_status": "valid",
+      "last_validation_date": "2026-08-06",
+      "limitations": "General UK NHS advice; urgent joint presentations are not defined here.",
+      "safety_notes": "Candidate referral information only; no diagnosis is generated."
+    },
+    {
+      "rule_id": "R-OA-SELFCARE-001",
+      "rule_key": "R-OA-SELFCARE-001",
+      "rule_version": "1.0.0",
+      "rule_name": "Osteoarthritis general self-care information",
+      "condition": "Osteoarthritis",
+      "rule_type": "general_recommendation",
+      "lifecycle_status": "active",
+      "evidence_status": "reference_checked",
+      "conditions": {
+        "field": "general_self_care_requested",
+        "operator": "eq",
+        "value": true
+      },
+      "action": {
+        "type": "general_recommendation",
+        "message": "Reference-checked NHS information lists regular exercise and, when applicable, weight reduction among general measures that can help manage mild osteoarthritis symptoms.",
+        "conflict_group": "supportive_information",
+        "value": "show_general_self_care",
+        "prominence": "normal"
+      },
+      "priority": 5,
+      "explanation_template": "General self-care information was requested within a supplied Osteoarthritis context.",
+      "claim_ids": [
+        "KC-OA-REF-SELF-001"
+      ],
+      "source_ids": [
+        "SRC-NHS-OA"
+      ],
+      "source_locator": "Treating osteoarthritis",
+      "validation_status": "valid",
+      "last_validation_date": "2026-08-06",
+      "limitations": "Exercise should be individualized; no exercise prescription is produced.",
+      "safety_notes": "Suppressed when referral status is positive or not evaluable from supplied facts."
+    },
+    {
+      "rule_id": "R-INSOMNIA-REFERRAL-001",
+      "rule_key": "R-INSOMNIA-REFERRAL-001",
+      "rule_version": "1.0.0",
+      "rule_name": "Insomnia professional-assessment information",
+      "condition": "Insomnia",
+      "rule_type": "professional_referral",
+      "lifecycle_status": "active",
+      "evidence_status": "reference_checked",
+      "conditions": {
+        "operator": "any",
+        "conditions": [
+          {
+            "field": "sleep_habit_changes_not_helped",
+            "operator": "eq",
+            "value": true
+          },
+          {
+            "field": "trouble_sleeping_for_months",
+            "operator": "eq",
+            "value": true
+          },
+          {
+            "field": "daily_life_hard_to_cope",
+            "operator": "eq",
+            "value": true
+          }
+        ]
+      },
+      "action": {
+        "type": "professional_referral",
+        "message": "Reference-checked NHS information advises GP assessment when sleep-habit changes have not helped, sleeping difficulty has lasted for months, or insomnia makes daily life hard to cope with.",
+        "conflict_group": "care_pathway",
+        "value": "professional_assessment",
+        "prominence": "high"
+      },
+      "priority": 1,
+      "explanation_template": "The supplied Insomnia context matched a checked NHS professional-assessment condition.",
+      "claim_ids": [
+        "KC-INSOMNIA-REF-SAFE-001"
+      ],
+      "source_ids": [
+        "SRC-NHS-INSOMNIA"
+      ],
+      "source_locator": "Non-urgent advice: See a GP if",
+      "validation_status": "valid",
+      "last_validation_date": "2026-08-06",
+      "limitations": "General UK NHS advice; not an emergency or mental-health triage protocol.",
+      "safety_notes": "No Dosha inference or resolution of the dataset disagreement is performed."
+    },
+    {
+      "rule_id": "R-INSOMNIA-SELFCARE-001",
+      "rule_key": "R-INSOMNIA-SELFCARE-001",
+      "rule_version": "1.0.0",
+      "rule_name": "Insomnia general sleep-habit information",
+      "condition": "Insomnia",
+      "rule_type": "general_recommendation",
+      "lifecycle_status": "active",
+      "evidence_status": "reference_checked",
+      "conditions": {
+        "field": "general_self_care_requested",
+        "operator": "eq",
+        "value": true
+      },
+      "action": {
+        "type": "general_recommendation",
+        "message": "Reference-checked NHS information includes keeping a consistent wake time, relaxing before bed, and making the bedroom dark and quiet.",
+        "conflict_group": "supportive_information",
+        "value": "show_general_self_care",
+        "prominence": "normal"
+      },
+      "priority": 5,
+      "explanation_template": "General sleep-habit information was requested within a supplied Insomnia context.",
+      "claim_ids": [
+        "KC-INSOMNIA-REF-SELF-001"
+      ],
+      "source_ids": [
+        "SRC-NHS-INSOMNIA"
+      ],
+      "source_locator": "How you can treat insomnia yourself",
+      "validation_status": "valid",
+      "last_validation_date": "2026-08-06",
+      "limitations": "General sleep-habit information; it does not address every cause of insomnia.",
+      "safety_notes": "No Dosha inference or resolution of the dataset disagreement is performed."
+    }
+  ],
+  "claim_reviews": [
+    {
+      "condition": "Acne",
+      "claim_id": "KC-ACNE-REF-SAFE-001",
+      "claim_type": "referral_consideration",
+      "claim_summary": "NHS advises GP assessment for moderate or severe acne, or when nodules or cysts develop.",
+      "evidence_status": "reference_checked",
+      "phase6_rule_eligible": true,
+      "source_profile_id": null,
+      "safety_relevance": "referral",
+      "source_ids": [
+        "SRC-NHS-ACNE"
+      ],
+      "supporting_source_urls": [
+        "https://www.nhs.uk/conditions/acne/"
+      ],
+      "source_locators": [
+        "When to seek medical advice"
+      ],
+      "complete_claim_supported": true,
+      "converted_to_rule": true,
+      "rule_ids": [
+        "R-ACNE-REFERRAL-001"
+      ],
+      "conversion_reason": "Converted because the exact reference-checked claim supplies a bounded, testable condition and safe information action.",
+      "limitations": "UK NHS referral wording; local pathways may differ."
+    },
+    {
+      "condition": "Acne",
+      "claim_id": "KC-ACNE-REF-SELF-001",
+      "claim_type": "general_self_care",
+      "claim_summary": "Avoid picking or squeezing acne spots because this can worsen them and contribute to scarring.",
+      "evidence_status": "reference_checked",
+      "phase6_rule_eligible": true,
+      "source_profile_id": null,
+      "safety_relevance": "general",
+      "source_ids": [
+        "SRC-NHS-ACNE"
+      ],
+      "supporting_source_urls": [
+        "https://www.nhs.uk/conditions/acne/"
+      ],
+      "source_locators": [
+        "Things you can try if you have acne"
+      ],
+      "complete_claim_supported": true,
+      "converted_to_rule": true,
+      "rule_ids": [
+        "R-ACNE-SELFCARE-001"
+      ],
+      "conversion_reason": "Converted because the exact reference-checked claim supplies a bounded, testable condition and safe information action.",
+      "limitations": "General self-care only; it does not replace treatment advice."
+    },
+    {
+      "condition": "Acne",
+      "claim_id": "KC-ACNE-REF-SYM-001",
+      "claim_type": "symptom",
+      "claim_summary": "Acne can involve spots and oily skin; affected skin may sometimes feel hot or painful.",
+      "evidence_status": "reference_checked",
+      "phase6_rule_eligible": false,
+      "source_profile_id": null,
+      "safety_relevance": "none",
+      "source_ids": [
+        "SRC-NHS-ACNE"
+      ],
+      "supporting_source_urls": [
+        "https://www.nhs.uk/conditions/acne/"
+      ],
+      "source_locators": [
+        "Overview and Symptoms of acne"
+      ],
+      "complete_claim_supported": true,
+      "converted_to_rule": false,
+      "rule_ids": [],
+      "conversion_reason": "Reference-checked descriptive symptom knowledge does not itself contain a complete testable condition-and-action pair.",
+      "limitations": "General symptom summary; it is not a diagnostic criterion."
+    },
+    {
+      "condition": "Acne",
+      "claim_id": "KC-DATA-KP_0016-COMPLICATION",
+      "claim_type": "dataset_complication_text",
+      "claim_summary": "Dataset complication text retained from knowledge profile kp_0016.",
+      "evidence_status": "dataset_derived",
+      "phase6_rule_eligible": false,
+      "source_profile_id": "kp_0016",
+      "safety_relevance": "caution",
+      "source_ids": [],
+      "supporting_source_urls": [],
+      "source_locators": [],
+      "complete_claim_supported": null,
+      "converted_to_rule": false,
+      "rule_ids": [],
+      "conversion_reason": "Dataset-derived text has not been externally checked for this complete claim; it is not converted into clinical, safety, referral, or prescribing logic.",
+      "limitations": "Dataset-derived and medically unverified; not eligible for a clinical rule."
+    },
+    {
+      "condition": "Acne",
+      "claim_id": "KC-DATA-KP_0016-DOSHA",
+      "claim_type": "dataset_dosha_association",
+      "claim_summary": "Dataset-assigned Dosha tags: Pitta retained from knowledge profile kp_0016.",
+      "evidence_status": "dataset_derived",
+      "phase6_rule_eligible": false,
+      "source_profile_id": "kp_0016",
+      "safety_relevance": "none",
+      "source_ids": [],
+      "supporting_source_urls": [],
+      "source_locators": [],
+      "complete_claim_supported": null,
+      "converted_to_rule": false,
+      "rule_ids": [],
+      "conversion_reason": "Dataset-assigned Dosha association is medically unverified and is retained for provenance only; Phase 7 does not infer or resolve Dosha.",
+      "limitations": "Dataset-derived and medically unverified; not eligible for a clinical rule."
+    },
+    {
+      "condition": "Acne",
+      "claim_id": "KC-DATA-KP_0016-LIFESTYLE",
+      "claim_type": "dataset_lifestyle_text",
+      "claim_summary": "Dataset diet and lifestyle text retained from knowledge profile kp_0016.",
+      "evidence_status": "dataset_derived",
+      "phase6_rule_eligible": false,
+      "source_profile_id": "kp_0016",
+      "safety_relevance": "general",
+      "source_ids": [],
+      "supporting_source_urls": [],
+      "source_locators": [],
+      "complete_claim_supported": null,
+      "converted_to_rule": false,
+      "rule_ids": [],
+      "conversion_reason": "Dataset-derived text has not been externally checked for this complete claim; it is not converted into clinical, safety, referral, or prescribing logic.",
+      "limitations": "Dataset-derived and medically unverified; not eligible for a clinical rule."
+    },
+    {
+      "condition": "Acne",
+      "claim_id": "KC-DATA-KP_0016-PREVENT",
+      "claim_type": "dataset_prevention_text",
+      "claim_summary": "Dataset prevention text retained from knowledge profile kp_0016.",
+      "evidence_status": "dataset_derived",
+      "phase6_rule_eligible": false,
+      "source_profile_id": "kp_0016",
+      "safety_relevance": "general",
+      "source_ids": [],
+      "supporting_source_urls": [],
+      "source_locators": [],
+      "complete_claim_supported": null,
+      "converted_to_rule": false,
+      "rule_ids": [],
+      "conversion_reason": "Dataset-derived text has not been externally checked for this complete claim; it is not converted into clinical, safety, referral, or prescribing logic.",
+      "limitations": "Dataset-derived and medically unverified; not eligible for a clinical rule."
+    },
+    {
+      "condition": "Acne",
+      "claim_id": "KC-DATA-KP_0016-SYM",
+      "claim_type": "dataset_symptom_profile",
+      "claim_summary": "Dataset symptom text retained from knowledge profile kp_0016.",
+      "evidence_status": "dataset_derived",
+      "phase6_rule_eligible": false,
+      "source_profile_id": "kp_0016",
+      "safety_relevance": "none",
+      "source_ids": [],
+      "supporting_source_urls": [],
+      "source_locators": [],
+      "complete_claim_supported": null,
+      "converted_to_rule": false,
+      "rule_ids": [],
+      "conversion_reason": "Dataset-derived text has not been externally checked for this complete claim; it is not converted into clinical, safety, referral, or prescribing logic.",
+      "limitations": "Dataset-derived and medically unverified; not eligible for a clinical rule."
+    },
+    {
+      "condition": "Common Cold",
+      "claim_id": "KC-COLD-REF-SAFE-001",
+      "claim_type": "referral_consideration",
+      "claim_summary": "NHS advises GP assessment when cold symptoms worsen, include shortness of breath or chest pain, or have not improved after 10 days.",
+      "evidence_status": "reference_checked",
+      "phase6_rule_eligible": true,
+      "source_profile_id": null,
+      "safety_relevance": "referral",
+      "source_ids": [
+        "SRC-NHS-COLD"
+      ],
+      "supporting_source_urls": [
+        "https://www.nhs.uk/conditions/common-cold/"
+      ],
+      "source_locators": [
+        "Non-urgent advice: See a GP if"
+      ],
+      "complete_claim_supported": true,
+      "converted_to_rule": true,
+      "rule_ids": [
+        "R-COLD-REFERRAL-001"
+      ],
+      "conversion_reason": "Converted because the exact reference-checked claim supplies a bounded, testable condition and safe information action.",
+      "limitations": "Selected NHS referral examples; this is not an exhaustive triage protocol."
+    },
+    {
+      "condition": "Common Cold",
+      "claim_id": "KC-COLD-REF-SELF-001",
+      "claim_type": "general_self_care",
+      "claim_summary": "Rest and adequate fluids are general self-care measures listed by NHS for a common cold.",
+      "evidence_status": "reference_checked",
+      "phase6_rule_eligible": true,
+      "source_profile_id": null,
+      "safety_relevance": "general",
+      "source_ids": [
+        "SRC-NHS-COLD"
+      ],
+      "supporting_source_urls": [
+        "https://www.nhs.uk/conditions/common-cold/"
+      ],
+      "source_locators": [
+        "How you can treat a cold yourself"
+      ],
+      "complete_claim_supported": true,
+      "converted_to_rule": true,
+      "rule_ids": [
+        "R-COLD-SELFCARE-001"
+      ],
+      "conversion_reason": "Converted because the exact reference-checked claim supplies a bounded, testable condition and safe information action.",
+      "limitations": "General self-care only; individual fluid restrictions are not assessed here."
+    },
+    {
+      "condition": "Common Cold",
+      "claim_id": "KC-COLD-REF-SYM-001",
+      "claim_type": "symptom",
+      "claim_summary": "Common cold symptoms commonly include a blocked or runny nose, sneezing, sore throat, hoarse voice, cough, and feeling tired or unwell.",
+      "evidence_status": "reference_checked",
+      "phase6_rule_eligible": false,
+      "source_profile_id": null,
+      "safety_relevance": "none",
+      "source_ids": [
+        "SRC-NHS-COLD"
+      ],
+      "supporting_source_urls": [
+        "https://www.nhs.uk/conditions/common-cold/"
+      ],
+      "source_locators": [
+        "Symptoms of a cold"
+      ],
+      "complete_claim_supported": true,
+      "converted_to_rule": false,
+      "rule_ids": [],
+      "conversion_reason": "Reference-checked descriptive symptom knowledge does not itself contain a complete testable condition-and-action pair.",
+      "limitations": "Symptoms overlap with other respiratory infections and are not diagnostic alone."
+    },
+    {
+      "condition": "Common Cold",
+      "claim_id": "KC-DATA-KP_0006-COMPLICATION",
+      "claim_type": "dataset_complication_text",
+      "claim_summary": "Dataset complication text retained from knowledge profile kp_0006.",
+      "evidence_status": "dataset_derived",
+      "phase6_rule_eligible": false,
+      "source_profile_id": "kp_0006",
+      "safety_relevance": "caution",
+      "source_ids": [],
+      "supporting_source_urls": [],
+      "source_locators": [],
+      "complete_claim_supported": null,
+      "converted_to_rule": false,
+      "rule_ids": [],
+      "conversion_reason": "Dataset-derived text has not been externally checked for this complete claim; it is not converted into clinical, safety, referral, or prescribing logic.",
+      "limitations": "Dataset-derived and medically unverified; not eligible for a clinical rule."
+    },
+    {
+      "condition": "Common Cold",
+      "claim_id": "KC-DATA-KP_0006-DOSHA",
+      "claim_type": "dataset_dosha_association",
+      "claim_summary": "Dataset-assigned Dosha tags: Vata, Kapha retained from knowledge profile kp_0006.",
+      "evidence_status": "dataset_derived",
+      "phase6_rule_eligible": false,
+      "source_profile_id": "kp_0006",
+      "safety_relevance": "none",
+      "source_ids": [],
+      "supporting_source_urls": [],
+      "source_locators": [],
+      "complete_claim_supported": null,
+      "converted_to_rule": false,
+      "rule_ids": [],
+      "conversion_reason": "Dataset-assigned Dosha association is medically unverified and is retained for provenance only; Phase 7 does not infer or resolve Dosha.",
+      "limitations": "Dataset-derived and medically unverified; not eligible for a clinical rule."
+    },
+    {
+      "condition": "Common Cold",
+      "claim_id": "KC-DATA-KP_0006-LIFESTYLE",
+      "claim_type": "dataset_lifestyle_text",
+      "claim_summary": "Dataset diet and lifestyle text retained from knowledge profile kp_0006.",
+      "evidence_status": "dataset_derived",
+      "phase6_rule_eligible": false,
+      "source_profile_id": "kp_0006",
+      "safety_relevance": "general",
+      "source_ids": [],
+      "supporting_source_urls": [],
+      "source_locators": [],
+      "complete_claim_supported": null,
+      "converted_to_rule": false,
+      "rule_ids": [],
+      "conversion_reason": "Dataset-derived text has not been externally checked for this complete claim; it is not converted into clinical, safety, referral, or prescribing logic.",
+      "limitations": "Dataset-derived and medically unverified; not eligible for a clinical rule."
+    },
+    {
+      "condition": "Common Cold",
+      "claim_id": "KC-DATA-KP_0006-PREVENT",
+      "claim_type": "dataset_prevention_text",
+      "claim_summary": "Dataset prevention text retained from knowledge profile kp_0006.",
+      "evidence_status": "dataset_derived",
+      "phase6_rule_eligible": false,
+      "source_profile_id": "kp_0006",
+      "safety_relevance": "general",
+      "source_ids": [],
+      "supporting_source_urls": [],
+      "source_locators": [],
+      "complete_claim_supported": null,
+      "converted_to_rule": false,
+      "rule_ids": [],
+      "conversion_reason": "Dataset-derived text has not been externally checked for this complete claim; it is not converted into clinical, safety, referral, or prescribing logic.",
+      "limitations": "Dataset-derived and medically unverified; not eligible for a clinical rule."
+    },
+    {
+      "condition": "Common Cold",
+      "claim_id": "KC-DATA-KP_0006-SYM",
+      "claim_type": "dataset_symptom_profile",
+      "claim_summary": "Dataset symptom text retained from knowledge profile kp_0006.",
+      "evidence_status": "dataset_derived",
+      "phase6_rule_eligible": false,
+      "source_profile_id": "kp_0006",
+      "safety_relevance": "none",
+      "source_ids": [],
+      "supporting_source_urls": [],
+      "source_locators": [],
+      "complete_claim_supported": null,
+      "converted_to_rule": false,
+      "rule_ids": [],
+      "conversion_reason": "Dataset-derived text has not been externally checked for this complete claim; it is not converted into clinical, safety, referral, or prescribing logic.",
+      "limitations": "Dataset-derived and medically unverified; not eligible for a clinical rule."
+    },
+    {
+      "condition": "Gastroesophageal Reflux Disease",
+      "claim_id": "KC-DATA-KP_0114-COMPLICATION",
+      "claim_type": "dataset_complication_text",
+      "claim_summary": "Dataset complication text retained from knowledge profile kp_0114.",
+      "evidence_status": "dataset_derived",
+      "phase6_rule_eligible": false,
+      "source_profile_id": "kp_0114",
+      "safety_relevance": "caution",
+      "source_ids": [],
+      "supporting_source_urls": [],
+      "source_locators": [],
+      "complete_claim_supported": null,
+      "converted_to_rule": false,
+      "rule_ids": [],
+      "conversion_reason": "Dataset-derived text has not been externally checked for this complete claim; it is not converted into clinical, safety, referral, or prescribing logic.",
+      "limitations": "Dataset-derived and medically unverified; not eligible for a clinical rule."
+    },
+    {
+      "condition": "Gastroesophageal Reflux Disease",
+      "claim_id": "KC-DATA-KP_0114-DOSHA",
+      "claim_type": "dataset_dosha_association",
+      "claim_summary": "Dataset-assigned Dosha tags: Pitta retained from knowledge profile kp_0114.",
+      "evidence_status": "dataset_derived",
+      "phase6_rule_eligible": false,
+      "source_profile_id": "kp_0114",
+      "safety_relevance": "none",
+      "source_ids": [],
+      "supporting_source_urls": [],
+      "source_locators": [],
+      "complete_claim_supported": null,
+      "converted_to_rule": false,
+      "rule_ids": [],
+      "conversion_reason": "Dataset-assigned Dosha association is medically unverified and is retained for provenance only; Phase 7 does not infer or resolve Dosha.",
+      "limitations": "Dataset-derived and medically unverified; not eligible for a clinical rule."
+    },
+    {
+      "condition": "Gastroesophageal Reflux Disease",
+      "claim_id": "KC-DATA-KP_0114-LIFESTYLE",
+      "claim_type": "dataset_lifestyle_text",
+      "claim_summary": "Dataset diet and lifestyle text retained from knowledge profile kp_0114.",
+      "evidence_status": "dataset_derived",
+      "phase6_rule_eligible": false,
+      "source_profile_id": "kp_0114",
+      "safety_relevance": "general",
+      "source_ids": [],
+      "supporting_source_urls": [],
+      "source_locators": [],
+      "complete_claim_supported": null,
+      "converted_to_rule": false,
+      "rule_ids": [],
+      "conversion_reason": "Dataset-derived text has not been externally checked for this complete claim; it is not converted into clinical, safety, referral, or prescribing logic.",
+      "limitations": "Dataset-derived and medically unverified; not eligible for a clinical rule."
+    },
+    {
+      "condition": "Gastroesophageal Reflux Disease",
+      "claim_id": "KC-DATA-KP_0114-PREVENT",
+      "claim_type": "dataset_prevention_text",
+      "claim_summary": "Dataset prevention text retained from knowledge profile kp_0114.",
+      "evidence_status": "dataset_derived",
+      "phase6_rule_eligible": false,
+      "source_profile_id": "kp_0114",
+      "safety_relevance": "general",
+      "source_ids": [],
+      "supporting_source_urls": [],
+      "source_locators": [],
+      "complete_claim_supported": null,
+      "converted_to_rule": false,
+      "rule_ids": [],
+      "conversion_reason": "Dataset-derived text has not been externally checked for this complete claim; it is not converted into clinical, safety, referral, or prescribing logic.",
+      "limitations": "Dataset-derived and medically unverified; not eligible for a clinical rule."
+    },
+    {
+      "condition": "Gastroesophageal Reflux Disease",
+      "claim_id": "KC-DATA-KP_0114-SYM",
+      "claim_type": "dataset_symptom_profile",
+      "claim_summary": "Dataset symptom text retained from knowledge profile kp_0114.",
+      "evidence_status": "dataset_derived",
+      "phase6_rule_eligible": false,
+      "source_profile_id": "kp_0114",
+      "safety_relevance": "none",
+      "source_ids": [],
+      "supporting_source_urls": [],
+      "source_locators": [],
+      "complete_claim_supported": null,
+      "converted_to_rule": false,
+      "rule_ids": [],
+      "conversion_reason": "Dataset-derived text has not been externally checked for this complete claim; it is not converted into clinical, safety, referral, or prescribing logic.",
+      "limitations": "Dataset-derived and medically unverified; not eligible for a clinical rule."
+    },
+    {
+      "condition": "Gastroesophageal Reflux Disease",
+      "claim_id": "KC-GERD-REF-SAFE-001",
+      "claim_type": "referral_consideration",
+      "claim_summary": "NHS advises GP assessment when self-care and pharmacy measures do not help, heartburn occurs most days, or swallowing difficulty, frequent vomiting, or unexplained weight loss occurs.",
+      "evidence_status": "reference_checked",
+      "phase6_rule_eligible": true,
+      "source_profile_id": null,
+      "safety_relevance": "referral",
+      "source_ids": [
+        "SRC-NHS-REFLUX"
+      ],
+      "supporting_source_urls": [
+        "https://www.nhs.uk/conditions/heartburn-and-acid-reflux/"
+      ],
+      "source_locators": [
+        "Non-urgent advice: See a GP if"
+      ],
+      "complete_claim_supported": true,
+      "converted_to_rule": true,
+      "rule_ids": [
+        "R-GERD-REFERRAL-001"
+      ],
+      "conversion_reason": "Converted because the exact reference-checked claim supplies a bounded, testable condition and safe information action.",
+      "limitations": "UK NHS referral wording; chest symptoms still require separate emergency assessment outside this claim."
+    },
+    {
+      "condition": "Gastroesophageal Reflux Disease",
+      "claim_id": "KC-GERD-REF-SELF-001",
+      "claim_type": "general_self_care",
+      "claim_summary": "NHS lists smaller, more frequent meals and avoiding personally triggering foods or drinks as measures that may reduce heartburn.",
+      "evidence_status": "reference_checked",
+      "phase6_rule_eligible": true,
+      "source_profile_id": null,
+      "safety_relevance": "general",
+      "source_ids": [
+        "SRC-NHS-REFLUX"
+      ],
+      "supporting_source_urls": [
+        "https://www.nhs.uk/conditions/heartburn-and-acid-reflux/"
+      ],
+      "source_locators": [
+        "How you can ease heartburn and acid reflux yourself"
+      ],
+      "complete_claim_supported": true,
+      "converted_to_rule": true,
+      "rule_ids": [
+        "R-GERD-SELFCARE-001"
+      ],
+      "conversion_reason": "Converted because the exact reference-checked claim supplies a bounded, testable condition and safe information action.",
+      "limitations": "General measures only; persistent symptoms require assessment."
+    },
+    {
+      "condition": "Gastroesophageal Reflux Disease",
+      "claim_id": "KC-GERD-REF-SYM-001",
+      "claim_type": "symptom",
+      "claim_summary": "The main acid-reflux symptoms listed by NHS are heartburn and an unpleasant sour taste in the mouth.",
+      "evidence_status": "reference_checked",
+      "phase6_rule_eligible": false,
+      "source_profile_id": null,
+      "safety_relevance": "none",
+      "source_ids": [
+        "SRC-NHS-REFLUX"
+      ],
+      "supporting_source_urls": [
+        "https://www.nhs.uk/conditions/heartburn-and-acid-reflux/"
+      ],
+      "source_locators": [
+        "Symptoms of acid reflux"
+      ],
+      "complete_claim_supported": true,
+      "converted_to_rule": false,
+      "rule_ids": [],
+      "conversion_reason": "Reference-checked descriptive symptom knowledge does not itself contain a complete testable condition-and-action pair.",
+      "limitations": "Symptoms are not specific and do not establish a diagnosis."
+    },
+    {
+      "condition": "Insomnia",
+      "claim_id": "KC-DATA-KP_0010-COMPLICATION",
+      "claim_type": "dataset_complication_text",
+      "claim_summary": "Dataset complication text retained from knowledge profile kp_0010.",
+      "evidence_status": "dataset_derived",
+      "phase6_rule_eligible": false,
+      "source_profile_id": "kp_0010",
+      "safety_relevance": "caution",
+      "source_ids": [],
+      "supporting_source_urls": [],
+      "source_locators": [],
+      "complete_claim_supported": null,
+      "converted_to_rule": false,
+      "rule_ids": [],
+      "conversion_reason": "Dataset-derived text has not been externally checked for this complete claim; it is not converted into clinical, safety, referral, or prescribing logic.",
+      "limitations": "Dataset-derived and medically unverified; not eligible for a clinical rule."
+    },
+    {
+      "condition": "Insomnia",
+      "claim_id": "KC-DATA-KP_0010-DOSHA",
+      "claim_type": "dataset_dosha_association",
+      "claim_summary": "Dataset-assigned Dosha tags: Vata, Pitta retained from knowledge profile kp_0010.",
+      "evidence_status": "dataset_derived",
+      "phase6_rule_eligible": false,
+      "source_profile_id": "kp_0010",
+      "safety_relevance": "none",
+      "source_ids": [],
+      "supporting_source_urls": [],
+      "source_locators": [],
+      "complete_claim_supported": null,
+      "converted_to_rule": false,
+      "rule_ids": [],
+      "conversion_reason": "Dataset-assigned Dosha association is medically unverified and is retained for provenance only; Phase 7 does not infer or resolve Dosha.",
+      "limitations": "Dataset-derived and medically unverified; not eligible for a clinical rule."
+    },
+    {
+      "condition": "Insomnia",
+      "claim_id": "KC-DATA-KP_0010-LIFESTYLE",
+      "claim_type": "dataset_lifestyle_text",
+      "claim_summary": "Dataset diet and lifestyle text retained from knowledge profile kp_0010.",
+      "evidence_status": "dataset_derived",
+      "phase6_rule_eligible": false,
+      "source_profile_id": "kp_0010",
+      "safety_relevance": "general",
+      "source_ids": [],
+      "supporting_source_urls": [],
+      "source_locators": [],
+      "complete_claim_supported": null,
+      "converted_to_rule": false,
+      "rule_ids": [],
+      "conversion_reason": "Dataset-derived text has not been externally checked for this complete claim; it is not converted into clinical, safety, referral, or prescribing logic.",
+      "limitations": "Dataset-derived and medically unverified; not eligible for a clinical rule."
+    },
+    {
+      "condition": "Insomnia",
+      "claim_id": "KC-DATA-KP_0010-PREVENT",
+      "claim_type": "dataset_prevention_text",
+      "claim_summary": "Dataset prevention text retained from knowledge profile kp_0010.",
+      "evidence_status": "dataset_derived",
+      "phase6_rule_eligible": false,
+      "source_profile_id": "kp_0010",
+      "safety_relevance": "general",
+      "source_ids": [],
+      "supporting_source_urls": [],
+      "source_locators": [],
+      "complete_claim_supported": null,
+      "converted_to_rule": false,
+      "rule_ids": [],
+      "conversion_reason": "Dataset-derived text has not been externally checked for this complete claim; it is not converted into clinical, safety, referral, or prescribing logic.",
+      "limitations": "Dataset-derived and medically unverified; not eligible for a clinical rule."
+    },
+    {
+      "condition": "Insomnia",
+      "claim_id": "KC-DATA-KP_0010-SYM",
+      "claim_type": "dataset_symptom_profile",
+      "claim_summary": "Dataset symptom text retained from knowledge profile kp_0010.",
+      "evidence_status": "dataset_derived",
+      "phase6_rule_eligible": false,
+      "source_profile_id": "kp_0010",
+      "safety_relevance": "none",
+      "source_ids": [],
+      "supporting_source_urls": [],
+      "source_locators": [],
+      "complete_claim_supported": null,
+      "converted_to_rule": false,
+      "rule_ids": [],
+      "conversion_reason": "Dataset-derived text has not been externally checked for this complete claim; it is not converted into clinical, safety, referral, or prescribing logic.",
+      "limitations": "Dataset-derived and medically unverified; not eligible for a clinical rule."
+    },
+    {
+      "condition": "Insomnia",
+      "claim_id": "KC-DATA-KP_0150-COMPLICATION",
+      "claim_type": "dataset_complication_text",
+      "claim_summary": "Dataset complication text retained from knowledge profile kp_0150.",
+      "evidence_status": "dataset_derived",
+      "phase6_rule_eligible": false,
+      "source_profile_id": "kp_0150",
+      "safety_relevance": "caution",
+      "source_ids": [],
+      "supporting_source_urls": [],
+      "source_locators": [],
+      "complete_claim_supported": null,
+      "converted_to_rule": false,
+      "rule_ids": [],
+      "conversion_reason": "Dataset-derived text has not been externally checked for this complete claim; it is not converted into clinical, safety, referral, or prescribing logic.",
+      "limitations": "Dataset-derived and medically unverified; not eligible for a clinical rule."
+    },
+    {
+      "condition": "Insomnia",
+      "claim_id": "KC-DATA-KP_0150-DOSHA",
+      "claim_type": "dataset_dosha_association",
+      "claim_summary": "Dataset-assigned Dosha tags: Vata retained from knowledge profile kp_0150.",
+      "evidence_status": "dataset_derived",
+      "phase6_rule_eligible": false,
+      "source_profile_id": "kp_0150",
+      "safety_relevance": "none",
+      "source_ids": [],
+      "supporting_source_urls": [],
+      "source_locators": [],
+      "complete_claim_supported": null,
+      "converted_to_rule": false,
+      "rule_ids": [],
+      "conversion_reason": "Dataset-assigned Dosha association is medically unverified and is retained for provenance only; Phase 7 does not infer or resolve Dosha.",
+      "limitations": "Dataset-derived and medically unverified; not eligible for a clinical rule."
+    },
+    {
+      "condition": "Insomnia",
+      "claim_id": "KC-DATA-KP_0150-LIFESTYLE",
+      "claim_type": "dataset_lifestyle_text",
+      "claim_summary": "Dataset diet and lifestyle text retained from knowledge profile kp_0150.",
+      "evidence_status": "dataset_derived",
+      "phase6_rule_eligible": false,
+      "source_profile_id": "kp_0150",
+      "safety_relevance": "general",
+      "source_ids": [],
+      "supporting_source_urls": [],
+      "source_locators": [],
+      "complete_claim_supported": null,
+      "converted_to_rule": false,
+      "rule_ids": [],
+      "conversion_reason": "Dataset-derived text has not been externally checked for this complete claim; it is not converted into clinical, safety, referral, or prescribing logic.",
+      "limitations": "Dataset-derived and medically unverified; not eligible for a clinical rule."
+    },
+    {
+      "condition": "Insomnia",
+      "claim_id": "KC-DATA-KP_0150-PREVENT",
+      "claim_type": "dataset_prevention_text",
+      "claim_summary": "Dataset prevention text retained from knowledge profile kp_0150.",
+      "evidence_status": "dataset_derived",
+      "phase6_rule_eligible": false,
+      "source_profile_id": "kp_0150",
+      "safety_relevance": "general",
+      "source_ids": [],
+      "supporting_source_urls": [],
+      "source_locators": [],
+      "complete_claim_supported": null,
+      "converted_to_rule": false,
+      "rule_ids": [],
+      "conversion_reason": "Dataset-derived text has not been externally checked for this complete claim; it is not converted into clinical, safety, referral, or prescribing logic.",
+      "limitations": "Dataset-derived and medically unverified; not eligible for a clinical rule."
+    },
+    {
+      "condition": "Insomnia",
+      "claim_id": "KC-DATA-KP_0150-SYM",
+      "claim_type": "dataset_symptom_profile",
+      "claim_summary": "Dataset symptom text retained from knowledge profile kp_0150.",
+      "evidence_status": "dataset_derived",
+      "phase6_rule_eligible": false,
+      "source_profile_id": "kp_0150",
+      "safety_relevance": "none",
+      "source_ids": [],
+      "supporting_source_urls": [],
+      "source_locators": [],
+      "complete_claim_supported": null,
+      "converted_to_rule": false,
+      "rule_ids": [],
+      "conversion_reason": "Dataset-derived text has not been externally checked for this complete claim; it is not converted into clinical, safety, referral, or prescribing logic.",
+      "limitations": "Dataset-derived and medically unverified; not eligible for a clinical rule."
+    },
+    {
+      "condition": "Insomnia",
+      "claim_id": "KC-INSOMNIA-REF-SAFE-001",
+      "claim_type": "referral_consideration",
+      "claim_summary": "NHS advises GP assessment when sleep-habit changes have not helped, sleeping difficulty has lasted for months, or insomnia makes daily life hard to cope with.",
+      "evidence_status": "reference_checked",
+      "phase6_rule_eligible": true,
+      "source_profile_id": null,
+      "safety_relevance": "referral",
+      "source_ids": [
+        "SRC-NHS-INSOMNIA"
+      ],
+      "supporting_source_urls": [
+        "https://www.nhs.uk/conditions/insomnia/"
+      ],
+      "source_locators": [
+        "Non-urgent advice: See a GP if"
+      ],
+      "complete_claim_supported": true,
+      "converted_to_rule": true,
+      "rule_ids": [
+        "R-INSOMNIA-REFERRAL-001"
+      ],
+      "conversion_reason": "Converted because the exact reference-checked claim supplies a bounded, testable condition and safe information action.",
+      "limitations": "General UK NHS referral advice; it is not an emergency or mental-health triage rule."
+    },
+    {
+      "condition": "Insomnia",
+      "claim_id": "KC-INSOMNIA-REF-SELF-001",
+      "claim_type": "general_self_care",
+      "claim_summary": "NHS sleep-habit advice includes keeping a consistent wake time, relaxing before bed, and making the bedroom dark and quiet.",
+      "evidence_status": "reference_checked",
+      "phase6_rule_eligible": true,
+      "source_profile_id": null,
+      "safety_relevance": "general",
+      "source_ids": [
+        "SRC-NHS-INSOMNIA"
+      ],
+      "supporting_source_urls": [
+        "https://www.nhs.uk/conditions/insomnia/"
+      ],
+      "source_locators": [
+        "How you can treat insomnia yourself"
+      ],
+      "complete_claim_supported": true,
+      "converted_to_rule": true,
+      "rule_ids": [
+        "R-INSOMNIA-SELFCARE-001"
+      ],
+      "conversion_reason": "Converted because the exact reference-checked claim supplies a bounded, testable condition and safe information action.",
+      "limitations": "General sleep-habit advice; it does not address every cause of insomnia."
+    },
+    {
+      "condition": "Insomnia",
+      "claim_id": "KC-INSOMNIA-REF-SYM-001",
+      "claim_type": "symptom",
+      "claim_summary": "Insomnia may involve difficulty falling asleep, repeated waking, early waking, tiredness after waking, daytime irritability, or difficulty concentrating because of tiredness.",
+      "evidence_status": "reference_checked",
+      "phase6_rule_eligible": false,
+      "source_profile_id": null,
+      "safety_relevance": "none",
+      "source_ids": [
+        "SRC-NHS-INSOMNIA"
+      ],
+      "supporting_source_urls": [
+        "https://www.nhs.uk/conditions/insomnia/"
+      ],
+      "source_locators": [
+        "Symptoms of insomnia"
+      ],
+      "complete_claim_supported": true,
+      "converted_to_rule": false,
+      "rule_ids": [],
+      "conversion_reason": "Reference-checked descriptive symptom knowledge does not itself contain a complete testable condition-and-action pair.",
+      "limitations": "A symptom summary only; causes and other sleep disorders require assessment."
+    },
+    {
+      "condition": "Osteoarthritis",
+      "claim_id": "KC-DATA-KP_0226-COMPLICATION",
+      "claim_type": "dataset_complication_text",
+      "claim_summary": "Dataset complication text retained from knowledge profile kp_0226.",
+      "evidence_status": "dataset_derived",
+      "phase6_rule_eligible": false,
+      "source_profile_id": "kp_0226",
+      "safety_relevance": "caution",
+      "source_ids": [],
+      "supporting_source_urls": [],
+      "source_locators": [],
+      "complete_claim_supported": null,
+      "converted_to_rule": false,
+      "rule_ids": [],
+      "conversion_reason": "Dataset-derived text has not been externally checked for this complete claim; it is not converted into clinical, safety, referral, or prescribing logic.",
+      "limitations": "Dataset-derived and medically unverified; not eligible for a clinical rule."
+    },
+    {
+      "condition": "Osteoarthritis",
+      "claim_id": "KC-DATA-KP_0226-DOSHA",
+      "claim_type": "dataset_dosha_association",
+      "claim_summary": "Dataset-assigned Dosha tags: Vata, Kapha retained from knowledge profile kp_0226.",
+      "evidence_status": "dataset_derived",
+      "phase6_rule_eligible": false,
+      "source_profile_id": "kp_0226",
+      "safety_relevance": "none",
+      "source_ids": [],
+      "supporting_source_urls": [],
+      "source_locators": [],
+      "complete_claim_supported": null,
+      "converted_to_rule": false,
+      "rule_ids": [],
+      "conversion_reason": "Dataset-assigned Dosha association is medically unverified and is retained for provenance only; Phase 7 does not infer or resolve Dosha.",
+      "limitations": "Dataset-derived and medically unverified; not eligible for a clinical rule."
+    },
+    {
+      "condition": "Osteoarthritis",
+      "claim_id": "KC-DATA-KP_0226-LIFESTYLE",
+      "claim_type": "dataset_lifestyle_text",
+      "claim_summary": "Dataset diet and lifestyle text retained from knowledge profile kp_0226.",
+      "evidence_status": "dataset_derived",
+      "phase6_rule_eligible": false,
+      "source_profile_id": "kp_0226",
+      "safety_relevance": "general",
+      "source_ids": [],
+      "supporting_source_urls": [],
+      "source_locators": [],
+      "complete_claim_supported": null,
+      "converted_to_rule": false,
+      "rule_ids": [],
+      "conversion_reason": "Dataset-derived text has not been externally checked for this complete claim; it is not converted into clinical, safety, referral, or prescribing logic.",
+      "limitations": "Dataset-derived and medically unverified; not eligible for a clinical rule."
+    },
+    {
+      "condition": "Osteoarthritis",
+      "claim_id": "KC-DATA-KP_0226-PREVENT",
+      "claim_type": "dataset_prevention_text",
+      "claim_summary": "Dataset prevention text retained from knowledge profile kp_0226.",
+      "evidence_status": "dataset_derived",
+      "phase6_rule_eligible": false,
+      "source_profile_id": "kp_0226",
+      "safety_relevance": "general",
+      "source_ids": [],
+      "supporting_source_urls": [],
+      "source_locators": [],
+      "complete_claim_supported": null,
+      "converted_to_rule": false,
+      "rule_ids": [],
+      "conversion_reason": "Dataset-derived text has not been externally checked for this complete claim; it is not converted into clinical, safety, referral, or prescribing logic.",
+      "limitations": "Dataset-derived and medically unverified; not eligible for a clinical rule."
+    },
+    {
+      "condition": "Osteoarthritis",
+      "claim_id": "KC-DATA-KP_0226-SYM",
+      "claim_type": "dataset_symptom_profile",
+      "claim_summary": "Dataset symptom text retained from knowledge profile kp_0226.",
+      "evidence_status": "dataset_derived",
+      "phase6_rule_eligible": false,
+      "source_profile_id": "kp_0226",
+      "safety_relevance": "none",
+      "source_ids": [],
+      "supporting_source_urls": [],
+      "source_locators": [],
+      "complete_claim_supported": null,
+      "converted_to_rule": false,
+      "rule_ids": [],
+      "conversion_reason": "Dataset-derived text has not been externally checked for this complete claim; it is not converted into clinical, safety, referral, or prescribing logic.",
+      "limitations": "Dataset-derived and medically unverified; not eligible for a clinical rule."
+    },
+    {
+      "condition": "Osteoarthritis",
+      "claim_id": "KC-OA-REF-SAFE-001",
+      "claim_type": "referral_consideration",
+      "claim_summary": "NHS advises GP assessment for persistent symptoms of osteoarthritis.",
+      "evidence_status": "reference_checked",
+      "phase6_rule_eligible": true,
+      "source_profile_id": null,
+      "safety_relevance": "referral",
+      "source_ids": [
+        "SRC-NHS-OA"
+      ],
+      "supporting_source_urls": [
+        "https://www.nhs.uk/conditions/osteoarthritis/"
+      ],
+      "source_locators": [
+        "Symptoms of osteoarthritis"
+      ],
+      "complete_claim_supported": true,
+      "converted_to_rule": true,
+      "rule_ids": [
+        "R-OA-REFERRAL-001"
+      ],
+      "conversion_reason": "Converted because the exact reference-checked claim supplies a bounded, testable condition and safe information action.",
+      "limitations": "General UK NHS advice; it does not define urgent joint presentations."
+    },
+    {
+      "condition": "Osteoarthritis",
+      "claim_id": "KC-OA-REF-SELF-001",
+      "claim_type": "general_self_care",
+      "claim_summary": "NHS lists regular exercise and, when applicable, weight reduction among measures that can help manage mild osteoarthritis symptoms.",
+      "evidence_status": "reference_checked",
+      "phase6_rule_eligible": true,
+      "source_profile_id": null,
+      "safety_relevance": "general",
+      "source_ids": [
+        "SRC-NHS-OA"
+      ],
+      "supporting_source_urls": [
+        "https://www.nhs.uk/conditions/osteoarthritis/"
+      ],
+      "source_locators": [
+        "Treating osteoarthritis"
+      ],
+      "complete_claim_supported": true,
+      "converted_to_rule": true,
+      "rule_ids": [
+        "R-OA-SELFCARE-001"
+      ],
+      "conversion_reason": "Converted because the exact reference-checked claim supplies a bounded, testable condition and safe information action.",
+      "limitations": "Exercise should be individualized; this claim does not specify an exercise prescription."
+    },
+    {
+      "condition": "Osteoarthritis",
+      "claim_id": "KC-OA-REF-SYM-001",
+      "claim_type": "symptom",
+      "claim_summary": "Osteoarthritis commonly involves joint pain, stiffness, and problems moving the affected joint.",
+      "evidence_status": "reference_checked",
+      "phase6_rule_eligible": false,
+      "source_profile_id": null,
+      "safety_relevance": "none",
+      "source_ids": [
+        "SRC-NHS-OA"
+      ],
+      "supporting_source_urls": [
+        "https://www.nhs.uk/conditions/osteoarthritis/"
+      ],
+      "source_locators": [
+        "Symptoms of osteoarthritis"
+      ],
+      "complete_claim_supported": true,
+      "converted_to_rule": false,
+      "rule_ids": [],
+      "conversion_reason": "Reference-checked descriptive symptom knowledge does not itself contain a complete testable condition-and-action pair.",
+      "limitations": "Symptoms overlap with other joint conditions and are not diagnostic alone."
+    }
+  ],
+  "claim_review_summary": {
+    "total_claims_reviewed": 45,
+    "converted_claims": 10,
+    "knowledge_only_claims": 35,
+    "reference_checked_claims": 15,
+    "dataset_derived_claims": 30
+  }
+}

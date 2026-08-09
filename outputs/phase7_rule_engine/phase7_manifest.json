@@ -1,0 +1,185 @@
+{
+  "phase": 7,
+  "status": "implemented_awaiting_user_approval",
+  "generated_at_utc": "2026-08-06T15:41:34.587818+00:00",
+  "schema_version": "1.1.0-phase7",
+  "software_versions": {
+    "python": "3.12.7",
+    "sqlite": "3.45.3"
+  },
+  "random_seed": {
+    "value": null,
+    "reason": "Not applicable: Phase 7 evaluation and seeding are deterministic and non-stochastic."
+  },
+  "database": {
+    "path": "C:\\Users\\thisari.thathsarani\\Documents\\MSc AI Coursework\\ayurvedic_hybrid_ai\\data\\knowledge_base\\ayurvedic_knowledge.db",
+    "sha256": "E52BD930AEE515F32012AC24359E7A94F4B4F726B0A5F86465185B1D2103ADFD"
+  },
+  "parent_phase6": {
+    "manifest_path": "C:\\Users\\thisari.thathsarani\\Documents\\MSc AI Coursework\\ayurvedic_hybrid_ai\\outputs\\phase6_knowledge_base\\database_manifest.json",
+    "manifest_sha256": "F125C5992308424FAAA46F9F0610D39B29A676BB2452DDA9193233CAF722A141",
+    "accepted_database_sha256": "6C78E31E694BC457E8481E572FCB4C685AD173767657D553FB20572BBE4AE333"
+  },
+  "migration": {
+    "files": [
+      {
+        "path": "C:\\Users\\thisari.thathsarani\\Documents\\MSc AI Coursework\\ayurvedic_hybrid_ai\\sql\\migrations\\002_phase7_rule_lifecycle.sql",
+        "sha256": "3A6AE8E5B39C22C2769AE535A2B59005883796D6CC3DACD4EAC5B9CF87F3B36D"
+      },
+      {
+        "path": "C:\\Users\\thisari.thathsarani\\Documents\\MSc AI Coursework\\ayurvedic_hybrid_ai\\sql\\migrations\\003_phase7_rule_validation_status.sql",
+        "sha256": "7729E36190978EAF41D46876E9BEF7611DFF4FEDDF3F98F6BA018A256A2C87E9"
+      },
+      {
+        "path": "C:\\Users\\thisari.thathsarani\\Documents\\MSc AI Coursework\\ayurvedic_hybrid_ai\\sql\\migrations\\004_phase7_rule_staleness_audit.sql",
+        "sha256": "675B6E2E4409CD2ECE1CDBECFBBCDCC555935B457D11FEADFB108EEE9DC1D066"
+      }
+    ],
+    "changed_database_this_run": false,
+    "idempotent": true
+  },
+  "total_rule_count": 10,
+  "rule_counts": {
+    "condition": {
+      "Acne": 2,
+      "Common Cold": 2,
+      "Gastroesophageal Reflux Disease": 2,
+      "Insomnia": 2,
+      "Osteoarthritis": 2
+    },
+    "rule_type": {
+      "general_recommendation": 5,
+      "professional_referral": 5
+    },
+    "evidence_status": {
+      "reference_checked": 10
+    },
+    "lifecycle_status": {
+      "active": 10
+    }
+  },
+  "supported_operators": [
+    "all",
+    "any",
+    "not",
+    "eq",
+    "in",
+    "contains",
+    "gte",
+    "lte",
+    "exists"
+  ],
+  "supported_actions": [
+    "professional_referral",
+    "recommendation_exclusion",
+    "contraindication_warning",
+    "dataset_demonstration",
+    "general_recommendation"
+  ],
+  "hashes": {
+    "rule_definitions_sha256": "EC15226316D30DB31D3AAB63D5A363F72B411A1427F9AD7F9ACA7971C2480D61",
+    "rule_catalog_json_sha256": "E1AAA848DEF79761EDB4F483DEC02C7F139ADC81719CBC84E0435E4FDAA08C1D",
+    "rule_catalog_csv_sha256": "C44F8640F47C039978CA9D99C3C30E2FB528674D5637105D6C786170376E25F5",
+    "rule_validation_results_sha256": "F19BA17A8841C1674C3F880A46E4077BD34B13782C95F8399512C98FD8192086",
+    "sample_explanation_traces_sha256": "B61BDD45F16AA62E667044D54B0F0CF982C8A61AB75D095BE8950F0CFD224EA3",
+    "json_schema_sha256": "6BF910B3BBB20789D21E5E27D828CEC5CBB892DB4B0B21A86D8A4727E005DBBE"
+  },
+  "claim_review_summary": {
+    "total_claims_reviewed": 45,
+    "converted_claims": 10,
+    "knowledge_only_claims": 35,
+    "reference_checked_claims": 15,
+    "dataset_derived_claims": 30
+  },
+  "validation_results": {
+    "all_rule_structures_and_links_valid": true,
+    "foreign_key_violation_count": 0,
+    "claim_count_reviewed": 45,
+    "converted_claim_count": 10,
+    "expert_reviewed_rule_count": 0,
+    "exact_dosage_findings": [],
+    "production_later_phase_tables_empty": true,
+    "final_test_access_events": 0,
+    "final_test_metrics_calculated": 0,
+    "passed": true
+  },
+  "conflict_counts": {
+    "production_runtime_conflicts": 0,
+    "retained_dataset_disagreements": 1
+  },
+  "expert_reviewed_rules": 0,
+  "exact_dosage_findings": [],
+  "production_empty_tables": {
+    "model_predictions": 0,
+    "retrieval_results": 0,
+    "final_recommendations": 0
+  },
+  "row_counts": {
+    "conditions": 5,
+    "condition_aliases": 15,
+    "symptoms": 36,
+    "condition_symptoms": 36,
+    "doshas": 3,
+    "condition_doshas": 9,
+    "recommendations": 17,
+    "recommendation_categories": 3,
+    "formulations": 0,
+    "ingredients": 0,
+    "formulation_ingredients": 0,
+    "contraindications": 0,
+    "safety_claims": 11,
+    "evidence_sources": 5,
+    "knowledge_claims": 45,
+    "claim_evidence": 15,
+    "knowledge_rules": 10,
+    "rule_evidence": 10,
+    "rule_validation": 10,
+    "knowledge_base_versions": 2,
+    "model_predictions": 0,
+    "retrieval_results": 0,
+    "final_recommendations": 0,
+    "stale_items": 0,
+    "final_recommendation_claims": 0,
+    "audit_log": 65
+  },
+  "final_test_seal": {
+    "allowed_partitions": [
+      "train",
+      "validation"
+    ],
+    "approved_profile_count": 6,
+    "approved_condition_count": 5,
+    "retained_profile_ids": [
+      "kp_0006",
+      "kp_0010",
+      "kp_0016",
+      "kp_0114",
+      "kp_0150",
+      "kp_0226"
+    ],
+    "final_test_profiles_retained": 0,
+    "final_test_fields_retained": 0,
+    "final_test_predictions_retained": 0,
+    "final_test_errors_retained": 0,
+    "final_test_metrics_calculated": false,
+    "phase7_ml_model_loaded": false,
+    "phase7_final_test_access_events": 0,
+    "phase7_final_test_metrics": 0
+  },
+  "scope_confirmations": {
+    "condition_inference_performed": false,
+    "dosha_inference_performed": false,
+    "diagnosis_output_created": false,
+    "exact_dosage_created": false,
+    "ml_model_loaded": false,
+    "phase8_retrieval_started": false,
+    "phase9_hybrid_integration_started": false,
+    "synthetic_executions_saved_to_production": false
+  },
+  "test_results": {
+    "passed": 75,
+    "total": 75,
+    "phase7_tests": 14,
+    "warnings": 1
+  }
+}
