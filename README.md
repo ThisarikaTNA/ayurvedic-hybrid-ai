@@ -1,4 +1,5 @@
-# Explainable Hybrid AI for Ayurvedic Knowledge Profiles
+# Hybrid AI Based Ayurvedic Decision Support System
+
 
 This repository contains an MSc coursework research prototype combining:
 
