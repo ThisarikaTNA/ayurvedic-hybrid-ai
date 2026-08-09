@@ -1,0 +1,11 @@
+# Versions used for the frozen Phase 10 evaluation and Phase 11 verification.
+numpy==1.26.4
+pandas==2.2.2
+scipy==1.13.1
+scikit-learn==1.5.1
+threadpoolctl==3.5.0
+joblib==1.4.2
+openpyxl==3.1.5
+matplotlib==3.9.2
+seaborn==0.13.2
+pytest==7.4.4
