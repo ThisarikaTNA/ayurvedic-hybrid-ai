@@ -1,0 +1,368 @@
+disease,profile_count
+Asthma,4
+Tuberculosis,3
+Arthritis,3
+Cystic Fibrosis,3
+Epilepsy,3
+Atherosclerosis,3
+Hepatitis,3
+Hypertension,3
+Coronary Artery Disease,2
+Anxiety,2
+Fever,2
+Constipation,2
+Obesity,2
+Pancreatitis,2
+Sickle Cell Anemia,2
+Stroke,2
+Sleep Apnea,2
+Skin Cancer (Melanoma),2
+Cardiomyopathy,2
+Lupus,2
+Lymphoma,2
+Autosomal Dominant Polycystic Kidney Disease,2
+Aspartylglucosaminuria,2
+Barth Syndrome,2
+Celiac Disease,2
+Amyotrophic Lateral Sclerosis (ALS),2
+Measles,2
+Insomnia,2
+Alzheimer's Disease,2
+Alkaptonuria,2
+Migraine,2
+Addison's Disease,2
+Adrenal Insufficiency,2
+Asparagine Synthetase Deficiency,2
+Arrhythmia,2
+Ascariasis,2
+Indigestion,2
+Malaria,2
+Back Pain,2
+Rheumatoid Arthritis,2
+Dementia,2
+Menstrual Disorders,2
+Cough,2
+Gout,2
+Irritable Bowel Syndrome (IBS),2
+Hypothyroidism,2
+Zika Virus,2
+Chronic Fatigue Syndrome,2
+Heart Attack (Myocardial Infarction),2
+Glomerulonephritis,2
+Bipolar Disorder,2
+Kidney Stones,2
+Fibromyalgia,2
+Depression,2
+Dengue Fever,2
+Gallstones,2
+Crohn's Disease,2
+Peptic Ulcers,2
+Diabetes,2
+Kidney Cancer,2
+Psoriasis,2
+Prostate Cancer,2
+Multiple Sclerosis,2
+Pneumocystis Pneumonia,2
+Pneumonia,2
+Osteoporosis,2
+Parkinson's Disease,2
+Colorectal Cancer,2
+Leprosy,2
+Leukemia,2
+Carpal Tunnel Syndrome,1
+Acromegaly,1
+Cerebrotendinous Xanthomatosis,1
+Carbamoyl Phosphate Synthetase I Deficiency Disease,1
+Common Cold,1
+Skin Allergy,1
+Acidity,1
+Acne,1
+Argininosuccinic Aciduria,1
+Acute Kidney Injury,1
+Allergies,1
+Cysticercosis,1
+Alopecia,1
+Argininemia,1
+Cushing's Syndrome,1
+Brugada Syndrome,1
+Chagas Disease,1
+Hepatitis B,1
+Cryptosporidiosis,1
+Crimean-Congo Hemorrhagic Fever,1
+Buruli Ulcer,1
+Histoplasmosis,1
+Hepatitis C,1
+Chickenpox,1
+Chikungunya,1
+Chromoblastomycosis,1
+Chronic Kidney Disease (CKD),1
+Chronic Obstructive Pulmonary Disease (COPD),1
+Ciguatera Poisoning,1
+Clonorchiasis,1
+Coffin-Lowry Syndrome,1
+Cold,1
+Contact Dermatitis,1
+Costello Syndrome,1
+Crigler-Najjar Syndrome,1
+Bubonic Plague,1
+Fascioliasis,1
+COVID-19,1
+Canavan Disease,1
+Hendra Virus Infection,1
+Hepatitis A,1
+Hantavirus Pulmonary Syndrome,1
+Pancreatic Cancer,1
+Filariasis,1
+Enterobiasis,1
+Dentinogenesis Imperfecta,1
+Desbuquois Dysplasia,1
+Diabetes Mellitus Type 1 and Type 2,1
+Digestive Disorders,1
+Dihydropyrimidine Dehydrogenase Deficiency,1
+Diphtheria,1
+Down Syndrome,1
+Mucolipidosis,1
+Dracunculiasis,1
+Hemophilia,1
+Hemochromatosis,1
+Heart Failure,1
+Graves Disease,1
+Amebiasis,1
+Cystinosis,1
+Dandruff,1
+Dengue Hemorrhagic Fever,1
+Gastroesophageal Reflux Disease (GERD),1
+Giardiasis,1
+Guillain-Barre Syndrome,1
+Heart Disease,1
+Guinea Worm Disease,1
+HIV/AIDS,1
+Hair Loss,1
+Fragile X Syndrome,1
+"Hand, Foot, and Mouth Disease",1
+Hashimoto's Thyroiditis,1
+Menopause,1
+Mycetoma,1
+Mowat-Wilson Syndrome,1
+Langerhans Cell Histiocytosis,1
+Huntington's Disease,1
+Hydronephrosis,1
+Hypercholesterolemia,1
+Hyperparathyroidism,1
+Hyperthyroidism,1
+Hypoglycemia,1
+Inflammation,1
+Lymphatic Filariasis,1
+Inflammatory Bowel Disease (IBD),1
+Joint Pain,1
+Kala-azar,1
+Kawasaki Disease,1
+Kearns-Sayre Syndrome,1
+Kleine-Levin Syndrome,1
+Klinefelter Syndrome,1
+Kyasanur Forest Disease,1
+Larsen Syndrome,1
+Monkeypox,1
+Lassa Fever,1
+Leigh Syndrome,1
+Leishmaniasis,1
+Leptospirosis,1
+Lesch-Nyhan Syndrome,1
+Leukodystrophy,1
+Liddle Syndrome,1
+Lipid Storage Disease,1
+Liver Cancer,1
+Liver Cirrhosis,1
+Liver Disorders,1
+Loeys-Dietz Syndrome,1
+Loiasis,1
+Lowe Syndrome,1
+Lung Cancer,1
+Lyme Disease,1
+Krabbe Disease,1
+Influenza,1
+Hookworm Infection,1
+Maffucci Syndrome,1
+Multiple Sulfatase Deficiency,1
+Mucopolysaccharidosis,1
+Marburg,1
+Marburg Virus Disease,1
+Marfan Syndrome,1
+McCune-Albright Syndrome,1
+Melanoma,1
+Melioidosis,1
+Meningitis,1
+Mansonelliasis,1
+Menkes Disease,1
+Mental Health Disorders,1
+Mental Stress,1
+Metabolic Syndrome,1
+Miller-Dieker Syndrome,1
+Muscular Dystrophy,1
+Myasthenia Gravis,1
+Ovarian Cancer,1
+Neurotoxocariasis,1
+Maple Syrup Urine Disease,1
+Ebola,1
+Myotonia Congenita,1
+Naegleria Infection,1
+Nephrotic Syndrome,1
+Neurofibromatosis,1
+Niemann-Pick Disease,1
+Osteopetrosis,1
+Nipah Virus Infection,1
+Noonan Syndrome,1
+Onchocerciasis (River Blindness),1
+Opistorchiasis,1
+Osteoarthritis,1
+Osteogenesis Imperfecta,1
+Dyggve-Melchior-Clausen Syndrome,1
+Wilson's Disease,1
+Ebola Virus,1
+Rheumatic Heart Disease,1
+Yeast Infections,1
+Rickettsial Diseases,1
+Rocky Mountain Spotted Fever,1
+Rosacea,1
+Rett Syndrome,1
+Primary Ciliary Dyskinesia,1
+Primary Amebic Meningoencephalitis,1
+Prader-Willi Syndrome,1
+Pelvic Floor Disorders,1
+Diabetic Retinopathy,1
+Peripheral Artery Disease,1
+Peutz-Jeghers Syndrome,1
+Pfeiffer Syndrome,1
+Phenylketonuria (PKU),1
+Pinta,1
+Zoonotic Infections,1
+Respiratory Issues,1
+Echinococcosis,1
+Crohn’s Disease,1
+Gallbladder Disease,1
+Gastroenteritis,1
+Gingivitis,1
+Glaucoma,1
+Goiter,1
+Dyslipidemia,1
+Tularemia,1
+Typhus,1
+Urinary Tract Infection (UTI),1
+Pulmonary Hypertension,1
+Q Fever,1
+Rabies,1
+Relapsing Fever,1
+Bell's Palsy,1
+Renal Hypertension,1
+Pitt-Hopkins Syndrome,1
+Pituitary Tumors,1
+Pneumoconiosis,1
+Pneumonic Plague,1
+Talaromycosis,1
+Strongyloidiasis,1
+Worm Infections,1
+Viral Infections,1
+Sciatica,1
+Skin Rash,1
+Sparganosis,1
+Skin Diseases,1
+"Skin Infections (Bacterial, Fungal, Viral)",1
+Wilson’s Disease,1
+Sexual Dysfunction,1
+Whipple's Disease,1
+Sjogren's Syndrome,1
+Sleeping Sickness (Trypanosomiasis),1
+Septicemic Plague,1
+Tay-Sachs Disease,1
+Tendinitis,1
+Tetanus,1
+Rift Valley Fever,1
+Polio,1
+Polycystic Kidney Disease,1
+Polycystic Ovary Syndrome (PCOS),1
+Porphyria,1
+Schistosomiasis,1
+Scoliosis,1
+Seborrheic Dermatitis,1
+Thalassemia,1
+Varicose Veins,1
+Trichuriasis,1
+Trichinellosis,1
+Trachoma,1
+Toxoplasmosis,1
+Toxocariasis,1
+Erectile Dysfunction,1
+Ear Infections,1
+Diverticulitis,1
+Zoonotic Malaria,1
+Systemic Lupus Erythematosus (SLE),1
+Brain Tumors,1
+Bronchiectasis,1
+Stress,1
+Anemia,1
+Candidiasis,1
+Acanthosis Nigricans,1
+Weight Loss,1
+Type 1 Diabetes,1
+Raynaud's Disease,1
+Ulcerative Colitis,1
+Urinary Tract Infections (UTIs),1
+Vitiligo,1
+West Nile Virus,1
+Yaws,1
+Bladder Cancer,1
+Testicular Cancer,1
+Thyroid Cancer,1
+Anxiety Disorder,1
+Eczema (Atopic Dermatitis),1
+Emphysema,1
+Endometriosis,1
+Duchenne Muscular Dystrophy,1
+Paracoccidioidomycosis,1
+Mitochondrial Myopathy,1
+Angina,1
+Tinnitus,1
+Paragonimiasis,1
+Aortic Aneurysm,1
+Aphasia,1
+Atopic Dermatitis,1
+Autoimmune Hepatitis,1
+Bacterial Infections,1
+Yellow Fever,1
+Thyroid Disorders,1
+Tungiasis,1
+"Autoimmune Diseases (e.g., Lupus)",1
+Polycythemia Vera,1
+Post-Traumatic Stress Disorder (PTSD),1
+Prostate Enlargement (Benign Prostatic Hyperplasia),1
+Psoriatic Arthritis,1
+Hidradenitis Suppurativa,1
+Herpes Simplex Virus (HSV),1
+Graves' Disease,1
+Stomach Cancer,1
+Cirrhosis,1
+Cleft Lip and Palate,1
+Cold Sores,1
+Conjunctivitis,1
+COPD (Chronic Obstructive Pulmonary Disease),1
+Cystitis,1
+Diabetic Neuropathy,1
+Nasal Polyps,1
+Sinusitis,1
+Myocardial Infarction (Heart Attack),1
+Chronic Sinusitis,1
+"Cancer (Breast Cancer, Lung Cancer, Prostate Cancer, etc.)",1
+Diabetes Mellitus,1
+"Hepatitis (A, B, C)",1
+Weight Gain,1
+Strep Throat,1
+Cerebral Palsy,1
+Spondylosis,1
+Skin Infections,1
+Hodgkin's Lymphoma,1
+Hyperlipidemia,1
+Spinal Cord Injury,1
+Lymphadenopathy,1
+Meniere's Disease,1
+Multiple Myeloma,1
+Hodgkin’s Lymphoma,1

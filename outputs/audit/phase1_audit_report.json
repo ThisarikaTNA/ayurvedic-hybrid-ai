@@ -1,0 +1,1387 @@
+{
+  "audit_version": "0.1.0",
+  "research_scope": "Descriptive audit of Ayurvedic knowledge profiles; not patient data validation or clinical evaluation.",
+  "source": {
+    "path": "C:\\Users\\thisari.thathsarani\\Pictures\\submission_candidate\\data\\raw\\AyurGenixAI_Dataset.xlsx",
+    "sha256": "1BAF1F9EFE833D8F980B1763B5E726F294F6861C76727521FEDC90CE8EDE840F",
+    "sheet": "AyurGenixAI_Dataset"
+  },
+  "schema": {
+    "required_column_count": 34,
+    "missing_required_columns": [],
+    "unexpected_columns": [],
+    "duplicate_headers": [],
+    "row_count": 446,
+    "column_count": 34,
+    "columns": [
+      {
+        "name": "Disease",
+        "dtype": "object",
+        "non_null_count": 446,
+        "unique_non_null_count": 367
+      },
+      {
+        "name": "Hindi Name",
+        "dtype": "object",
+        "non_null_count": 446,
+        "unique_non_null_count": 390
+      },
+      {
+        "name": "Marathi Name",
+        "dtype": "object",
+        "non_null_count": 446,
+        "unique_non_null_count": 405
+      },
+      {
+        "name": "Symptoms",
+        "dtype": "object",
+        "non_null_count": 446,
+        "unique_non_null_count": 429
+      },
+      {
+        "name": "Diagnosis & Tests",
+        "dtype": "object",
+        "non_null_count": 446,
+        "unique_non_null_count": 310
+      },
+      {
+        "name": "Symptom Severity",
+        "dtype": "object",
+        "non_null_count": 446,
+        "unique_non_null_count": 7
+      },
+      {
+        "name": "Duration of Treatment",
+        "dtype": "object",
+        "non_null_count": 446,
+        "unique_non_null_count": 59
+      },
+      {
+        "name": "Medical History",
+        "dtype": "object",
+        "non_null_count": 445,
+        "unique_non_null_count": 371
+      },
+      {
+        "name": "Current Medications",
+        "dtype": "object",
+        "non_null_count": 446,
+        "unique_non_null_count": 287
+      },
+      {
+        "name": "Risk Factors",
+        "dtype": "object",
+        "non_null_count": 446,
+        "unique_non_null_count": 330
+      },
+      {
+        "name": "Environmental Factors",
+        "dtype": "object",
+        "non_null_count": 446,
+        "unique_non_null_count": 345
+      },
+      {
+        "name": "Sleep Patterns",
+        "dtype": "object",
+        "non_null_count": 446,
+        "unique_non_null_count": 8
+      },
+      {
+        "name": "Stress Levels",
+        "dtype": "object",
+        "non_null_count": 446,
+        "unique_non_null_count": 7
+      },
+      {
+        "name": "Physical Activity Levels",
+        "dtype": "object",
+        "non_null_count": 446,
+        "unique_non_null_count": 9
+      },
+      {
+        "name": "Family History",
+        "dtype": "object",
+        "non_null_count": 445,
+        "unique_non_null_count": 224
+      },
+      {
+        "name": "Dietary Habits",
+        "dtype": "object",
+        "non_null_count": 446,
+        "unique_non_null_count": 171
+      },
+      {
+        "name": "Allergies (Food/Env)",
+        "dtype": "object",
+        "non_null_count": 96,
+        "unique_non_null_count": 52
+      },
+      {
+        "name": "Seasonal Variation",
+        "dtype": "object",
+        "non_null_count": 446,
+        "unique_non_null_count": 33
+      },
+      {
+        "name": "Age Group",
+        "dtype": "object",
+        "non_null_count": 446,
+        "unique_non_null_count": 55
+      },
+      {
+        "name": "Gender",
+        "dtype": "object",
+        "non_null_count": 446,
+        "unique_non_null_count": 7
+      },
+      {
+        "name": "Occupation and Lifestyle",
+        "dtype": "object",
+        "non_null_count": 446,
+        "unique_non_null_count": 204
+      },
+      {
+        "name": "Cultural Preferences",
+        "dtype": "object",
+        "non_null_count": 446,
+        "unique_non_null_count": 183
+      },
+      {
+        "name": "Herbal/Alternative Remedies",
+        "dtype": "object",
+        "non_null_count": 431,
+        "unique_non_null_count": 120
+      },
+      {
+        "name": "Ayurvedic Herbs",
+        "dtype": "object",
+        "non_null_count": 436,
+        "unique_non_null_count": 74
+      },
+      {
+        "name": "Formulation",
+        "dtype": "object",
+        "non_null_count": 446,
+        "unique_non_null_count": 210
+      },
+      {
+        "name": "Doshas",
+        "dtype": "object",
+        "non_null_count": 446,
+        "unique_non_null_count": 9
+      },
+      {
+        "name": "Constitution/Prakriti",
+        "dtype": "object",
+        "non_null_count": 446,
+        "unique_non_null_count": 12
+      },
+      {
+        "name": "Diet and Lifestyle Recommendations",
+        "dtype": "object",
+        "non_null_count": 446,
+        "unique_non_null_count": 445
+      },
+      {
+        "name": "Yoga & Physical Therapy",
+        "dtype": "object",
+        "non_null_count": 432,
+        "unique_non_null_count": 140
+      },
+      {
+        "name": "Medical Intervention",
+        "dtype": "object",
+        "non_null_count": 446,
+        "unique_non_null_count": 293
+      },
+      {
+        "name": "Prevention",
+        "dtype": "object",
+        "non_null_count": 437,
+        "unique_non_null_count": 290
+      },
+      {
+        "name": "Prognosis",
+        "dtype": "object",
+        "non_null_count": 446,
+        "unique_non_null_count": 99
+      },
+      {
+        "name": "Complications",
+        "dtype": "object",
+        "non_null_count": 446,
+        "unique_non_null_count": 382
+      },
+      {
+        "name": "Patient Recommendations",
+        "dtype": "object",
+        "non_null_count": 446,
+        "unique_non_null_count": 305
+      }
+    ]
+  },
+  "value_quality": {
+    "totals": {
+      "missing": 400,
+      "sentinel_placeholder": 0,
+      "explicit_negative": 71,
+      "ambiguous": 1
+    },
+    "by_column": {
+      "missing": {
+        "Medical History": 1,
+        "Family History": 1,
+        "Allergies (Food/Env)": 350,
+        "Herbal/Alternative Remedies": 15,
+        "Ayurvedic Herbs": 10,
+        "Yoga & Physical Therapy": 14,
+        "Prevention": 9
+      },
+      "sentinel_placeholder": {},
+      "explicit_negative": {
+        "Current Medications": 1,
+        "Family History": 70
+      },
+      "ambiguous": {
+        "Herbal/Alternative Remedies": 1
+      }
+    },
+    "examples": {
+      "sentinel_placeholder": {},
+      "explicit_negative": {
+        "Current Medications": {
+          "No specific treatment": 1
+        },
+        "Family History": {
+          "No family history": 68,
+          "No significant family history": 2
+        }
+      },
+      "ambiguous": {
+        "Herbal/Alternative Remedies": {
+          "None known": 1
+        }
+      }
+    },
+    "missing_details": [
+      {
+        "column": "Disease",
+        "count": 0,
+        "percentage": 0.0
+      },
+      {
+        "column": "Hindi Name",
+        "count": 0,
+        "percentage": 0.0
+      },
+      {
+        "column": "Marathi Name",
+        "count": 0,
+        "percentage": 0.0
+      },
+      {
+        "column": "Symptoms",
+        "count": 0,
+        "percentage": 0.0
+      },
+      {
+        "column": "Diagnosis & Tests",
+        "count": 0,
+        "percentage": 0.0
+      },
+      {
+        "column": "Symptom Severity",
+        "count": 0,
+        "percentage": 0.0
+      },
+      {
+        "column": "Duration of Treatment",
+        "count": 0,
+        "percentage": 0.0
+      },
+      {
+        "column": "Medical History",
+        "count": 1,
+        "percentage": 0.224
+      },
+      {
+        "column": "Current Medications",
+        "count": 0,
+        "percentage": 0.0
+      },
+      {
+        "column": "Risk Factors",
+        "count": 0,
+        "percentage": 0.0
+      },
+      {
+        "column": "Environmental Factors",
+        "count": 0,
+        "percentage": 0.0
+      },
+      {
+        "column": "Sleep Patterns",
+        "count": 0,
+        "percentage": 0.0
+      },
+      {
+        "column": "Stress Levels",
+        "count": 0,
+        "percentage": 0.0
+      },
+      {
+        "column": "Physical Activity Levels",
+        "count": 0,
+        "percentage": 0.0
+      },
+      {
+        "column": "Family History",
+        "count": 1,
+        "percentage": 0.224
+      },
+      {
+        "column": "Dietary Habits",
+        "count": 0,
+        "percentage": 0.0
+      },
+      {
+        "column": "Allergies (Food/Env)",
+        "count": 350,
+        "percentage": 78.475
+      },
+      {
+        "column": "Seasonal Variation",
+        "count": 0,
+        "percentage": 0.0
+      },
+      {
+        "column": "Age Group",
+        "count": 0,
+        "percentage": 0.0
+      },
+      {
+        "column": "Gender",
+        "count": 0,
+        "percentage": 0.0
+      },
+      {
+        "column": "Occupation and Lifestyle",
+        "count": 0,
+        "percentage": 0.0
+      },
+      {
+        "column": "Cultural Preferences",
+        "count": 0,
+        "percentage": 0.0
+      },
+      {
+        "column": "Herbal/Alternative Remedies",
+        "count": 15,
+        "percentage": 3.363
+      },
+      {
+        "column": "Ayurvedic Herbs",
+        "count": 10,
+        "percentage": 2.242
+      },
+      {
+        "column": "Formulation",
+        "count": 0,
+        "percentage": 0.0
+      },
+      {
+        "column": "Doshas",
+        "count": 0,
+        "percentage": 0.0
+      },
+      {
+        "column": "Constitution/Prakriti",
+        "count": 0,
+        "percentage": 0.0
+      },
+      {
+        "column": "Diet and Lifestyle Recommendations",
+        "count": 0,
+        "percentage": 0.0
+      },
+      {
+        "column": "Yoga & Physical Therapy",
+        "count": 14,
+        "percentage": 3.139
+      },
+      {
+        "column": "Medical Intervention",
+        "count": 0,
+        "percentage": 0.0
+      },
+      {
+        "column": "Prevention",
+        "count": 9,
+        "percentage": 2.018
+      },
+      {
+        "column": "Prognosis",
+        "count": 0,
+        "percentage": 0.0
+      },
+      {
+        "column": "Complications",
+        "count": 0,
+        "percentage": 0.0
+      },
+      {
+        "column": "Patient Recommendations",
+        "count": 0,
+        "percentage": 0.0
+      }
+    ]
+  },
+  "duplicates": {
+    "exact_duplicate_rows_including_first_occurrence": 0,
+    "exact_duplicate_extra_rows": 0,
+    "normalized_duplicate_rows_including_first_occurrence": 0,
+    "normalized_duplicate_extra_rows": 0
+  },
+  "disease": {
+    "raw_unique_disease_count": 367,
+    "normalized_disease_group_count": 363,
+    "profiles_in_repeated_disease_groups": 156,
+    "group_size_distribution": {
+      "1": 290,
+      "2": 64,
+      "3": 8,
+      "4": 1
+    },
+    "raw_distribution": {
+      "Asthma": 4,
+      "Tuberculosis": 3,
+      "Arthritis": 3,
+      "Cystic Fibrosis": 3,
+      "Epilepsy": 3,
+      "Atherosclerosis": 3,
+      "Hepatitis": 3,
+      "Hypertension": 3,
+      "Coronary Artery Disease": 2,
+      "Anxiety": 2,
+      "Fever": 2,
+      "Constipation": 2,
+      "Obesity": 2,
+      "Pancreatitis": 2,
+      "Sickle Cell Anemia": 2,
+      "Stroke": 2,
+      "Sleep Apnea": 2,
+      "Skin Cancer (Melanoma)": 2,
+      "Cardiomyopathy": 2,
+      "Lupus": 2,
+      "Lymphoma": 2,
+      "Autosomal Dominant Polycystic Kidney Disease": 2,
+      "Aspartylglucosaminuria": 2,
+      "Barth Syndrome": 2,
+      "Celiac Disease": 2,
+      "Amyotrophic Lateral Sclerosis (ALS)": 2,
+      "Measles": 2,
+      "Insomnia": 2,
+      "Alzheimer's Disease": 2,
+      "Alkaptonuria": 2,
+      "Migraine": 2,
+      "Addison's Disease": 2,
+      "Adrenal Insufficiency": 2,
+      "Asparagine Synthetase Deficiency": 2,
+      "Arrhythmia": 2,
+      "Ascariasis": 2,
+      "Indigestion": 2,
+      "Malaria": 2,
+      "Back Pain": 2,
+      "Rheumatoid Arthritis": 2,
+      "Dementia": 2,
+      "Menstrual Disorders": 2,
+      "Cough": 2,
+      "Gout": 2,
+      "Irritable Bowel Syndrome (IBS)": 2,
+      "Hypothyroidism": 2,
+      "Zika Virus": 2,
+      "Chronic Fatigue Syndrome": 2,
+      "Heart Attack (Myocardial Infarction)": 2,
+      "Glomerulonephritis": 2,
+      "Bipolar Disorder": 2,
+      "Kidney Stones": 2,
+      "Fibromyalgia": 2,
+      "Depression": 2,
+      "Dengue Fever": 2,
+      "Gallstones": 2,
+      "Crohn's Disease": 2,
+      "Peptic Ulcers": 2,
+      "Diabetes": 2,
+      "Kidney Cancer": 2,
+      "Psoriasis": 2,
+      "Prostate Cancer": 2,
+      "Multiple Sclerosis": 2,
+      "Pneumocystis Pneumonia": 2,
+      "Pneumonia": 2,
+      "Osteoporosis": 2,
+      "Parkinson's Disease": 2,
+      "Colorectal Cancer": 2,
+      "Leprosy": 2,
+      "Leukemia": 2,
+      "Carpal Tunnel Syndrome": 1,
+      "Acromegaly": 1,
+      "Cerebrotendinous Xanthomatosis": 1,
+      "Carbamoyl Phosphate Synthetase I Deficiency Disease": 1,
+      "Common Cold": 1,
+      "Skin Allergy": 1,
+      "Acidity": 1,
+      "Acne": 1,
+      "Argininosuccinic Aciduria": 1,
+      "Acute Kidney Injury": 1,
+      "Allergies": 1,
+      "Cysticercosis": 1,
+      "Alopecia": 1,
+      "Argininemia": 1,
+      "Cushing's Syndrome": 1,
+      "Brugada Syndrome": 1,
+      "Chagas Disease": 1,
+      "Hepatitis B": 1,
+      "Cryptosporidiosis": 1,
+      "Crimean-Congo Hemorrhagic Fever": 1,
+      "Buruli Ulcer": 1,
+      "Histoplasmosis": 1,
+      "Hepatitis C": 1,
+      "Chickenpox": 1,
+      "Chikungunya": 1,
+      "Chromoblastomycosis": 1,
+      "Chronic Kidney Disease (CKD)": 1,
+      "Chronic Obstructive Pulmonary Disease (COPD)": 1,
+      "Ciguatera Poisoning": 1,
+      "Clonorchiasis": 1,
+      "Coffin-Lowry Syndrome": 1,
+      "Cold": 1,
+      "Contact Dermatitis": 1,
+      "Costello Syndrome": 1,
+      "Crigler-Najjar Syndrome": 1,
+      "Bubonic Plague": 1,
+      "Fascioliasis": 1,
+      "COVID-19": 1,
+      "Canavan Disease": 1,
+      "Hendra Virus Infection": 1,
+      "Hepatitis A": 1,
+      "Hantavirus Pulmonary Syndrome": 1,
+      "Pancreatic Cancer": 1,
+      "Filariasis": 1,
+      "Enterobiasis": 1,
+      "Dentinogenesis Imperfecta": 1,
+      "Desbuquois Dysplasia": 1,
+      "Diabetes Mellitus Type 1 and Type 2": 1,
+      "Digestive Disorders": 1,
+      "Dihydropyrimidine Dehydrogenase Deficiency": 1,
+      "Diphtheria": 1,
+      "Down Syndrome": 1,
+      "Mucolipidosis": 1,
+      "Dracunculiasis": 1,
+      "Hemophilia": 1,
+      "Hemochromatosis": 1,
+      "Heart Failure": 1,
+      "Graves Disease": 1,
+      "Amebiasis": 1,
+      "Cystinosis": 1,
+      "Dandruff": 1,
+      "Dengue Hemorrhagic Fever": 1,
+      "Gastroesophageal Reflux Disease (GERD)": 1,
+      "Giardiasis": 1,
+      "Guillain-Barre Syndrome": 1,
+      "Heart Disease": 1,
+      "Guinea Worm Disease": 1,
+      "HIV/AIDS": 1,
+      "Hair Loss": 1,
+      "Fragile X Syndrome": 1,
+      "Hand, Foot, and Mouth Disease": 1,
+      "Hashimoto's Thyroiditis": 1,
+      "Menopause": 1,
+      "Mycetoma": 1,
+      "Mowat-Wilson Syndrome": 1,
+      "Langerhans Cell Histiocytosis": 1,
+      "Huntington's Disease": 1,
+      "Hydronephrosis": 1,
+      "Hypercholesterolemia": 1,
+      "Hyperparathyroidism": 1,
+      "Hyperthyroidism": 1,
+      "Hypoglycemia": 1,
+      "Inflammation": 1,
+      "Lymphatic Filariasis": 1,
+      "Inflammatory Bowel Disease (IBD)": 1,
+      "Joint Pain": 1,
+      "Kala-azar": 1,
+      "Kawasaki Disease": 1,
+      "Kearns-Sayre Syndrome": 1,
+      "Kleine-Levin Syndrome": 1,
+      "Klinefelter Syndrome": 1,
+      "Kyasanur Forest Disease": 1,
+      "Larsen Syndrome": 1,
+      "Monkeypox": 1,
+      "Lassa Fever": 1,
+      "Leigh Syndrome": 1,
+      "Leishmaniasis": 1,
+      "Leptospirosis": 1,
+      "Lesch-Nyhan Syndrome": 1,
+      "Leukodystrophy": 1,
+      "Liddle Syndrome": 1,
+      "Lipid Storage Disease": 1,
+      "Liver Cancer": 1,
+      "Liver Cirrhosis": 1,
+      "Liver Disorders": 1,
+      "Loeys-Dietz Syndrome": 1,
+      "Loiasis": 1,
+      "Lowe Syndrome": 1,
+      "Lung Cancer": 1,
+      "Lyme Disease": 1,
+      "Krabbe Disease": 1,
+      "Influenza": 1,
+      "Hookworm Infection": 1,
+      "Maffucci Syndrome": 1,
+      "Multiple Sulfatase Deficiency": 1,
+      "Mucopolysaccharidosis": 1,
+      "Marburg": 1,
+      "Marburg Virus Disease": 1,
+      "Marfan Syndrome": 1,
+      "McCune-Albright Syndrome": 1,
+      "Melanoma": 1,
+      "Melioidosis": 1,
+      "Meningitis": 1,
+      "Mansonelliasis": 1,
+      "Menkes Disease": 1,
+      "Mental Health Disorders": 1,
+      "Mental Stress": 1,
+      "Metabolic Syndrome": 1,
+      "Miller-Dieker Syndrome": 1,
+      "Muscular Dystrophy": 1,
+      "Myasthenia Gravis": 1,
+      "Ovarian Cancer": 1,
+      "Neurotoxocariasis": 1,
+      "Maple Syrup Urine Disease": 1,
+      "Ebola": 1,
+      "Myotonia Congenita": 1,
+      "Naegleria Infection": 1,
+      "Nephrotic Syndrome": 1,
+      "Neurofibromatosis": 1,
+      "Niemann-Pick Disease": 1,
+      "Osteopetrosis": 1,
+      "Nipah Virus Infection": 1,
+      "Noonan Syndrome": 1,
+      "Onchocerciasis (River Blindness)": 1,
+      "Opistorchiasis": 1,
+      "Osteoarthritis": 1,
+      "Osteogenesis Imperfecta": 1,
+      "Dyggve-Melchior-Clausen Syndrome": 1,
+      "Wilson's Disease": 1,
+      "Ebola Virus": 1,
+      "Rheumatic Heart Disease": 1,
+      "Yeast Infections": 1,
+      "Rickettsial Diseases": 1,
+      "Rocky Mountain Spotted Fever": 1,
+      "Rosacea": 1,
+      "Rett Syndrome": 1,
+      "Primary Ciliary Dyskinesia": 1,
+      "Primary Amebic Meningoencephalitis": 1,
+      "Prader-Willi Syndrome": 1,
+      "Pelvic Floor Disorders": 1,
+      "Diabetic Retinopathy": 1,
+      "Peripheral Artery Disease": 1,
+      "Peutz-Jeghers Syndrome": 1,
+      "Pfeiffer Syndrome": 1,
+      "Phenylketonuria (PKU)": 1,
+      "Pinta": 1,
+      "Zoonotic Infections": 1,
+      "Respiratory Issues": 1,
+      "Echinococcosis": 1,
+      "Crohn’s Disease": 1,
+      "Gallbladder Disease": 1,
+      "Gastroenteritis": 1,
+      "Gingivitis": 1,
+      "Glaucoma": 1,
+      "Goiter": 1,
+      "Dyslipidemia": 1,
+      "Tularemia": 1,
+      "Typhus": 1,
+      "Urinary Tract Infection (UTI)": 1,
+      "Pulmonary Hypertension": 1,
+      "Q Fever": 1,
+      "Rabies": 1,
+      "Relapsing Fever": 1,
+      "Bell's Palsy": 1,
+      "Renal Hypertension": 1,
+      "Pitt-Hopkins Syndrome": 1,
+      "Pituitary Tumors": 1,
+      "Pneumoconiosis": 1,
+      "Pneumonic Plague": 1,
+      "Talaromycosis": 1,
+      "Strongyloidiasis": 1,
+      "Worm Infections": 1,
+      "Viral Infections": 1,
+      "Sciatica": 1,
+      "Skin Rash": 1,
+      "Sparganosis": 1,
+      "Skin Diseases": 1,
+      "Skin Infections (Bacterial, Fungal, Viral)": 1,
+      "Wilson’s Disease": 1,
+      "Sexual Dysfunction": 1,
+      "Whipple's Disease": 1,
+      "Sjogren's Syndrome": 1,
+      "Sleeping Sickness (Trypanosomiasis)": 1,
+      "Septicemic Plague": 1,
+      "Tay-Sachs Disease": 1,
+      "Tendinitis": 1,
+      "Tetanus": 1,
+      "Rift Valley Fever": 1,
+      "Polio": 1,
+      "Polycystic Kidney Disease": 1,
+      "Polycystic Ovary Syndrome (PCOS)": 1,
+      "Porphyria": 1,
+      "Schistosomiasis": 1,
+      "Scoliosis": 1,
+      "Seborrheic Dermatitis": 1,
+      "Thalassemia": 1,
+      "Varicose Veins": 1,
+      "Trichuriasis": 1,
+      "Trichinellosis": 1,
+      "Trachoma": 1,
+      "Toxoplasmosis": 1,
+      "Toxocariasis": 1,
+      "Erectile Dysfunction": 1,
+      "Ear Infections": 1,
+      "Diverticulitis": 1,
+      "Zoonotic Malaria": 1,
+      "Systemic Lupus Erythematosus (SLE)": 1,
+      "Brain Tumors": 1,
+      "Bronchiectasis": 1,
+      "Stress": 1,
+      "Anemia": 1,
+      "Candidiasis": 1,
+      "Acanthosis Nigricans": 1,
+      "Weight Loss": 1,
+      "Type 1 Diabetes": 1,
+      "Raynaud's Disease": 1,
+      "Ulcerative Colitis": 1,
+      "Urinary Tract Infections (UTIs)": 1,
+      "Vitiligo": 1,
+      "West Nile Virus": 1,
+      "Yaws": 1,
+      "Bladder Cancer": 1,
+      "Testicular Cancer": 1,
+      "Thyroid Cancer": 1,
+      "Anxiety Disorder": 1,
+      "Eczema (Atopic Dermatitis)": 1,
+      "Emphysema": 1,
+      "Endometriosis": 1,
+      "Duchenne Muscular Dystrophy": 1,
+      "Paracoccidioidomycosis": 1,
+      "Mitochondrial Myopathy": 1,
+      "Angina": 1,
+      "Tinnitus": 1,
+      "Paragonimiasis": 1,
+      "Aortic Aneurysm": 1,
+      "Aphasia": 1,
+      "Atopic Dermatitis": 1,
+      "Autoimmune Hepatitis": 1,
+      "Bacterial Infections": 1,
+      "Yellow Fever": 1,
+      "Thyroid Disorders": 1,
+      "Tungiasis": 1,
+      "Autoimmune Diseases (e.g., Lupus)": 1,
+      "Polycythemia Vera": 1,
+      "Post-Traumatic Stress Disorder (PTSD)": 1,
+      "Prostate Enlargement (Benign Prostatic Hyperplasia)": 1,
+      "Psoriatic Arthritis": 1,
+      "Hidradenitis Suppurativa": 1,
+      "Herpes Simplex Virus (HSV)": 1,
+      "Graves' Disease": 1,
+      "Stomach Cancer": 1,
+      "Cirrhosis": 1,
+      "Cleft Lip and Palate": 1,
+      "Cold Sores": 1,
+      "Conjunctivitis": 1,
+      "COPD (Chronic Obstructive Pulmonary Disease)": 1,
+      "Cystitis": 1,
+      "Diabetic Neuropathy": 1,
+      "Nasal Polyps": 1,
+      "Sinusitis": 1,
+      "Myocardial Infarction (Heart Attack)": 1,
+      "Chronic Sinusitis": 1,
+      "Cancer (Breast Cancer, Lung Cancer, Prostate Cancer, etc.)": 1,
+      "Diabetes Mellitus": 1,
+      "Hepatitis (A, B, C)": 1,
+      "Weight Gain": 1,
+      "Strep Throat": 1,
+      "Cerebral Palsy": 1,
+      "Spondylosis": 1,
+      "Skin Infections": 1,
+      "Hodgkin's Lymphoma": 1,
+      "Hyperlipidemia": 1,
+      "Spinal Cord Injury": 1,
+      "Lymphadenopathy": 1,
+      "Meniere's Disease": 1,
+      "Multiple Myeloma": 1,
+      "Hodgkin’s Lymphoma": 1
+    },
+    "conflicting_target_group_count": 48,
+    "profiles_in_conflicting_target_groups": 104,
+    "conflicting_target_groups": [
+      {
+        "normalized_disease": "adrenal insufficiency",
+        "profile_count": 2,
+        "canonical_dosha_counts": {
+          "Vata": 1,
+          "Vata + Pitta": 1
+        }
+      },
+      {
+        "normalized_disease": "alkaptonuria",
+        "profile_count": 2,
+        "canonical_dosha_counts": {
+          "Vata + Kapha": 1,
+          "Vata + Pitta": 1
+        }
+      },
+      {
+        "normalized_disease": "alzheimer s disease",
+        "profile_count": 2,
+        "canonical_dosha_counts": {
+          "Vata + Pitta": 1,
+          "Vata": 1
+        }
+      },
+      {
+        "normalized_disease": "amyotrophic lateral sclerosis als",
+        "profile_count": 2,
+        "canonical_dosha_counts": {
+          "Vata": 1,
+          "Vata + Pitta": 1
+        }
+      },
+      {
+        "normalized_disease": "anxiety",
+        "profile_count": 2,
+        "canonical_dosha_counts": {
+          "Vata + Pitta": 1,
+          "Vata": 1
+        }
+      },
+      {
+        "normalized_disease": "arrhythmia",
+        "profile_count": 2,
+        "canonical_dosha_counts": {
+          "Vata + Pitta": 1,
+          "Kapha": 1
+        }
+      },
+      {
+        "normalized_disease": "arthritis",
+        "profile_count": 3,
+        "canonical_dosha_counts": {
+          "Vata + Kapha": 2,
+          "Pitta": 1
+        }
+      },
+      {
+        "normalized_disease": "ascariasis",
+        "profile_count": 2,
+        "canonical_dosha_counts": {
+          "Pitta + Kapha": 1,
+          "Vata + Pitta": 1
+        }
+      },
+      {
+        "normalized_disease": "asparagine synthetase deficiency",
+        "profile_count": 2,
+        "canonical_dosha_counts": {
+          "Vata": 1,
+          "Pitta + Kapha": 1
+        }
+      },
+      {
+        "normalized_disease": "aspartylglucosaminuria",
+        "profile_count": 2,
+        "canonical_dosha_counts": {
+          "Vata": 1,
+          "Pitta": 1
+        }
+      },
+      {
+        "normalized_disease": "asthma",
+        "profile_count": 4,
+        "canonical_dosha_counts": {
+          "Vata + Kapha": 3,
+          "Vata": 1
+        }
+      },
+      {
+        "normalized_disease": "atherosclerosis",
+        "profile_count": 3,
+        "canonical_dosha_counts": {
+          "Pitta + Kapha": 1,
+          "Vata + Kapha": 1,
+          "Pitta": 1
+        }
+      },
+      {
+        "normalized_disease": "autosomal dominant polycystic kidney disease",
+        "profile_count": 2,
+        "canonical_dosha_counts": {
+          "Pitta + Kapha": 1,
+          "Kapha": 1
+        }
+      },
+      {
+        "normalized_disease": "back pain",
+        "profile_count": 2,
+        "canonical_dosha_counts": {
+          "Vata": 1,
+          "Vata + Kapha": 1
+        }
+      },
+      {
+        "normalized_disease": "barth syndrome",
+        "profile_count": 2,
+        "canonical_dosha_counts": {
+          "Vata + Pitta": 1,
+          "Pitta + Kapha": 1
+        }
+      },
+      {
+        "normalized_disease": "bipolar disorder",
+        "profile_count": 2,
+        "canonical_dosha_counts": {
+          "Vata + Pitta": 1,
+          "Vata": 1
+        }
+      },
+      {
+        "normalized_disease": "celiac disease",
+        "profile_count": 2,
+        "canonical_dosha_counts": {
+          "Vata + Pitta": 1,
+          "Kapha": 1
+        }
+      },
+      {
+        "normalized_disease": "chronic fatigue syndrome",
+        "profile_count": 2,
+        "canonical_dosha_counts": {
+          "Vata": 1,
+          "Vata + Pitta": 1
+        }
+      },
+      {
+        "normalized_disease": "colorectal cancer",
+        "profile_count": 2,
+        "canonical_dosha_counts": {
+          "Pitta + Kapha": 1,
+          "Vata + Pitta": 1
+        }
+      },
+      {
+        "normalized_disease": "coronary artery disease",
+        "profile_count": 2,
+        "canonical_dosha_counts": {
+          "Pitta + Kapha": 1,
+          "Vata + Pitta": 1
+        }
+      },
+      {
+        "normalized_disease": "crohn s disease",
+        "profile_count": 3,
+        "canonical_dosha_counts": {
+          "Pitta + Kapha": 1,
+          "Vata + Pitta": 1,
+          "Pitta": 1
+        }
+      },
+      {
+        "normalized_disease": "cystic fibrosis",
+        "profile_count": 3,
+        "canonical_dosha_counts": {
+          "Vata + Kapha": 1,
+          "Kapha": 1,
+          "Vata": 1
+        }
+      },
+      {
+        "normalized_disease": "epilepsy",
+        "profile_count": 3,
+        "canonical_dosha_counts": {
+          "Vata": 2,
+          "Vata + Pitta": 1
+        }
+      },
+      {
+        "normalized_disease": "fever",
+        "profile_count": 2,
+        "canonical_dosha_counts": {
+          "Pitta + Kapha": 1,
+          "Pitta": 1
+        }
+      },
+      {
+        "normalized_disease": "fibromyalgia",
+        "profile_count": 2,
+        "canonical_dosha_counts": {
+          "Vata": 1,
+          "Vata + Pitta": 1
+        }
+      },
+      {
+        "normalized_disease": "glomerulonephritis",
+        "profile_count": 2,
+        "canonical_dosha_counts": {
+          "Vata + Kapha": 1,
+          "Pitta": 1
+        }
+      },
+      {
+        "normalized_disease": "gout",
+        "profile_count": 2,
+        "canonical_dosha_counts": {
+          "Vata + Pitta": 1,
+          "Pitta + Kapha": 1
+        }
+      },
+      {
+        "normalized_disease": "graves disease",
+        "profile_count": 2,
+        "canonical_dosha_counts": {
+          "Vata + Pitta": 1,
+          "Pitta": 1
+        }
+      },
+      {
+        "normalized_disease": "heart attack myocardial infarction",
+        "profile_count": 2,
+        "canonical_dosha_counts": {
+          "Vata + Pitta": 1,
+          "Pitta": 1
+        }
+      },
+      {
+        "normalized_disease": "hodgkin s lymphoma",
+        "profile_count": 2,
+        "canonical_dosha_counts": {
+          "Pitta": 1,
+          "Vata": 1
+        }
+      },
+      {
+        "normalized_disease": "hypertension",
+        "profile_count": 3,
+        "canonical_dosha_counts": {
+          "Vata + Pitta": 2,
+          "Pitta": 1
+        }
+      },
+      {
+        "normalized_disease": "insomnia",
+        "profile_count": 2,
+        "canonical_dosha_counts": {
+          "Vata + Pitta": 1,
+          "Vata": 1
+        }
+      },
+      {
+        "normalized_disease": "irritable bowel syndrome ibs",
+        "profile_count": 2,
+        "canonical_dosha_counts": {
+          "Vata": 1,
+          "Vata + Pitta": 1
+        }
+      },
+      {
+        "normalized_disease": "kidney cancer",
+        "profile_count": 2,
+        "canonical_dosha_counts": {
+          "Vata + Kapha": 1,
+          "Pitta": 1
+        }
+      },
+      {
+        "normalized_disease": "leukemia",
+        "profile_count": 2,
+        "canonical_dosha_counts": {
+          "Vata + Pitta": 1,
+          "Pitta": 1
+        }
+      },
+      {
+        "normalized_disease": "lupus",
+        "profile_count": 2,
+        "canonical_dosha_counts": {
+          "Pitta": 1,
+          "Vata + Pitta": 1
+        }
+      },
+      {
+        "normalized_disease": "lymphoma",
+        "profile_count": 2,
+        "canonical_dosha_counts": {
+          "Vata + Pitta": 1,
+          "Pitta": 1
+        }
+      },
+      {
+        "normalized_disease": "menstrual disorders",
+        "profile_count": 2,
+        "canonical_dosha_counts": {
+          "Vata + Pitta": 1,
+          "Pitta": 1
+        }
+      },
+      {
+        "normalized_disease": "migraine",
+        "profile_count": 2,
+        "canonical_dosha_counts": {
+          "Vata + Pitta": 1,
+          "Pitta": 1
+        }
+      },
+      {
+        "normalized_disease": "multiple sclerosis",
+        "profile_count": 2,
+        "canonical_dosha_counts": {
+          "Vata + Pitta": 1,
+          "Vata": 1
+        }
+      },
+      {
+        "normalized_disease": "obesity",
+        "profile_count": 2,
+        "canonical_dosha_counts": {
+          "Kapha": 1,
+          "Pitta + Kapha": 1
+        }
+      },
+      {
+        "normalized_disease": "pneumonia",
+        "profile_count": 2,
+        "canonical_dosha_counts": {
+          "Vata + Pitta": 1,
+          "Vata": 1
+        }
+      },
+      {
+        "normalized_disease": "prostate cancer",
+        "profile_count": 2,
+        "canonical_dosha_counts": {
+          "Vata + Pitta": 1,
+          "Pitta": 1
+        }
+      },
+      {
+        "normalized_disease": "rheumatoid arthritis",
+        "profile_count": 2,
+        "canonical_dosha_counts": {
+          "Vata + Kapha": 1,
+          "Vata": 1
+        }
+      },
+      {
+        "normalized_disease": "sickle cell anemia",
+        "profile_count": 2,
+        "canonical_dosha_counts": {
+          "Vata + Pitta": 1,
+          "Kapha": 1
+        }
+      },
+      {
+        "normalized_disease": "sleep apnea",
+        "profile_count": 2,
+        "canonical_dosha_counts": {
+          "Vata + Kapha": 1,
+          "Vata": 1
+        }
+      },
+      {
+        "normalized_disease": "stroke",
+        "profile_count": 2,
+        "canonical_dosha_counts": {
+          "Vata + Pitta": 1,
+          "Vata": 1
+        }
+      },
+      {
+        "normalized_disease": "zika virus",
+        "profile_count": 2,
+        "canonical_dosha_counts": {
+          "Pitta": 1,
+          "Vata": 1
+        }
+      }
+    ]
+  },
+  "dosha": {
+    "raw_unique_value_count": 9,
+    "raw_distribution": {
+      "Pitta": 132,
+      "Vata, Pitta": 117,
+      "Vata": 62,
+      "Vata, Kapha": 46,
+      "Kapha, Pitta": 24,
+      "Kapha": 20,
+      "Pitta, Kapha": 18,
+      "Pitta, Vata": 16,
+      "Kapha, Vata": 11
+    },
+    "canonical_combination_count": 6,
+    "canonical_distribution": {
+      "Vata + Pitta": 133,
+      "Pitta": 132,
+      "Vata": 62,
+      "Vata + Kapha": 57,
+      "Pitta + Kapha": 42,
+      "Kapha": 20
+    },
+    "per_label_presence": {
+      "Vata": 252,
+      "Pitta": 307,
+      "Kapha": 119
+    },
+    "label_cardinality_distribution": {
+      "1": 214,
+      "2": 232
+    }
+  },
+  "feature_leakage_screen": [
+    {
+      "feature": "Symptoms",
+      "raw_unique_values": 429,
+      "normalized_unique_values": 429,
+      "normalization_collisions": 0,
+      "repeat_coverage": 0.0717,
+      "repeated_value_majority_target_purity": 0.7188,
+      "direct_dosha_term_rows": 0,
+      "disease_name_overlap_rows": 3,
+      "automated_decision": "none",
+      "review_note": "High-cardinality disease proxy risk; grouped evaluation is essential."
+    },
+    {
+      "feature": "Sleep Patterns",
+      "raw_unique_values": 8,
+      "normalized_unique_values": 6,
+      "normalization_collisions": 2,
+      "repeat_coverage": 0.9978,
+      "repeated_value_majority_target_purity": 0.3213,
+      "direct_dosha_term_rows": 0,
+      "disease_name_overlap_rows": 0,
+      "automated_decision": "none",
+      "review_note": "Candidate field; retain only after semantic review."
+    },
+    {
+      "feature": "Stress Levels",
+      "raw_unique_values": 7,
+      "normalized_unique_values": 4,
+      "normalization_collisions": 3,
+      "repeat_coverage": 0.9978,
+      "repeated_value_majority_target_purity": 0.3124,
+      "direct_dosha_term_rows": 0,
+      "disease_name_overlap_rows": 1,
+      "automated_decision": "none",
+      "review_note": "Candidate field; retain only after semantic review."
+    },
+    {
+      "feature": "Physical Activity Levels",
+      "raw_unique_values": 9,
+      "normalized_unique_values": 6,
+      "normalization_collisions": 3,
+      "repeat_coverage": 0.9978,
+      "repeated_value_majority_target_purity": 0.3191,
+      "direct_dosha_term_rows": 0,
+      "disease_name_overlap_rows": 3,
+      "automated_decision": "none",
+      "review_note": "Candidate field; retain only after semantic review."
+    },
+    {
+      "feature": "Dietary Habits",
+      "raw_unique_values": 171,
+      "normalized_unique_values": 170,
+      "normalization_collisions": 1,
+      "repeat_coverage": 0.7646,
+      "repeated_value_majority_target_purity": 0.5132,
+      "direct_dosha_term_rows": 0,
+      "disease_name_overlap_rows": 0,
+      "automated_decision": "none",
+      "review_note": "May describe prescribed diet rather than pre-assessment habits."
+    },
+    {
+      "feature": "Age Group",
+      "raw_unique_values": 55,
+      "normalized_unique_values": 54,
+      "normalization_collisions": 1,
+      "repeat_coverage": 0.9507,
+      "repeated_value_majority_target_purity": 0.4363,
+      "direct_dosha_term_rows": 0,
+      "disease_name_overlap_rows": 0,
+      "automated_decision": "none",
+      "review_note": "Candidate field; retain only after semantic review."
+    },
+    {
+      "feature": "Gender",
+      "raw_unique_values": 7,
+      "normalized_unique_values": 7,
+      "normalization_collisions": 0,
+      "repeat_coverage": 1.0,
+      "repeated_value_majority_target_purity": 0.3229,
+      "direct_dosha_term_rows": 0,
+      "disease_name_overlap_rows": 0,
+      "automated_decision": "none",
+      "review_note": "Candidate field; retain only after semantic review."
+    },
+    {
+      "feature": "Occupation and Lifestyle",
+      "raw_unique_values": 204,
+      "normalized_unique_values": 204,
+      "normalization_collisions": 0,
+      "repeat_coverage": 0.7108,
+      "repeated_value_majority_target_purity": 0.5678,
+      "direct_dosha_term_rows": 0,
+      "disease_name_overlap_rows": 0,
+      "automated_decision": "none",
+      "review_note": "Contains care/monitoring language; exclude or clean before modelling."
+    },
+    {
+      "feature": "Seasonal Variation",
+      "raw_unique_values": 33,
+      "normalized_unique_values": 33,
+      "normalization_collisions": 0,
+      "repeat_coverage": 0.9664,
+      "repeated_value_majority_target_purity": 0.3805,
+      "direct_dosha_term_rows": 0,
+      "disease_name_overlap_rows": 1,
+      "automated_decision": "none",
+      "review_note": "Candidate field; retain only after semantic review."
+    }
+  ],
+  "fields_excluded_from_candidate_ml_inputs": [
+    "Disease",
+    "Hindi Name",
+    "Marathi Name",
+    "Diagnosis & Tests",
+    "Duration of Treatment",
+    "Medical History",
+    "Current Medications",
+    "Family History",
+    "Allergies (Food/Env)",
+    "Cultural Preferences",
+    "Herbal/Alternative Remedies",
+    "Ayurvedic Herbs",
+    "Formulation",
+    "Constitution/Prakriti",
+    "Diet and Lifestyle Recommendations",
+    "Yoga & Physical Therapy",
+    "Medical Intervention",
+    "Prevention",
+    "Prognosis",
+    "Complications",
+    "Patient Recommendations"
+  ],
+  "limitations": [
+    "The audit does not establish that rows are independent patient records.",
+    "The provenance and clinical authority of profile content are unverified.",
+    "Feature screens are diagnostics, not automated inclusion decisions.",
+    "No preprocessing, splitting, modelling, or recommendation evaluation was run."
+  ]
+}

@@ -1,0 +1,10 @@
+feature,raw_unique_values,normalized_unique_values,normalization_collisions,repeat_coverage,repeated_value_majority_target_purity,direct_dosha_term_rows,disease_name_overlap_rows,automated_decision,review_note
+Symptoms,429,429,0,0.0717,0.7188,0,3,none,High-cardinality disease proxy risk; grouped evaluation is essential.
+Sleep Patterns,8,6,2,0.9978,0.3213,0,0,none,Candidate field; retain only after semantic review.
+Stress Levels,7,4,3,0.9978,0.3124,0,1,none,Candidate field; retain only after semantic review.
+Physical Activity Levels,9,6,3,0.9978,0.3191,0,3,none,Candidate field; retain only after semantic review.
+Dietary Habits,171,170,1,0.7646,0.5132,0,0,none,May describe prescribed diet rather than pre-assessment habits.
+Age Group,55,54,1,0.9507,0.4363,0,0,none,Candidate field; retain only after semantic review.
+Gender,7,7,0,1.0,0.3229,0,0,none,Candidate field; retain only after semantic review.
+Occupation and Lifestyle,204,204,0,0.7108,0.5678,0,0,none,Contains care/monitoring language; exclude or clean before modelling.
+Seasonal Variation,33,33,0,0.9664,0.3805,0,1,none,Candidate field; retain only after semantic review.

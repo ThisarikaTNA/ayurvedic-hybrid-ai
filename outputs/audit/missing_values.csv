@@ -1,0 +1,35 @@
+column,count,percentage
+Disease,0,0.0
+Hindi Name,0,0.0
+Marathi Name,0,0.0
+Symptoms,0,0.0
+Diagnosis & Tests,0,0.0
+Symptom Severity,0,0.0
+Duration of Treatment,0,0.0
+Medical History,1,0.224
+Current Medications,0,0.0
+Risk Factors,0,0.0
+Environmental Factors,0,0.0
+Sleep Patterns,0,0.0
+Stress Levels,0,0.0
+Physical Activity Levels,0,0.0
+Family History,1,0.224
+Dietary Habits,0,0.0
+Allergies (Food/Env),350,78.475
+Seasonal Variation,0,0.0
+Age Group,0,0.0
+Gender,0,0.0
+Occupation and Lifestyle,0,0.0
+Cultural Preferences,0,0.0
+Herbal/Alternative Remedies,15,3.363
+Ayurvedic Herbs,10,2.242
+Formulation,0,0.0
+Doshas,0,0.0
+Constitution/Prakriti,0,0.0
+Diet and Lifestyle Recommendations,0,0.0
+Yoga & Physical Therapy,14,3.139
+Medical Intervention,0,0.0
+Prevention,9,2.018
+Prognosis,0,0.0
+Complications,0,0.0
+Patient Recommendations,0,0.0
