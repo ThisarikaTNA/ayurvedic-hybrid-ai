@@ -1,0 +1,966 @@
+{
+  "phase": 4,
+  "scope": "training fit and validation comparison only",
+  "target_definition": "dataset-assigned Dosha tags, not true patient Doshas",
+  "random_state": 42,
+  "data_access_audit": {
+    "training_profiles": 312,
+    "validation_profiles": 67,
+    "train_validation_group_overlap": 0,
+    "final_test_rows_selected": 0,
+    "final_test_metrics_computed": false
+  },
+  "cleaned_dataset_sha256": "55AF558BB13246C5941DAC81EB02CD62916BAE71AFD7B3BD357A51944C5A1E13",
+  "split_manifest_sha256": "1E57C0C8870700DE64BE51F4C60BEAF714D518ED1AD66D390E7F563F5E664D78",
+  "preprocessing_fit_scope": "inside each pipeline; training rows only",
+  "feature_experiments": {
+    "symptoms_only": [
+      "symptoms"
+    ],
+    "symptoms_plus_categorical": [
+      "symptoms",
+      "symptom_severity",
+      "age_group",
+      "gender",
+      "risk_factors",
+      "environmental_factors",
+      "sleep_patterns",
+      "stress_levels",
+      "physical_activity_levels",
+      "dietary_habits",
+      "seasonal_variation",
+      "occupation_and_lifestyle"
+    ]
+  },
+  "categorical_features": [
+    "symptom_severity",
+    "age_group",
+    "gender",
+    "risk_factors",
+    "environmental_factors",
+    "sleep_patterns",
+    "stress_levels",
+    "physical_activity_levels",
+    "dietary_habits",
+    "seasonal_variation",
+    "occupation_and_lifestyle"
+  ],
+  "probability_statement": "Scores are uncalibrated probability estimates. They are not calibrated confidence.",
+  "calibration_deferred": [
+    "Brier score",
+    "log loss",
+    "calibration plots"
+  ],
+  "candidate_results": [
+    {
+      "candidate": "symptoms_only__dummy_prior",
+      "feature_experiment": "symptoms_only",
+      "feature_columns": [
+        "symptoms"
+      ],
+      "model": "dummy_prior",
+      "selected_hyperparameters": {
+        "strategy": "prior"
+      },
+      "thresholds": [
+        0.5,
+        0.5,
+        0.25
+      ],
+      "metrics_default_0_5": {
+        "macro_f1": 0.5170783266577659,
+        "micro_f1": 0.7142857142857143,
+        "samples_f1": 0.7064676616915422,
+        "hamming_loss": 0.3383084577114428,
+        "exact_match_subset_accuracy": 0.2835820895522388,
+        "jaccard_samples": 0.5895522388059702,
+        "actual_label_prevalence": {
+          "Vata": 0.5970149253731343,
+          "Pitta": 0.6716417910447762,
+          "Kapha": 0.2835820895522388
+        },
+        "predicted_label_prevalence": {
+          "Vata": 1.0,
+          "Pitta": 1.0,
+          "Kapha": 0.0
+        },
+        "per_label": {
+          "Vata": {
+            "precision": 0.5970149253731343,
+            "recall": 1.0,
+            "f1": 0.7476635514018691,
+            "positive_support": 40,
+            "negative_support": 27
+          },
+          "Pitta": {
+            "precision": 0.6716417910447762,
+            "recall": 1.0,
+            "f1": 0.8035714285714286,
+            "positive_support": 45,
+            "negative_support": 22
+          },
+          "Kapha": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "positive_support": 19,
+            "negative_support": 48
+          }
+        },
+        "multilabel_confusion_matrices": {
+          "Vata": {
+            "true_negative": 0,
+            "false_positive": 27,
+            "false_negative": 0,
+            "true_positive": 40
+          },
+          "Pitta": {
+            "true_negative": 0,
+            "false_positive": 22,
+            "false_negative": 0,
+            "true_positive": 45
+          },
+          "Kapha": {
+            "true_negative": 48,
+            "false_positive": 0,
+            "false_negative": 19,
+            "true_positive": 0
+          }
+        }
+      },
+      "metrics_tuned": {
+        "macro_f1": 0.6643651483631922,
+        "micro_f1": 0.6819672131147541,
+        "samples_f1": 0.6656716417910447,
+        "hamming_loss": 0.48258706467661694,
+        "exact_match_subset_accuracy": 0.0,
+        "jaccard_samples": 0.5174129353233832,
+        "actual_label_prevalence": {
+          "Vata": 0.5970149253731343,
+          "Pitta": 0.6716417910447762,
+          "Kapha": 0.2835820895522388
+        },
+        "predicted_label_prevalence": {
+          "Vata": 1.0,
+          "Pitta": 1.0,
+          "Kapha": 1.0
+        },
+        "per_label": {
+          "Vata": {
+            "precision": 0.5970149253731343,
+            "recall": 1.0,
+            "f1": 0.7476635514018691,
+            "positive_support": 40,
+            "negative_support": 27
+          },
+          "Pitta": {
+            "precision": 0.6716417910447762,
+            "recall": 1.0,
+            "f1": 0.8035714285714286,
+            "positive_support": 45,
+            "negative_support": 22
+          },
+          "Kapha": {
+            "precision": 0.2835820895522388,
+            "recall": 1.0,
+            "f1": 0.4418604651162791,
+            "positive_support": 19,
+            "negative_support": 48
+          }
+        },
+        "multilabel_confusion_matrices": {
+          "Vata": {
+            "true_negative": 0,
+            "false_positive": 27,
+            "false_negative": 0,
+            "true_positive": 40
+          },
+          "Pitta": {
+            "true_negative": 0,
+            "false_positive": 22,
+            "false_negative": 0,
+            "true_positive": 45
+          },
+          "Kapha": {
+            "true_negative": 0,
+            "false_positive": 48,
+            "false_negative": 0,
+            "true_positive": 19
+          }
+        }
+      },
+      "pipeline_path": "C:\\Users\\thisari.thathsarani\\Documents\\MSc AI Coursework\\ayurvedic_hybrid_ai\\models\\phase4_validation\\symptoms_only__dummy_prior.joblib",
+      "score_semantics": "uncalibrated probability estimates"
+    },
+    {
+      "candidate": "symptoms_only__logistic_regression_ovr",
+      "feature_experiment": "symptoms_only",
+      "feature_columns": [
+        "symptoms"
+      ],
+      "model": "logistic_regression_ovr",
+      "selected_hyperparameters": {
+        "C": 0.5,
+        "class_weight": "balanced"
+      },
+      "thresholds": [
+        0.45,
+        0.45,
+        0.45
+      ],
+      "metrics_default_0_5": {
+        "macro_f1": 0.665903890160183,
+        "micro_f1": 0.7184466019417476,
+        "samples_f1": 0.717910447761194,
+        "hamming_loss": 0.2885572139303483,
+        "exact_match_subset_accuracy": 0.3582089552238806,
+        "jaccard_samples": 0.6268656716417911,
+        "actual_label_prevalence": {
+          "Vata": 0.5970149253731343,
+          "Pitta": 0.6716417910447762,
+          "Kapha": 0.2835820895522388
+        },
+        "predicted_label_prevalence": {
+          "Vata": 0.5373134328358209,
+          "Pitta": 0.7014925373134329,
+          "Kapha": 0.2835820895522388
+        },
+        "per_label": {
+          "Vata": {
+            "precision": 0.8611111111111112,
+            "recall": 0.775,
+            "f1": 0.8157894736842105,
+            "positive_support": 40,
+            "negative_support": 27
+          },
+          "Pitta": {
+            "precision": 0.7446808510638298,
+            "recall": 0.7777777777777778,
+            "f1": 0.7608695652173914,
+            "positive_support": 45,
+            "negative_support": 22
+          },
+          "Kapha": {
+            "precision": 0.42105263157894735,
+            "recall": 0.42105263157894735,
+            "f1": 0.42105263157894735,
+            "positive_support": 19,
+            "negative_support": 48
+          }
+        },
+        "multilabel_confusion_matrices": {
+          "Vata": {
+            "true_negative": 22,
+            "false_positive": 5,
+            "false_negative": 9,
+            "true_positive": 31
+          },
+          "Pitta": {
+            "true_negative": 10,
+            "false_positive": 12,
+            "false_negative": 10,
+            "true_positive": 35
+          },
+          "Kapha": {
+            "true_negative": 37,
+            "false_positive": 11,
+            "false_negative": 11,
+            "true_positive": 8
+          }
+        }
+      },
+      "metrics_tuned": {
+        "macro_f1": 0.7298139768728004,
+        "micro_f1": 0.7615062761506276,
+        "samples_f1": 0.7567164179104476,
+        "hamming_loss": 0.2835820895522388,
+        "exact_match_subset_accuracy": 0.34328358208955223,
+        "jaccard_samples": 0.6567164179104478,
+        "actual_label_prevalence": {
+          "Vata": 0.5970149253731343,
+          "Pitta": 0.6716417910447762,
+          "Kapha": 0.2835820895522388
+        },
+        "predicted_label_prevalence": {
+          "Vata": 0.6716417910447762,
+          "Pitta": 0.8507462686567164,
+          "Kapha": 0.4925373134328358
+        },
+        "per_label": {
+          "Vata": {
+            "precision": 0.8,
+            "recall": 0.9,
+            "f1": 0.8470588235294118,
+            "positive_support": 40,
+            "negative_support": 27
+          },
+          "Pitta": {
+            "precision": 0.7192982456140351,
+            "recall": 0.9111111111111111,
+            "f1": 0.803921568627451,
+            "positive_support": 45,
+            "negative_support": 22
+          },
+          "Kapha": {
+            "precision": 0.42424242424242425,
+            "recall": 0.7368421052631579,
+            "f1": 0.5384615384615384,
+            "positive_support": 19,
+            "negative_support": 48
+          }
+        },
+        "multilabel_confusion_matrices": {
+          "Vata": {
+            "true_negative": 18,
+            "false_positive": 9,
+            "false_negative": 4,
+            "true_positive": 36
+          },
+          "Pitta": {
+            "true_negative": 6,
+            "false_positive": 16,
+            "false_negative": 4,
+            "true_positive": 41
+          },
+          "Kapha": {
+            "true_negative": 29,
+            "false_positive": 19,
+            "false_negative": 5,
+            "true_positive": 14
+          }
+        }
+      },
+      "pipeline_path": "C:\\Users\\thisari.thathsarani\\Documents\\MSc AI Coursework\\ayurvedic_hybrid_ai\\models\\phase4_validation\\symptoms_only__logistic_regression_ovr.joblib",
+      "score_semantics": "uncalibrated probability estimates"
+    },
+    {
+      "candidate": "symptoms_only__random_forest_ovr",
+      "feature_experiment": "symptoms_only",
+      "feature_columns": [
+        "symptoms"
+      ],
+      "model": "random_forest_ovr",
+      "selected_hyperparameters": {
+        "n_estimators": 200,
+        "max_depth": 12,
+        "min_samples_leaf": 1,
+        "class_weight": "balanced_subsample"
+      },
+      "thresholds": [
+        0.5,
+        0.45,
+        0.4
+      ],
+      "metrics_default_0_5": {
+        "macro_f1": 0.7104538017738742,
+        "micro_f1": 0.7707317073170732,
+        "samples_f1": 0.7786069651741292,
+        "hamming_loss": 0.23383084577114427,
+        "exact_match_subset_accuracy": 0.5074626865671642,
+        "jaccard_samples": 0.7064676616915422,
+        "actual_label_prevalence": {
+          "Vata": 0.5970149253731343,
+          "Pitta": 0.6716417910447762,
+          "Kapha": 0.2835820895522388
+        },
+        "predicted_label_prevalence": {
+          "Vata": 0.582089552238806,
+          "Pitta": 0.7910447761194029,
+          "Kapha": 0.13432835820895522
+        },
+        "per_label": {
+          "Vata": {
+            "precision": 0.8461538461538461,
+            "recall": 0.825,
+            "f1": 0.8354430379746836,
+            "positive_support": 40,
+            "negative_support": 27
+          },
+          "Pitta": {
+            "precision": 0.7358490566037735,
+            "recall": 0.8666666666666667,
+            "f1": 0.7959183673469388,
+            "positive_support": 45,
+            "negative_support": 22
+          },
+          "Kapha": {
+            "precision": 0.7777777777777778,
+            "recall": 0.3684210526315789,
+            "f1": 0.5,
+            "positive_support": 19,
+            "negative_support": 48
+          }
+        },
+        "multilabel_confusion_matrices": {
+          "Vata": {
+            "true_negative": 21,
+            "false_positive": 6,
+            "false_negative": 7,
+            "true_positive": 33
+          },
+          "Pitta": {
+            "true_negative": 8,
+            "false_positive": 14,
+            "false_negative": 6,
+            "true_positive": 39
+          },
+          "Kapha": {
+            "true_negative": 46,
+            "false_positive": 2,
+            "false_negative": 12,
+            "true_positive": 7
+          }
+        }
+      },
+      "metrics_tuned": {
+        "macro_f1": 0.7272274894420878,
+        "micro_f1": 0.7719298245614035,
+        "samples_f1": 0.7746268656716416,
+        "hamming_loss": 0.25870646766169153,
+        "exact_match_subset_accuracy": 0.44776119402985076,
+        "jaccard_samples": 0.6890547263681591,
+        "actual_label_prevalence": {
+          "Vata": 0.5970149253731343,
+          "Pitta": 0.6716417910447762,
+          "Kapha": 0.2835820895522388
+        },
+        "predicted_label_prevalence": {
+          "Vata": 0.582089552238806,
+          "Pitta": 0.9253731343283582,
+          "Kapha": 0.34328358208955223
+        },
+        "per_label": {
+          "Vata": {
+            "precision": 0.8461538461538461,
+            "recall": 0.825,
+            "f1": 0.8354430379746836,
+            "positive_support": 40,
+            "negative_support": 27
+          },
+          "Pitta": {
+            "precision": 0.7096774193548387,
+            "recall": 0.9777777777777777,
+            "f1": 0.822429906542056,
+            "positive_support": 45,
+            "negative_support": 22
+          },
+          "Kapha": {
+            "precision": 0.4782608695652174,
+            "recall": 0.5789473684210527,
+            "f1": 0.5238095238095238,
+            "positive_support": 19,
+            "negative_support": 48
+          }
+        },
+        "multilabel_confusion_matrices": {
+          "Vata": {
+            "true_negative": 21,
+            "false_positive": 6,
+            "false_negative": 7,
+            "true_positive": 33
+          },
+          "Pitta": {
+            "true_negative": 4,
+            "false_positive": 18,
+            "false_negative": 1,
+            "true_positive": 44
+          },
+          "Kapha": {
+            "true_negative": 36,
+            "false_positive": 12,
+            "false_negative": 8,
+            "true_positive": 11
+          }
+        }
+      },
+      "pipeline_path": "C:\\Users\\thisari.thathsarani\\Documents\\MSc AI Coursework\\ayurvedic_hybrid_ai\\models\\phase4_validation\\symptoms_only__random_forest_ovr.joblib",
+      "score_semantics": "uncalibrated probability estimates"
+    },
+    {
+      "candidate": "symptoms_plus_categorical__dummy_prior",
+      "feature_experiment": "symptoms_plus_categorical",
+      "feature_columns": [
+        "symptoms",
+        "symptom_severity",
+        "age_group",
+        "gender",
+        "risk_factors",
+        "environmental_factors",
+        "sleep_patterns",
+        "stress_levels",
+        "physical_activity_levels",
+        "dietary_habits",
+        "seasonal_variation",
+        "occupation_and_lifestyle"
+      ],
+      "model": "dummy_prior",
+      "selected_hyperparameters": {
+        "strategy": "prior"
+      },
+      "thresholds": [
+        0.5,
+        0.5,
+        0.25
+      ],
+      "metrics_default_0_5": {
+        "macro_f1": 0.5170783266577659,
+        "micro_f1": 0.7142857142857143,
+        "samples_f1": 0.7064676616915422,
+        "hamming_loss": 0.3383084577114428,
+        "exact_match_subset_accuracy": 0.2835820895522388,
+        "jaccard_samples": 0.5895522388059702,
+        "actual_label_prevalence": {
+          "Vata": 0.5970149253731343,
+          "Pitta": 0.6716417910447762,
+          "Kapha": 0.2835820895522388
+        },
+        "predicted_label_prevalence": {
+          "Vata": 1.0,
+          "Pitta": 1.0,
+          "Kapha": 0.0
+        },
+        "per_label": {
+          "Vata": {
+            "precision": 0.5970149253731343,
+            "recall": 1.0,
+            "f1": 0.7476635514018691,
+            "positive_support": 40,
+            "negative_support": 27
+          },
+          "Pitta": {
+            "precision": 0.6716417910447762,
+            "recall": 1.0,
+            "f1": 0.8035714285714286,
+            "positive_support": 45,
+            "negative_support": 22
+          },
+          "Kapha": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "positive_support": 19,
+            "negative_support": 48
+          }
+        },
+        "multilabel_confusion_matrices": {
+          "Vata": {
+            "true_negative": 0,
+            "false_positive": 27,
+            "false_negative": 0,
+            "true_positive": 40
+          },
+          "Pitta": {
+            "true_negative": 0,
+            "false_positive": 22,
+            "false_negative": 0,
+            "true_positive": 45
+          },
+          "Kapha": {
+            "true_negative": 48,
+            "false_positive": 0,
+            "false_negative": 19,
+            "true_positive": 0
+          }
+        }
+      },
+      "metrics_tuned": {
+        "macro_f1": 0.6643651483631922,
+        "micro_f1": 0.6819672131147541,
+        "samples_f1": 0.6656716417910447,
+        "hamming_loss": 0.48258706467661694,
+        "exact_match_subset_accuracy": 0.0,
+        "jaccard_samples": 0.5174129353233832,
+        "actual_label_prevalence": {
+          "Vata": 0.5970149253731343,
+          "Pitta": 0.6716417910447762,
+          "Kapha": 0.2835820895522388
+        },
+        "predicted_label_prevalence": {
+          "Vata": 1.0,
+          "Pitta": 1.0,
+          "Kapha": 1.0
+        },
+        "per_label": {
+          "Vata": {
+            "precision": 0.5970149253731343,
+            "recall": 1.0,
+            "f1": 0.7476635514018691,
+            "positive_support": 40,
+            "negative_support": 27
+          },
+          "Pitta": {
+            "precision": 0.6716417910447762,
+            "recall": 1.0,
+            "f1": 0.8035714285714286,
+            "positive_support": 45,
+            "negative_support": 22
+          },
+          "Kapha": {
+            "precision": 0.2835820895522388,
+            "recall": 1.0,
+            "f1": 0.4418604651162791,
+            "positive_support": 19,
+            "negative_support": 48
+          }
+        },
+        "multilabel_confusion_matrices": {
+          "Vata": {
+            "true_negative": 0,
+            "false_positive": 27,
+            "false_negative": 0,
+            "true_positive": 40
+          },
+          "Pitta": {
+            "true_negative": 0,
+            "false_positive": 22,
+            "false_negative": 0,
+            "true_positive": 45
+          },
+          "Kapha": {
+            "true_negative": 0,
+            "false_positive": 48,
+            "false_negative": 0,
+            "true_positive": 19
+          }
+        }
+      },
+      "pipeline_path": "C:\\Users\\thisari.thathsarani\\Documents\\MSc AI Coursework\\ayurvedic_hybrid_ai\\models\\phase4_validation\\symptoms_plus_categorical__dummy_prior.joblib",
+      "score_semantics": "uncalibrated probability estimates"
+    },
+    {
+      "candidate": "symptoms_plus_categorical__logistic_regression_ovr",
+      "feature_experiment": "symptoms_plus_categorical",
+      "feature_columns": [
+        "symptoms",
+        "symptom_severity",
+        "age_group",
+        "gender",
+        "risk_factors",
+        "environmental_factors",
+        "sleep_patterns",
+        "stress_levels",
+        "physical_activity_levels",
+        "dietary_habits",
+        "seasonal_variation",
+        "occupation_and_lifestyle"
+      ],
+      "model": "logistic_regression_ovr",
+      "selected_hyperparameters": {
+        "C": 0.5,
+        "class_weight": "balanced"
+      },
+      "thresholds": [
+        0.2,
+        0.45,
+        0.4
+      ],
+      "metrics_default_0_5": {
+        "macro_f1": 0.5888002364066194,
+        "micro_f1": 0.6666666666666666,
+        "samples_f1": 0.6442786069651741,
+        "hamming_loss": 0.3283582089552239,
+        "exact_match_subset_accuracy": 0.40298507462686567,
+        "jaccard_samples": 0.5796019900497512,
+        "actual_label_prevalence": {
+          "Vata": 0.5970149253731343,
+          "Pitta": 0.6716417910447762,
+          "Kapha": 0.2835820895522388
+        },
+        "predicted_label_prevalence": {
+          "Vata": 0.47761194029850745,
+          "Pitta": 0.7313432835820896,
+          "Kapha": 0.19402985074626866
+        },
+        "per_label": {
+          "Vata": {
+            "precision": 0.75,
+            "recall": 0.6,
+            "f1": 0.6666666666666666,
+            "positive_support": 40,
+            "negative_support": 27
+          },
+          "Pitta": {
+            "precision": 0.7551020408163265,
+            "recall": 0.8222222222222222,
+            "f1": 0.7872340425531915,
+            "positive_support": 45,
+            "negative_support": 22
+          },
+          "Kapha": {
+            "precision": 0.38461538461538464,
+            "recall": 0.2631578947368421,
+            "f1": 0.3125,
+            "positive_support": 19,
+            "negative_support": 48
+          }
+        },
+        "multilabel_confusion_matrices": {
+          "Vata": {
+            "true_negative": 19,
+            "false_positive": 8,
+            "false_negative": 16,
+            "true_positive": 24
+          },
+          "Pitta": {
+            "true_negative": 10,
+            "false_positive": 12,
+            "false_negative": 8,
+            "true_positive": 37
+          },
+          "Kapha": {
+            "true_negative": 40,
+            "false_positive": 8,
+            "false_negative": 14,
+            "true_positive": 5
+          }
+        }
+      },
+      "metrics_tuned": {
+        "macro_f1": 0.6966666666666667,
+        "micro_f1": 0.7380952380952381,
+        "samples_f1": 0.7383084577114427,
+        "hamming_loss": 0.3283582089552239,
+        "exact_match_subset_accuracy": 0.31343283582089554,
+        "jaccard_samples": 0.6318407960199005,
+        "actual_label_prevalence": {
+          "Vata": 0.5970149253731343,
+          "Pitta": 0.6716417910447762,
+          "Kapha": 0.2835820895522388
+        },
+        "predicted_label_prevalence": {
+          "Vata": 0.9552238805970149,
+          "Pitta": 0.8208955223880597,
+          "Kapha": 0.43283582089552236
+        },
+        "per_label": {
+          "Vata": {
+            "precision": 0.609375,
+            "recall": 0.975,
+            "f1": 0.75,
+            "positive_support": 40,
+            "negative_support": 27
+          },
+          "Pitta": {
+            "precision": 0.7636363636363637,
+            "recall": 0.9333333333333333,
+            "f1": 0.84,
+            "positive_support": 45,
+            "negative_support": 22
+          },
+          "Kapha": {
+            "precision": 0.41379310344827586,
+            "recall": 0.631578947368421,
+            "f1": 0.5,
+            "positive_support": 19,
+            "negative_support": 48
+          }
+        },
+        "multilabel_confusion_matrices": {
+          "Vata": {
+            "true_negative": 2,
+            "false_positive": 25,
+            "false_negative": 1,
+            "true_positive": 39
+          },
+          "Pitta": {
+            "true_negative": 9,
+            "false_positive": 13,
+            "false_negative": 3,
+            "true_positive": 42
+          },
+          "Kapha": {
+            "true_negative": 31,
+            "false_positive": 17,
+            "false_negative": 7,
+            "true_positive": 12
+          }
+        }
+      },
+      "pipeline_path": "C:\\Users\\thisari.thathsarani\\Documents\\MSc AI Coursework\\ayurvedic_hybrid_ai\\models\\phase4_validation\\symptoms_plus_categorical__logistic_regression_ovr.joblib",
+      "score_semantics": "uncalibrated probability estimates"
+    },
+    {
+      "candidate": "symptoms_plus_categorical__random_forest_ovr",
+      "feature_experiment": "symptoms_plus_categorical",
+      "feature_columns": [
+        "symptoms",
+        "symptom_severity",
+        "age_group",
+        "gender",
+        "risk_factors",
+        "environmental_factors",
+        "sleep_patterns",
+        "stress_levels",
+        "physical_activity_levels",
+        "dietary_habits",
+        "seasonal_variation",
+        "occupation_and_lifestyle"
+      ],
+      "model": "random_forest_ovr",
+      "selected_hyperparameters": {
+        "n_estimators": 200,
+        "max_depth": 12,
+        "min_samples_leaf": 1,
+        "class_weight": "balanced_subsample"
+      },
+      "thresholds": [
+        0.45,
+        0.5,
+        0.45
+      ],
+      "metrics_default_0_5": {
+        "macro_f1": 0.697597901120406,
+        "micro_f1": 0.7715736040609137,
+        "samples_f1": 0.7761194029850745,
+        "hamming_loss": 0.22388059701492538,
+        "exact_match_subset_accuracy": 0.5522388059701493,
+        "jaccard_samples": 0.7164179104477612,
+        "actual_label_prevalence": {
+          "Vata": 0.5970149253731343,
+          "Pitta": 0.6716417910447762,
+          "Kapha": 0.2835820895522388
+        },
+        "predicted_label_prevalence": {
+          "Vata": 0.4925373134328358,
+          "Pitta": 0.7910447761194029,
+          "Kapha": 0.1044776119402985
+        },
+        "per_label": {
+          "Vata": {
+            "precision": 0.8787878787878788,
+            "recall": 0.725,
+            "f1": 0.7945205479452054,
+            "positive_support": 40,
+            "negative_support": 27
+          },
+          "Pitta": {
+            "precision": 0.7735849056603774,
+            "recall": 0.9111111111111111,
+            "f1": 0.8367346938775511,
+            "positive_support": 45,
+            "negative_support": 22
+          },
+          "Kapha": {
+            "precision": 0.8571428571428571,
+            "recall": 0.3157894736842105,
+            "f1": 0.46153846153846156,
+            "positive_support": 19,
+            "negative_support": 48
+          }
+        },
+        "multilabel_confusion_matrices": {
+          "Vata": {
+            "true_negative": 23,
+            "false_positive": 4,
+            "false_negative": 11,
+            "true_positive": 29
+          },
+          "Pitta": {
+            "true_negative": 10,
+            "false_positive": 12,
+            "false_negative": 4,
+            "true_positive": 41
+          },
+          "Kapha": {
+            "true_negative": 47,
+            "false_positive": 1,
+            "false_negative": 13,
+            "true_positive": 6
+          }
+        }
+      },
+      "metrics_tuned": {
+        "macro_f1": 0.7282942806752329,
+        "micro_f1": 0.784688995215311,
+        "samples_f1": 0.790547263681592,
+        "hamming_loss": 0.22388059701492538,
+        "exact_match_subset_accuracy": 0.5373134328358209,
+        "jaccard_samples": 0.7238805970149254,
+        "actual_label_prevalence": {
+          "Vata": 0.5970149253731343,
+          "Pitta": 0.6716417910447762,
+          "Kapha": 0.2835820895522388
+        },
+        "predicted_label_prevalence": {
+          "Vata": 0.6119402985074627,
+          "Pitta": 0.7910447761194029,
+          "Kapha": 0.16417910447761194
+        },
+        "per_label": {
+          "Vata": {
+            "precision": 0.8048780487804879,
+            "recall": 0.825,
+            "f1": 0.8148148148148148,
+            "positive_support": 40,
+            "negative_support": 27
+          },
+          "Pitta": {
+            "precision": 0.7735849056603774,
+            "recall": 0.9111111111111111,
+            "f1": 0.8367346938775511,
+            "positive_support": 45,
+            "negative_support": 22
+          },
+          "Kapha": {
+            "precision": 0.7272727272727273,
+            "recall": 0.42105263157894735,
+            "f1": 0.5333333333333333,
+            "positive_support": 19,
+            "negative_support": 48
+          }
+        },
+        "multilabel_confusion_matrices": {
+          "Vata": {
+            "true_negative": 19,
+            "false_positive": 8,
+            "false_negative": 7,
+            "true_positive": 33
+          },
+          "Pitta": {
+            "true_negative": 10,
+            "false_positive": 12,
+            "false_negative": 4,
+            "true_positive": 41
+          },
+          "Kapha": {
+            "true_negative": 45,
+            "false_positive": 3,
+            "false_negative": 11,
+            "true_positive": 8
+          }
+        }
+      },
+      "pipeline_path": "C:\\Users\\thisari.thathsarani\\Documents\\MSc AI Coursework\\ayurvedic_hybrid_ai\\models\\phase4_validation\\symptoms_plus_categorical__random_forest_ovr.joblib",
+      "score_semantics": "uncalibrated probability estimates"
+    }
+  ],
+  "provisional_selection": {
+    "candidate": "symptoms_only__logistic_regression_ovr",
+    "selection_partition": "validation",
+    "primary_metric": "macro_f1",
+    "secondary_criteria": [
+      "micro_f1",
+      "lower hamming_loss",
+      "model simplicity",
+      "interpretability"
+    ],
+    "final_test_accessed": false
+  },
+  "environment": {
+    "python": "3.12.7",
+    "numpy": "1.26.4",
+    "pandas": "2.2.2",
+    "scikit_learn": "1.5.1",
+    "matplotlib": "3.9.2",
+    "joblib": "1.4.2"
+  },
+  "limitations": [
+    "Only 312 training and 67 validation knowledge profiles are available.",
+    "Kapha has the lowest label prevalence.",
+    "Several approved categorical fields are templated and high-cardinality.",
+    "Repeated disease groups contain conflicting dataset-assigned labels.",
+    "Validation-based model and threshold selection may overfit.",
+    "Generalization to unseen diseases may be weak.",
+    "The task predicts dataset-assigned tags, not clinically validated Doshas."
+  ]
+}

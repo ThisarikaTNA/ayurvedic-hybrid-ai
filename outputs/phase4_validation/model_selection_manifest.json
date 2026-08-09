@@ -1,0 +1,46 @@
+{
+  "status": "frozen_after_user_acceptance",
+  "phase": 4,
+  "selected_model": "symptoms-only one-vs-rest Logistic Regression",
+  "implementation_candidate": "symptoms_only__logistic_regression_ovr",
+  "hyperparameters": {
+    "C": 0.5,
+    "class_weight": "balanced"
+  },
+  "thresholds": {
+    "Vata": 0.45,
+    "Pitta": 0.45,
+    "Kapha": 0.45
+  },
+  "primary_selection_metric": "validation Macro-F1",
+  "features": [
+    "symptoms"
+  ],
+  "random_seed": 42,
+  "software_versions": {
+    "python": "3.12.7",
+    "scikit_learn": "1.5.1",
+    "pandas": "2.2.2",
+    "numpy": "1.26.4",
+    "matplotlib": "3.9.2",
+    "joblib": "1.4.2"
+  },
+  "artifacts": {
+    "split_manifest": {
+      "path": "C:\\Users\\thisari.thathsarani\\Documents\\MSc AI Coursework\\ayurvedic_hybrid_ai\\outputs\\splits\\split_manifest.json",
+      "sha256": "1E57C0C8870700DE64BE51F4C60BEAF714D518ED1AD66D390E7F563F5E664D78"
+    },
+    "preprocessing_output": {
+      "path": "C:\\Users\\thisari.thathsarani\\Documents\\MSc AI Coursework\\ayurvedic_hybrid_ai\\data\\processed\\ayurgenix_cleaned.csv",
+      "sha256": "55AF558BB13246C5941DAC81EB02CD62916BAE71AFD7B3BD357A51944C5A1E13"
+    },
+    "saved_model_bundle": {
+      "path": "C:\\Users\\thisari.thathsarani\\Documents\\MSc AI Coursework\\ayurvedic_hybrid_ai\\models\\phase4_validation\\provisional_best_bundle.joblib",
+      "sha256": "876F5DA8C4E4FBE1A73CC91B83DAB518DD945789CC2DAB78663F01B9111CFABF"
+    }
+  },
+  "rationale": "Highest validation Macro-F1 among the compared candidates, with greater simplicity and interpretability.",
+  "limitation": "The combined-feature Random Forest was a near-tie on validation Macro-F1 and performed better on several secondary metrics. Logistic Regression must not be described as decisively superior.",
+  "probability_statement": "Outputs are uncalibrated probability estimates, not calibrated confidence.",
+  "final_test_status": "sealed; not accessed or evaluated for this decision"
+}

@@ -1,0 +1,52 @@
+{
+  "partition": "validation",
+  "grid": [
+    0.2,
+    0.25,
+    0.3,
+    0.35,
+    0.4,
+    0.45,
+    0.5,
+    0.55,
+    0.6,
+    0.65,
+    0.7,
+    0.75,
+    0.8
+  ],
+  "method": "separate per-label F1 maximization; ties prefer threshold nearest 0.5",
+  "overfitting_warning": "Thresholds reuse the 67-profile validation set used for model and hyperparameter comparison and may overfit.",
+  "selected_thresholds": {
+    "symptoms_only__dummy_prior": {
+      "Vata": 0.5,
+      "Pitta": 0.5,
+      "Kapha": 0.25
+    },
+    "symptoms_only__logistic_regression_ovr": {
+      "Vata": 0.45,
+      "Pitta": 0.45,
+      "Kapha": 0.45
+    },
+    "symptoms_only__random_forest_ovr": {
+      "Vata": 0.5,
+      "Pitta": 0.45,
+      "Kapha": 0.4
+    },
+    "symptoms_plus_categorical__dummy_prior": {
+      "Vata": 0.5,
+      "Pitta": 0.5,
+      "Kapha": 0.25
+    },
+    "symptoms_plus_categorical__logistic_regression_ovr": {
+      "Vata": 0.2,
+      "Pitta": 0.45,
+      "Kapha": 0.4
+    },
+    "symptoms_plus_categorical__random_forest_ovr": {
+      "Vata": 0.45,
+      "Pitta": 0.5,
+      "Kapha": 0.45
+    }
+  }
+}
