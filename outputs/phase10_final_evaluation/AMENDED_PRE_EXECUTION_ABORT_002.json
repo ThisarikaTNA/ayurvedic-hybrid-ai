@@ -1,0 +1,33 @@
+{
+  "phase": 10,
+  "status": "aborted_before_guard_consumption_second_amendment_required",
+  "recorded_at_utc": "2026-08-06T16:55:40.3452482Z",
+  "stage": "post_lock_pre_execution_code_audit",
+  "defect": {
+    "description": "The execution preflight's existing-output check does not exempt amended_pre_execution_manifest.json and amended_integrity_checks.json, even though both files are required to exist before execution.",
+    "practical_effect": "The locked execution would reject its own required lock records before consuming the guard or opening cleaned data.",
+    "discovered_before_execution_command": true,
+    "exposed_metadata_influenced_defect": false,
+    "frozen_model_or_evaluation_definition_affected": false
+  },
+  "preserved_lock_records": {
+    "amended_pre_execution_manifest_sha256": "8529E6BB81D7C931DDABA7E0E863F773442C326E32EC5D35FCB4E6B0D5009ED7",
+    "amended_integrity_checks_sha256": "F77399A06632FCCF5CDDB22183847BB67A985BB82F4F9342EC7397395F2B3980"
+  },
+  "access_counters": {
+    "split_manifest_metadata_exposures": 1,
+    "cleaned_final_test_data_read_executions": 0,
+    "final_test_rows_loaded": 0,
+    "final_test_symptom_fields_loaded": 0,
+    "batch_prediction_calls": 0,
+    "metric_calculation_executions": 0,
+    "error_analysis_executions": 0,
+    "successful_evaluation_runs": 0,
+    "aborted_evaluation_runs": 2
+  },
+  "one_time_execution_guard_consumed": false,
+  "started_marker_exists": false,
+  "completion_marker_exists": false,
+  "final_metrics_exist": false,
+  "required_next_authority": "Amendment 002 authorizing the narrow guard fix, an added synthetic prepare-to-execute preflight test, and new versioned amended lock records without overwriting the preserved Amendment 001 lock."
+}

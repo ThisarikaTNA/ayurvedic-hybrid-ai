@@ -1,0 +1,223 @@
+{
+  "phase": 10,
+  "status": "one_time_final_test_evaluation_complete",
+  "completed_at_utc": "2026-08-06T17:08:08.747943+00:00",
+  "protocol_incident": {
+    "perfect_pre_unsealing_blindness": false,
+    "split_manifest_metadata_exposures": 1,
+    "aborted_pre_execution_attempts": 2,
+    "false_lock_file_collision": true,
+    "continuation_authority": [
+      "PHASE10-AMENDMENT-001",
+      "PHASE10-AMENDMENT-002"
+    ],
+    "cleaned_rows_or_predictions_at_exposure": 0,
+    "possible_effect_dismissed": false
+  },
+  "protocol_hashes": {
+    "original_pre_unsealing_manifest": "712E3EF9D454BB6860DFE06FC317211C82F2FE5DC372B8C4C454467C13ABF204",
+    "original_integrity_checks": "3E505411E5B2AF510064A9C637A1AD8D1E1CC8FC7653CE5427EEACFBA226ED39",
+    "protocol_amendment_001": "C59000A392477188B7BF8B1BB660C0E8B993D8D1C20D4E6530DA94AB6F32F3BE",
+    "protocol_amendment_002": "374A16C200A3474028DBA7DA526D206EF820CBBA6613A0FE084E20A157C676B4",
+    "amended_pre_execution_manifest": "8529E6BB81D7C931DDABA7E0E863F773442C326E32EC5D35FCB4E6B0D5009ED7",
+    "amended_integrity_checks": "F77399A06632FCCF5CDDB22183847BB67A985BB82F4F9342EC7397395F2B3980",
+    "amended_pre_execution_manifest_v2": "F3D3220AC497BB802ED5958E85F676D5E5F1AAC0442CE5CAAD06265286C2A0D5",
+    "amended_integrity_checks_v2": "721D45107EE57E36C3ACDF5073B999036D88F07237E907627875CE94F5B8A6B1",
+    "second_pre_execution_abort": "95C205AD70DB76B2D696C4FC4F521FD4089DB144E4DE11451F06B6526C831349"
+  },
+  "locked_code_and_configuration": {
+    "src/evaluation/final_test_evaluator.py": "237C3EA602188790247980805C555E514D328848D1DF8C9F89FFAA6F1E4BF210",
+    "config/final_test_evaluation.v1.json": "34D27FE77F03B51470C74A1548BBA0E7119E694FECA5BF4D020FB49C21F554FB",
+    "scripts/run_phase10_final_test_evaluation.py": "3497E9DD26DD1499982C8FAA037B23A33F5CD8D12002AA681A4F7F9C45E12302",
+    "schemas/phase10_final_test_metrics.schema.json": "77310750402B26B22EB47A88066BAF5B205AB780DBBB4C8FA6715A70AB894B96",
+    "schemas/phase10_final_evaluation_manifest.schema.json": "CD7FB0FF840FB3C9B2555C33735F2C626AC59E82F7F36F20869A3D2EF4BB4D30",
+    "tests/test_phase10_final_test_evaluator.py": "85D4A18BCBD86B32B11CE5A46F71AC4402636811E484D2C7BCBC45F86093564B",
+    "outputs/phase10_final_evaluation/protocol_amendment_001.json": "C59000A392477188B7BF8B1BB660C0E8B993D8D1C20D4E6530DA94AB6F32F3BE",
+    "outputs/phase10_final_evaluation/post_exposure_change_log.json": "7F14B7EE08D6E8B1B2E383D45BC02332E4AABDAF2036C0B3106672B9D53B690A",
+    "outputs/phase10_final_evaluation/amended_pre_execution_manifest.json": "8529E6BB81D7C931DDABA7E0E863F773442C326E32EC5D35FCB4E6B0D5009ED7",
+    "outputs/phase10_final_evaluation/amended_integrity_checks.json": "F77399A06632FCCF5CDDB22183847BB67A985BB82F4F9342EC7397395F2B3980",
+    "outputs/phase10_final_evaluation/AMENDED_PRE_EXECUTION_ABORT_002.json": "95C205AD70DB76B2D696C4FC4F521FD4089DB144E4DE11451F06B6526C831349",
+    "outputs/phase10_final_evaluation/protocol_amendment_002.json": "374A16C200A3474028DBA7DA526D206EF820CBBA6613A0FE084E20A157C676B4",
+    "outputs/phase10_final_evaluation/post_exposure_change_log_amendment_002.json": "B27005CD6D160BEF57CB8B948558F615596831880F2A8939380CE2AA26B7CBAD"
+  },
+  "frozen_artifact_hashes": {
+    "phase4_model_selection_manifest": "9369A84E8A895E1B4657F7C58AEECB062294F88E5C78128E416F27624C497466",
+    "frozen_model_bundle": "876F5DA8C4E4FBE1A73CC91B83DAB518DD945789CC2DAB78663F01B9111CFABF",
+    "cleaned_dataset": "55AF558BB13246C5941DAC81EB02CD62916BAE71AFD7B3BD357A51944C5A1E13",
+    "split_manifest": "1E57C0C8870700DE64BE51F4C60BEAF714D518ED1AD66D390E7F563F5E664D78",
+    "split_assignments": "EA573340FDF70942C2E09267A7BDE7C3B2D45E8C343ED535F4E80B06A7D450C3",
+    "phase6_manifest": "F125C5992308424FAAA46F9F0610D39B29A676BB2452DDA9193233CAF722A141",
+    "phase7_manifest": "5774E1096A7BB0B0347876358E532B681D8B24D6FF6694AD6EE91D9753D73784",
+    "phase8_manifest": "8D5AED3484D6A136BC6C59629B77FE4232B239961A552559AB6E5D0245829D09",
+    "phase9_manifest": "1A54683066456D2EEE6CEEB637B52A336D5018438E7675872A20C564D4B996D2",
+    "hybrid_configuration": "65CA01FEDD740B12AA398476EC2EF2A1D08C22F6A736265C051A6C8121EAFD44",
+    "production_database": "E52BD930AEE515F32012AC24359E7A94F4B4F726B0A5F86465185B1D2103ADFD",
+    "incident_pre_unsealing_manifest": "712E3EF9D454BB6860DFE06FC317211C82F2FE5DC372B8C4C454467C13ABF204",
+    "incident_integrity_checks": "3E505411E5B2AF510064A9C637A1AD8D1E1CC8FC7653CE5427EEACFBA226ED39",
+    "protocol_amendment_001": "C59000A392477188B7BF8B1BB660C0E8B993D8D1C20D4E6530DA94AB6F32F3BE"
+  },
+  "runtime_versions": {
+    "python": "3.12.7",
+    "scikit_learn": "1.5.1",
+    "pandas": "2.2.2",
+    "numpy": "1.26.4",
+    "joblib": "1.4.2",
+    "sqlite": "3.45.3"
+  },
+  "access_counters": {
+    "split_manifest_metadata_exposures": 1,
+    "aborted_pre_execution_attempts": 2,
+    "cleaned_final_test_data_read_executions": 1,
+    "final_test_rows_loaded": 67,
+    "final_test_symptom_fields_loaded": 67,
+    "batch_prediction_calls": 1,
+    "metric_calculation_executions": 1,
+    "error_analysis_executions": 0,
+    "successful_evaluation_runs": 1,
+    "aborted_evaluation_runs": 0
+  },
+  "test_partition": {
+    "profile_count": 67,
+    "per_label_decision_count": 201,
+    "label_order": [
+      "Vata",
+      "Pitta",
+      "Kapha"
+    ],
+    "label_prevalence": {
+      "Vata": {
+        "positive_count": 37,
+        "profile_count": 67,
+        "prevalence": 0.5522388059701493
+      },
+      "Pitta": {
+        "positive_count": 47,
+        "profile_count": 67,
+        "prevalence": 0.7014925373134329
+      },
+      "Kapha": {
+        "positive_count": 18,
+        "profile_count": 67,
+        "prevalence": 0.26865671641791045
+      }
+    }
+  },
+  "metrics": {
+    "primary": {
+      "name": "macro_f1",
+      "value": 0.6262408506146225
+    },
+    "secondary": {
+      "micro_f1": 0.6974789915966386,
+      "weighted_f1": 0.7061962011276839,
+      "samples_f1": 0.6925373134328358,
+      "jaccard_samples": 0.5771144278606964,
+      "exact_match_subset_accuracy": 0.23880597014925373,
+      "hamming_loss": 0.3582089552238806
+    },
+    "per_label": {
+      "Vata": {
+        "precision": 0.6530612244897959,
+        "recall": 0.8648648648648649,
+        "f1": 0.7441860465116279,
+        "support": 37,
+        "tn": 13,
+        "fp": 17,
+        "fn": 5,
+        "tp": 32
+      },
+      "Pitta": {
+        "precision": 0.7457627118644068,
+        "recall": 0.9361702127659575,
+        "f1": 0.8301886792452831,
+        "support": 47,
+        "tn": 5,
+        "fp": 15,
+        "fn": 3,
+        "tp": 44
+      },
+      "Kapha": {
+        "precision": 0.25,
+        "recall": 0.3888888888888889,
+        "f1": 0.30434782608695654,
+        "support": 18,
+        "tn": 28,
+        "fp": 21,
+        "fn": 11,
+        "tp": 7
+      }
+    },
+    "bootstrap_intervals": {
+      "method": "record_level_resampling_with_replacement",
+      "resamples": 2000,
+      "seed": 42,
+      "confidence_level": 0.95,
+      "macro_f1": {
+        "lower_percentile": 2.5,
+        "lower": 0.5597106544766417,
+        "upper_percentile": 97.5,
+        "upper": 0.6845154237795747
+      },
+      "micro_f1": {
+        "lower_percentile": 2.5,
+        "lower": 0.6448912126834204,
+        "upper_percentile": 97.5,
+        "upper": 0.7509889489392595
+      },
+      "estimator_refitted": false,
+      "warning": "Intervals may be unstable for this small grouped final-test partition and do not represent clinical uncertainty."
+    },
+    "abstention": {
+      "definition": "zero labels meeting their frozen thresholds",
+      "count": 0,
+      "rate": 0.0
+    },
+    "validation_comparison": {
+      "frozen_validation_macro_f1": 0.7298139768728004,
+      "final_test_macro_f1": 0.6262408506146225,
+      "test_minus_validation": -0.10357312625817783,
+      "interpretation": "observed_generalization_gap_without_significance_claim",
+      "pre_registered_success_threshold": null
+    }
+  },
+  "artifact_hashes": {
+    "final_test_metrics.json": "67232584A7773A77A1983E3A34B21334E5FF78A8F1221E47D9D37CE2F7756BFE",
+    "final_test_predictions.csv": "44B09ACC6285B64AFDC9F9BE7F6397A77788F93F151874C522514D6617D2E8E5",
+    "final_test_confusion_counts.json": "FDE6B33AC1DDF593ABF229608D857D010FB8710425D5EA0643B129164EC8A8EE",
+    "FINAL_TEST_EVALUATION_STARTED.json": "A1EC22DC666C7745EE6442D1B473A87E88A9DEC5A05FE498F1CEB988F01BA4F8",
+    "FINAL_TEST_EVALUATION_COMPLETE.json": "14700DC407109A3F595CD708A56BD1D58D999F384DB4FADCAD8F283E7B80BAC0"
+  },
+  "production_database": {
+    "path": "data/knowledge_base/ayurvedic_knowledge.db",
+    "sha256_before": "E52BD930AEE515F32012AC24359E7A94F4B4F726B0A5F86465185B1D2103ADFD",
+    "sha256_after": "E52BD930AEE515F32012AC24359E7A94F4B4F726B0A5F86465185B1D2103ADFD",
+    "byte_for_byte_unchanged": true,
+    "production_table_row_counts": {
+      "model_predictions": 0,
+      "retrieval_results": 0,
+      "final_recommendations": 0
+    },
+    "foreign_key_violation_count": 0
+  },
+  "exact_dosage_findings": [],
+  "prohibited_language_findings": [],
+  "integrity_warnings_or_deviations": [
+    "One acknowledged pre-execution split-manifest metadata exposure; perfect pre-unsealing blindness cannot be claimed.",
+    "Two pre-execution attempts aborted before cleaned-data access; the second was caused by a false collision with required Amendment 001 lock files.",
+    "Continuation used Amendments 001 and 002 without changing the frozen model or evaluation definitions."
+  ],
+  "integrity_status": "passed_with_acknowledged_metadata_exposure",
+  "post_test_changes": {
+    "model_changes": 0,
+    "preprocessing_changes": 0,
+    "threshold_changes": 0,
+    "split_changes": 0,
+    "metric_definition_changes": 0,
+    "retrieval_rule_or_hybrid_changes": 0
+  },
+  "evidence_boundary": {
+    "frozen_ml_model": "held-out agreement with dataset-assigned Dosha labels",
+    "rules_retrieval_safety_gate": "synthetic implementation and traceability evidence only",
+    "full_hybrid_pipeline": "functional educational prototype; no combined accuracy score"
+  }
+}

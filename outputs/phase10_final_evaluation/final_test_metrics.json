@@ -1,0 +1,153 @@
+{
+  "scope": "held_out_dataset_label_agreement_not_clinical_accuracy",
+  "primary_metric": {
+    "name": "macro_f1",
+    "value": 0.6262408506146225
+  },
+  "secondary_metrics": {
+    "micro_f1": 0.6974789915966386,
+    "weighted_f1": 0.7061962011276839,
+    "samples_f1": 0.6925373134328358,
+    "jaccard_samples": 0.5771144278606964,
+    "exact_match_subset_accuracy": 0.23880597014925373,
+    "hamming_loss": 0.3582089552238806
+  },
+  "per_label": {
+    "Vata": {
+      "precision": 0.6530612244897959,
+      "recall": 0.8648648648648649,
+      "f1": 0.7441860465116279,
+      "support": 37,
+      "tn": 13,
+      "fp": 17,
+      "fn": 5,
+      "tp": 32
+    },
+    "Pitta": {
+      "precision": 0.7457627118644068,
+      "recall": 0.9361702127659575,
+      "f1": 0.8301886792452831,
+      "support": 47,
+      "tn": 5,
+      "fp": 15,
+      "fn": 3,
+      "tp": 44
+    },
+    "Kapha": {
+      "precision": 0.25,
+      "recall": 0.3888888888888889,
+      "f1": 0.30434782608695654,
+      "support": 18,
+      "tn": 28,
+      "fp": 21,
+      "fn": 11,
+      "tp": 7
+    }
+  },
+  "confusion_counts": {
+    "Vata": {
+      "tn": 13,
+      "fp": 17,
+      "fn": 5,
+      "tp": 32
+    },
+    "Pitta": {
+      "tn": 5,
+      "fp": 15,
+      "fn": 3,
+      "tp": 44
+    },
+    "Kapha": {
+      "tn": 28,
+      "fp": 21,
+      "fn": 11,
+      "tp": 7
+    }
+  },
+  "label_prevalence": {
+    "Vata": {
+      "positive_count": 37,
+      "profile_count": 67,
+      "prevalence": 0.5522388059701493
+    },
+    "Pitta": {
+      "positive_count": 47,
+      "profile_count": 67,
+      "prevalence": 0.7014925373134329
+    },
+    "Kapha": {
+      "positive_count": 18,
+      "profile_count": 67,
+      "prevalence": 0.26865671641791045
+    }
+  },
+  "cardinality": {
+    "true_mean_labels_per_profile": 1.5223880597014925,
+    "predicted_mean_labels_per_profile": 2.029850746268657
+  },
+  "abstention": {
+    "definition": "zero labels meeting their frozen thresholds",
+    "count": 0,
+    "rate": 0.0
+  },
+  "predicted_label_combinations": [
+    {
+      "combination": "Pitta",
+      "count": 5,
+      "fraction": 0.07462686567164178
+    },
+    {
+      "combination": "Pitta+Kapha",
+      "count": 13,
+      "fraction": 0.19402985074626866
+    },
+    {
+      "combination": "Vata",
+      "count": 7,
+      "fraction": 0.1044776119402985
+    },
+    {
+      "combination": "Vata+Kapha",
+      "count": 1,
+      "fraction": 0.014925373134328358
+    },
+    {
+      "combination": "Vata+Pitta",
+      "count": 27,
+      "fraction": 0.40298507462686567
+    },
+    {
+      "combination": "Vata+Pitta+Kapha",
+      "count": 14,
+      "fraction": 0.208955223880597
+    }
+  ],
+  "bootstrap_intervals": {
+    "method": "record_level_resampling_with_replacement",
+    "resamples": 2000,
+    "seed": 42,
+    "confidence_level": 0.95,
+    "macro_f1": {
+      "lower_percentile": 2.5,
+      "lower": 0.5597106544766417,
+      "upper_percentile": 97.5,
+      "upper": 0.6845154237795747
+    },
+    "micro_f1": {
+      "lower_percentile": 2.5,
+      "lower": 0.6448912126834204,
+      "upper_percentile": 97.5,
+      "upper": 0.7509889489392595
+    },
+    "estimator_refitted": false,
+    "warning": "Intervals may be unstable for this small grouped final-test partition and do not represent clinical uncertainty."
+  },
+  "validation_comparison": {
+    "frozen_validation_macro_f1": 0.7298139768728004,
+    "final_test_macro_f1": 0.6262408506146225,
+    "test_minus_validation": -0.10357312625817783,
+    "interpretation": "observed_generalization_gap_without_significance_claim",
+    "pre_registered_success_threshold": null
+  },
+  "zero_division": 0
+}

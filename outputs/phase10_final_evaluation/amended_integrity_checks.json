@@ -1,0 +1,195 @@
+{
+  "phase": 10,
+  "status": "amended_pre_execution_checks_passed",
+  "checked_at_utc": "2026-08-06T16:55:03.724369+00:00",
+  "protocol_amendment": "PHASE10-AMENDMENT-001",
+  "perfect_pre_unsealing_blindness": false,
+  "preflight": {
+    "artifact_hash_checks": {
+      "phase4_model_selection_manifest": {
+        "path": "outputs/phase4_validation/model_selection_manifest.json",
+        "expected_sha256": "9369A84E8A895E1B4657F7C58AEECB062294F88E5C78128E416F27624C497466",
+        "observed_sha256": "9369A84E8A895E1B4657F7C58AEECB062294F88E5C78128E416F27624C497466",
+        "passed": true
+      },
+      "frozen_model_bundle": {
+        "path": "models/phase4_validation/provisional_best_bundle.joblib",
+        "expected_sha256": "876F5DA8C4E4FBE1A73CC91B83DAB518DD945789CC2DAB78663F01B9111CFABF",
+        "observed_sha256": "876F5DA8C4E4FBE1A73CC91B83DAB518DD945789CC2DAB78663F01B9111CFABF",
+        "passed": true
+      },
+      "cleaned_dataset": {
+        "path": "data/processed/ayurgenix_cleaned.csv",
+        "expected_sha256": "55AF558BB13246C5941DAC81EB02CD62916BAE71AFD7B3BD357A51944C5A1E13",
+        "observed_sha256": "55AF558BB13246C5941DAC81EB02CD62916BAE71AFD7B3BD357A51944C5A1E13",
+        "passed": true
+      },
+      "split_manifest": {
+        "path": "outputs/splits/split_manifest.json",
+        "expected_sha256": "1E57C0C8870700DE64BE51F4C60BEAF714D518ED1AD66D390E7F563F5E664D78",
+        "observed_sha256": "1E57C0C8870700DE64BE51F4C60BEAF714D518ED1AD66D390E7F563F5E664D78",
+        "passed": true
+      },
+      "split_assignments": {
+        "path": "outputs/splits/split_assignments.csv",
+        "expected_sha256": "EA573340FDF70942C2E09267A7BDE7C3B2D45E8C343ED535F4E80B06A7D450C3",
+        "observed_sha256": "EA573340FDF70942C2E09267A7BDE7C3B2D45E8C343ED535F4E80B06A7D450C3",
+        "passed": true
+      },
+      "phase6_manifest": {
+        "path": "outputs/phase6_knowledge_base/database_manifest.json",
+        "expected_sha256": "F125C5992308424FAAA46F9F0610D39B29A676BB2452DDA9193233CAF722A141",
+        "observed_sha256": "F125C5992308424FAAA46F9F0610D39B29A676BB2452DDA9193233CAF722A141",
+        "passed": true
+      },
+      "phase7_manifest": {
+        "path": "outputs/phase7_rule_engine/phase7_manifest.json",
+        "expected_sha256": "5774E1096A7BB0B0347876358E532B681D8B24D6FF6694AD6EE91D9753D73784",
+        "observed_sha256": "5774E1096A7BB0B0347876358E532B681D8B24D6FF6694AD6EE91D9753D73784",
+        "passed": true
+      },
+      "phase8_manifest": {
+        "path": "outputs/phase8_profile_retrieval/phase8_manifest.json",
+        "expected_sha256": "8D5AED3484D6A136BC6C59629B77FE4232B239961A552559AB6E5D0245829D09",
+        "observed_sha256": "8D5AED3484D6A136BC6C59629B77FE4232B239961A552559AB6E5D0245829D09",
+        "passed": true
+      },
+      "phase9_manifest": {
+        "path": "outputs/phase9_hybrid_integration/phase9_manifest.json",
+        "expected_sha256": "1A54683066456D2EEE6CEEB637B52A336D5018438E7675872A20C564D4B996D2",
+        "observed_sha256": "1A54683066456D2EEE6CEEB637B52A336D5018438E7675872A20C564D4B996D2",
+        "passed": true
+      },
+      "hybrid_configuration": {
+        "path": "config/hybrid_pipeline.v1.json",
+        "expected_sha256": "65CA01FEDD740B12AA398476EC2EF2A1D08C22F6A736265C051A6C8121EAFD44",
+        "observed_sha256": "65CA01FEDD740B12AA398476EC2EF2A1D08C22F6A736265C051A6C8121EAFD44",
+        "passed": true
+      },
+      "production_database": {
+        "path": "data/knowledge_base/ayurvedic_knowledge.db",
+        "expected_sha256": "E52BD930AEE515F32012AC24359E7A94F4B4F726B0A5F86465185B1D2103ADFD",
+        "observed_sha256": "E52BD930AEE515F32012AC24359E7A94F4B4F726B0A5F86465185B1D2103ADFD",
+        "passed": true
+      },
+      "incident_pre_unsealing_manifest": {
+        "path": "outputs/phase10_final_evaluation/pre_unsealing_manifest.json",
+        "expected_sha256": "712E3EF9D454BB6860DFE06FC317211C82F2FE5DC372B8C4C454467C13ABF204",
+        "observed_sha256": "712E3EF9D454BB6860DFE06FC317211C82F2FE5DC372B8C4C454467C13ABF204",
+        "passed": true
+      },
+      "incident_integrity_checks": {
+        "path": "outputs/phase10_final_evaluation/integrity_checks.json",
+        "expected_sha256": "3E505411E5B2AF510064A9C637A1AD8D1E1CC8FC7653CE5427EEACFBA226ED39",
+        "observed_sha256": "3E505411E5B2AF510064A9C637A1AD8D1E1CC8FC7653CE5427EEACFBA226ED39",
+        "passed": true
+      },
+      "protocol_amendment_001": {
+        "path": "outputs/phase10_final_evaluation/protocol_amendment_001.json",
+        "expected_sha256": "C59000A392477188B7BF8B1BB660C0E8B993D8D1C20D4E6530DA94AB6F32F3BE",
+        "observed_sha256": "C59000A392477188B7BF8B1BB660C0E8B993D8D1C20D4E6530DA94AB6F32F3BE",
+        "passed": true
+      }
+    },
+    "runtime_versions": {
+      "required": {
+        "python": "3.12.7",
+        "scikit_learn": "1.5.1",
+        "pandas": "2.2.2",
+        "numpy": "1.26.4",
+        "joblib": "1.4.2"
+      },
+      "observed": {
+        "python": "3.12.7",
+        "scikit_learn": "1.5.1",
+        "pandas": "2.2.2",
+        "numpy": "1.26.4",
+        "joblib": "1.4.2",
+        "sqlite": "3.45.3"
+      },
+      "passed": true
+    },
+    "production_database": {
+      "path": "data/knowledge_base/ayurvedic_knowledge.db",
+      "sha256_before": "E52BD930AEE515F32012AC24359E7A94F4B4F726B0A5F86465185B1D2103ADFD",
+      "sha256_after": "E52BD930AEE515F32012AC24359E7A94F4B4F726B0A5F86465185B1D2103ADFD",
+      "byte_for_byte_unchanged": true,
+      "production_table_row_counts": {
+        "model_predictions": 0,
+        "retrieval_results": 0,
+        "final_recommendations": 0
+      },
+      "foreign_key_violation_count": 0
+    },
+    "frozen_model_and_preprocessing": {
+      "bundle_sha256": "876F5DA8C4E4FBE1A73CC91B83DAB518DD945789CC2DAB78663F01B9111CFABF",
+      "pipeline_type": "sklearn.pipeline.Pipeline",
+      "preprocessor_type": "sklearn.compose.ColumnTransformer",
+      "classifier_type": "sklearn.multiclass.OneVsRestClassifier",
+      "base_estimator_type": "sklearn.linear_model.LogisticRegression",
+      "parameters": {
+        "C": 0.5,
+        "class_weight": "balanced",
+        "random_state": 42,
+        "solver": "liblinear",
+        "max_iter": 2000
+      },
+      "feature_fields": [
+        "symptoms"
+      ],
+      "label_order": [
+        "Vata",
+        "Pitta",
+        "Kapha"
+      ],
+      "thresholds": {
+        "Vata": 0.45,
+        "Pitta": 0.45,
+        "Kapha": 0.45
+      },
+      "already_fitted": true,
+      "fit_calls_permitted": 0,
+      "passed": true
+    },
+    "split_metadata_structure": {
+      "split_manifest_and_csv_identical": true,
+      "identifiers_unique": true,
+      "all_partitions_present": true,
+      "normalized_disease_group_overlap_count": 0,
+      "targets_binary": true,
+      "test_row_count_source": "locked_manifest_computed_without_display",
+      "passed": true
+    },
+    "static_prediction_only_audit": {
+      "fit_fit_transform_fit_resample_calls": [],
+      "predict_proba_call_sites": 1,
+      "feature_selection_or_training_calls": 0,
+      "passed": true
+    },
+    "one_time_output_guard": {
+      "existing_result_or_guard_artifacts": [],
+      "passed": true
+    },
+    "passed": true
+  },
+  "tests": {
+    "phase10_synthetic_tests": {
+      "tests": 27,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "189110FEA3B487E82BDC23CD043AFCB484BCE14D03F7CA889A72848717D28EC8"
+    },
+    "phase1_9_regression_tests": {
+      "tests": 139,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "73D2C367A581C746426F7D29C26371BF50B6D42F8FBD353C5E9501F613D3771F"
+    }
+  },
+  "no_frozen_component_changed_after_exposure": true,
+  "no_exposed_metadata_used_for_evaluator_logic": true,
+  "additional_split_manifest_content_displayed": false,
+  "passed": true
+}

@@ -1,0 +1,25 @@
+{
+  "phase": 10,
+  "status": "one_time_guard_consumed_before_cleaned_data_read",
+  "consumed_at_utc": "2026-08-06T17:08:02.158391+00:00",
+  "authorization": "PHASE10-AMENDMENT-001",
+  "split_manifest_metadata_exposures": 1,
+  "cleaned_final_test_data_read_executions_at_marker_creation": 0,
+  "batch_prediction_calls_at_marker_creation": 0,
+  "locked_code_and_configuration_hashes": {
+    "src/evaluation/final_test_evaluator.py": "237C3EA602188790247980805C555E514D328848D1DF8C9F89FFAA6F1E4BF210",
+    "config/final_test_evaluation.v1.json": "34D27FE77F03B51470C74A1548BBA0E7119E694FECA5BF4D020FB49C21F554FB",
+    "scripts/run_phase10_final_test_evaluation.py": "3497E9DD26DD1499982C8FAA037B23A33F5CD8D12002AA681A4F7F9C45E12302",
+    "schemas/phase10_final_test_metrics.schema.json": "77310750402B26B22EB47A88066BAF5B205AB780DBBB4C8FA6715A70AB894B96",
+    "schemas/phase10_final_evaluation_manifest.schema.json": "CD7FB0FF840FB3C9B2555C33735F2C626AC59E82F7F36F20869A3D2EF4BB4D30",
+    "tests/test_phase10_final_test_evaluator.py": "85D4A18BCBD86B32B11CE5A46F71AC4402636811E484D2C7BCBC45F86093564B",
+    "outputs/phase10_final_evaluation/protocol_amendment_001.json": "C59000A392477188B7BF8B1BB660C0E8B993D8D1C20D4E6530DA94AB6F32F3BE",
+    "outputs/phase10_final_evaluation/post_exposure_change_log.json": "7F14B7EE08D6E8B1B2E383D45BC02332E4AABDAF2036C0B3106672B9D53B690A",
+    "outputs/phase10_final_evaluation/amended_pre_execution_manifest.json": "8529E6BB81D7C931DDABA7E0E863F773442C326E32EC5D35FCB4E6B0D5009ED7",
+    "outputs/phase10_final_evaluation/amended_integrity_checks.json": "F77399A06632FCCF5CDDB22183847BB67A985BB82F4F9342EC7397395F2B3980",
+    "outputs/phase10_final_evaluation/AMENDED_PRE_EXECUTION_ABORT_002.json": "95C205AD70DB76B2D696C4FC4F521FD4089DB144E4DE11451F06B6526C831349",
+    "outputs/phase10_final_evaluation/protocol_amendment_002.json": "374A16C200A3474028DBA7DA526D206EF820CBBA6613A0FE084E20A157C676B4",
+    "outputs/phase10_final_evaluation/post_exposure_change_log_amendment_002.json": "B27005CD6D160BEF57CB8B948558F615596831880F2A8939380CE2AA26B7CBAD"
+  },
+  "rerun_without_new_amendment_permitted": false
+}

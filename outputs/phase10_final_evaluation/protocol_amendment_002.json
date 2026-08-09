@@ -1,0 +1,51 @@
+{
+  "phase": 10,
+  "amendment_id": "PHASE10-AMENDMENT-002",
+  "status": "authorized_before_cleaned_data_access",
+  "authorized_at_utc": "2026-08-06T17:02:28.9803241Z",
+  "reason": "The locked execution script's existing-output rejection check treated its own two required Amendment 001 lock files as prohibited result artifacts, causing a false pre-execution rejection.",
+  "false_existing_output_collision": true,
+  "exact_allowlisted_immutable_inputs": [
+    {
+      "path": "outputs/phase10_final_evaluation/amended_pre_execution_manifest.json",
+      "pre_correction_sha256": "8529E6BB81D7C931DDABA7E0E863F773442C326E32EC5D35FCB4E6B0D5009ED7"
+    },
+    {
+      "path": "outputs/phase10_final_evaluation/amended_integrity_checks.json",
+      "pre_correction_sha256": "F77399A06632FCCF5CDDB22183847BB67A985BB82F4F9342EC7397395F2B3980"
+    }
+  ],
+  "second_abort_record": {
+    "path": "outputs/phase10_final_evaluation/AMENDED_PRE_EXECUTION_ABORT_002.json",
+    "sha256": "95C205AD70DB76B2D696C4FC4F521FD4089DB144E4DE11451F06B6526C831349"
+  },
+  "preserved_protocol_records": {
+    "outputs/phase10_final_evaluation/pre_unsealing_manifest.json": "712E3EF9D454BB6860DFE06FC317211C82F2FE5DC372B8C4C454467C13ABF204",
+    "outputs/phase10_final_evaluation/integrity_checks.json": "3E505411E5B2AF510064A9C637A1AD8D1E1CC8FC7653CE5427EEACFBA226ED39",
+    "outputs/phase10_final_evaluation/protocol_amendment_001.json": "C59000A392477188B7BF8B1BB660C0E8B993D8D1C20D4E6530DA94AB6F32F3BE"
+  },
+  "accepted_counters_before_correction": {
+    "split_manifest_metadata_exposures": 1,
+    "aborted_pre_execution_attempts": 2,
+    "cleaned_final_test_data_read_executions": 0,
+    "final_test_rows_loaded": 0,
+    "final_test_symptom_fields_loaded": 0,
+    "batch_prediction_calls": 0,
+    "metric_calculation_executions": 0,
+    "error_analysis_executions": 0,
+    "successful_evaluation_runs": 0
+  },
+  "one_time_guard_consumed": false,
+  "completion_marker_created": false,
+  "production_database_unchanged": true,
+  "authorized_changes": {
+    "source": "Modify only the prepare-to-execute existing-output preflight so the two exact canonical Amendment 001 lock paths are required, hash-verified immutable inputs and all other existing Phase 10 result or guard artifacts remain rejected.",
+    "tests": "Add synthetic-only regression coverage for valid locks, missing locks, changed locks, additional result artifacts, completion markers, and zero execution-side effects.",
+    "versioned_records": "Create Amendment 002 locks and reporting references without overwriting Amendment 001 records."
+  },
+  "unchanged_frozen_protocol": true,
+  "cleaned_data_or_symptom_text_read_before_authorization": false,
+  "predictions_metrics_or_error_analysis_before_authorization": false,
+  "continuation_authorization": "Continue the unused one-time Phase 10 execution only after the corrected tests, new versioned locks, and corrected preflight pass.",
+  "perfect_pre_unsealing_blindness": false
+}

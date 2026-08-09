@@ -1,0 +1,29 @@
+{
+  "label_order": [
+    "Vata",
+    "Pitta",
+    "Kapha"
+  ],
+  "profile_count": 67,
+  "confusion_counts": {
+    "Vata": {
+      "tn": 13,
+      "fp": 17,
+      "fn": 5,
+      "tp": 32
+    },
+    "Pitta": {
+      "tn": 5,
+      "fp": 15,
+      "fn": 3,
+      "tp": 44
+    },
+    "Kapha": {
+      "tn": 28,
+      "fp": 21,
+      "fn": 11,
+      "tp": 7
+    }
+  },
+  "scope": "dataset_label_agreement_counts_not_clinical_errors"
+}

@@ -1,0 +1,50 @@
+{
+  "phase": 10,
+  "status": "amended_protocol_locked_before_cleaned_data_read",
+  "locked_at_utc": "2026-08-06T16:55:03.724369+00:00",
+  "protocol_amendment": "PHASE10-AMENDMENT-001",
+  "original_incident_records_preserved": true,
+  "perfect_pre_unsealing_blindness": false,
+  "locked_code_and_configuration_hashes": {
+    "src/evaluation/final_test_evaluator.py": "239F4E9EE21EED303DE584F261D5090C22736BDAFF8E1FD6A507FB31AB710A14",
+    "config/final_test_evaluation.v1.json": "34D27FE77F03B51470C74A1548BBA0E7119E694FECA5BF4D020FB49C21F554FB",
+    "scripts/run_phase10_final_test_evaluation.py": "6EEB9EFF61BFCAC9DDE6E4B944AC044548039CE79051CAFE2CB600CEA9854B1F",
+    "schemas/phase10_final_test_metrics.schema.json": "77310750402B26B22EB47A88066BAF5B205AB780DBBB4C8FA6715A70AB894B96",
+    "schemas/phase10_final_evaluation_manifest.schema.json": "CD7FB0FF840FB3C9B2555C33735F2C626AC59E82F7F36F20869A3D2EF4BB4D30",
+    "tests/test_phase10_final_test_evaluator.py": "B0001E323D01F78ED37E2D31CC1F1354532033D09E28E77A0128FD6648DC7E93",
+    "outputs/phase10_final_evaluation/protocol_amendment_001.json": "C59000A392477188B7BF8B1BB660C0E8B993D8D1C20D4E6530DA94AB6F32F3BE",
+    "outputs/phase10_final_evaluation/post_exposure_change_log.json": "7F14B7EE08D6E8B1B2E383D45BC02332E4AABDAF2036C0B3106672B9D53B690A"
+  },
+  "amended_integrity_checks_sha256": "F77399A06632FCCF5CDDB22183847BB67A985BB82F4F9342EC7397395F2B3980",
+  "test_records": {
+    "phase10_synthetic_tests": {
+      "tests": 27,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "189110FEA3B487E82BDC23CD043AFCB484BCE14D03F7CA889A72848717D28EC8"
+    },
+    "phase1_9_regression_tests": {
+      "tests": 139,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "73D2C367A581C746426F7D29C26371BF50B6D42F8FBD353C5E9501F613D3771F"
+    }
+  },
+  "access_counters": {
+    "split_manifest_metadata_exposures": 1,
+    "cleaned_final_test_data_read_executions": 0,
+    "final_test_rows_loaded": 0,
+    "final_test_symptom_fields_loaded": 0,
+    "batch_prediction_calls": 0,
+    "metric_calculation_executions": 0,
+    "error_analysis_executions": 0,
+    "successful_evaluation_runs": 0,
+    "aborted_evaluation_runs": 1
+  },
+  "one_time_guard_consumed": false,
+  "completion_marker_exists": false,
+  "class_counts_or_test_content_reported_by_lock": false,
+  "ready_for_one_time_execution": true
+}

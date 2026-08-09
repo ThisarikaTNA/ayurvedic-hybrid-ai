@@ -1,0 +1,32 @@
+{
+  "phase": 10,
+  "status": "incomplete_aborted_before_prediction",
+  "recorded_at_utc": "2026-08-06T16:38:18.3297765Z",
+  "checks_completed": {
+    "phase4_manifest_file_hash_matches_record": true,
+    "frozen_model_bundle_file_hash_matches_record": true,
+    "cleaned_dataset_file_hash_matches_record": true,
+    "split_manifest_file_hash_matches_record": true,
+    "split_assignments_file_hash_recorded": true,
+    "phase9_manifest_file_hash_recorded": true,
+    "production_database_hash_matches_phase9_record": true,
+    "successful_completion_marker_absent": true
+  },
+  "checks_not_completed": [
+    "Full Phase 6-9 internal integrity-chain validation",
+    "Frozen estimator type and parameter validation",
+    "Prediction-only interface validation",
+    "Synthetic evaluator test suite",
+    "Phase 1-9 regression suite",
+    "Evaluator code and configuration lock",
+    "Real final-test partition structural validation"
+  ],
+  "access_counters": {
+    "cleaned_final_test_data_read_executions": 0,
+    "split_manifest_final_test_metadata_access_events": 1,
+    "batch_prediction_calls": 0,
+    "final_test_metrics_calculated": 0,
+    "final_test_error_analysis_events": 0
+  },
+  "abort_reason": "Pre-unsealing blindness was compromised when the split manifest content was displayed. Prediction was not attempted."
+}

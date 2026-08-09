@@ -1,0 +1,42 @@
+{
+  "phase": 10,
+  "status": "aborted_before_prediction_protocol_amendment_required",
+  "recorded_at_utc": "2026-08-06T16:38:18.3297765Z",
+  "authorized_execution_limit": 1,
+  "successful_final_test_evaluation_runs": 0,
+  "one_time_execution_guard_consumed": false,
+  "completion_marker_exists": false,
+  "protocol_deviation": {
+    "occurred": true,
+    "stage": "pre_unsealing_manifest_verification",
+    "description": "The split manifest was displayed instead of being verified by hash only. The manifest contains final-test disease-group and dataset-label metadata.",
+    "cleaned_final_test_rows_read": 0,
+    "final_test_symptom_text_read": 0,
+    "split_manifest_final_test_metadata_access_events": 1,
+    "final_test_predictions_generated": 0,
+    "final_test_errors_inspected": 0,
+    "final_test_metrics_calculated": 0,
+    "batch_prediction_calls": 0,
+    "response": "Fail closed before prediction and request a separately approved amendment."
+  },
+  "verified_hashes_before_abort": {
+    "phase4_model_selection_manifest_sha256": "9369A84E8A895E1B4657F7C58AEECB062294F88E5C78128E416F27624C497466",
+    "split_manifest_sha256": "1E57C0C8870700DE64BE51F4C60BEAF714D518ED1AD66D390E7F563F5E664D78",
+    "split_assignments_sha256": "EA573340FDF70942C2E09267A7BDE7C3B2D45E8C343ED535F4E80B06A7D450C3",
+    "cleaned_dataset_sha256": "55AF558BB13246C5941DAC81EB02CD62916BAE71AFD7B3BD357A51944C5A1E13",
+    "frozen_model_bundle_sha256": "876F5DA8C4E4FBE1A73CC91B83DAB518DD945789CC2DAB78663F01B9111CFABF",
+    "phase9_manifest_sha256": "1A54683066456D2EEE6CEEB637B52A336D5018438E7675872A20C564D4B996D2",
+    "production_database_sha256": "E52BD930AEE515F32012AC24359E7A94F4B4F726B0A5F86465185B1D2103ADFD"
+  },
+  "not_performed_due_to_abort": [
+    "Phase 10 evaluator implementation",
+    "Phase 10 synthetic evaluator tests",
+    "Phase 1-9 pre-unsealing regression run",
+    "Evaluator and configuration protocol lock",
+    "Cleaned final-test data read",
+    "Frozen-model final-test prediction",
+    "Final-test metric calculation",
+    "Final-test error analysis"
+  ],
+  "required_next_authority": "A separately approved Phase 10 amendment acknowledging the split-manifest metadata exposure and authorizing completion of the still-unused one-time evaluation run."
+}

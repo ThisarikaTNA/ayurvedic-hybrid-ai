@@ -1,0 +1,67 @@
+{
+  "phase": 10,
+  "scope": "Code, configuration, schema, test and documentation changes made after the recorded metadata exposure",
+  "metadata_exposure_count_at_log_start": 1,
+  "entries": [
+    {
+      "sequence": 1,
+      "timestamp_utc": "2026-08-06T16:42:57.4959590Z",
+      "change": "Created protocol_amendment_001.json and this post-exposure change log.",
+      "basis": "Explicitly approved Phase 10 Amendment 001",
+      "real_final_test_content_used": false,
+      "frozen_component_changed": false
+    },
+    {
+      "sequence": 2,
+      "timestamp_utc": "2026-08-06T16:52:46.4959561Z",
+      "change": "Created the versioned evaluation configuration, two Phase 10 result schemas, the prediction-only evaluator, the guarded prepare/execute script, the evaluation package initializer and synthetic-only evaluator tests.",
+      "files": [
+        "config/final_test_evaluation.v1.json",
+        "schemas/phase10_final_test_metrics.schema.json",
+        "schemas/phase10_final_evaluation_manifest.schema.json",
+        "src/evaluation/__init__.py",
+        "src/evaluation/final_test_evaluator.py",
+        "scripts/run_phase10_final_test_evaluation.py",
+        "tests/test_phase10_final_test_evaluator.py"
+      ],
+      "basis": "Original approved Phase 10 protocol and Amendment 001 only",
+      "real_final_test_content_used": false,
+      "exposed_metadata_special_case_logic_added": false,
+      "frozen_model_changed": false,
+      "preprocessing_changed": false,
+      "thresholds_changed": false,
+      "split_changed": false,
+      "metric_definitions_changed_after_results": false
+    },
+    {
+      "sequence": 3,
+      "timestamp_utc": "2026-08-06T16:54:36.7436595Z",
+      "change": "Executed synthetic-only Phase 10 tests and the Phase 1-9 regression suite before the amended protocol lock.",
+      "synthetic_test_attempts": [
+        {
+          "result": "environmental_fixture_setup_failure",
+          "details": "10 tests ran and 17 tmp_path fixture setups were blocked by the sandbox temporary-directory ACL; no final-test data or guard was involved."
+        },
+        {
+          "result": "passed",
+          "tests": 27,
+          "failures": 0,
+          "errors": 0,
+          "junit_sha256": "189110FEA3B487E82BDC23CD043AFCB484BCE14D03F7CA889A72848717D28EC8"
+        }
+      ],
+      "phase1_9_regression": {
+        "result": "passed",
+        "tests": 139,
+        "failures": 0,
+        "errors": 0,
+        "warnings": 1,
+        "warning": "Unrelated Jupyter platformdirs deprecation warning.",
+        "junit_sha256": "73D2C367A581C746426F7D29C26371BF50B6D42F8FBD353C5E9501F613D3771F"
+      },
+      "real_final_test_content_used": false,
+      "one_time_guard_consumed": false,
+      "frozen_component_changed": false
+    }
+  ]
+}

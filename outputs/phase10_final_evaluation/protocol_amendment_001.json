@@ -1,0 +1,62 @@
+{
+  "phase": 10,
+  "amendment_id": "PHASE10-AMENDMENT-001",
+  "status": "approved_continuation_authority",
+  "approved_at_utc": "2026-08-06T16:42:57.4959590Z",
+  "authorization_source": "Explicit user approval in the Phase 10 task",
+  "incident": {
+    "stage": "pre_unsealing_manifest_verification",
+    "description": "The locked split-manifest contents were displayed during hash verification before evaluator implementation and synthetic testing were complete.",
+    "information_categories_exposed": [
+      "final-test split membership metadata",
+      "normalized disease-group metadata",
+      "dataset-assigned Vata/Pitta/Kapha label metadata"
+    ],
+    "split_manifest_metadata_exposures": 1,
+    "cleaned_final_test_data_read_executions": 0,
+    "final_test_rows_loaded": 0,
+    "final_test_symptom_fields_loaded": 0,
+    "batch_prediction_calls": 0,
+    "metric_calculation_executions": 0,
+    "error_analysis_executions": 0,
+    "successful_evaluation_runs": 0,
+    "aborted_evaluation_runs": 1,
+    "execution_guard_consumed": false,
+    "completion_marker_created": false
+  },
+  "continuation_authorization": {
+    "complete_evaluator_implementation": true,
+    "complete_synthetic_pre_execution_tests": true,
+    "lock_and_hash_evaluator_and_configuration": true,
+    "one_cleaned_final_test_data_read_execution": true,
+    "one_in_memory_frozen_test_selection": true,
+    "one_batch_probability_call": true,
+    "one_frozen_threshold_application": true,
+    "one_pre_registered_metric_calculation_execution": true,
+    "one_result_artifact_write": true,
+    "one_successful_completion_marker": true
+  },
+  "unchanged_controls": [
+    "Frozen symptoms-only one-vs-rest Logistic Regression",
+    "C=0.5 and class_weight=balanced",
+    "Label order Vata, Pitta, Kapha",
+    "All thresholds equal 0.45 with greater-than-or-equal comparison",
+    "Random seed 42",
+    "Frozen fitted preprocessing and split membership",
+    "Pre-registered metric definitions and zero-division policy",
+    "No retraining, refitting, recalibration, retuning or replacement",
+    "No output overwrite or unapproved rerun",
+    "Phase 6-9 database, rule, retrieval and integration artifacts"
+  ],
+  "required_reporting": {
+    "perfect_pre_unsealing_blindness_may_be_claimed": false,
+    "incident_must_remain_visible": true,
+    "possible_effect_must_not_be_dismissed": true,
+    "ml_and_synthetic_hybrid_evidence_remain_separate": true
+  },
+  "original_incident_record_hashes": {
+    "pre_unsealing_manifest_sha256": "712E3EF9D454BB6860DFE06FC317211C82F2FE5DC372B8C4C454467C13ABF204",
+    "integrity_checks_sha256": "3E505411E5B2AF510064A9C637A1AD8D1E1CC8FC7653CE5427EEACFBA226ED39"
+  },
+  "sole_authorized_deviation": "One pre-execution split-manifest metadata exposure; no other original Phase 10 control is amended."
+}

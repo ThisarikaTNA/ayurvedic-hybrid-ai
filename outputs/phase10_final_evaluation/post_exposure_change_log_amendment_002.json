@@ -1,0 +1,46 @@
+{
+  "phase": 10,
+  "record_type": "amendment_002_code_and_configuration_change_log",
+  "created_at_utc": "2026-08-06T17:02:28.9803241Z",
+  "base_amendment": "outputs/phase10_final_evaluation/protocol_amendment_002.json",
+  "preserves_prior_change_log": "outputs/phase10_final_evaluation/post_exposure_change_log.json",
+  "completed_at_utc": "2026-08-06T17:06:51.8743149Z",
+  "completed_changes": [
+    {
+      "path": "scripts/run_phase10_final_test_evaluation.py",
+      "scope": "Exact canonical two-file allowlist with required SHA-256 verification; Amendment 002 versioned lock creation and consumption.",
+      "sha256": "3497E9DD26DD1499982C8FAA037B23A33F5CD8D12002AA681A4F7F9C45E12302"
+    },
+    {
+      "path": "tests/test_phase10_final_test_evaluator.py",
+      "scope": "Six synthetic preflight regression checks covering valid, missing, changed, additional-result, completion-marker, and zero-side-effect cases.",
+      "sha256": "85D4A18BCBD86B32B11CE5A46F71AC4402636811E484D2C7BCBC45F86093564B"
+    },
+    {
+      "path": "src/evaluation/final_test_evaluator.py",
+      "scope": "Final manifest, authorization, deviation, and counter reporting references required by Amendment 002 only.",
+      "sha256": "237C3EA602188790247980805C555E514D328848D1DF8C9F89FFAA6F1E4BF210"
+    }
+  ],
+  "unchanged_locked_files": {
+    "config/final_test_evaluation.v1.json": "34D27FE77F03B51470C74A1548BBA0E7119E694FECA5BF4D020FB49C21F554FB",
+    "schemas/phase10_final_test_metrics.schema.json": "77310750402B26B22EB47A88066BAF5B205AB780DBBB4C8FA6715A70AB894B96",
+    "schemas/phase10_final_evaluation_manifest.schema.json": "CD7FB0FF840FB3C9B2555C33735F2C626AC59E82F7F36F20869A3D2EF4BB4D30"
+  },
+  "test_records": {
+    "outputs/phase10_final_evaluation/phase10_synthetic_tests_v2.xml": {
+      "passed": 33,
+      "failed": 0,
+      "sha256": "E0A97B861B4B240B99671815DD05BF2BBA574E36873080DA9758E2BDF3AFE7C5"
+    },
+    "outputs/phase10_final_evaluation/phase1_9_regression_tests_v2.xml": {
+      "passed": 139,
+      "failed": 0,
+      "sha256": "2C734C235319571517F08A6BF3574F674BCC014B0FAE0CEA73A9A8F9564727EA"
+    }
+  },
+  "configuration_changes": [],
+  "schema_changes": [],
+  "frozen_model_or_evaluation_definition_changes": [],
+  "cleaned_final_test_data_access_at_creation": 0
+}
