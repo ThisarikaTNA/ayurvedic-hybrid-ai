@@ -1,0 +1,124 @@
+{
+  "phase": 9,
+  "status": "implemented_awaiting_user_approval",
+  "generated_at_utc": "2026-08-06T16:28:05.747105+00:00",
+  "scope": "deterministic hybrid integration with sealed final test",
+  "software_versions": {
+    "python": "3.12.7",
+    "sqlite": "3.45.3"
+  },
+  "configuration_versions": {
+    "hybrid": "1.0.0",
+    "model": "phase4-frozen-1.0.0",
+    "preprocessing": "phase4-symptoms-tfidf-1.0.0",
+    "knowledge_base_schema": "1.1.0-phase7",
+    "retrieval": "1.0.0"
+  },
+  "frozen_hashes": {
+    "model_manifest": "9369A84E8A895E1B4657F7C58AEECB062294F88E5C78128E416F27624C497466",
+    "model_bundle": "876F5DA8C4E4FBE1A73CC91B83DAB518DD945789CC2DAB78663F01B9111CFABF",
+    "preprocessing_output": "55AF558BB13246C5941DAC81EB02CD62916BAE71AFD7B3BD357A51944C5A1E13",
+    "knowledge_database": "E52BD930AEE515F32012AC24359E7A94F4B4F726B0A5F86465185B1D2103ADFD",
+    "rule_catalog": "E1AAA848DEF79761EDB4F483DEC02C7F139ADC81719CBC84E0435E4FDAA08C1D",
+    "retrieval_config": "C2D65A4F0F65AC56A8356668A53896DCF95648E3E9C3EE932FE5254F31B61845",
+    "retrieval_code": {
+      "src/retrieval/query_schema.py": "4DBAB8F510F85526AA2A715B184AB868B6CCC7D6242D77907A597D16DF43115A",
+      "src/retrieval/repository.py": "F82F4E3C141F37FEBD175BFF9899AC0DA86BC360B39DA80DDE75C0A0E8E61E1B",
+      "src/retrieval/profile_retriever.py": "40F6EA05A8D75460CBAEB12A011127A9764FE353B26B878F5DC6B120D565319D"
+    }
+  },
+  "scenario_evaluation": {
+    "scenario_count": 23,
+    "passed_scenarios": 23,
+    "scenario_pass_rate": 1.0,
+    "safety_state_correctness": 1.0,
+    "trace_completeness": 1.0,
+    "provenance_label_correctness": 1.0,
+    "referral_suppression_correctness": true,
+    "missing_input_clarification_correctness": true,
+    "component_integrity_detection": true,
+    "zero_prohibited_output_finding_rate": 1.0,
+    "deterministic_repeatability_rate": 1.0
+  },
+  "component_invocation_counts": {
+    "compose_result": 24,
+    "condition_scoped_retrieval": 14,
+    "frozen_ml_model": 14,
+    "resolve_condition": 21,
+    "safety_gate": 18,
+    "validate_input": 24
+  },
+  "model_invocations": {
+    "total_adapter_attempts": 14,
+    "verified_frozen_bundle": 9,
+    "controlled_orchestration_test_double": 5
+  },
+  "safety_gate_outcomes": {
+    "blocked_component_failure": 3,
+    "blocked_invalid_input": 2,
+    "blocked_rule_conflict": 1,
+    "clarification_required": 4,
+    "escalation_information": 1,
+    "proceed_with_information": 12
+  },
+  "suppression_count": 3,
+  "conflict_count": 1,
+  "ml_abstention_count": 2,
+  "agreement_count": 4,
+  "disagreement_count": 8,
+  "provenance_counts": {
+    "model_generated": 13,
+    "dataset_derived": 20,
+    "reference_checked": 24,
+    "expert_reviewed": 0
+  },
+  "production_table_row_counts": {
+    "model_predictions": 0,
+    "retrieval_results": 0,
+    "final_recommendations": 0
+  },
+  "recommendation_inventory_reconciliation": {
+    "phase6_total": 17,
+    "dataset_derived_retrievable_in_phase8": 12,
+    "reference_checked_not_returned_as_dataset_recommendations": 5,
+    "intentional_not_lost": true
+  },
+  "exact_dosage_findings": [],
+  "prohibited_output_findings": [],
+  "expert_reviewed_rules": 0,
+  "final_test_seal": {
+    "access_events": 0,
+    "predictions": 0,
+    "errors_inspected": 0,
+    "metrics_calculated": 0,
+    "profiles_loaded": 0
+  },
+  "artifact_hashes": {
+    "evaluation_scenarios": "EBC396C8B17BCFD45681441E828F436A387ECA7B00B0A1C5538DA2281120DDCF",
+    "evaluation_results": "18CEF1C33E067C4F4B12D0F6C2C3EBCC76925D2DC994C9E0F4AF9FE570769158",
+    "sample_hybrid_traces": "A25D055838D4F759ECB047498D40A2BE78ADC04C88A176B919104DB326AA4370"
+  },
+  "phase9_code_hashes": {
+    "src/integration/input_schema.py": "20889B5E05AABD5D98B7CCD5108772975C445B7BA5731EFB8A114DB111F4A109",
+    "src/integration/safety_gate.py": "4AFBCDB6CA1F31B9D511A6F47D8AB13BC525F8D447BE4E4745D604EBEA667479",
+    "src/integration/model_adapter.py": "1B65BC03BA46612B3646C3170F4504D469D7C224015D260F8598513AF953D9C4",
+    "src/integration/retrieval_adapter.py": "CBC469E617418D917CB6F47C456F215152E9EE1F35559CCA8B86054FEC7C4E9E",
+    "src/integration/result_composer.py": "B1349DBFBB9334B08075726904F276FD4E0B41ED9F7A197F383F0273D78BB502",
+    "src/integration/hybrid_pipeline.py": "4FA4882ADEBACD2C0F97D6219CC530812DF7C9628D32D8EED6241D7939AC5D71",
+    "src/integration/evaluation.py": "96619C117BE30FAAD8B16EF6D71C5192D43D5B1344A1B1F1CA4E5479652DA176",
+    "scripts/run_phase9_hybrid_integration.py": "80950CBD4AF3D2832B4295660732767D9827CC24CEB523F2658C250D9FDA076E",
+    "schemas/phase9_hybrid_input.schema.json": "CB1B21ED71FE58C65C584A469625C79DF5CB305D04FCC380B6242C0CF60B570A",
+    "schemas/phase9_hybrid_output.schema.json": "033AB324CC3C37F94C9ED559CB29C20FFBA6A395D441688D227EABD81748FA25",
+    "tests/test_phase9_hybrid_integration.py": "3E18E7536BE04C46BD18F981F8B7C1E7EFAE54B30F8E0A45D3A96E46412B7EDE",
+    "docs/phase9_hybrid_integration_report.md": "B8C24A3A1F843E5C3B457F16B9491B659CA311CDEABFBD56C647681F154A7F4A"
+  },
+  "hybrid_configuration_sha256": "65CA01FEDD740B12AA398476EC2EF2A1D08C22F6A736265C051A6C8121EAFD44",
+  "test_results": {
+    "phase9_tests": 32,
+    "total_regression_tests": 139,
+    "passed": 139,
+    "failed": 0,
+    "warnings": 1,
+    "warning_summary": "Unrelated Jupyter platformdirs deprecation warning."
+  }
+}

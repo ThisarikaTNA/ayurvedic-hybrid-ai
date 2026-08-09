@@ -1,0 +1,248 @@
+{
+  "phase": 9,
+  "scope": "Synthetic orchestration scenarios using approved train/validation knowledge only; not clinical evaluation.",
+  "frozen_components_changed_from_scenarios": false,
+  "final_test_used": false,
+  "scenarios": [
+    {
+      "scenario_id": "P9-NORMAL-ACNE",
+      "description": "Normal Acne information flow with fully evaluated non-firing referral facts.",
+      "input": {
+        "condition": "Acne",
+        "symptom_text": "facial spots blackheads and oily skin",
+        "safety_facts": {"acne_severity": "mild", "has_nodules": false, "has_cysts": false, "picks_or_squeezes_spots": false},
+        "top_k": 3
+      },
+      "expected_state": "proceed_with_information"
+    },
+    {
+      "scenario_id": "P9-NORMAL-COLD",
+      "description": "Normal Common Cold information flow.",
+      "input": {
+        "condition": "Common Cold",
+        "symptom_text": "runny nose sneezing sore throat",
+        "safety_facts": {"cold_symptoms_worsening": false, "shortness_of_breath": false, "chest_pain": false, "cold_symptom_duration_days": 3, "cold_not_improving": false, "general_self_care_requested": true},
+        "top_k": 3
+      },
+      "expected_state": "proceed_with_information"
+    },
+    {
+      "scenario_id": "P9-NORMAL-GERD",
+      "description": "GORD alias resolution followed by normal condition-scoped information flow.",
+      "input": {
+        "condition": "GORD",
+        "symptom_text": "heartburn acid reflux after meals",
+        "safety_facts": {"reflux_self_care_not_helping": false, "heartburn_most_days": false, "food_sticking": false, "frequent_vomiting": false, "unexplained_weight_loss": false, "general_self_care_requested": true},
+        "top_k": 3
+      },
+      "expected_state": "proceed_with_information"
+    },
+    {
+      "scenario_id": "P9-NORMAL-OA",
+      "description": "Normal Osteoarthritis information flow.",
+      "input": {
+        "condition": "Osteoarthritis",
+        "symptom_text": "joint pain stiffness and reduced movement",
+        "safety_facts": {"persistent_joint_symptoms": false, "overweight_context": false, "general_self_care_requested": true},
+        "top_k": 3
+      },
+      "expected_state": "proceed_with_information"
+    },
+    {
+      "scenario_id": "P9-NORMAL-INSOMNIA",
+      "description": "Normal Insomnia flow retaining both source-profile Dosha associations.",
+      "input": {
+        "condition": "Insomnia",
+        "symptom_text": "difficulty falling asleep frequent waking fatigue",
+        "safety_facts": {"sleep_habit_changes_not_helped": false, "trouble_sleeping_for_months": false, "daily_life_hard_to_cope": false, "general_self_care_requested": true},
+        "top_k": 5
+      },
+      "expected_state": "proceed_with_information",
+      "assertions": ["insomnia_disagreement"]
+    },
+    {
+      "scenario_id": "P9-REFERRAL-ACTIVATION",
+      "description": "Reference-checked Acne referral information suppresses the lower-priority general action and blocks personalization.",
+      "input": {
+        "condition": "Acne",
+        "symptom_text": "inflamed spots",
+        "safety_facts": {"acne_severity": "severe", "has_nodules": false, "has_cysts": false, "picks_or_squeezes_spots": true}
+      },
+      "expected_state": "escalation_information",
+      "assertions": ["no_model_invocation", "no_retrieval_invocation", "referral_prominent", "recommendations_suppressed"]
+    },
+    {
+      "scenario_id": "P9-MISSING-SAFETY",
+      "description": "Missing Common Cold referral facts require clarification and block personalization.",
+      "input": {"condition": "Common Cold", "symptom_text": "runny nose", "safety_facts": {}},
+      "expected_state": "clarification_required",
+      "assertions": ["no_model_invocation", "no_retrieval_invocation"]
+    },
+    {
+      "scenario_id": "P9-UNKNOWN-CONDITION",
+      "description": "Unknown condition does not fall back or become symptom diagnosis.",
+      "input": {"condition": "Unlisted Condition", "symptom_text": "some symptoms", "safety_facts": {}},
+      "expected_state": "clarification_required",
+      "assertions": ["no_model_invocation", "no_retrieval_invocation"]
+    },
+    {
+      "scenario_id": "P9-AMBIGUOUS-CONDITION",
+      "description": "Synthetic temporary alias collision produces clarification without inference.",
+      "mode": "ambiguous_temp_database",
+      "input": {"condition": "Ambiguous Demonstration", "symptom_text": "some symptoms", "safety_facts": {}},
+      "expected_state": "clarification_required",
+      "assertions": ["no_model_invocation", "no_retrieval_invocation"]
+    },
+    {
+      "scenario_id": "P9-ML-PROFILE-MATCH",
+      "description": "Controlled orchestration path where a Pitta label matches the Acne profile association.",
+      "controlled_model_labels": ["Pitta"],
+      "input": {
+        "condition": "Acne",
+        "symptom_text": "blackheads oily skin",
+        "safety_facts": {"acne_severity": "mild", "has_nodules": false, "has_cysts": false}
+      },
+      "expected_state": "proceed_with_information",
+      "assertions": ["dosha_agreement"]
+    },
+    {
+      "scenario_id": "P9-ML-PROFILE-DISAGREEMENT",
+      "description": "Controlled Kapha label and Pitta dataset profile remain visibly different.",
+      "controlled_model_labels": ["Kapha"],
+      "input": {
+        "condition": "Acne",
+        "symptom_text": "blackheads oily skin",
+        "safety_facts": {"acne_severity": "mild", "has_nodules": false, "has_cysts": false}
+      },
+      "expected_state": "proceed_with_information",
+      "assertions": ["dosha_disagreement", "no_matching_dosha_profile"]
+    },
+    {
+      "scenario_id": "P9-ML-ABSTENTION",
+      "description": "Controlled abstention uses lexical-only retrieval and forces no label.",
+      "controlled_model_labels": [],
+      "input": {
+        "condition": "Acne",
+        "symptom_text": "blackheads oily skin",
+        "safety_facts": {"acne_severity": "mild", "has_nodules": false, "has_cysts": false}
+      },
+      "expected_state": "proceed_with_information",
+      "assertions": ["lexical_only"]
+    },
+    {
+      "scenario_id": "P9-NO-MATCHING-DOSHA-PROFILE",
+      "description": "No Kapha Acne profile exists, so condition-scoped lexical results remain instead of cross-condition fallback.",
+      "controlled_model_labels": ["Kapha"],
+      "input": {
+        "condition": "Acne",
+        "symptom_text": "blackheads",
+        "safety_facts": {"acne_severity": "mild", "has_nodules": false, "has_cysts": false}
+      },
+      "expected_state": "proceed_with_information",
+      "assertions": ["no_matching_dosha_profile"]
+    },
+    {
+      "scenario_id": "P9-EMPTY-RETRIEVAL",
+      "description": "Controlled ML abstention plus unmatched lexical text yields an explicit empty profile collection.",
+      "controlled_model_labels": [],
+      "input": {
+        "condition": "Acne",
+        "symptom_text": "zzzxxyyqqq",
+        "safety_facts": {"acne_severity": "mild", "has_nodules": false, "has_cysts": false},
+        "requested_information_categories": ["profiles"]
+      },
+      "expected_state": "proceed_with_information",
+      "assertions": ["empty_profiles", "lexical_only"]
+    },
+    {
+      "scenario_id": "P9-RULE-CONFLICT",
+      "description": "Equal-priority incompatible synthetic actions in a temporary database fail closed.",
+      "mode": "rule_conflict_temp_database",
+      "input": {
+        "condition": "Acne",
+        "symptom_text": "blackheads",
+        "safety_facts": {"acne_severity": "mild", "has_nodules": false, "has_cysts": false, "picks_or_squeezes_spots": true}
+      },
+      "expected_state": "blocked_rule_conflict",
+      "assertions": ["no_model_invocation", "no_retrieval_invocation"]
+    },
+    {
+      "scenario_id": "P9-RULE-ENGINE-FAILURE",
+      "description": "Synthetic rule-engine boundary failure blocks all personalization.",
+      "mode": "rule_engine_failure",
+      "input": {
+        "condition": "Acne",
+        "symptom_text": "blackheads",
+        "safety_facts": {"acne_severity": "mild", "has_nodules": false, "has_cysts": false}
+      },
+      "expected_state": "blocked_component_failure",
+      "assertions": ["no_model_invocation", "no_retrieval_invocation"]
+    },
+    {
+      "scenario_id": "P9-COMPONENT-INTEGRITY-FAILURE",
+      "description": "Synthetic frozen-component mismatch is detected before component invocation.",
+      "mode": "integrity_failure",
+      "input": {
+        "condition": "Acne",
+        "symptom_text": "blackheads",
+        "safety_facts": {"acne_severity": "mild", "has_nodules": false, "has_cysts": false}
+      },
+      "expected_state": "blocked_component_failure",
+      "assertions": ["no_model_invocation", "no_retrieval_invocation", "integrity_detected"]
+    },
+    {
+      "scenario_id": "P9-FTS-FAILURE",
+      "description": "Synthetic FTS5 boundary failure is disclosed and returns no retrieved profiles or recommendations.",
+      "mode": "fts_failure",
+      "input": {
+        "condition": "Acne",
+        "symptom_text": "blackheads",
+        "safety_facts": {"acne_severity": "mild", "has_nodules": false, "has_cysts": false}
+      },
+      "expected_state": "blocked_component_failure",
+      "assertions": ["empty_profiles"]
+    },
+    {
+      "scenario_id": "P9-INJECTION-LIKE-TEXT",
+      "description": "Injection-like symptom text is safely tokenized and parameterized within the resolved condition.",
+      "input": {
+        "condition": "Acne",
+        "symptom_text": "blackheads' OR 1=1 -- oily skin",
+        "safety_facts": {"acne_severity": "mild", "has_nodules": false, "has_cysts": false}
+      },
+      "expected_state": "proceed_with_information"
+    },
+    {
+      "scenario_id": "P9-INJECTION-LIKE-CONDITION",
+      "description": "Injection-like condition text resolves to no match and never becomes SQL.",
+      "input": {"condition": "Acne' OR 1=1 --", "symptom_text": "blackheads", "safety_facts": {}},
+      "expected_state": "clarification_required",
+      "assertions": ["no_model_invocation", "no_retrieval_invocation"]
+    },
+    {
+      "scenario_id": "P9-MALFORMED-INPUT",
+      "description": "Wrong top_k type is rejected before component invocation.",
+      "input": {"condition": "Acne", "symptom_text": "blackheads", "safety_facts": {}, "top_k": "three"},
+      "expected_state": "blocked_invalid_input",
+      "assertions": ["no_model_invocation", "no_retrieval_invocation"]
+    },
+    {
+      "scenario_id": "P9-OVERSIZED-INPUT",
+      "description": "Oversized symptom text is rejected before component invocation.",
+      "input": {"condition": "Acne", "symptom_text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", "safety_facts": {}},
+      "expected_state": "blocked_invalid_input",
+      "assertions": ["no_model_invocation", "no_retrieval_invocation"]
+    },
+    {
+      "scenario_id": "P9-DETERMINISTIC-REPEAT",
+      "description": "Identical validated input produces byte-equivalent structured results.",
+      "repeat": true,
+      "input": {
+        "condition": "GERD",
+        "symptom_text": "heartburn acid reflux",
+        "safety_facts": {"reflux_self_care_not_helping": false, "heartburn_most_days": false, "food_sticking": false, "frequent_vomiting": false, "unexplained_weight_loss": false}
+      },
+      "expected_state": "proceed_with_information"
+    }
+  ]
+}

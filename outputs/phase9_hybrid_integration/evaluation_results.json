@@ -1,0 +1,418 @@
+{
+  "scope": "synthetic technical orchestration evaluation; not clinical accuracy",
+  "scenario_results": [
+    {
+      "scenario_id": "P9-NORMAL-ACNE",
+      "description": "Normal Acne information flow with fully evaluated non-firing referral facts.",
+      "mode": "production_components",
+      "expected_state": "proceed_with_information",
+      "actual_state": "proceed_with_information",
+      "checks": {
+        "state_correct": true,
+        "trace_complete": true,
+        "provenance_labels_correct": true,
+        "prohibited_output_findings": [],
+        "deterministic_repeat": null
+      },
+      "passed": true
+    },
+    {
+      "scenario_id": "P9-NORMAL-COLD",
+      "description": "Normal Common Cold information flow.",
+      "mode": "production_components",
+      "expected_state": "proceed_with_information",
+      "actual_state": "proceed_with_information",
+      "checks": {
+        "state_correct": true,
+        "trace_complete": true,
+        "provenance_labels_correct": true,
+        "prohibited_output_findings": [],
+        "deterministic_repeat": null
+      },
+      "passed": true
+    },
+    {
+      "scenario_id": "P9-NORMAL-GERD",
+      "description": "GORD alias resolution followed by normal condition-scoped information flow.",
+      "mode": "production_components",
+      "expected_state": "proceed_with_information",
+      "actual_state": "proceed_with_information",
+      "checks": {
+        "state_correct": true,
+        "trace_complete": true,
+        "provenance_labels_correct": true,
+        "prohibited_output_findings": [],
+        "deterministic_repeat": null
+      },
+      "passed": true
+    },
+    {
+      "scenario_id": "P9-NORMAL-OA",
+      "description": "Normal Osteoarthritis information flow.",
+      "mode": "production_components",
+      "expected_state": "proceed_with_information",
+      "actual_state": "proceed_with_information",
+      "checks": {
+        "state_correct": true,
+        "trace_complete": true,
+        "provenance_labels_correct": true,
+        "prohibited_output_findings": [],
+        "deterministic_repeat": null
+      },
+      "passed": true
+    },
+    {
+      "scenario_id": "P9-NORMAL-INSOMNIA",
+      "description": "Normal Insomnia flow retaining both source-profile Dosha associations.",
+      "mode": "production_components",
+      "expected_state": "proceed_with_information",
+      "actual_state": "proceed_with_information",
+      "checks": {
+        "state_correct": true,
+        "trace_complete": true,
+        "provenance_labels_correct": true,
+        "prohibited_output_findings": [],
+        "deterministic_repeat": null,
+        "insomnia_disagreement": true
+      },
+      "passed": true
+    },
+    {
+      "scenario_id": "P9-REFERRAL-ACTIVATION",
+      "description": "Reference-checked Acne referral information suppresses the lower-priority general action and blocks personalization.",
+      "mode": "production_components",
+      "expected_state": "escalation_information",
+      "actual_state": "escalation_information",
+      "checks": {
+        "state_correct": true,
+        "trace_complete": true,
+        "provenance_labels_correct": true,
+        "prohibited_output_findings": [],
+        "deterministic_repeat": null,
+        "no_model_invocation": true,
+        "no_retrieval_invocation": true,
+        "referral_prominent": true,
+        "recommendations_suppressed": true
+      },
+      "passed": true
+    },
+    {
+      "scenario_id": "P9-MISSING-SAFETY",
+      "description": "Missing Common Cold referral facts require clarification and block personalization.",
+      "mode": "production_components",
+      "expected_state": "clarification_required",
+      "actual_state": "clarification_required",
+      "checks": {
+        "state_correct": true,
+        "trace_complete": true,
+        "provenance_labels_correct": true,
+        "prohibited_output_findings": [],
+        "deterministic_repeat": null,
+        "no_model_invocation": true,
+        "no_retrieval_invocation": true
+      },
+      "passed": true
+    },
+    {
+      "scenario_id": "P9-UNKNOWN-CONDITION",
+      "description": "Unknown condition does not fall back or become symptom diagnosis.",
+      "mode": "production_components",
+      "expected_state": "clarification_required",
+      "actual_state": "clarification_required",
+      "checks": {
+        "state_correct": true,
+        "trace_complete": true,
+        "provenance_labels_correct": true,
+        "prohibited_output_findings": [],
+        "deterministic_repeat": null,
+        "no_model_invocation": true,
+        "no_retrieval_invocation": true
+      },
+      "passed": true
+    },
+    {
+      "scenario_id": "P9-AMBIGUOUS-CONDITION",
+      "description": "Synthetic temporary alias collision produces clarification without inference.",
+      "mode": "ambiguous_temp_database",
+      "expected_state": "clarification_required",
+      "actual_state": "clarification_required",
+      "checks": {
+        "state_correct": true,
+        "trace_complete": true,
+        "provenance_labels_correct": true,
+        "prohibited_output_findings": [],
+        "deterministic_repeat": null,
+        "no_model_invocation": true,
+        "no_retrieval_invocation": true
+      },
+      "passed": true
+    },
+    {
+      "scenario_id": "P9-ML-PROFILE-MATCH",
+      "description": "Controlled orchestration path where a Pitta label matches the Acne profile association.",
+      "mode": "production_components",
+      "expected_state": "proceed_with_information",
+      "actual_state": "proceed_with_information",
+      "checks": {
+        "state_correct": true,
+        "trace_complete": true,
+        "provenance_labels_correct": true,
+        "prohibited_output_findings": [],
+        "deterministic_repeat": null,
+        "dosha_agreement": true
+      },
+      "passed": true
+    },
+    {
+      "scenario_id": "P9-ML-PROFILE-DISAGREEMENT",
+      "description": "Controlled Kapha label and Pitta dataset profile remain visibly different.",
+      "mode": "production_components",
+      "expected_state": "proceed_with_information",
+      "actual_state": "proceed_with_information",
+      "checks": {
+        "state_correct": true,
+        "trace_complete": true,
+        "provenance_labels_correct": true,
+        "prohibited_output_findings": [],
+        "deterministic_repeat": null,
+        "dosha_disagreement": true,
+        "no_matching_dosha_profile": true
+      },
+      "passed": true
+    },
+    {
+      "scenario_id": "P9-ML-ABSTENTION",
+      "description": "Controlled abstention uses lexical-only retrieval and forces no label.",
+      "mode": "production_components",
+      "expected_state": "proceed_with_information",
+      "actual_state": "proceed_with_information",
+      "checks": {
+        "state_correct": true,
+        "trace_complete": true,
+        "provenance_labels_correct": true,
+        "prohibited_output_findings": [],
+        "deterministic_repeat": null,
+        "lexical_only": true
+      },
+      "passed": true
+    },
+    {
+      "scenario_id": "P9-NO-MATCHING-DOSHA-PROFILE",
+      "description": "No Kapha Acne profile exists, so condition-scoped lexical results remain instead of cross-condition fallback.",
+      "mode": "production_components",
+      "expected_state": "proceed_with_information",
+      "actual_state": "proceed_with_information",
+      "checks": {
+        "state_correct": true,
+        "trace_complete": true,
+        "provenance_labels_correct": true,
+        "prohibited_output_findings": [],
+        "deterministic_repeat": null,
+        "no_matching_dosha_profile": true
+      },
+      "passed": true
+    },
+    {
+      "scenario_id": "P9-EMPTY-RETRIEVAL",
+      "description": "Controlled ML abstention plus unmatched lexical text yields an explicit empty profile collection.",
+      "mode": "production_components",
+      "expected_state": "proceed_with_information",
+      "actual_state": "proceed_with_information",
+      "checks": {
+        "state_correct": true,
+        "trace_complete": true,
+        "provenance_labels_correct": true,
+        "prohibited_output_findings": [],
+        "deterministic_repeat": null,
+        "empty_profiles": true,
+        "lexical_only": true
+      },
+      "passed": true
+    },
+    {
+      "scenario_id": "P9-RULE-CONFLICT",
+      "description": "Equal-priority incompatible synthetic actions in a temporary database fail closed.",
+      "mode": "rule_conflict_temp_database",
+      "expected_state": "blocked_rule_conflict",
+      "actual_state": "blocked_rule_conflict",
+      "checks": {
+        "state_correct": true,
+        "trace_complete": true,
+        "provenance_labels_correct": true,
+        "prohibited_output_findings": [],
+        "deterministic_repeat": null,
+        "no_model_invocation": true,
+        "no_retrieval_invocation": true
+      },
+      "passed": true
+    },
+    {
+      "scenario_id": "P9-RULE-ENGINE-FAILURE",
+      "description": "Synthetic rule-engine boundary failure blocks all personalization.",
+      "mode": "rule_engine_failure",
+      "expected_state": "blocked_component_failure",
+      "actual_state": "blocked_component_failure",
+      "checks": {
+        "state_correct": true,
+        "trace_complete": true,
+        "provenance_labels_correct": true,
+        "prohibited_output_findings": [],
+        "deterministic_repeat": null,
+        "no_model_invocation": true,
+        "no_retrieval_invocation": true
+      },
+      "passed": true
+    },
+    {
+      "scenario_id": "P9-COMPONENT-INTEGRITY-FAILURE",
+      "description": "Synthetic frozen-component mismatch is detected before component invocation.",
+      "mode": "integrity_failure",
+      "expected_state": "blocked_component_failure",
+      "actual_state": "blocked_component_failure",
+      "checks": {
+        "state_correct": true,
+        "trace_complete": true,
+        "provenance_labels_correct": true,
+        "prohibited_output_findings": [],
+        "deterministic_repeat": null,
+        "no_model_invocation": true,
+        "no_retrieval_invocation": true,
+        "integrity_detected": true
+      },
+      "passed": true
+    },
+    {
+      "scenario_id": "P9-FTS-FAILURE",
+      "description": "Synthetic FTS5 boundary failure is disclosed and returns no retrieved profiles or recommendations.",
+      "mode": "fts_failure",
+      "expected_state": "blocked_component_failure",
+      "actual_state": "blocked_component_failure",
+      "checks": {
+        "state_correct": true,
+        "trace_complete": true,
+        "provenance_labels_correct": true,
+        "prohibited_output_findings": [],
+        "deterministic_repeat": null,
+        "empty_profiles": true
+      },
+      "passed": true
+    },
+    {
+      "scenario_id": "P9-INJECTION-LIKE-TEXT",
+      "description": "Injection-like symptom text is safely tokenized and parameterized within the resolved condition.",
+      "mode": "production_components",
+      "expected_state": "proceed_with_information",
+      "actual_state": "proceed_with_information",
+      "checks": {
+        "state_correct": true,
+        "trace_complete": true,
+        "provenance_labels_correct": true,
+        "prohibited_output_findings": [],
+        "deterministic_repeat": null
+      },
+      "passed": true
+    },
+    {
+      "scenario_id": "P9-INJECTION-LIKE-CONDITION",
+      "description": "Injection-like condition text resolves to no match and never becomes SQL.",
+      "mode": "production_components",
+      "expected_state": "clarification_required",
+      "actual_state": "clarification_required",
+      "checks": {
+        "state_correct": true,
+        "trace_complete": true,
+        "provenance_labels_correct": true,
+        "prohibited_output_findings": [],
+        "deterministic_repeat": null,
+        "no_model_invocation": true,
+        "no_retrieval_invocation": true
+      },
+      "passed": true
+    },
+    {
+      "scenario_id": "P9-MALFORMED-INPUT",
+      "description": "Wrong top_k type is rejected before component invocation.",
+      "mode": "production_components",
+      "expected_state": "blocked_invalid_input",
+      "actual_state": "blocked_invalid_input",
+      "checks": {
+        "state_correct": true,
+        "trace_complete": true,
+        "provenance_labels_correct": true,
+        "prohibited_output_findings": [],
+        "deterministic_repeat": null,
+        "no_model_invocation": true,
+        "no_retrieval_invocation": true
+      },
+      "passed": true
+    },
+    {
+      "scenario_id": "P9-OVERSIZED-INPUT",
+      "description": "Oversized symptom text is rejected before component invocation.",
+      "mode": "production_components",
+      "expected_state": "blocked_invalid_input",
+      "actual_state": "blocked_invalid_input",
+      "checks": {
+        "state_correct": true,
+        "trace_complete": true,
+        "provenance_labels_correct": true,
+        "prohibited_output_findings": [],
+        "deterministic_repeat": null,
+        "no_model_invocation": true,
+        "no_retrieval_invocation": true
+      },
+      "passed": true
+    },
+    {
+      "scenario_id": "P9-DETERMINISTIC-REPEAT",
+      "description": "Identical validated input produces byte-equivalent structured results.",
+      "mode": "production_components",
+      "expected_state": "proceed_with_information",
+      "actual_state": "proceed_with_information",
+      "checks": {
+        "state_correct": true,
+        "trace_complete": true,
+        "provenance_labels_correct": true,
+        "prohibited_output_findings": [],
+        "deterministic_repeat": true
+      },
+      "passed": true
+    }
+  ],
+  "metrics": {
+    "scenario_count": 23,
+    "passed_scenarios": 23,
+    "scenario_pass_rate": 1.0,
+    "safety_state_correctness": 1.0,
+    "trace_completeness": 1.0,
+    "provenance_label_correctness": 1.0,
+    "referral_suppression_correctness": true,
+    "missing_input_clarification_correctness": true,
+    "component_integrity_detection": true,
+    "zero_prohibited_output_finding_rate": 1.0,
+    "deterministic_repeatability_rate": 1.0
+  },
+  "safety_gate_outcomes": {
+    "blocked_component_failure": 3,
+    "blocked_invalid_input": 2,
+    "blocked_rule_conflict": 1,
+    "clarification_required": 4,
+    "escalation_information": 1,
+    "proceed_with_information": 12
+  },
+  "component_invocation_counts": {
+    "compose_result": 24,
+    "condition_scoped_retrieval": 14,
+    "frozen_ml_model": 14,
+    "resolve_condition": 21,
+    "safety_gate": 18,
+    "validate_input": 24
+  },
+  "model_invocations": {
+    "total_adapter_attempts": 14,
+    "verified_frozen_bundle": 9,
+    "controlled_orchestration_test_double": 5
+  },
+  "agreement_count": 4,
+  "disagreement_count": 8
+}
