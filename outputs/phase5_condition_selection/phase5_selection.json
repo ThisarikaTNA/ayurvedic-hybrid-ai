@@ -1,0 +1,252 @@
+{
+  "phase": 5,
+  "status": "approved_and_finalized_for_phase6",
+  "model_selection_manifest": {
+    "path": "C:\\Users\\thisari.thathsarani\\Documents\\MSc AI Coursework\\ayurvedic_hybrid_ai\\outputs\\phase4_validation\\model_selection_manifest.json",
+    "sha256": "9369A84E8A895E1B4657F7C58AEECB062294F88E5C78128E416F27624C497466"
+  },
+  "data_access_audit": {
+    "allowed_partitions": [
+      "train",
+      "validation"
+    ],
+    "retained_profile_count": 379,
+    "retained_normalized_group_count": 308,
+    "final_test_rows_selected": 0,
+    "final_test_fields_retained": 0,
+    "final_test_metrics_computed": false
+  },
+  "scoring_weights": {
+    "symptoms_completeness_score": 0.1,
+    "dosha_clarity_score": 0.12,
+    "diet_lifestyle_completeness_score": 0.1,
+    "prevention_completeness_score": 0.08,
+    "complications_referral_completeness_score": 0.1,
+    "distinctiveness_score": 0.1,
+    "rule_potential_score": 0.12,
+    "external_source_availability_score": 0.13,
+    "manageable_scope_score": 0.15
+  },
+  "candidate_count": 10,
+  "recommended_conditions": [
+    "acne",
+    "common cold",
+    "gastroesophageal reflux disease gerd",
+    "osteoarthritis",
+    "insomnia"
+  ],
+  "candidates": [
+    {
+      "normalized_condition_name": "acne",
+      "display_name": "Acne",
+      "profile_count": 1,
+      "dosha_combinations_present": "Pitta",
+      "relevant_fields_complete": "[\"symptoms\", \"doshas\", \"diet_and_lifestyle_recommendations\", \"prevention\", \"complications\"]",
+      "missing_or_placeholder_fields": "{}",
+      "possible_safety_referral_rule_opportunities": "Later source review could define severity, scarring, infection, and appropriate-care escalation topics; no trigger or rule is defined here.",
+      "possible_general_lifestyle_rule_opportunities": "Dataset skin-care and trigger text can nominate non-dosage lifestyle-rule topics for later source checking.",
+      "external_source_availability_status": "verified: authoritative source page available; content not yet converted to rules",
+      "external_source_title": "NHS: Acne",
+      "external_source_url": "https://www.nhs.uk/conditions/acne/",
+      "selection_score": 0.9958628901848602,
+      "recommendation_status": "recommended_for_user_approval",
+      "inclusion_or_exclusion_reason": "Manageable scope, clear dataset Dosha tag, distinct skin-care demonstration.",
+      "important_medical_or_data_limitations": "Dataset completeness is not evidence of medical correctness. Only one unsealed dataset profile is available. Only one unsealed profile; dataset claims remain unverified."
+    },
+    {
+      "normalized_condition_name": "common cold",
+      "display_name": "Common Cold",
+      "profile_count": 1,
+      "dosha_combinations_present": "Vata, Kapha",
+      "relevant_fields_complete": "[\"symptoms\", \"doshas\", \"diet_and_lifestyle_recommendations\", \"prevention\", \"complications\"]",
+      "missing_or_placeholder_fields": "{}",
+      "possible_safety_referral_rule_opportunities": "Later source review could define worsening, prolonged, or breathing-related assessment topics; no trigger or rule is defined here.",
+      "possible_general_lifestyle_rule_opportunities": "Dataset rest, hygiene, and general self-care text can nominate non-dosage rule topics for later source checking.",
+      "external_source_availability_status": "verified: authoritative source page available; content not yet converted to rules",
+      "external_source_title": "NHS: Common cold",
+      "external_source_url": "https://www.nhs.uk/conditions/common-cold/",
+      "selection_score": 0.9760160862535758,
+      "recommendation_status": "recommended_for_user_approval",
+      "inclusion_or_exclusion_reason": "Manageable demonstration scope with clear separation between general support and escalation.",
+      "important_medical_or_data_limitations": "Dataset completeness is not evidence of medical correctness. Only one unsealed dataset profile is available. Only one unsealed profile; symptom overlap with other infections is substantial."
+    },
+    {
+      "normalized_condition_name": "gastroesophageal reflux disease gerd",
+      "display_name": "Gastroesophageal Reflux Disease (GERD)",
+      "profile_count": 1,
+      "dosha_combinations_present": "Pitta",
+      "relevant_fields_complete": "[\"symptoms\", \"doshas\", \"diet_and_lifestyle_recommendations\", \"prevention\", \"complications\"]",
+      "missing_or_placeholder_fields": "{}",
+      "possible_safety_referral_rule_opportunities": "Later source review could define persistent, worsening, or alarm-feature assessment topics; no trigger or rule is defined here.",
+      "possible_general_lifestyle_rule_opportunities": "Dataset meal-pattern and trigger text can nominate general lifestyle-rule topics for later source checking.",
+      "external_source_availability_status": "verified: authoritative source page available; content not yet converted to rules",
+      "external_source_title": "NHS: Heartburn and acid reflux",
+      "external_source_url": "https://www.nhs.uk/conditions/heartburn-and-acid-reflux/",
+      "selection_score": 0.9754027113296809,
+      "recommendation_status": "recommended_for_user_approval",
+      "inclusion_or_exclusion_reason": "Distinct digestive example with clear dataset tag and general lifestyle structure.",
+      "important_medical_or_data_limitations": "Dataset completeness is not evidence of medical correctness. Only one unsealed dataset profile is available. Only one unsealed profile; chest symptoms require careful differential safety design."
+    },
+    {
+      "normalized_condition_name": "osteoarthritis",
+      "display_name": "Osteoarthritis",
+      "profile_count": 1,
+      "dosha_combinations_present": "Vata, Kapha",
+      "relevant_fields_complete": "[\"symptoms\", \"doshas\", \"diet_and_lifestyle_recommendations\", \"prevention\", \"complications\"]",
+      "missing_or_placeholder_fields": "{}",
+      "possible_safety_referral_rule_opportunities": "Later source review could define persistent or function-limiting symptom and professional-assessment topics; no trigger or rule is defined here.",
+      "possible_general_lifestyle_rule_opportunities": "Dataset activity and lifestyle text can nominate general movement and daily-living topics for later source checking.",
+      "external_source_availability_status": "verified: authoritative source page available; content not yet converted to rules",
+      "external_source_title": "NHS: Osteoarthritis",
+      "external_source_url": "https://www.nhs.uk/conditions/osteoarthritis/",
+      "selection_score": 0.9473626828472596,
+      "recommendation_status": "recommended_for_user_approval",
+      "inclusion_or_exclusion_reason": "Distinct musculoskeletal example with explainable lifestyle and referral structure.",
+      "important_medical_or_data_limitations": "Dataset completeness is not evidence of medical correctness. Only one unsealed dataset profile is available. Only one unsealed profile; condition severity and affected joint vary."
+    },
+    {
+      "normalized_condition_name": "insomnia",
+      "display_name": "Insomnia",
+      "profile_count": 2,
+      "dosha_combinations_present": "Vata | Vata, Pitta",
+      "relevant_fields_complete": "[\"symptoms\", \"doshas\", \"diet_and_lifestyle_recommendations\", \"prevention\", \"complications\"]",
+      "missing_or_placeholder_fields": "{}",
+      "possible_safety_referral_rule_opportunities": "Later source review could define persistence, daytime impairment, and other-sleep-disorder referral topics; no trigger or rule is defined here.",
+      "possible_general_lifestyle_rule_opportunities": "Dataset sleep-routine text can nominate general sleep-habit rule topics for later source checking.",
+      "external_source_availability_status": "verified: authoritative source page available; content not yet converted to rules",
+      "external_source_title": "NHS: Insomnia",
+      "external_source_url": "https://www.nhs.uk/conditions/insomnia/",
+      "selection_score": 0.9070526312814458,
+      "recommendation_status": "recommended_for_user_approval",
+      "inclusion_or_exclusion_reason": "Distinct sleep-domain demonstration with non-dosage lifestyle-rule potential.",
+      "important_medical_or_data_limitations": "Dataset completeness is not evidence of medical correctness. The normalized disease group contains multiple dataset Dosha combinations. Repeated profiles have low symptom coherence and require data-quality review. Two profiles have different dataset Dosha combinations."
+    },
+    {
+      "normalized_condition_name": "psoriasis",
+      "display_name": "Psoriasis",
+      "profile_count": 2,
+      "dosha_combinations_present": "Pitta",
+      "relevant_fields_complete": "[\"symptoms\", \"doshas\", \"diet_and_lifestyle_recommendations\", \"prevention\", \"complications\"]",
+      "missing_or_placeholder_fields": "{}",
+      "possible_safety_referral_rule_opportunities": "Authoritative material supports later review of complications and urgent presentations; no trigger or rule is defined here.",
+      "possible_general_lifestyle_rule_opportunities": "Dataset trigger and skin-care topics could be reviewed later.",
+      "external_source_availability_status": "verified: authoritative source page available; content not yet converted to rules",
+      "external_source_title": "NHS: Psoriasis",
+      "external_source_url": "https://www.nhs.uk/conditions/psoriasis/",
+      "selection_score": 0.9093495404465525,
+      "recommendation_status": "not_recommended_in_current_five",
+      "inclusion_or_exclusion_reason": "Strong candidate, but excluded provisionally to reduce dermatology redundancy.",
+      "important_medical_or_data_limitations": "Dataset completeness is not evidence of medical correctness. Chronic immune-mediated disease with potentially serious presentations and treatment complexity."
+    },
+    {
+      "normalized_condition_name": "eczema atopic dermatitis",
+      "display_name": "Eczema (Atopic Dermatitis)",
+      "profile_count": 1,
+      "dosha_combinations_present": "Pitta",
+      "relevant_fields_complete": "[\"symptoms\", \"doshas\", \"diet_and_lifestyle_recommendations\", \"prevention\", \"complications\"]",
+      "missing_or_placeholder_fields": "{}",
+      "possible_safety_referral_rule_opportunities": "Authoritative material supports later infection and urgent-assessment topic review; no trigger or rule is defined here.",
+      "possible_general_lifestyle_rule_opportunities": "Dataset irritant and skin-care topics could be reviewed later.",
+      "external_source_availability_status": "verified: authoritative source page available; content not yet converted to rules",
+      "external_source_title": "NHS: Atopic eczema",
+      "external_source_url": "https://www.nhs.uk/conditions/atopic-eczema/",
+      "selection_score": 0.9068658789629316,
+      "recommendation_status": "not_recommended_in_current_five",
+      "inclusion_or_exclusion_reason": "Useful candidate, but redundant with acne in a five-condition portfolio.",
+      "important_medical_or_data_limitations": "Dataset completeness is not evidence of medical correctness. Only one unsealed dataset profile is available. Only one profile; age-dependent care and infection safety add complexity."
+    },
+    {
+      "normalized_condition_name": "diabetes",
+      "display_name": "Diabetes",
+      "profile_count": 2,
+      "dosha_combinations_present": "Pitta, Kapha",
+      "relevant_fields_complete": "[\"symptoms\", \"doshas\", \"diet_and_lifestyle_recommendations\", \"prevention\", \"complications\"]",
+      "missing_or_placeholder_fields": "{}",
+      "possible_safety_referral_rule_opportunities": "Authoritative material supports later complication and professional-care review, but no trigger or rule is defined here.",
+      "possible_general_lifestyle_rule_opportunities": "Dataset lifestyle topics could be reviewed later without prescribing output.",
+      "external_source_availability_status": "verified: authoritative source page available; content not yet converted to rules",
+      "external_source_title": "WHO: Diabetes",
+      "external_source_url": "https://www.who.int/news-room/fact-sheets/detail/diabetes",
+      "selection_score": 0.8588798910112809,
+      "recommendation_status": "not_recommended_in_current_five",
+      "inclusion_or_exclusion_reason": "Excluded because monitoring, medication, complications, and disease subtype are high risk.",
+      "important_medical_or_data_limitations": "Dataset completeness is not evidence of medical correctness. Generic disease label may combine contexts; dataset medical content is unverified."
+    },
+    {
+      "normalized_condition_name": "asthma",
+      "display_name": "Asthma",
+      "profile_count": 4,
+      "dosha_combinations_present": "Vata | Vata, Kapha",
+      "relevant_fields_complete": "[\"symptoms\", \"doshas\", \"diet_and_lifestyle_recommendations\", \"prevention\", \"complications\"]",
+      "missing_or_placeholder_fields": "{}",
+      "possible_safety_referral_rule_opportunities": "Authoritative material clearly supports later emergency-escalation review, but no trigger or rule is defined here.",
+      "possible_general_lifestyle_rule_opportunities": "Dataset trigger-avoidance topics could be reviewed later.",
+      "external_source_availability_status": "verified: authoritative source page available; content not yet converted to rules",
+      "external_source_title": "NHS: Asthma",
+      "external_source_url": "https://www.nhs.uk/conditions/asthma/",
+      "selection_score": 0.8277532126804411,
+      "recommendation_status": "not_recommended_in_current_five",
+      "inclusion_or_exclusion_reason": "Excluded because emergency breathing assessment and medication context are high risk.",
+      "important_medical_or_data_limitations": "Dataset completeness is not evidence of medical correctness. The normalized disease group contains multiple dataset Dosha combinations. Repeated profiles have low symptom coherence and require data-quality review. Conflicting dataset Dosha combinations and an apparent unrelated fracture-like profile indicate serious data-quality concerns."
+    },
+    {
+      "normalized_condition_name": "hypertension",
+      "display_name": "Hypertension",
+      "profile_count": 3,
+      "dosha_combinations_present": "Pitta | Vata, Pitta",
+      "relevant_fields_complete": "[\"symptoms\", \"doshas\", \"diet_and_lifestyle_recommendations\", \"prevention\", \"complications\"]",
+      "missing_or_placeholder_fields": "{}",
+      "possible_safety_referral_rule_opportunities": "Authoritative material supports later urgent-care and monitoring review, but no trigger or rule is defined here.",
+      "possible_general_lifestyle_rule_opportunities": "Dataset lifestyle topics could be reviewed later with clinical safeguards.",
+      "external_source_availability_status": "verified: authoritative source page available; content not yet converted to rules",
+      "external_source_title": "WHO: Hypertension",
+      "external_source_url": "https://www.who.int/news-room/fact-sheets/detail/hypertension",
+      "selection_score": 0.8053189982396922,
+      "recommendation_status": "not_recommended_in_current_five",
+      "inclusion_or_exclusion_reason": "Excluded because diagnosis, monitoring, treatment, and escalation are high stakes.",
+      "important_medical_or_data_limitations": "Dataset completeness is not evidence of medical correctness. The normalized disease group contains multiple dataset Dosha combinations. Conflicting dataset Dosha combinations; symptoms alone cannot establish hypertension."
+    }
+  ],
+  "separation_of_knowledge": {
+    "dataset_derived": [
+      "profile counts",
+      "Dosha combinations",
+      "field completeness",
+      "symptom distinctiveness"
+    ],
+    "externally_verified_in_phase5": "authoritative page availability only",
+    "not_created": [
+      "medical rules",
+      "safety triggers",
+      "contraindications",
+      "dosages",
+      "treatment recommendations"
+    ]
+  },
+  "approval": {
+    "approved": true,
+    "approval_date": "2026-08-06",
+    "approved_conditions": [
+      "acne",
+      "common cold",
+      "gastroesophageal reflux disease gerd",
+      "osteoarthritis",
+      "insomnia"
+    ],
+    "selection_basis": [
+      "portfolio diversity",
+      "knowledge completeness",
+      "explainability",
+      "manageable MSc prototype scope",
+      "authoritative source availability"
+    ],
+    "explicitly_not_selection_basis": [
+      "medical correctness",
+      "clinical validation",
+      "ML sample size",
+      "final-test results or errors"
+    ],
+    "next_authorized_phase": 6,
+    "phase7_rule_engine_authorized": false
+  }
+}
