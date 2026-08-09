@@ -1,0 +1,13 @@
+column,direct_dosha_term_count,direct_dosha_term_row_indices,disease_name_overlap_count,disease_name_overlap_row_indices,unique_value_count,unique_value_ratio,repeated_value_target_majority_purity
+symptoms,0,[],3,"[74, 342, 343]",429,0.9619,0.7188
+symptom_severity,0,[],0,[],7,0.0157,0.3378
+age_group,0,[],0,[],54,0.1211,0.4363
+gender,0,[],0,[],5,0.0112,0.3184
+risk_factors,0,[],0,[],330,0.7399,0.6405
+environmental_factors,0,[],1,[68],345,0.7735,0.6369
+sleep_patterns,0,[],0,[],6,0.0135,0.3213
+stress_levels,0,[],1,[423],4,0.009,0.3124
+physical_activity_levels,0,[],0,[],5,0.0112,0.3146
+dietary_habits,0,[],0,[],171,0.3834,0.5147
+seasonal_variation,0,[],1,[68],33,0.074,0.3805
+occupation_and_lifestyle,0,[],0,[],204,0.4574,0.5678

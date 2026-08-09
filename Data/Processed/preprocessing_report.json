@@ -1,0 +1,346 @@
+{
+  "phase": 2,
+  "scope": "audit and preprocessing only; no split or model training",
+  "source": {
+    "path": "C:\\Users\\thisari.thathsarani\\Documents\\MSc AI Coursework\\ayurvedic_hybrid_ai\\data\\raw\\AyurGenixAI_Dataset.csv",
+    "sha256": "6B722B8784E5947B762D93A0F1A6E86650CA7AF27BBE21A95AB0C84AFD4F37D5",
+    "rows": 446,
+    "columns": 34,
+    "encoding": "utf-8-sig"
+  },
+  "column_mapping": {
+    "Disease": "disease",
+    "Hindi Name": "hindi_name",
+    "Marathi Name": "marathi_name",
+    "Symptoms": "symptoms",
+    "Diagnosis & Tests": "diagnosis_and_tests",
+    "Symptom Severity": "symptom_severity",
+    "Duration of Treatment": "duration_of_treatment",
+    "Medical History": "medical_history",
+    "Current Medications": "current_medications",
+    "Risk Factors": "risk_factors",
+    "Environmental Factors": "environmental_factors",
+    "Sleep Patterns": "sleep_patterns",
+    "Stress Levels": "stress_levels",
+    "Physical Activity Levels": "physical_activity_levels",
+    "Family History": "family_history",
+    "Dietary Habits": "dietary_habits",
+    "Allergies (Food/Env)": "allergies_food_env",
+    "Seasonal Variation": "seasonal_variation",
+    "Age Group": "age_group",
+    "Gender": "gender",
+    "Occupation and Lifestyle": "occupation_and_lifestyle",
+    "Cultural Preferences": "cultural_preferences",
+    "Herbal/Alternative Remedies": "herbal_alternative_remedies",
+    "Ayurvedic Herbs": "ayurvedic_herbs",
+    "Formulation": "formulation",
+    "Doshas": "doshas",
+    "Constitution/Prakriti": "constitution_prakriti",
+    "Diet and Lifestyle Recommendations": "diet_and_lifestyle_recommendations",
+    "Yoga & Physical Therapy": "yoga_and_physical_therapy",
+    "Medical Intervention": "medical_intervention",
+    "Prevention": "prevention",
+    "Prognosis": "prognosis",
+    "Complications": "complications",
+    "Patient Recommendations": "patient_recommendations"
+  },
+  "missing_and_placeholders": {
+    "true_missing_cells_in_source": 0,
+    "placeholder_counts_by_clean_column": {
+      "medical_history": 1,
+      "family_history": 1,
+      "allergies_food_env": 350,
+      "herbal_alternative_remedies": 15,
+      "ayurvedic_herbs": 10,
+      "yoga_and_physical_therapy": 14,
+      "prevention": 9
+    },
+    "policy": "Placeholders become pd.NA only in cleaned columns. Raw values are preserved. 'None' is not interpreted as an explicit negative or as no allergy."
+  },
+  "duplicates": {
+    "exact_duplicate_extra_rows": 0,
+    "normalized_duplicate_extra_rows": 0,
+    "normalized_disease_count": 363,
+    "repeated_disease_group_count": 73,
+    "maximum_profiles_per_disease": 4
+  },
+  "symptoms": {
+    "delimiter_inspection": {
+      "rows_with_comma": 442,
+      "rows_with_slash": 3,
+      "rows_with_semicolon": 0
+    },
+    "token_count_distribution": {
+      "1": 4,
+      "2": 52,
+      "3": 241,
+      "4": 139,
+      "5": 10
+    },
+    "policy": "Split on comma, semicolon, slash, or vertical bar; casefold and deduplicate per profile."
+  },
+  "dosha": {
+    "allowed_labels": [
+      "vata",
+      "pitta",
+      "kapha"
+    ],
+    "invalid_value_count": 0,
+    "per_label_positive_counts": {
+      "vata": 252,
+      "pitta": 307,
+      "kapha": 119
+    },
+    "combination_counts": {
+      "kapha": 20,
+      "pitta": 132,
+      "pitta+kapha": 42,
+      "vata": 62,
+      "vata+kapha": 57,
+      "vata+pitta": 133
+    }
+  },
+  "categorical_variant_changes": {
+    "gender": {
+      "both genders -> all genders": 417,
+      "males -> male": 2
+    },
+    "physical_activity_levels": {
+      "moderate to low -> low to moderate": 2
+    }
+  },
+  "leakage": {
+    "feature_policy_passed": true,
+    "allowed_features": [
+      "symptoms",
+      "symptom_severity",
+      "age_group",
+      "gender",
+      "risk_factors",
+      "environmental_factors",
+      "sleep_patterns",
+      "stress_levels",
+      "physical_activity_levels",
+      "dietary_habits",
+      "seasonal_variation",
+      "occupation_and_lifestyle"
+    ],
+    "forbidden_features": [
+      "allergies_food_env",
+      "ayurvedic_herbs",
+      "complications",
+      "constitution_prakriti",
+      "cultural_preferences",
+      "current_medications",
+      "diagnosis_and_tests",
+      "diet_and_lifestyle_recommendations",
+      "disease",
+      "dosha_kapha",
+      "dosha_pitta",
+      "dosha_vata",
+      "doshas",
+      "duration_of_treatment",
+      "family_history",
+      "formulation",
+      "herbal_alternative_remedies",
+      "hindi_name",
+      "marathi_name",
+      "medical_history",
+      "medical_intervention",
+      "normalized_disease",
+      "patient_recommendations",
+      "prevention",
+      "prognosis",
+      "yoga_and_physical_therapy"
+    ],
+    "candidate_feature_screen": [
+      {
+        "column": "symptoms",
+        "direct_dosha_term_count": 0,
+        "direct_dosha_term_row_indices": [],
+        "disease_name_overlap_count": 3,
+        "disease_name_overlap_row_indices": [
+          74,
+          342,
+          343
+        ],
+        "unique_value_count": 429,
+        "unique_value_ratio": 0.9619,
+        "repeated_value_target_majority_purity": 0.7188
+      },
+      {
+        "column": "symptom_severity",
+        "direct_dosha_term_count": 0,
+        "direct_dosha_term_row_indices": [],
+        "disease_name_overlap_count": 0,
+        "disease_name_overlap_row_indices": [],
+        "unique_value_count": 7,
+        "unique_value_ratio": 0.0157,
+        "repeated_value_target_majority_purity": 0.3378
+      },
+      {
+        "column": "age_group",
+        "direct_dosha_term_count": 0,
+        "direct_dosha_term_row_indices": [],
+        "disease_name_overlap_count": 0,
+        "disease_name_overlap_row_indices": [],
+        "unique_value_count": 54,
+        "unique_value_ratio": 0.1211,
+        "repeated_value_target_majority_purity": 0.4363
+      },
+      {
+        "column": "gender",
+        "direct_dosha_term_count": 0,
+        "direct_dosha_term_row_indices": [],
+        "disease_name_overlap_count": 0,
+        "disease_name_overlap_row_indices": [],
+        "unique_value_count": 5,
+        "unique_value_ratio": 0.0112,
+        "repeated_value_target_majority_purity": 0.3184
+      },
+      {
+        "column": "risk_factors",
+        "direct_dosha_term_count": 0,
+        "direct_dosha_term_row_indices": [],
+        "disease_name_overlap_count": 0,
+        "disease_name_overlap_row_indices": [],
+        "unique_value_count": 330,
+        "unique_value_ratio": 0.7399,
+        "repeated_value_target_majority_purity": 0.6405
+      },
+      {
+        "column": "environmental_factors",
+        "direct_dosha_term_count": 0,
+        "direct_dosha_term_row_indices": [],
+        "disease_name_overlap_count": 1,
+        "disease_name_overlap_row_indices": [
+          68
+        ],
+        "unique_value_count": 345,
+        "unique_value_ratio": 0.7735,
+        "repeated_value_target_majority_purity": 0.6369
+      },
+      {
+        "column": "sleep_patterns",
+        "direct_dosha_term_count": 0,
+        "direct_dosha_term_row_indices": [],
+        "disease_name_overlap_count": 0,
+        "disease_name_overlap_row_indices": [],
+        "unique_value_count": 6,
+        "unique_value_ratio": 0.0135,
+        "repeated_value_target_majority_purity": 0.3213
+      },
+      {
+        "column": "stress_levels",
+        "direct_dosha_term_count": 0,
+        "direct_dosha_term_row_indices": [],
+        "disease_name_overlap_count": 1,
+        "disease_name_overlap_row_indices": [
+          423
+        ],
+        "unique_value_count": 4,
+        "unique_value_ratio": 0.009,
+        "repeated_value_target_majority_purity": 0.3124
+      },
+      {
+        "column": "physical_activity_levels",
+        "direct_dosha_term_count": 0,
+        "direct_dosha_term_row_indices": [],
+        "disease_name_overlap_count": 0,
+        "disease_name_overlap_row_indices": [],
+        "unique_value_count": 5,
+        "unique_value_ratio": 0.0112,
+        "repeated_value_target_majority_purity": 0.3146
+      },
+      {
+        "column": "dietary_habits",
+        "direct_dosha_term_count": 0,
+        "direct_dosha_term_row_indices": [],
+        "disease_name_overlap_count": 0,
+        "disease_name_overlap_row_indices": [],
+        "unique_value_count": 171,
+        "unique_value_ratio": 0.3834,
+        "repeated_value_target_majority_purity": 0.5147
+      },
+      {
+        "column": "seasonal_variation",
+        "direct_dosha_term_count": 0,
+        "direct_dosha_term_row_indices": [],
+        "disease_name_overlap_count": 1,
+        "disease_name_overlap_row_indices": [
+          68
+        ],
+        "unique_value_count": 33,
+        "unique_value_ratio": 0.074,
+        "repeated_value_target_majority_purity": 0.3805
+      },
+      {
+        "column": "occupation_and_lifestyle",
+        "direct_dosha_term_count": 0,
+        "direct_dosha_term_row_indices": [],
+        "disease_name_overlap_count": 0,
+        "disease_name_overlap_row_indices": [],
+        "unique_value_count": 204,
+        "unique_value_ratio": 0.4574,
+        "repeated_value_target_majority_purity": 0.5678
+      }
+    ],
+    "excluded_field_checks": {
+      "family_history_disease_name_overlap_count": 141,
+      "medical_history_disease_name_overlap_count": 4
+    },
+    "interpretation": "String overlap and repeated-value purity are screening heuristics, not proof that a field is safe or causal. High-cardinality and templated fields require review."
+  },
+  "model_feature_policy": {
+    "allowed_initial_features": [
+      "symptoms",
+      "symptom_severity",
+      "age_group",
+      "gender",
+      "risk_factors",
+      "environmental_factors",
+      "sleep_patterns",
+      "stress_levels",
+      "physical_activity_levels",
+      "dietary_habits",
+      "seasonal_variation",
+      "occupation_and_lifestyle"
+    ],
+    "excluded_fields": [
+      "allergies_food_env",
+      "ayurvedic_herbs",
+      "complications",
+      "constitution_prakriti",
+      "cultural_preferences",
+      "current_medications",
+      "diagnosis_and_tests",
+      "diet_and_lifestyle_recommendations",
+      "disease",
+      "dosha_kapha",
+      "dosha_pitta",
+      "dosha_vata",
+      "doshas",
+      "duration_of_treatment",
+      "family_history",
+      "formulation",
+      "herbal_alternative_remedies",
+      "hindi_name",
+      "marathi_name",
+      "medical_history",
+      "medical_intervention",
+      "normalized_disease",
+      "patient_recommendations",
+      "prevention",
+      "prognosis",
+      "yoga_and_physical_therapy"
+    ],
+    "medical_history_status": "excluded pending manual leakage review",
+    "family_history_status": "excluded because disease-name leakage is frequent"
+  },
+  "limitations": [
+    "Rows are knowledge profiles, not verified independent patient cases.",
+    "Dataset provenance, medical accuracy, and labeling process are unverified.",
+    "String-based leakage tests cannot detect every semantic or templated proxy.",
+    "Cleaning does not make dataset-derived Dosha tags clinically valid."
+  ]
+}
