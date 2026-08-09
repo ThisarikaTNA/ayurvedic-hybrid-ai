@@ -118,6 +118,4 @@ Earlier data-processing and model-development scripts remain for auditability, b
 - Passing the limited safety gate does not establish comprehensive medical safety.
 - The metadata exposure recorded in Phase 10 means perfect pre-unsealing blindness cannot be claimed.
 
-## Submission status
 
-`SUBMISSION_MANIFEST.md` identifies included files, exclusions and outstanding student actions. Major outstanding rubric deliverables are a current two-page project description, a 4,000-5,000-word PDF technical report, an implementation notebook if the lecturer enforces the notebook format literally, and a 5-10-minute demonstration video.
